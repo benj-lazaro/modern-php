@@ -1,0 +1,93 @@
+Install XAMPP
+-------------
+- Windows
+    - Get the latest XAMPP installer
+        - Website (https://www.apachefriends.org/download.html)
+
+    - Run the executable installer
+        - Use default settings
+
+    - Post installation
+        - Click the button "Start" on the following services
+            - Apache
+            - MySQL 
+
+        - On the "Apache" service
+            - Click the button "Admin"
+
+            - Launches the default browser
+
+            - Loads the XAMPP dashboard web application
+    
+
+- Linux
+    - Get the latest XAMPP installer
+        - Website (https://www.apachefriends.org/download.html)
+
+    - Open terminal
+        - Navigate to the folder where the installer is downloaded
+
+    - Make the file executable
+
+        sudo chmod +x xammp-linux-x64*
+
+    - Run the installer
+
+        sudo ./xammp-linux-x64*
+
+    - Change the ownership of the folder "/opt/lampp/htdocs"
+
+        sudo chown -R <username>:<username> /opt/lampp/htdocs/
+
+    - Launch XAMPP dashboard
+
+        sudo /opt/lampp/manager-linux-x64.ru
+
+
+
+Troubleshooting Tips
+--------------------
+- Windows: Services (i.e. Apache, MySQL) failed to start
+    - Default ports may have been taken by another application or service
+
+    - Click button "Configure"
+        - Select "Apache (httpd.conf)"
+
+        - Scroll down until reaching the directive (for incoming requests)
+
+            "Listen 80"
+
+        - Change the port number to something else (e.g. 8080 or 8090)
+
+            "Listen 8090"
+
+        - Close the editor
+            - To automatically save the changes
+
+    - Click button "Configure"
+        - Select "Apache (httpd-ssl.conf)"
+
+        - Scroll down until reaching the directive (for incoming requests)
+
+            "Listen 443"
+
+        - Change the port number to something else (e.g. 1891 )
+
+            "Listen 1891"
+
+        - Close the editor
+            - To automatically save the changes
+
+    - Click the button "Start"
+        - Displays the updated port numbers
+
+    - Click the button "Admin"
+        - Launches the default browser
+
+        - Loads the XAMPP dashboard web application
+
+        - NOTE: If the dashboard fails to load
+            - Manually append the new port number on the URL
+
+                https://localhost:<new_port_number>/dashboard
+       
