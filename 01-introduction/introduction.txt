@@ -1,0 +1,57 @@
+Introduction
+------------
+- PHP history
+    - Was launched in 1997
+    - Nowadays, powering 80% of all websites
+    - Popular software (i.e. WordPress) is written in it
+    - PHP is incredibly a powerful programming language
+    - Also, PHP hosting is incredibly cheap
+
+    - Moreover
+        - PHP has significantly evolved over the years
+
+        - Used to be a pure scripting language for simple scripts
+            - Likely cause its bad reputation
+
+        - It has become an advanced, object-oriented programming language
+            - That can be utilized for modern applications
+
+
+Course Structure (Roadmap)
+--------------------------
+- Introduction
+    - Setting up your system
+
+- PHP for small projects
+    - Variables, conditionals, loops, arrays ...
+
+- PHP for intermediate projects
+    - Working with a database, functions, type annotations, file uploads...
+
+- PHP for larger projects
+    - Object-oriented programming, namespace, autoloading, MVC pattern
+
+
+Course Projects
+---------------
+- Image browser (from local filesystem)
+    - Add a few files in a folder
+    - Turns into a nice website
+    - All local images will be displayed
+
+- Air Quality explorer
+    - Loads files
+    - Parse JSON data
+    - Work with arrays
+
+- PHP diary
+    - Working with a database
+
+- Weather app
+    - Working with extrenal APIs, interfaces
+    - Explore object-oriented programming
+
+- Content Management System
+    - A fully fledged CMS application
+    - A complete MVC (Model View Controller) setup
+    - Prepare for real-world projects
