@@ -2,4 +2,4 @@
 Notes on modern PHP programming
 
 ## What is it?
-Based on <b>Jannis Seeman</b>.'s <b> Udemy course
+Based on <b>Jannis Seeman</b>.'s Udemy course
