@@ -1,0 +1,90 @@
+A First PHP File & The "echo" Command: Display Text On A Website
+----------------------------------------------------------------
+- Creating the first PHP file
+    - Launch XAMPP's "Apache Web Server" service
+
+    - Launch Chrome browser
+
+    - On the project's root folder
+        - Create a new file "index.php"
+
+    - Inside the "index.php" file
+        - Generate HTML boilerplate code 
+            - Using VS Code's "!" shortcut
+
+        - Add an HTML element <h1> with the content
+
+            "Hey, this is my first .php file"
+
+        - Save the changes
+
+        - Refresh the Chrome browser
+
+    - Behind the scenes
+        - Apache Web Server by virtue of file extension
+            - Detect the ".php" file extension
+            - Hands it over to the PHP interpreter (if installed one)
+
+        - PHP interpreter goes through the file's code
+            - Checks for PHP keywords, function, etc. 
+                - Generates the corresponding content
+
+            - Hands it back to the Apache Web Server
+
+        - Apache Web Server receives the content
+            - Serves the content to the Chrome browser
+
+        - Chrome browser receives the content
+            - Renders it on its (currently active) window
+
+    - To insert PHP code within a HTML document
+        - Use the following line
+
+            <?php <php_code_here> ?>
+
+        - The "<?php" infoms the Apache Web Server that
+            - This is the start of a PHP block of code
+
+        - The "?>" signifies the end of the PHP code block
+
+            - NOTE: This code block does NOT appear in the HTML document
+                - When viewed using Chrome browser's "View page source"
+                - It ONLY shows the generaed content from the PHP's code block
+
+        - NOTE: PHP code can be embedded as content within a HTML element (e.g. <h1>)
+
+
+- The "echo" statement is a PHP language construct (NOT a function)
+    - It outputs one or more expression passed as a parameter value
+        - Enclosed within a pair of ' ' or " "
+        
+    - It does NOT add newlines or space to the expression
+    
+    - It does NOT have a return value (i.e. void)
+
+    - Reference (https://www.php.net/manual/en/function.echo.php)
+
+Syntax:
+
+echo '<string>';
+echo "<string>";
+
+echo '$<variable_name>';
+echo "$<variable_name>";
+
+echo <expression>;
+echo <function>;
+
+- The function "rand()" generates a random integer
+    - It optionally accepts two paramters
+        - First paramter    = minimum number generated
+        - Second parameter  = maximum number generated (inclusive)
+
+    - If called without the optional parameters
+        - Returns an integer between 0 and the value returned by "getrandmax()"
+
+    - Reference (https://www.php.net/manual/en/function.rand.php)
+
+Syntax:
+
+rand([min, max]);
