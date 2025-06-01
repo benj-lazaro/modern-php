@@ -1,0 +1,16 @@
+The Basics Of Text Generation With PHP: Create Dynamic Background Colors
+------------------------------------------------------------------------
+- PHP generates HTML markup
+    - The browser renders the corresponding HTML markup
+
+
+- PHP can generate any arbitrary text that
+    - Can be rendered by the browser as HTML markup
+
+    - Common use case:
+        - Dynamically change the assigned value of an element's "class" attribute
+            - Using a combination of "echo" and "rand()"
+
+    - NOTE: The browser does NOT care where the generated HTML markup came from
+        - It just renders the HTML markup received from the (Apache) Web Server
+
