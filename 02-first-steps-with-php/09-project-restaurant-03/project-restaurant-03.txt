@@ -1,0 +1,73 @@
+Project: Multi-Page Restaurant Website (Displaying Data & Exercise)
+-------------------------------------------------------------------
+- Address the glaring concerns from the previous lecture
+    - Each page's corresponding header background image & title
+
+
+- Implementation
+    - Open the file "ingredients.php"
+
+    - Define a variable named "$pageTitle"
+        - Place it BEFORE the "include" statement
+        - Assign it the the value of "Ingredients"
+        - Save the changes
+
+    - Open the file "inc/header.inc.php"
+        - On the HTML element <title>
+        
+        - Replace the content right after the "&bull;" character
+            - With the following PHP code
+
+                <?php echo $pageTitle ?>
+
+            - Dynamically generates the assigned value of the variable "$pageTitle"
+
+        - Save the changes
+            - Reload the page
+
+    - Open the file "our-mission.php"
+
+    - Define a variable named "$pageTitle"
+        - Place it BEFORE the "include" statement
+        - Assign it the the value of "Our Mission"
+        - Save the changes
+
+
+- To address the header background image
+    - Switch back to "inc/header.inc.php"
+
+    - On the HTML element <header>
+        - Look at the attribute "style"
+            - Select & cut the content of the "url()"
+        
+        - Replace it with the following PHP code
+
+            <?php echo $headerImg; ?>
+
+        - Save the changes
+
+    - Switch back to "our-mission.php" file
+        - Declare a new variable named "$headerImg"
+            - Just below the variable "$pageTitle"
+
+            - Paste the content taken from "/inc/header.inc.php" 
+                - As the assigned value
+
+        - Save the changes
+
+    - Switch to the "ingredients.php" file
+        -  Repeat the same procedure
+            - With the exception of a different value (i.e. image) being assigned
+
+        - Save the changes
+
+    
+- Exercise
+    - Add & integrated a 3rd page into the website (menu.html)
+        - The HTML document and associated images are included with the starter files
+
+    - Use the lessons learned from the previous lectures
+        - Rename the page from ".html" to ".php"
+        - Include the shared header & footer sections in the new page
+        - Dynamically update the page's title and header background image
+        
