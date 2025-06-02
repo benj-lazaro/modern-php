@@ -1,0 +1,63 @@
+Project: Multi-Page Restaurant Website (Refactor)
+-------------------------------------------------
+- Use PHP to simplify the management of manually added links
+    - On each individual page's navigation bar
+
+    - The advantage of this approach
+        - Both header & footer section of the pages
+            - Will come from their respective ".php" file
+            - Reduces duplication of header & footer markup on succeeding pages
+
+
+- Implementation
+    - Rename the file extension ".html" to ".php"
+        - Allows the Apache Web Server to call the PHP interpreter
+        - Have the embedded PHP code evaluated & executed by PHP interpreter
+
+    - Update the link references on each page's navigation bar
+        - From ".html" to ".php"
+
+    - Create a new folder named "inc" (short for includes)
+        - Move inside the folder "inc"
+
+    - Create a new file "header.inc.php"
+        - NOTE: The ".inc" part is an OPTIONAL naming convention
+            - Signifying that it is NOT MEANT to run as a standalone
+
+    - Switch back to "ingredients.php"
+        - Select from the beginning line up to starting HTML element <main>
+        - Cut the block of HTML markup
+        - Leaving the HTML element <main> and the rest of the code base
+    
+    - Paste the content in "header.inc.php"
+        - Save the changes
+
+    - Switch back to "ingredients.php"
+        - Add a PHP's "include" statement at the start of the file
+            - Include the file "inc/header.inc.php"
+
+        - Save the changes
+
+    - Move inside the folder "inc"
+        - Create a new file "footer.inc.php"
+
+    - Switch back to the "ingredients.php"
+        - Select from the closing HTML element </main> up to the last line of code
+        - Cut the block of HTML markup
+
+    - Paste the content in "foother.inc.php"
+        - Save the changes
+
+    - Switch back to "ingredients.php"
+        - Add a PHP's "include" statement at the last line of the file
+            - Include the file "inc/footer.inc.php"
+
+        - Save the changes
+        - Refresh the page
+
+    - Implement the same procedures on "our-mission.php"
+        - Save the changes
+
+        - NOTE: Two glaring concerns will be addressed on the next lecture
+            - The content of the page's HTML element <title> 
+            - The page's header background image
