@@ -1,0 +1,43 @@
+Quiz 01: Test Your Knowledge In PHP
+-----------------------------------
+- Consider the following incorrect PHP code snippet:
+
+    <?php echo 'Can you see this message?'>.
+
+    - This code produces the following error message:
+
+        Parse error: syntax error, unexpected end of file in /Applications/XAMPP/xamppfiles/htdocs/php-course/first.php on line 1
+
+    - How would you fix the above code snippet to avoid the error?
+
+    - Answer: <?php code 'Can you see this message?'; ?>
+
+
+- Assume that the file header.php exists 
+    - It contains valid PHP code
+    - Which of the following options correctly includes it into another PHP file?
+
+    - Answer: <?php include 'header.php'; ?>
+
+
+- Which of the following options does NOT contain valid PHP code?
+    - Note: Assume all referenced files do exist and have valid PHP code
+
+    - Answer: <php? echo 'PHP 101: echo some text' ?>
+
+
+- Given the CSS class definition below:
+
+    .highlight {
+        background-color: yellow;
+        padding: 5px;
+    }
+
+    - Which of the following PHP options correctly defines & uses a variable for this CSS class identifier
+
+    - Answer: 
+    
+        <?php $className = 'highlight'; ?>
+        <span class="<?php echo $className; ?>">
+            This is a highlighted text
+        </span>
