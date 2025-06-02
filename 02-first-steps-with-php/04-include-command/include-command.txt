@@ -1,0 +1,42 @@
+The include Command: Combine multiple PHP files
+-----------------------------------------------
+- The "include" expression includes and evaluates the specified file
+    - Allows to split PHP code into multiple files
+    
+    - Allows to build a common HTML structure that is shared between pages
+        - Simplifying the deployment of simple HTML websites
+
+    - NOTE: The filename extension does NOT have to be ".php" (e.g. ".txt")
+        - As long as it contains valid PHP code
+            - PHP interpreter will read, evaluate & execute the code
+
+        - HOWEVER, this is to be AVOIDED
+            - It is best practice for files to be included 
+                - To use the ".php" file extension
+
+    - Reference (https://www.php.net/manual/en/function.include.php)
+
+Syntax:
+
+include '<path_name/filename>';
+
+include '<filename>';
+
+
+- PHP uses // for commenting code
+    - It is one of the three (3) suppported commenting styles in PHP
+        - PHP supports C, C++ & Unix shell-style comments
+
+    - Reference (https://www.php.net/manual/en/language.basic-syntax.comments.php)
+
+Syntax:
+
+// This is a one-line C++ comment (preferred one)
+
+/* This is
+   a multi-line comment of C
+*/
+
+# This is a one-line shell-style comment
+
+
