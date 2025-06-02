@@ -1,0 +1,18 @@
+Variables In PHP: Store & Access Data Dynamically
+-------------------------------------------------
+- A variables in PHP is represented by a $ followed by a name
+    - NOTE: A variable name is CASE-SENSITIVE
+
+    - A variable name
+        - Starts with a letter (A-Z, a-z) or underscore
+        - Followed by any number of letters, numbers or underscores
+
+    - NOTE: PHP does NOT support unicode variable names
+
+    - NOTE: "$this" is a special variable name that can NOT be assigned
+
+    - Reference (https://www.php.net/manual/en/language.variables.basics.php)
+
+Syntax:
+
+$<variable_name> = <value>;
