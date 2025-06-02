@@ -1,0 +1,3 @@
+Project: Multi-Page Restaurant Website (Exercise Solution)
+----------------------------------------------------------
+- Focuses on the author's solution on the previous lecture's Exercise
