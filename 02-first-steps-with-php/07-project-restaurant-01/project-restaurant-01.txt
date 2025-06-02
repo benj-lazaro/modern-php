@@ -1,0 +1,43 @@
+Project: Multi-Page Restaurant Website (Introduction)
+-----------------------------------------------------
+- To develop a simple multi-page website
+    - Use PHP to help implement the project
+
+
+- The project is a restaurant website (Culinary Cove)
+    - It has a single page (our-mission.html)
+        - Contains the site's mission statement
+        - It has a footer
+
+
+- Create a new page (ingredients.html)
+    - Intended to hold information about ingredients
+    
+    - Copy the file "our-mission.html"
+        - Rename it to "ingredients.html"
+
+    - Update the header image & content of "ingredients.html"
+        - NOTE: Copy the content from the provided starter files
+
+    - Save the changes
+
+
+- Open the page (mission.html)
+    - Manually add a link to the "ingredients.html" file 
+        - In the navigation bar
+    
+    - On the <nav> element
+        - Add the following HTML markup link
+
+        <a href="ingredients.html">Ingredients</a>
+
+    - Save the changes
+
+    - Reload the page (mission.html)
+
+
+- NOTE: As the project grows into multiple pages over time
+    - Manually updating the navigation bar proved to be unmaintainable
+
+    - The next section will focus on how PHP
+        - Simplifies the update of new links added into the navigation bar
