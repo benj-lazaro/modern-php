@@ -1,0 +1,46 @@
+How To Deal With Error & Warning Messages In PHP
+------------------------------------------------
+- A "Parse error" means
+    - PHP interpreter encounter a piece of code that can NOT be parsed
+        - Into a structure that will be executed later
+        - Halts the parsing of the rest of the code
+        - Terminates the program
+
+    - Common occurrence
+        - Missing semi-colon at the end of each PHP line of code
+
+   
+- A "Syntax error" means
+    - A violation of a fundemental rule of the PHP syntax
+
+    - Common occurrence
+        - Variable name violation
+
+
+- A "Fatal error" means
+    - PHP interpreter successfully parses the entire program
+        - BUT encounters an unrecoverable error during its execution
+        - So serious that it immediately termintes the program
+
+    - Common occurrence
+        - Calling a non-existent user-defined function
+
+
+- Error(s) reported by the PHP interpreter
+    - Often located on the actual line 
+        - Where the error is detected
+    
+    - Sometimes located a line BEFORE (often) or AFTER
+        - Where the error is detected
+
+
+- A "warning" unlike an error
+    - Does NOT violate any fundemental rule of PHP syntax
+    - Does NOT halt the parsing of the entire code base
+    - Does NOT terminate the program
+
+    - Common occurrence
+        - Accessing an non-existent variable
+        - Include a non-existent PHP file
+
+    
