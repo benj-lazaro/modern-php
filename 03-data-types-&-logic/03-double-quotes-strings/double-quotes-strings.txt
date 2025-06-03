@@ -1,0 +1,28 @@
+Strings Within Double Quotes: Utilize Variable Substitution & Special Characters
+--------------------------------------------------------------------------------
+- Strings enclosed within a pair of " "
+    - Allows more flexibility
+        - Remove the need of using an escape character \ to include a ' in a string
+
+    - Able to concatenate a variable & a string
+        - Enclosed within a pair of " "
+        - Without using the "." operator
+    
+        - NOTE: The preferred way of concatenating a variable with an additional string
+            - Enclose the variable within a pair of { }
+            - This helps PHP identify & separate the variable from the string
+            - This is referred as "variable substitution"
+
+    - Able to create (support) special Characters
+        - Newline character = "\n"
+        - Tab character     = "\t"
+
+
+- Single quotes vs Double quotes
+    - Use single quotes when
+        - It is reasonably possible
+        - Simply displaying a string value
+
+    - Use double quotes when
+        - Implementing a variable substitution in a string
+        - Including a special character within a string
