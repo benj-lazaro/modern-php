@@ -1,0 +1,18 @@
+Overview
+--------
+- This section focuses on:
+    - Exploring different data types
+        - Numbers
+        - Strings
+        - Booleans
+
+    - Basic functions
+        - var_dump()
+        - empty()
+
+    - Conditional statement
+        - if else
+
+    - Enhancement of the previous section's Restaurant website project
+
+    
