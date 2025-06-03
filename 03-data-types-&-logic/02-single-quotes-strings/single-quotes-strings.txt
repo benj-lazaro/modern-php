@@ -12,7 +12,7 @@ Strings Within Single Quotes & Combine Strings w/ the . Operator
             - NOT as the end (termination part) of the string
 
         - Alternatively
-            - Enlose the string uaing a pair of " " instead
+            - Enclose the string uaing a pair of " " instead
             - Removes the need for the \ escape character
 
 
