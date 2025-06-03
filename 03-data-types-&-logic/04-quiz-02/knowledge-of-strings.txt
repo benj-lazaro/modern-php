@@ -1,0 +1,42 @@
+Quiz 02: Test Your Knowledge Of Strings
+---------------------------------------
+- In PHP, single and double quotes are used to define strings
+    - Each have different behaviors interpreting variables & special characters
+    - Which of the following correctly describes the difference
+    
+    - Answer: Double quotes interpret both variable & special chracters, single quotes don't
+
+
+- Given the PHP variables:
+
+    $sender = 'Dana';
+    $project = 'GlobalLink';
+
+    - Which of the following PHP snippets will NOT correctly display 
+
+        "You have a new request from Dana for Project GlobalLink!"?
+
+    - Answer: echo 'You have a new request from {$sender} for Project {$project}!';
+
+
+- Given the following PHP code:
+
+    echo "Welcome back!\nWe're glad to see you again.<br/>Check out our new features.";
+
+    - How will the above message be displayed in the browser?
+        - NOTE: Outputting the PHP code directly into the HTML document
+            - NOT as content of the HTML element <pre>
+
+    - Answer: Welcome back! We're glad to see you again.
+              Check out our new features.
+
+
+- Given the PHP code snippet:
+
+    $promoCode = 'SUMMER_SALE';
+    echo "Seasonal Offer! 🤑 Use \"{$promoCode}\" for an exclusive discount.";
+
+    - What will be the displayed output?
+
+    - Answer: Seasonal Offer! 🤑 Use "SUMMER_SALE" for an exclusive discount.
+    
