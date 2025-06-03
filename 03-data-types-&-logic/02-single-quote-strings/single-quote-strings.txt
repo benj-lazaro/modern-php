@@ -1,0 +1,25 @@
+Strings Within Single Quotes & Combine Strings w/ the . Operator
+----------------------------------------------------------------
+- A string is a collection of characters
+    - Placed inside a pair of single quotes '' or double quotes " "
+
+
+- A string enclosed using a pair of ' '
+    - When in need to insert a ' character into the string
+        - Requires prefixing the ' with the \ escape character
+        
+        - Informs the PHP to interpret the ' as part of the string
+            - NOT as the end (termination part) of the string
+
+        - Alternatively
+            - Enlose the string uaing a pair of " " instead
+            - Removes the need for the \ escape character
+
+
+- The string concatenation operator "."
+    - Returns the concatenation of its right & left (string) arguments
+    - Reference (https://www.php.net/manual/en/language.operators.string.php)
+
+Syntax:
+
+'<string_value>' . '<string_value>';
