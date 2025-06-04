@@ -1,0 +1,45 @@
+Numbers
+-------
+- PHP has two number data types
+    - Integer (int)
+        - Whole numbers (both positive & negative)
+        
+        - Can be specified in
+            - Decimal (base 10)
+            - Hexadecimal (base 16)
+            - Octal (base 8)
+            - Binary (base 2)
+
+        - Reference (https://www.php.net/manual/en/language.types.integer.php)
+        
+    - Floating Point (float)
+        - Number with a decimal point
+        - Reference (https://www.php.net/manual/en/language.types.float.php)
+
+
+- PHP tries it's best to implicitly convert types automatically
+    - When performing a mathematical operation between two number "strings"
+        - Each number enclosed within a pair of ' '
+
+    - This ONLY WORKS if BOTH operands
+        - Can be converted into numbers
+        - To perform the corresponding operation
+        - Convert the returned result into a string
+
+    - Otherwise, PHP flags a "fatal error"
+        - Specifically an "Uncaught TypeError: Unsupported operand types..."
+        - Chrome browser's JavaScript console reports a "500 (Internal Server Error)"
+
+
+- The PHP function round()
+    - Returns the rounded value (as a float) of a number passed as argument (1st argument)
+        - To a specified precision (2nd optional argument, an integer)
+        - As well as mode of round (3rd optional argument, a constant)
+
+    - Reference (https://www.php.net/manual/en/function.round.php)
+
+Syntax:
+
+round(<int | float> [,precision, mode])
+
+
