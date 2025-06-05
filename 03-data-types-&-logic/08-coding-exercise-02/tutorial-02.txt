@@ -1,0 +1,12 @@
+Coding Exercise 01: Tutorial Part 02
+------------------------------------
+- Your task is to refine the digital checkout process for an e-commerce store
+    - You will work with two variables
+        - $itemName: holds the name of the item being purchased
+        - $itemPrice: represents the price of the item in dollars
+
+    - The message should be formatted as follows:
+
+        "Thank you for purchasing the [item]! Your total is $[price]."
+
+    
