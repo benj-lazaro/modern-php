@@ -1,0 +1,7 @@
+Coding Exercise 01: Tutorial Part 01
+------------------------------------
+- Add an exclamation sign to the string 'Hello World'
+    - So the program would output "Hello World!"
+
+    - Click the button "Run tests"
+        - To evaluate & execute the program
