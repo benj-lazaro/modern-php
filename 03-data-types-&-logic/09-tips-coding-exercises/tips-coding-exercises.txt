@@ -1,0 +1,13 @@
+Tips For Coding Exercises
+-------------------------
+- The closing PHP tag "?>" can be omitted
+
+
+- The output NEEDS to MATCH what the exercise is expecting
+    - Be mindful of case-sensitivity
+
+    - How to MATCH the expected output is completely up to you
+
+
+- There is NO need to pass all tests at once
+    - Try to make gradual progess instead
