@@ -1,0 +1,21 @@
+Introduction: Coding Exercise
+-----------------------------
+- Quick overview on the interactive code exercises
+    - Read the instructions on the left-panel window
+
+    - Write the code exercise on the right-panel window
+
+    - Click the button "Run tests" to execute (and test) the written code
+        - Submits (uploads) the code to Udemy
+
+        - Evaluates the code if it passes the test cases or not
+            - Test cases will provide hints as to why it failed
+
+    - The tab "User logs"
+        - Displays the output from an echo statement (if there is one)
+
+    - Using the keyboard combination "CTRL+" or "CTRL-"
+        - Allows to zoom in or out (respectively) the browser window
+            - Should the interface seemed cramped
+
+    
