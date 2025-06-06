@@ -1,0 +1,26 @@
+The var_dump() Function: Inspect Variables
+------------------------------------------
+- The PHP function var_dump() dumps information about a variable
+    - It sisplays information about
+        - Data type of the value
+        - Length (i.e. characters of a string)
+        - Assigned value
+
+        - NOTE: An emoji character & non-English character(s)
+            - May consume more than 1 character to represent it in memory
+                - e.g. an emoji = 4 characters
+                - e.g. German language "ä" = 2 characters
+    
+    - Arrays & objects are explored recursively with values
+
+    - It is perfect for debugging
+        - Offers more information than using an "echo" statement
+
+    - There is NO value that is returned (i.e. void) by the var_dump()
+
+    - Reference (https://www.php.net/manual/en/function.var-dump.php)
+
+Syntax:
+
+var_dump(<expression>, [<expressions>]);
+
