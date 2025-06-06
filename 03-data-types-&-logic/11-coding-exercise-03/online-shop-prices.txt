@@ -1,0 +1,24 @@
+Coding Exercise 03: Online Shop Prices
+--------------------------------------
+- A variable named "$price"
+    - Declared in the background
+    - Contains the original price of an item
+
+
+- Your task is to manipulate the price according to the following:
+    - Apply a 30% discount to the value in "$price"
+    
+    - Apply a flat discount of $10 to the price
+        - After the first discount
+        - A flat discount is a fixed amount subtracted from the price
+
+    - Add a 20% tax to the price
+        - After applying BOTH discounts
+
+    - Calculate the loyalty points
+        - Every cent spent earns 1 point
+        - 100 points = $1 
+
+    - Format the output as follows:
+
+        "After applying discounts and taxes, the item's price is reduced from $150 to $114, and you've earned 11400 loyalty points."
