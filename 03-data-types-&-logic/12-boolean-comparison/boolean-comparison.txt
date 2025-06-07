@@ -1,0 +1,17 @@
+Boolean & Comparison Operators: Compare Values
+----------------------------------------------
+- PHP comparison operators
+    - ==    = Equal                     Returns true if BOTH operands are equal in value
+    - ===   = Identical                 Returns true if BOTH operands are equal in value AND data type
+    - !=    = Not equal                 Returns true if BOTH operands are NOT equal in value
+    - <>    = Not equal                 Returns true if BOTH operands are NOT equal in value
+    - !==   - Not identical             Returns true if BOTH operands are NOT equal in value OR data type
+    - <     = Less than                 Returns true if the 1st operand is less than the 2nd operand
+    - >     = Greater than              Returns true if the 1st operand is greater than the 2nd operand
+    - <=    = Less than or equal to     Returns true if the 1st operand is greater than or equal to the 2nd operand
+
+    - NOTE: For equality checks
+        - It is recommended to use "===" and "!==" operators
+
+    - Reference (https://www.php.net/manual/en/language.operators.comparison.php)
+
