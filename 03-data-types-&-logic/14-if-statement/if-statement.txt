@@ -1,0 +1,20 @@
+The if Statement: Direct Conditional Control Flows
+--------------------------------------------------
+- The "if" statement allows for the conditional execution of code fragments
+    - It is similar to that of the C-language
+
+    - NOTE: The pair of { } can be omitted when the "if" statement
+        - ONLY contains a single statement
+
+    - Reference (https://www.php.net/manual/en/control-structures.if.php)
+
+Syntax:
+
+if (<conditional_expression>) {
+    <statement>;                // Multi-line statements
+    ...
+}
+
+if (<conditional_expression>)
+    <statement>;                // Single-line statement
+
