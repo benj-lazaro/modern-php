@@ -1,0 +1,41 @@
+Quiz 03: Numbers And Booleans
+-----------------------------
+- Given the following PHP code snippet:
+
+    $unitsSold = 10;
+    $maxLimit = "5";
+
+    - Which of the following "echo" statements will produce that "contradicts"
+        - The claim made about its output due to PHP's automatic type casting
+
+    - Answer: $unitSold . $maxLimit // returns 510
+
+
+- Consider the following PHP code snippet:
+
+    $amount = -10;
+    $conversionRate = 0.3;
+    var_dump(($amount * $conversionRate) === -3);
+
+    - This code outputs bool(false)
+        - Why does it happen, given that -10 multiplied by 0.3 should theoretically be -3
+
+    - Answer: Floating-point representation in PHP can lead to precision issues
+
+
+- Which of the following statement is correct
+
+    - Answer: $flag = false;
+              var_dump($flag != true);  // returns bool(true)
+
+
+- Given the following PHP snippet:
+
+    $enteredPIN = 4567;
+    $storedPIN = '4567';
+
+    Which of the following statements is correct regarding the comparison of $enteredPIN and $storedPIN? 
+
+    - Answer: $enteredPIN != $storedPIN  // false
+              $enteredPIN !== $storedPIN // true
+
