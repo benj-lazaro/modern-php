@@ -1,0 +1,39 @@
+Alternative Syntax In PHP: Enhance Clarity In HTML Integration
+--------------------------------------------------------------
+- Alternative syntax of embedding PHP code in HTML
+    - Enclose PHP code at every line
+        - Instead of enclosing entire block of code with embedded HTML mark-up
+
+    - Improves readability of HTML mark-up & PHP
+        - Applicable for complicated (element layered) HTML mark-up
+        - NOTE: Adds whitespace characters on the generated HTML mark-up
+
+    - When to use the alternative syntax
+        - Generating the corresponding HTML mark-up
+        
+    - When to use the normal syntax
+        - Declaring variables
+        - Load or include other PHP files via "include"
+        - Implementing logic
+
+    
+- Alternative way of writing an "if" statement
+    - Replace the "if" statement { with a ":"
+    - Replace the closing } with an "endif"
+
+    - Improves readability of "if" statements
+        - Easily identify where an "if" statement closes
+
+Syntax:
+
+// Classic
+if (<conditional_expression>) {
+    <statement>;               
+    ...
+}
+
+// Alternative
+if (<conditional_expression>): 
+    <statement>;
+    ...
+endif
