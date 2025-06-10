@@ -1,4 +1,4 @@
-Coding Exercise 04: Loyalty Points Evaluation Part 02
+Coding Exercise 05: Loyalty Points Evaluation Part 02
 -----------------------------------------------------
 - Determine the customer's discount
     - Based on their Loyalty Points balance
