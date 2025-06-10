@@ -1,0 +1,43 @@
+Coding Exercise 04: Loyalty Points Evaluation Part 02
+-----------------------------------------------------
+- Determine the customer's discount
+    - Based on their Loyalty Points balance
+        - Less than 3000 points     = no discount
+        - 3000 or more points       = 5% discount
+        - 6000 or more points       = 15% discount
+
+
+- Calculate discounted total
+    - Compute the total amount after applying the eligible discount
+    - Customers with over 6000 points should be considered for both discount options
+
+
+- Apply tax
+    - Add 8% tax to the discounted total
+
+- Update Loyalty Points
+    - Calculate the customer's new Loyalty Points balance
+    
+    - Every cent spent (after tax) earns 1 Loyalty Point ($1 = 100 Loyalty Points)
+    
+    - Subtract the spent Loyalty Points for the discount
+        - Then add points based on the final purchase amount
+
+
+- Display checkout message
+    - Display a tailored message for the customer
+
+    - For customer with Loyalty Points of 2900 & a Total Cost of $20
+
+        "You have fewer than 3000 Loyalty Points. No discount is available. Your final price (after taxes) would be $21.6. Your new Loyalty Balance would be: 5060."
+
+    - For customer with Loyalty Points of 3500 & a Total Cost of $20
+
+        "You can spend 3000 Loyalty Points for a discount of 5%. Your final price (after discount and taxes) would be $20.52. Your new Loyalty Balance would be: 2552."
+
+    - For customer with Loyalty Points of 7000 & a Total Cost of $20
+
+        "You can spend 3000 Loyalty Points for a discount of 5%. Your final price (after discount and taxes) would be $20.52. Your new Loyalty Balance would be: 6052."
+
+        "You can spend 6000 Loyalty Points for a discount of 15%. Your final price (after discount and taxes) would be $18.36. Your new Loyalty Balance would be: 2836."
+        
