@@ -1,0 +1,18 @@
+Coding Exercise 04: Loyalty Points Evaluation Part 01
+-----------------------------------------------------
+- A variable named "$loyaltyPoints"
+    - Holds a customer's loyalty points balance
+
+
+- Your task is to assess the "$loyaltyPoints" of a customer
+    - Output a corresponding message based on their balance
+
+    - less than 3000 points = no discount
+    - 3000 or more points   = 5% discount
+    - 6000 or more points   = 15% discount
+
+    - Corresponding text message is as follows:
+
+        "You have fewer than 3000 Loyalty Points. No discount is available."
+
+        "You can spend <3000 | 6000> Loyalty Points for a discount of <5 | 15>%."
