@@ -1,0 +1,45 @@
+The isset, empty & unset Functions: Validate & Delete Variables
+---------------------------------------------------------------
+- The function isset() determines if a variable
+    - Has been declared & assigned with a value that is NOT a null
+        - Returns a boolean value of "true"
+
+    - If a variable is assigned with a value of "null"
+        - It returns a boolean value of "false"
+
+    - If multiple parameters are passed to the function
+        - It ONLY returns "true" when all of the variables passed are considered set
+
+    - A variable that has been unset using the function unset()
+        - Will be NO longer be considered set
+        - It returns a boolean value of "false"
+
+    - Reference (https://www.php.net/manual/en/function.isset.php)
+
+
+- The function empty()
+    - Determines if a variable is empty (i.e. no assigned value), null or 0
+        - It returns a boolean value of "true"
+        - Otherwise, returns a value of "false"
+
+    - If a variable is non-existent
+        - It returns a boolean value of "true"
+        - It does NOT generate a warning for the non-existent variable
+
+    - Reference (https://www.php.net/manual/en/function.empty.php)
+
+
+- The function unset()
+    - Unsets or destroys the passed variable
+        - Returns nothing (i.e. void)
+
+    - Reference (https://www.php.net/manual/en/function.unset.php)
+
+
+Syntax:
+
+isset(<variable>, ...): bool
+
+empty(<variable>): bool
+
+unset(<variable>, ...): void
