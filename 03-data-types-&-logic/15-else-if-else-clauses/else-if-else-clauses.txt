@@ -1,0 +1,55 @@
+The else if And else Clauses: Expand Decision-Making Options
+------------------------------------------------------------
+- The "else" statement
+    - Executes a statement when the condition of an "if" statement evaluates to false
+
+    - NOTE: MUST immediately placed right after an "if" or "else if" statement
+    
+    - Reference (https://www.php.net/manual/en/control-structures.else.php)
+
+Syntax:
+
+if (<condition>) {
+    <statement>;
+    ...
+} else {
+    <statement>;
+    ...
+}
+
+
+- The "elseif" or "else if" statement
+    - Is a combination of "if" and "else" statement
+    
+    - Executes a different statement(s) in case the original "if" statement evaluates to false
+    
+    - If all conditions evaluates to false
+        - The statement within the "else" clause will be executes
+    
+    - Reference (https://www.php.net/manual/en/control-structures.elseif.php)
+
+Syntax:
+
+// else if 
+if (<condition>) {
+    <statement>;
+    ...
+} else if (<condition>) {
+    <statement>;
+    ...
+} else {
+    <statement>;
+    ...
+}
+
+// elseif
+if (<condition>):
+    <statement>;
+    ...
+elseif (<condition>):
+    <statement>;
+    ...
+else:
+    <statement>;
+    ...
+endif;
