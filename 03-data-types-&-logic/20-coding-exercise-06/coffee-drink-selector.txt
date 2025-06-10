@@ -1,0 +1,21 @@
+Coding Exercise 06: Coffee Drink Selector
+-----------------------------------------
+- Working with a variable name "$selectedCoffee"
+    - This holds the type of coffee chosen by the user
+
+
+- Your task is to display information about the selected coffee type using the guidelines
+    - Check if the variable "$selectedCoffee" exists AND contain a value
+        - If it does NOT exists OR has NO value
+            - "$selectedCoffee = drip"
+
+    - Display information about the selected coffee on the value of "$selectedCoffee"
+        - Focus on two (2) cases ONLY
+            - "expresso"
+            - "drip"
+
+        - Display ONLY the corresponding HTML mark-up
+
+    - Do NOT modify the structure of the provided HTML elements
+
+    - NOTE: Incorporate if-else with the shorthand (alternative) syntax
