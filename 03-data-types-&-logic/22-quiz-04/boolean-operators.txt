@@ -1,0 +1,67 @@
+Quiz 04: Boolean Operators & Variable Validation
+------------------------------------------------
+- In a video game code, consider the following variable assignments:
+
+    $playerAlive = true;
+    $ammoAvailable = false;
+
+    - Which of the following expressions will evaluate to true?
+
+    - Answer: $playerAlive || $ammoAvailable
+
+
+- You're still debugging video game logic, where the following conditions are given:
+
+    $isPlayerAlive = true;
+    $isBossDefeated = false;
+    $hasExtraLife = true;
+
+    - Which of the following expressions will evaluate to false?
+
+    - Answer: (!$isPlayerAlive) && ($isBossDefeated XOR $hasExtraLife)
+
+
+- Review the following PHP script
+
+    if (isset($tool) && $tool == 'binoculars' && $distance > 100 && !$lightAvailable) {
+        echo "Long-range scout in the dark!";
+    } else if (!empty($tool) && $tool == 'flashlight' && $distance <= 50 && $lightAvailable) {
+        echo "Close-range explorer ready!";
+    } else if (empty($tool) && $distance == 0 && !$lightAvailable) {
+        echo "Stranded without tools!";
+    } else {
+        echo "Standard explorer mode!";
+    }
+
+    - How could the variables $tool, $distance and $lightAvailable be set to produce the output:
+
+        "Long-range scout in the dark!"
+
+    - Answer:
+        $tool = "binoculars";
+        $distance = 150;
+        $lightAvailable = false;
+
+
+- You're enhancing some inventory management system. Inspect the PHP script below:
+
+    $weapon = 'sword';
+    $armor = 'leather';
+     
+    if (!empty($weapon)) {
+        $weapon = '';
+        if (empty($armor)) {
+            $armor = 'chainmail';
+            echo "Chainmail equipped!";
+        } else if (!isset($weapon) && !empty($armor)) {
+            echo "Weapon slot empty!";
+        } else {
+            echo "Fully equipped!";
+        }
+    } else {
+        echo "Nothing equipped!";
+    }
+
+    - What will be the displayed message?
+
+    - Answer: "Fully equipped!"
