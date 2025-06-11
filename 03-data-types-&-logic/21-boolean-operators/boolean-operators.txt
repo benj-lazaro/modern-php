@@ -1,0 +1,13 @@
+Boolean Operators: Craft More Complex Conditions
+------------------------------------------------
+- PHP's boolean (logical) operators
+    - And (&&)  = true if BOTH operands are true
+    - And (and) = true if BOTH operands are true
+    - Or (||)   = true if EITHER operand is (or BOTH operands are) true
+    - Or (or)   = true if EITHER operand is (or BOTH operands are) true
+    - Not (!)   = true if operand is NOT true
+    - Xor (xor) = true if EITHER operand but NOT BOTH
+
+    - NOTE: The variants "and" & "or" operate at different predences
+
+    - Reference (https://www.php.net/manual/en/language.operators.logical.php)
