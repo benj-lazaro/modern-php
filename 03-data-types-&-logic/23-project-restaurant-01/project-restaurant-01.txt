@@ -1,0 +1,28 @@
+Project: Restaurant Website Refinement (Exercise Intoduction)
+-------------------------------------------------------------
+- Further improve the Restaurant project from the previous chapter
+    - Improvements to be implemented as an Exercise
+
+
+- Refinement tasks:
+    - Navigation bar
+        - Highlights the menu button based on the active (loaded) page
+
+        - Each page has added a new variable "$pageKey"
+            - This helps identify which page is currently active
+            
+            - Dynamically add the CSS class "active" 
+                - To the corresponding HTML element <a>
+
+    - Default header background image
+        - A default (fallback) background image for the header
+            - When a new page is created / added into the website 
+
+        - Current implementation
+            - Each page has its own dedicated header background image
+        
+    - Default HTML <title> element
+        - Loads a default (fallback) HTML element <title>
+            - When a new page forgets to include one
+            
+    - Target file: header.inc.php
