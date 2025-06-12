@@ -1,0 +1,4 @@
+Project: Restaurant Website Refinement: Fixing The Active Menu
+--------------------------------------------------------------
+- Implementation on highlighting the active (menu) button
+    - On the navigation bar
