@@ -1,0 +1,8 @@
+Overview
+--------
+- This section focuses on:
+    - Arrays in PHP
+        - How it allows to "bundle" multiple values in a single variable
+
+    - Use foreach loop
+        - To access each element of an array
