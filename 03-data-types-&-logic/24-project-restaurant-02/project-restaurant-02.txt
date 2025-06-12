@@ -1,0 +1,5 @@
+Project: Restaurant Website Refinement: Dynamic Titles & Images
+---------------------------------------------------------------
+- Implementation to address the following
+    - Forgotten / missing title page
+    - Forgotten / missing header image
