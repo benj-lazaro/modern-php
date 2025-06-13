@@ -1,0 +1,65 @@
+Quiz 05: Array Basics
+---------------------
+- Suppose an array named $colorPalette with seven values representing different colors is defined as:
+
+    $colorPalette = array('Red', 'Blue', 'Green', 'Yellow', 'Purple', 'Orange', 'Pink');
+
+    - Which of the following code snippets correctly accesses the colors for 'Purple' and 'Orange'?
+
+    - Answer: 
+        $purpleColor = $colorPalette[4];
+        $orangeColor = $colorPalette[5];
+
+
+- In a PHP script for a computer sales application
+    - You encounter the following code that attempts to display the screen sizes of laptops (in inches):
+
+        $screenSizes = array(13, 14, 15, 16, 17);
+
+        echo $screenSizes;
+
+    - What will be the output when this code is executed?
+
+    - Answer: Warning: Array to string conversion in [file path] on line [line number] followed by Array
+
+
+- In the IT department of a corporation
+    - You're tasked with enhancing the software license tracking system
+
+        $softwareLicenses = array("Quantum Security Suite", "Galaxy Database Manager", "Atlas Cloud Services");
+
+    - The system needs to verify whether a specific software title is available
+        - The software name is stored in the variable $softwareName, for example
+
+            $softwareName = 'Galaxy Database Manager';
+
+    - Which of the following code snippets then correctly checks 
+        - If the "Galaxy Database Manager" is available 
+        - Outputs "Galaxy Database Manager is available"?
+
+    - Answer:
+        if (in_array($softwareName, $softwareLicenses)) {
+            echo $softwareName . "is available";
+        }
+
+
+- You are developing a website for reserving seats in a local workshop which
+    - Has a capacity of only 5 attendees 
+    
+    - Given the PHP code below:
+
+        $attendeeCount = count($attendees);
+        
+        if ($attendeeCount >= 5) {
+            echo "Sorry, the workshop is fully booked!";
+        } else {
+            echo "Seats available. Register now!";
+        }
+
+
+    - Which of the following pairs does correctly match the array to its expected output message?
+
+    - Answer:
+        $attendees = ['Alex', 'Jordan', 'Taylor', 'Casey', 'Riley']; 
+        // Will yield "Sorry, the workshop is fully booked!";
+
