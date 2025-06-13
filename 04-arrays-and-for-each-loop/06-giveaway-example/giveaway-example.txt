@@ -1,0 +1,12 @@
+Giveaway Example: Select Winners From A List Randomly
+-----------------------------------------------------
+- Write a code that will run a giveaway gift to a fictional YouTube subscriber
+    - It will randomly pick a name from an array
+
+    - Use the function "count()"
+        - To get the total number of elements (i.e. subscribers) of the array
+
+    - Use the function "rand()" 
+        - To randomly generate a number between 0 and the total number of subscribers
+
+    
