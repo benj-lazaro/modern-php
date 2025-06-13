@@ -1,0 +1,28 @@
+Coding Exercise 07: Playlist Song Manager Part 01
+-------------------------------------------------
+- The variable "$playlist" contains an array that might look like this:
+
+    ['Starry Night', 'Moonlit Walk', 'Whispering Wind', 'Golden Horizon']
+
+
+- Playlist verification
+    - Start by determining if "$playlist" is set and contains any tracks
+    
+    - If NOT return the message
+
+        "Your playlist needs an update. Time to discover more music!"
+
+
+- Song presence check
+    - Search "$playlist" for a specific track "Sunny Days"
+    
+    - If found return the message 
+
+    "You have great taste! 'Sunny Days' always lifts the mood!"
+
+
+- Platlist update from missing 'Sunny Days'
+    - If the track "Sunny Days" is NOT found AND has at least two (2) songs available
+
+    - Update the "$playlist" by replacing the song in the 2nd position (index 1)
+        - With the song "Solar Whispers"
