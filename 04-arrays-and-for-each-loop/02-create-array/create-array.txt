@@ -1,0 +1,46 @@
+Create An Array & Access It's Elements
+--------------------------------------
+- Use "array()" to create an array
+    - Takes comma separated key-value pairs (i.e. elements) as arguments
+        - Returns an array of arguments
+
+    - Altenatively, the modern way of creating an array
+        - Enclose the elements within a pair of [ ]
+        - NOTE: Recommended to use this syntax
+
+    - The key (or index) can be of type integer or string
+        - When omitting the key (or index)
+            - An integer index is automatically generated
+            - Starting at 0
+
+        - When two identical keys exists
+            - The last key's value overwrites the first key
+        
+        - It is best practice for elements
+            - To stick one (1) data type
+
+    - NOTE: The "array()" is a language construct
+        - To represent literal arrays 
+        - It is NOT a regular function
+
+    - The entire array can be viewed using the functions "var_dump()"
+        - Shows the array length, indices & corresponding values
+    
+    - Reference (https://www.php.net/manual/en/function.array.php)
+
+
+Syntax:
+
+// Classic array creation
+$<variable> = array(
+    <key> => <value>,
+    ...
+    <key> => <value>[,]
+);
+
+// Modern (short) array creation
+$<variable> = [
+    <key> => <value>,
+    ...
+];
+
