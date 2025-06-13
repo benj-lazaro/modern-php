@@ -1,0 +1,30 @@
+Change, Delete & Append Elements To An Array
+--------------------------------------------
+- To change / update an existing element of an array
+    - Simply assign a new value using the "=" operator and corresponding key (i.e. index)
+
+        <array_name>[target_index] = <new_value>;
+
+
+- To delete an existing element from an array
+    - Use the function "unset()"
+
+    - NOTE: The integer keys of the array will NOT be updated
+        - After the targeted element has been removed
+
+        - Recommended to refrain from using when possible
+            - Better to write the code without using "unset()"
+
+
+- To append a new element into an array
+    - To add at the end of an array
+
+        <array_name>[] = <new_element>;
+
+
+    - To add at a specific key (i.e. index)
+
+        <array_name>[<key>] = <new_element>;
+
+        - NOTE: This may unintentionally overwrite an existing element
+            - If left unchecked
