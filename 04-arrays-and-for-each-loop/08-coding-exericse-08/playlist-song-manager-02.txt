@@ -1,0 +1,29 @@
+Coding Exercise 08: Playlist Song Manager Part 02
+-------------------------------------------------
+- The variable "$playlist" contains an array that might look like this:
+
+    ['Starry Night', 'Moonlit Walk', 'Whispering Wind', 'Golden Horizon']
+
+
+- The variable "$songRecommendations" contains an array of recommended songs
+
+    ['Ocean Waves', 'City Nights', 'Rising Sun', 'Dancing Shadows', 'Eclipse']
+
+
+- Highlight the latest addition to the playlist
+    - If "$playlist" has any songs
+    - Output the last song in the following format
+
+        "Your lastly added song was: '[song at last position]'."
+
+
+- Keep the playlist fresh
+    - If "$playlist" consists of 3 or less songs
+    
+    - Select a random track from "$songRecommendations"
+        - Add the track to the end of the "$playlist"
+
+
+- Remove a song
+    - If "$Platlist" has more than 10 songs
+        - Remove the song at the 1st position
