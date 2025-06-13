@@ -1,0 +1,39 @@
+Test The Existence Of Specific Keys And Values In Arrays
+--------------------------------------------------------
+- Accessing a non-existent element in an array
+    - Returns a warning "Undefined array key <index_name>" 
+        - Also returns the value of NULL
+
+
+- To test for the existence of a specific key in an array
+    - Use the function "isset()"
+        - Pass the array name & target index as argument value
+        - Returns a boolean value of "true" or "false"
+
+    - Alternatively, use the function "empty()"
+        - Pass the array name & target index as argument value
+        - Returns a boolean value of "true" or "false"
+
+    
+- To test for the existence of a specific value in an array
+    - Use the function "in_array()"
+        - Accepts the searched value as argument
+        - Returns a boolean value of "true" or "false
+
+    - Reference (https://www.php.net/manual/en/function.in-array.php)
+
+Syntax:
+
+in_array(<searched_value>, <array_name>);
+
+
+- To count the number of existing elements in an array
+    - Use the function "count()"
+        - Accepts an array as argument
+        - Returns an integer value
+
+    - Reference (https://www.php.net/manual/en/function.count.php)
+
+Syntax:
+
+count(<array_name>);
