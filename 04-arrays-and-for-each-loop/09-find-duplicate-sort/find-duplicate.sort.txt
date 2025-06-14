@@ -1,0 +1,21 @@
+Array Functions: Find Duplicate Elements And Sort Arrays
+--------------------------------------------------------
+- The PHP function array_unique()
+    - Accepts an array as argument value
+    - Copies the elements of the original array
+    - Removes duplicates elements
+    - Returns as a new array
+    - Reference (https://www.php.net/manual/en/function.array-unique.php)
+
+- The PHP function sort()
+    - Sorts the array's elements IN PLACE by ascending order
+    - Accepts an array as argument value
+    - Returns a sorted array 
+    - Reference (https://www.php.net/manual/en/function.sort.php)
+
+
+Syntax:
+
+array_unique(<array>);
+
+sort(<array>);
