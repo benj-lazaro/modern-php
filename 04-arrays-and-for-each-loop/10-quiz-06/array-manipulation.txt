@@ -1,0 +1,74 @@
+Quiz 06: Test Your Knowledge Of Array Manipulation
+--------------------------------------------------
+- You are given the following array representing a grocery shopping list:
+
+    $groceryList = array('Milk', 'Bread', 'Eggs');
+
+    - Which option correctly adds 'Oranges' to the end of the $groceryList array?
+
+    - Answer: $groceryList[] = 'Oranges';
+
+
+- Consider the following PHP code:
+
+    $productCategories = array('Electronics', 'Fashion', 'Home & Garden', 'Toys', 'Sports');
+     
+    $productCategories[2] = 'Kitchenware';
+    unset($productCategories[3]);
+
+    $productCategories[6] = 'Automotive';
+
+
+    - What is the output of var_dump($productCategories) after executing the above code?
+
+    - Answer: 
+        array(5) {
+            [0]=> string(11) 'Electronics'
+            [1]=> string(11) 'Fashion'
+            [2]=> string(11) 'Kitchenware'
+            [4]=> string(11) 'Sports'
+            [6]=> string(11) 'Automotive'
+        }
+
+
+- You have the following shopping cart array, which records the product IDs of items a user has added:
+
+    $cart = array(
+        'PRD-101-ZX', 
+        'PRD-101-AY', 
+        'PRD-101-ZX',
+        'PRD-103-WB', 
+        'PRD-102-ZX', 
+        'PRD-104-CV', 
+        'PRD-102-AY', 
+        'PRD-105-ZX', 
+        'PRD-106-DC',
+        'PRD-104-CV',
+        'PRD-107-QW',
+        'PRD-102-ZX'  
+    );
+
+    - Which line of code correctly determines the number of unique products in the cart?
+
+    - Answer: count(array_unique($cart));
+
+
+- You are given the following array of scores:
+
+    $scores = array(78, 90, 65, 88, 90, 75);
+
+    - The following code is executed:
+
+        sort($scores);
+        
+        if ($scores[0] < 70) {
+            echo 'Lowest score is below 70!';
+        } else if ($scores[0] === 70) {
+            echo 'Lowest score is 70!';
+        } else {
+            echo 'All scores are above 70!';
+        }
+
+    - What will be the output of the code?
+
+    - Answer: 'Lowest score is below 70!'
