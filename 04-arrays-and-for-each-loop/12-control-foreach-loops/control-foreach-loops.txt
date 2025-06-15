@@ -1,0 +1,34 @@
+Control Loops With break And continue
+-------------------------------------
+- The keyword "break"
+    - Ends the execution of the current loop
+        - Applicable to "for", "foreach", "while", "do-while" loops and "switch" structure
+
+    - Accepts an optional numeric argument
+        - Tells how many nested enclosing structures are to be broken out of
+        
+        - Default value is 1
+            - Referring to the immediate enclosing structure
+
+    - Reference (https://www.php.net/manual/en/control-structures.break.php)
+
+
+Syntax:
+
+break [<numeric_value>];
+
+
+- The keyword "continue"
+    - Used within a loop structure
+    
+    - Informs PHP to skip the rest of the current loop
+        - Continue execution at the condition evaluation
+        - Then start with the next iteration
+
+    - Accepts an optional numeric argument
+        - Tells how many nested enclosing structures are to be broken out of
+        
+        - Default value is 1
+            - Referring to the immediate enclosing structure 
+
+    - Reference (https://www.php.net/manual/en/control-structures.continue.php)
