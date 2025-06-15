@@ -1,0 +1,28 @@
+The foreach Loop: Iterate Over Elements In An Array
+---------------------------------------------------
+- The PHP "foreach" loop
+    - Provides an easy way to iterate over arrays (and traversable objects)
+    
+    - Issues an error when used with a variable
+        - Containing a different data type or that is uninitialized
+
+    - Reference (https://www.php.net/manual/en/control-structures.foreach.php)
+
+
+Syntax:
+
+foreach (<iterable_expression> as <$value>) {
+    <statement_list>;
+    ...
+}
+
+foreach (<iterable_expression as $key> => <$value>) {
+    <statement_list>;
+    ...
+}
+
+// Alternative syntax
+foreach (<iterable_expression> as <$value>):
+    <statement_list>;
+    ...
+endforeach;
