@@ -1,0 +1,31 @@
+Coding Exercise 09: Workshop Attenance Coordination 01
+------------------------------------------------------
+- The exercise has two important variables
+    - The variable "$waitingList"
+        - Is an array of individuals who expressed interest in attending a workshop
+
+    - The variable "$removeFromList"
+        - Is an array of individuals who requested to be removed from the waiting list 
+
+
+- List cleaning
+    - Remove any duplicates from the "$waitingList"
+    - Remove names in the "$removeFromList" from the "$waitingList"
+    - Save the clearned array it to a new variable "$cleanedWaitingList"
+
+
+- Initial selection
+    - Sort the "$cleanedWaitingList" alphabetically
+
+    - Select the first five (5) individuals as atttendees of the workshop 
+        - Save to a new variable "$selectedParticipants"
+
+
+- Attendance status
+    - Generate an unordered list <ul> showcasing the potential participants from "$cleanedWaitingList"
+    
+    - For each individual 
+        - Add a check if their name is presented in the "$selectedParticipants"
+        - Add a "x" if their name is presented in the "$removeFromList"
+
+
