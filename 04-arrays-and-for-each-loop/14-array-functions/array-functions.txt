@@ -1,0 +1,80 @@
+Additional Array Functions
+--------------------------
+- The function "array_search()"
+    - Searches an array for a given value
+
+    - Accepts a search string 
+        - Followed by an array to search from
+
+    - Returns the first corresponding key (i.e. index) IF successful
+
+    - Reference (https://www.php.net/manual/en/function.array-search.php)
+
+
+- The function "array_slice()"
+    - Extracts a 'slice' of an array
+
+    - Accepts an array
+        - Followed by an offset (an integer)
+            - This denotes the position of an element
+            - NOT the key of an element
+
+        - Then the length
+            - Specifies how many elements it will be sliced from the array
+            - If omitted, the sequence will be from the offset until the end of the array
+
+    - Returns a sequence of elements from an array
+
+    - NOTE: By default, it re-orders & resets the integer-based indices of the array
+
+    - Reference (https://www.php.net/manual/en/function.array-slice.php)
+
+
+- The function "min()"
+    - Accepts an array
+        - Then finds and returns the lowest value
+
+    - NOTE: Passing an empty array
+        - It throws a "ValueError"
+
+    - Reference (https://www.php.net/manual/en/function.min.php)
+
+
+- The function "max()"
+    - Accepts an array
+        - Then finds and returns the highest value
+
+    - Reference (https://www.php.net/manual/en/function.max.php)
+
+
+- The function "array_merge()"
+    - Merges one or more arrays
+        - Returns a new array containing merged elements
+
+    - Reference (https://www.php.net/manual/en/function.array-merge.php)
+
+
+- The function round()
+    - Accepts a numeric value (as a standalone or stored in an array) to be rounded
+        - Followed by the number of digits to round to
+
+    - Reference (https://www.php.net/manual/en/function.round.php)
+
+
+- NOTE: The "..." operator followed by the name of an array
+    - Is a shorthand to unpack the elements from its array
+
+
+Syntax:
+
+array_search(<search_string>, <array>);
+
+array_slice(<array>, <offset>, <length>);
+
+min(<array>);
+
+max(<array>);
+
+array_merge(<array>, <array>, ...);
+
+round(<number | array>);
