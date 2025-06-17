@@ -1,0 +1,67 @@
+Coding Exercise 10: Workshop Attenance Coordination 02
+------------------------------------------------------
+- Continuation of the previous coding exercise (#09)
+    - Proceed from where Part 1 left off
+        - With a cleaned and sorted list of potential attendees
+
+    - The exercise introduces
+        - Concept of priority handling and backup candidates 
+            - To further refine the selection process
+
+    - The variable "$waitingList"
+        - Is a cleaned up and sorted array
+        - Containing names of people who signed up for the workshop
+
+    - The variable "$priorityParticipants"
+        - Is a sorted array
+        - Containing names of people who should be given priority for the workshop
+        - EVEN IF they are NOT part of the "$waitingList"
+
+    - The variable "$individualName"
+        - Contains a string
+        - Representing a name of an individual
+
+
+- Tasks
+    - Priority inclusion & selection
+        - Define a variable "$finalAttendees"
+        - Assigns a sorted array with NO duplicates
+        - Consists of UP TO 5 elements
+
+        - Starts by including the TOP 5 elements from "$priorityParticipants"
+            - Then fill the remaining slot from elements of "$waitingList"
+            - UNTIL it reaches five (elements)
+
+    
+    - Backup candidates identification
+        - After finalizing "$finalAttendees"
+            - Select and assign the next three (3) names to "$backupCandidates"
+            
+            - Ensure that these are distinct from "$finalAttendees"
+                - Without any duplications
+
+            - Backup could also include "$priorityParticipants" who 
+                - Are NOT included in the "$finalAttendees"
+                    - In cases that there are more than five (5)
+                
+                - Generate & display a personalized message to participants
+
+    - Individual status inquiry
+        - Assess the status of a specific individual with respect to their attendance 
+            - The predefined variable "$individualName" will be used to identify the person
+
+        - Identify which group an individual falls in
+            - Is this person from the "$finalAttendees", "$backupCandidates" or "$waitingList"
+
+            - If the person is from "$finalAttendees"
+                - Their status is "Final Attendee"
+
+            - If the person is from "$backupCandidates"
+                - Their status is "Backup Candidate"
+
+            - For those who remain in the "$waitingList"
+                - Their status is "Waiting, position <array_NOT_INDEX_position>" 
+    
+            - If the person is NOT present in any list
+                - Their status is "Not found"
+            
