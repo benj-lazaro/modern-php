@@ -20,44 +20,51 @@ $priorityParticipants = [
     'Jordan Kay', // In the waiting list and has priority
     'Sam Taylor', // Not in the waiting list but has priority
     'Zane Pryor',  // Not in the waiting list but has priority
-    // 'John Wick',
-    // 'John Constantine',
-    // 'Thomas Anderson',
-    // 'Trinity',
-    // 'Tiffany',
-    // 'Morpheus',
-    // 'Niobe',
+    'John Wick',
+    'John Constantine',
+    'Thomas Anderson',
+    'Trinity',
+    'Oracle',
+    'Morpheus',
+    'Niobe',
 ];
 
-$individualName = 'Morgan Drew';
+$individualName = 'Kim Lee';
 // Write your code here
+$finalSeatCount = 5;
 
 if (!empty($waitingList)):
     // Priority inclusion & selection
-    $finalSeatCount = 5;
-    $finalAttendees = array_slice(array_unique($priorityParticipants), 0, $finalSeatCount);
-    $availableSeats = $finalSeatCount - count($finalAttendees);
+    foreach ($waitingList as $attendee) :
+        if (!in_array($attendee, $priorityParticipants)):
+            $cleanedWaitingList[] = $attendee;
+        endif;
+    endforeach;
 
-    if ($availableSeats !== 0):
-        $chanceAttendees = array_slice(array_unique($waitingList), 0, $availableSeats);
+    $finalAttendees = array_slice(array_unique($priorityParticipants), 0, $finalSeatCount);
+    sort($finalAttendees);
+
+    $availableFinalSeats = $finalSeatCount - count($finalAttendees);
+
+    if ($availableFinalSeats !== 0):
+        $chanceAttendees = array_slice(array_unique($cleanedWaitingList), 0, $availableFinalSeats);
         $finalAttendees = array_unique(array_merge($finalAttendees, $chanceAttendees));
-        sort($finalAttendees);
-    else:
         sort($finalAttendees);
     endif;
 
     // Backup candidates identification
-    $backupSeats = 3;
-    $backupCandidates = array_slice(array_unique($priorityParticipants), 5, $backupSeats);
-    $availableBackupSeats = $backupSeats - count($backupCandidates);
+    $backupCandidateSeats = 3;
 
-    if ($availableBackupSeats !== 0):
-        $waitingChanceAttendees = array_slice(array_unique($waitingList), $availableSeats, $availableBackupSeats);
-        $backupCandidates = array_merge($backupCandidates, $waitingChanceAttendees);
+    $backupCandidates = array_slice(array_unique($priorityParticipants), $finalSeatCount, $backupCandidateSeats);
+    $vacantBackupSeats = $backupCandidateSeats - count($backupCandidates);
+
+    if ($vacantBackupSeats !== 0):
+        $chanceBackupCandidates = array_slice(array_unique($cleanedWaitingList), $availableFinalSeats, $vacantBackupSeats);
+        $backupCandidates = array_merge($backupCandidates, $chanceBackupCandidates);
     endif;
 
     foreach ($backupCandidates as $attendee) {
-        echo "Hey {$attendee}, we want to inform you that you are one of our backup candidates. 🥳" . "<br />";
+        echo "Hey {$attendee}, we want to inform you that you are one of our backup candidates. 🥳";
     }
 
     // Individual status inquiry
@@ -65,15 +72,13 @@ if (!empty($waitingList)):
         $individualStatus = "Final Attendee";
     elseif (in_array($individualName, $backupCandidates)):
         $individualStatus = "Backup Candidate";
-    elseif (in_array($individualName, $waitingList)):
-        $waitingListOffset = $availableSeats + $availableBackupSeats;
-        $remainingWaitingList = array_slice($waitingList, $waitingListOffset);
-        $position = array_search($individualName, $remainingWaitingList);
-        $individualStatus = "Waiting, position " . $position + 1;
+    elseif (in_array($individualName, $cleanedWaitingList)):
+        $offsetValue = $availableFinalSeats + $vacantBackupSeats;
+        $remnantWaitingList = array_slice($waitingList, $offsetValue);
+        $individualPosition = array_search($individualName, $remnantWaitingList);
+        $individualStatus = "Waiting, position " . $individualPosition + 1;
     else:
         $individualStatus = "Not found";
     endif;
-
-    echo $individualStatus;
 
 endif;
