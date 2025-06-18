@@ -1,0 +1,76 @@
+Quiz 07: Test Knowledge Of Associative Arrays
+---------------------------------------------
+- You're designing the backend for a restaurant's online ordering system
+    - Which of the following code snippets 
+    - Successfully defines an associative array representing dishes and their prices?
+
+    - Answer: $menu = ['Pasta' => 12.50, 'Steak' => 25.00, 'Salad' => 9.00];
+
+
+- You're setting up a website for a gym
+    - Where the PHP code lists different fitness classes and their times:
+
+        $fitnessClasses = [
+        'Yoga' => '8:00 AM',
+        'Cardio Blast' => '10:00 AM',
+        'Strength Training' => '6:00 PM'
+        ];
+        
+        foreach($fitnessClasses as $class => $time) {
+            echo "{$class} at {$time}<br/>";
+        }
+
+    - Answer:
+        Yoga at 8:00 AM
+        Cardio Blast at 10:00 AM
+        Strength Training at 6:00 PM
+
+
+- You're working on a website for a popular electronics store
+    - The inventory is managed using an associative array:
+
+        $inventory = [
+            'Laptop' => 15,
+            'Tablet' => 25,
+            'Smartphone' => 40,
+            'Smartwatch' => 10,
+            'Headphones' => 30
+        ];
+
+    - Which of the following code snippets will 
+        - Correctly produce an array $categories of product categories in alphabetical order
+
+    - Answer:
+        $categories = array_keys($inventory);
+        sort($categories);
+
+
+- You are tasked with developing a conference website
+    - The speakers and their respective topics are stored in the following associative array:
+
+        $speakers = [
+            'Dr. Miller' => 'Artificial Intelligence',
+            'Prof. Johnson' => 'Robotics',
+            'Dr. Smith' => 'Quantum Computing',
+            'Dr. Brown' => 'Cybersecurity'
+        ];
+
+
+    - After executing these modifications:
+
+        unset($speakers['Prof. Johnson']);
+
+        if (count($speakers) < 3) {
+            $speakers['Prof. Taylor'] = 'Blockchain';
+        }
+
+        $topics = array_values($speakers);
+
+    - How will the array $topics appear when outputted with var_dump() following these modifications?
+
+    - Answer:
+        array(3) {
+            [0] => "Artificial Intelligence",
+            [1] => "Quantum Computing",
+            [2] => "Cybersecurity",
+        }
