@@ -1,0 +1,40 @@
+Define An Associative Array
+---------------------------
+- Similar to defining a normal array EXCEPT
+    - That is uses a key to associate its corresponding (assigned) value
+
+    - The keys are NOT integer-based anymore
+        - Often are string-based keys
+
+    - To access a value
+        - Pass the associated key as an argument to the pair of []
+        - Similar to that of accessing a value using a numeric index key
+
+    - Associative arrays in PHP are
+        - Efficient and heavily optimized
+
+
+- Use the function "isset()"
+    - To check for the existence of a key inside an Associative array 
+    - Returns a boolean value
+
+
+- Use the function "!empty()"
+    - To check if a key exists & has been set & NOT empty
+    - Returns a boolean value
+
+
+Syntax:
+
+// Classic array creation
+$<variable> = array(
+    <key> => <value>,
+    ...
+    <key> => <value>[,]
+);
+
+// Modern (preferred) array creation
+$<variable> = [
+    <key> => <value>,
+    ...
+];
