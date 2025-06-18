@@ -1,0 +1,6 @@
+Overview
+--------
+- This section focuses on:
+    - Associative arrays in PHP
+        - Create a map between a key & a value
+        - Manipulate and output keys & values
