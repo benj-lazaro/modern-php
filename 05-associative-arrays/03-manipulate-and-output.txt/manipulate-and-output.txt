@@ -1,0 +1,57 @@
+Manipulate & Output Keys and Values From Associative Arrays
+-----------------------------------------------------------
+- To add a new element into an Associative array
+    - Simply declare the array & key
+        - Use the "=" operator to assign the associated value
+        
+        - NOTE: Pre-existing value can easily be overriden
+            - Meaning that there is ONLY one unique key that exists in an Associative array
+
+
+- To remove en element from an Associative array
+    - Use the function "unset()"
+        - Pass the array with the corresponding key as argument
+
+
+- To get the number of elements in an Associative array
+    - Use the function "count()"
+        - Pass the Associative array as an argument
+
+
+- To iterate through the elements of an Associative array
+    - Use the loop "foreach"
+
+    - In order to access the values ONLY
+
+        foreach ($<array> as $<value>) {
+            <statement>;
+        }
+
+    - In order to access BOTH key & associated value
+
+        foreach ($<array> as $<key> => $<value>) {
+            <statement>;
+        }
+
+
+- To retrieve all of the keys ONLY from an Associative array
+    - Use the function "array_keys()"
+        - Returns a new number-indexed array of keys
+        - Original Associative array remains untouched
+
+    - Reference (https://www.php.net/manual/en/function.array-keys.php)
+
+
+- To retrieve all of the values ONLY from an Associative array
+    - Use the function "array_values()"
+        - Returns a new number-indexed array of values
+        - Original Associative array remains untouched
+
+    - Reference (https://www.php.net/manual/en/function.array-values.php)
+
+
+Syntax:
+
+array_keys(<associative_array>);
+
+array_values(<associative_array>);
