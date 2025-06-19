@@ -1,0 +1,26 @@
+Coding Exercise 11: Employee Salary Analysis 01
+-----------------------------------------------
+- Work with 3 Associative arrays
+    - Each array maps employee names to their respective salaries in dollars
+        - "$hrSalaries"
+        - "$salesSalaries"
+        - "$itSalaries"
+
+
+- Tasks
+    - Calculate department expenditures
+        - Sum up the salaries in each department
+        
+        - Create "$totals" to consolidate this information
+            - This information is structured as follows:
+
+            [ 'HR' => $hrTotal, 'Sales' => $salesTotal, 'IT' => $itTotal ];
+
+    - Determine the highest expenditures
+        - Analyze total expenditures across the departments
+        - Pinpoint the one with the highest monthly salary expenditures
+        - Record the department's name in a variable "$maxDept"
+
+    
+
+        
