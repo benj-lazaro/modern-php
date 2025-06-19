@@ -1,0 +1,20 @@
+Best Practices For Managing Associative Arrays
+----------------------------------------------
+- An Associative array can accept a new value without an assigned key
+    - PHP IMPLICTLY assigns a numeric index (begins at 0)
+
+    - NOTE: Using said numeric key as a string
+        - PHP is able to access the associated value
+        - Despite being a different type 
+
+        - Succeeding values without a key
+            - PHP increments the numeric index by 1
+
+
+- For best practice
+    - It is HIGHLY advised to refrain from mixing Associative array elements with normal array elements
+        - Consider each array as separate data structures
+        - Even if the former is capable of supporting numeric index elements
+        - This likely lead to bloated and confusing code at a later time
+
+    - Best to keep the code (and data structure) simple & clear
