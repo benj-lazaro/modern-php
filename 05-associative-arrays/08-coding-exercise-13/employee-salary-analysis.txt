@@ -1,0 +1,46 @@
+Coding Exercise 13: Employee Salary Analysis 03
+-----------------------------------------------
+- Advance into the deeper intricacies of financial management within the company's ecosystem
+    - Armed with comprehensive salary data across all departments 
+        - Consolidated into the "$companySalaries"
+
+    - Optimize salary expenditures with strategic adjustments
+
+
+- Tasks
+    - Compute the average salary
+        - Determine the overall average monthly salary using "$companySalaries"
+        - Save the value in "$averageSalary"
+
+    
+    - Adjust salary records
+        - Employees earning less than the average salary
+            - Apply a $200 raise to their current salary
+        
+        - Employees earning more than the average salary
+            - Reduce their salary by 5%
+
+        - Employees earning EXACTLY the average salary
+            - NO change in their current salary
+
+        - These adjustments are accurately reflected
+            - In the "$companySalaries" array
+
+
+    - Evaluate financial impact
+        - Calculate the net financial impact of the salary adjustments
+
+        - Determine if the adjustments result in
+            - An increase in expenses
+            - A reduction in expenses (savings)
+
+        - Provide a precise statement
+            - For an increase in expenses
+
+                "The net impact of the salary adjustments is a cost increase of $X for the company."
+
+            - For a decrease in overall salary expenses
+
+                "The net impact of the salary adjustments is a savings of $X for the company."
+
+        
