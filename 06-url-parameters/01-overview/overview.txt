@@ -1,0 +1,12 @@
+Overview
+--------
+- This section focuses on:
+    - Exploring URL parameters and forms
+
+    - React to user inputs 
+
+    - How to implement (user input reaction) securely
+        - Cross Side Scripting (XSS)
+
+    - A website with drop-down menu project
+
