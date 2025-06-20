@@ -1,0 +1,19 @@
+The Short if Statement
+----------------------
+- PHP's short "if" statement
+    - Drops the "if" keyword
+        - Retains the pair of ( ) holding the conditional expression
+        - Followed by "?" operator
+        - Single statement to execute if condition evaluates to true
+        - Then a ":" operator
+        - Next is the single statement to execute if the condition evaluates to false
+
+    - Applicable for "if" statements
+        - That ONLY has a single statment to execute
+
+    - NOTE: Syntax is similar to JavaScript's "Ternary operator"
+
+
+Syntax:
+
+(<conditiona> ? <statement_if_true> : <statement_if_false>);
