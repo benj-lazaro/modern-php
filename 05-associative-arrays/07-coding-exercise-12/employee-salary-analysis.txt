@@ -1,0 +1,20 @@
+Coding Exercise 12: Employee Salary Analysis 02
+-----------------------------------------------
+- Delve deeper into these financial records
+    - Unearth insights that extend beyond departmental boundaries
+
+    - Work with 3 pre-defined Associative arrays
+        - "$hrSalaries"
+        - "$salesSalaries"
+        - "$itSalaries"
+
+
+- Tasks
+    - Consolidate departmental records
+        - Combine ALL salary records into a single Associative array "$companySalaries"
+
+    - Identify minimum salary
+        - Examine "$companySalaries" to identify employee(s) with the lowest salary
+        - Save this information to "$lowestSalaries"
+            - Adopting the format "[name => salary]"
+
