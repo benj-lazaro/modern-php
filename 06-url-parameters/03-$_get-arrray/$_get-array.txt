@@ -1,0 +1,25 @@
+The $_GET Array: Retrieve User Input From The URL
+-------------------------------------------------
+- The "$_GET" is a normal Associative array that
+    - Retrieves ALL GET parameters from the URL that invoked the running PHP program
+    
+    - By default, it is empty
+        - It ALWAYS exists when a PHP program is running
+   
+    - The parameters (key-value pairs) can be manually defined
+        - On the URL that the PHP program is invoked with
+        - Place the "?" operator at the end of the URL
+        - Followed by a key
+        - Then the "=" operator
+        - And the assigned value (enclosed within a pair of "")
+
+    - To specify multiple GET parameters in the URL
+        - Preceed the succeeding parameter with a "&" operator
+        - Followed by a new GET parameter
+
+            https://<host>/<program>.php?<key_1>=<value_1>&<key_n>=<value_n>
+
+    - This allows a PHP script 
+        - To interactively look (or set) at GET parameter(s) from the URL
+        - Then do something with them
+    
