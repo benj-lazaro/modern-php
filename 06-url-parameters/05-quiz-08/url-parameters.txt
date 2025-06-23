@@ -1,0 +1,67 @@
+Quiz 08: Test Your Knowledge About URL Parameters 
+-------------------------------------------------
+- You are developing a student portal for a university
+    - Students can access various resources, including course materials and grades
+    
+    - Consider the URL
+        
+        http://studentportaluniversity.com/dashboard.php?view=grades&course=Physics
+
+    - What will be the result of var_dump($_GET);?
+
+    - Answer: 
+        array(2) {
+            ["view"] => string(6) "grades"
+            ["course] => string(7) "Physics"
+        }
+
+
+- Imagine you are developing an online shopping website called 'Shopping Store Online'
+    - The website uses URL parameters to pass information about products
+    
+    - Consider the following URL:
+
+        http://shopping-store-online.com/product.php?id=7973&category=electronics&quantity=3
+
+    - You should parse these parameters into variables 
+        - $id, $category, and $quantity, then generate the following output:
+
+            "There are 3 units of the product with ID 7973 in the electronics category available."
+
+    - Which of the following code snippets correctly generates this output?
+
+    - Answer: 
+        $id = $_GET["id"];
+        $category = $_GET["category"];
+        $quantity = $_GET["quantity"];
+        echo "There are $quantity units of the product with ID $id in the $category category available.";
+
+
+- Imagine a travel booking website where users can search for hotels
+    - After selecting options, the website generates the following URL:
+
+        http://www.travel-site.com/hotels.php?location=New York&amenity=Bed & Breakfast&deal=Special & Offers
+
+    - How many elements will the $_GET array contain when this URL is accessed?
+
+    - Answer: 5
+
+
+- Given the previous example where a travel booking website generated the following URL, leading to incorrect parsing:
+
+    http://www.travel-site.com/hotels.php?location=New York&amenity=Bed & Breakfast&deal=Special & Offers
+
+    - How can the http_build_query function be used to encode the URL parameters 
+        - To prevent such parsing issues? Select the correct implementation:
+
+    - Answer:
+        $params = [
+            'location' => 'New York',
+            'amenity' => 'Bed & Breakfast',
+            'deal' => 'Special & Offers'
+        ];
+
+        $query = http_build_query($params);
+        $url = "http://www.travel-site.com/hotels.php?" . $query;
+
+    
