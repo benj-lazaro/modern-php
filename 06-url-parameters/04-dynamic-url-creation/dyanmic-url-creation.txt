@@ -1,0 +1,47 @@
+Dynamic URL Creation: Craft Links With Parameters & http_build_query 
+--------------------------------------------------------------------
+- Crafting a hyperlink manually with a parameter (i.e. a query string)
+    - Using the HTML element <a> and the corresponding attribute "src"
+    
+    - Works most of the time
+        - Until the value of the parameter contains a "&" character
+        
+        - PHP interprets this character
+            - The succeeding value after the "&"
+                - Is a parameter
+                - NOT part of the assigned value
+
+            - Resulting to two parameters
+                - The 1st parameter is assigned with NO value
+
+                - The value prior ot the "&" character
+                    - Becomes the 2nd parameter
+                
+                - The value after the "&" character
+                    - Becomes the value to the 2nd parameter
+
+
+- To address this
+    - Instead of crafting a query string manually
+        - Use PHP's function "http_build_query()" instead
+    
+    - This function generates a URL-encoded query string
+        - From the Associative (or indexed) array provided
+
+    - Uses the key-value pair from an Associative array or value from an indexed array
+        - To generate the corresponding query string
+
+        - Eliminates whitespace characters from the value
+            - Replacing it with "+" character
+
+        - Eliminates the "&" from the value
+            - Prevents being misinterpreted as a start of a new parameter
+            - Replacing it with "%26" character which translates the "&" as a symbol instead
+
+    - Reference (https://www.php.net/manual/en/function.http-build-query.php)
+
+    - It also offers the ability
+        - To support multiple paramters   
+
+    - NOTE: This is considered best practice to use the function "http_build_query()"
+        - For generating quert string (with paramters)
