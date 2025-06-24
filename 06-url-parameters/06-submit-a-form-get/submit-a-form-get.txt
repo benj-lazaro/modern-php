@@ -1,0 +1,33 @@
+Submit A Form Through GET
+-------------------------
+- Another way of getting parameter(s) into a URL
+    - Using the HTML element <form>
+        - With the HTML attribute "method" set to "GET"
+
+    - An HTML element <input> with
+        - The HTML attribute "name" set to the paramter name
+        
+        - This accepts any text typed by a user
+            - That will be assigned to the parameter name
+            - Effectively creating a query string
+            
+    - Another HTML element <input> with
+        - The HTML attribute "type" set to "submit"
+            - And HTML attribute "value" set to "Submit!"
+        
+        - This create a form button labeled "Submit!"
+
+        - NOTE: In order to repopulate the <input> element with
+            - The previous data entered by a user
+            
+            - Assign the HTML attribute "value" with
+                - The current element from the $_GET Associative array       
+
+    - The query string is then sent to
+        - The corresponding file
+            - Based on the attribute "action"
+            - Could be the same PHP file or another 
+
+        - Via the HTTP method GET
+            - Then key-value pair will be assigned to a $_GET Associative array
+
