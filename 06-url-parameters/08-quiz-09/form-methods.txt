@@ -1,0 +1,67 @@
+Quiz 09: Test Your Knowledge Of Form Methods 
+--------------------------------------------
+- What is the primary difference between using 
+    - The GET method (as in the example) and the POST method in an HTML form
+
+    - Answer: GET appends data to the URL; POST delivers data without displaying it in the URL
+
+
+- Given the HTML form for tech support service requests:
+
+    <form action="submitTicket.php" method="GET">
+        <input type="text" name="serviceRequest" />
+        <input type="submit" value="Submit" />
+    </form>
+
+    - How can you set "Computer Not Starting" 
+        - As the default value for the service request
+
+    - Answer: <input type="text" name="serviceRequest" value="Computer Not Starting" />
+
+
+- Building upon the previous scenario with the tech support service request form:
+
+
+    <form action="submitTicket.php" method="GET">
+        <input type="text" name="serviceRequest" />
+        <input type="submit" value="Submit" />
+    </form>
+
+    - We want to modify the form so that 
+        - The value of the serviceRequest input field is set 
+        - To the value passed in the $_GET query parameter, if it exists.
+
+    - How should the value attribute of the input field be set in PHP 
+        - To achieve this?
+
+    - Answer: value=<?php if (!empty($_GET['serviceRequest'])) echo $_GET['serviceRequest']; ?>
+
+
+- Consider a content management system where users can create and edit articles
+    - The system provides an HTML form with two submit buttons: "Save Draft" and "Publish"
+    
+    - The form is structured as follows:
+
+        <form action="articleProcessor.php" method="POST">
+            <label for="articleTitle">Title:</label>
+            <input type="text" id="articleTitle" name="articleTitle" />
+        
+            <label for="articleContent">Content:</label>
+            <textarea id="articleContent" name="articleContent"></textarea>
+        
+            <input type="submit" name="action" value="Save Draft" />
+            <input type="submit" name="action" value="Publish" />
+        </form>
+
+    - In articleProcessor.php
+        - How should you handle the form submission 
+            - To differentiate between a draft save and a publish action?
+
+    - Answer: 
+
+        if ($_POST['action'] === 'Save Draft') {
+            echo "Saved as draft";
+        } else if ($_POST['action'] === 'Publish') {
+            echo "Article Published";
+        }
+
