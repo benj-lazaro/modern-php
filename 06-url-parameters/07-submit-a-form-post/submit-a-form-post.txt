@@ -1,0 +1,27 @@
+Submit A Form Through POST
+--------------------------
+- Another way of getting parameter(s) into a URL
+    - Using the HTML element <form>
+        - With the HTML attribute "method" set to the HTTP method "POST"
+
+    - Rather than retrieving data from the Associative array $_GET 
+        - It retrieves from the Associative array $_POST instead
+
+
+- This method addresses problems when using the HTTP method "GET"
+    - An HTML element <input>
+        - With the attribute "type" set to "password"
+        - The password value is displayed as plaintext in the URL
+
+    - An HTML element <form>
+        - WIth multiple HTML element <input>
+        - NOT all user-type data can be transferred into the URL
+
+    - Using the HTTP method "POST"
+        - Multiple HTML element <input> of a form accepts user-provided data
+            - BUT it will be NOT displayed as parameter(s) the URL
+
+        - NOTE: It is NOT advisable to repopulate the <input> password field
+            - As the value assigned in the HTML attribute "value" of an HTML element <input>
+            - Is still displayed in cleartext
+            - Use "https" to provide a layer of protection    
