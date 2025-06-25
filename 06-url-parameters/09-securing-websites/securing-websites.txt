@@ -1,0 +1,45 @@
+Securing Websites: Prevent Cross-Site Scripting (XSS) With htmlspecialchars
+---------------------------------------------------------------------------
+- A Cross-Site Scripting is a type of security vulnerability
+    - Performed by injecting client-side scripts into web pages that
+        - Exploits trust between a web application and a user's browser
+        - Leads to unauthorized access to sensitive information
+        - Bypassing access controls such as the same-origin policy
+
+    - This can be prevented by converting potential 'harmful' characters
+        - Inputted by a user into HTML entities
+        - Losing its potential harm while retaining its symantic meaning
+
+    - Example:
+        - Passing the string 'Jan /><script>document.location.href="https://www.google.com";</script>'
+            - As a user input to a normal HTML element <input>
+
+            - Results to the webpage being redirected (hijacked)
+                - To a remote website (e.g. Google)
+
+
+- The PHP function "htmlspecialchars()"
+    - Converts special characters into HTML entities
+        - Received from users via an HTML form
+        - Returns a string with translations implemented
+       
+    - Performed translations
+        - & = &amp;
+        - " = &quot;
+        - ' = &#039;
+        - > = &gt;
+        - < = &lt;
+
+    - Reference (https://www.php.net/manual/en/function.htmlspecialchars.php)
+
+    - NOTE: It is advised to call this function
+        - To sanitize user provided input and user generated output
+            - To ensure the security of a website
+
+        - It is best to place the function "htmlspecialchars()" within another function
+            - To ensure that the function's character encoding & flag(s) remain consistent for EVERY CALL
+
+
+Syntax:
+
+htmlspecialchars(<string_to_convert>, <flag>, <character_encoding>);
