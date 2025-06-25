@@ -1,0 +1,28 @@
+Project: Secure Recipe App (Introduction & Setup)
+-------------------------------------------------
+- A web app of recipes
+    - It has a drop-down menu of 4 dishes
+    
+    - Selecting & clicking a dish
+        - Loads the corresponding sub-page 
+            - Stored in the pages/ directory
+
+    - Use each page's HTML element <h1> content
+        - As the label for the corresponding HTML element <option>
+    
+    - Use each page's filename
+        - For the attribute "value" for each HTML element <option>
+
+    - Use the PHP function "file_get_contents()"
+        - To read the content of each sub-page
+
+        - Return as a string content
+            - Since each sub-page does NOT contain embedded PHP code
+            - Instead of using an "include" statement
+        
+        - Reference (https://www.php.net/manual/en/function.file-get-contents.php)
+    
+        - NOTE: Selecting the first option of the drop-down menu
+            - Triggers a warning from the PHP interpreter
+            - Since there is NO corresponding file to be opened
+
