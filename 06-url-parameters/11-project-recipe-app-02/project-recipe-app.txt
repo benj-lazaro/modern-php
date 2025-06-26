@@ -1,0 +1,60 @@
+Project: Secure Recipe App (Secure Input Handling)
+--------------------------------------------------
+- Address the warning triggered
+    - When accessing the key "page" in the $_GET Associative array
+        - That does NOT exists
+
+    - Refactor the code
+        - Load the correspodning sub-page recipe
+        - ONLY when the key "page" from the $_GET array is NOT EMPTY
+
+
+- The glaring security problem of the app
+    - Using the "GET" method
+        - The query string is displayed in the URL
+        
+        - Anyone can deliberately change the value of the URL
+            - Resulting to triggering the warning
+
+                "Failed to open stream: No such file or directory..."
+            
+            - Reveals the current page's correspodning directory path & filename
+
+        - It can be exploited to
+            - Discover neighboring directories 
+            - Open file(s) that is/are NEVER meant to be loaded in the browser
+
+
+- To address the security concern
+    - Define an indexed array 
+        - Contains the filename of the allowed pages to the loaded into the browser
+            - Filename extension NOT included
+            - Save it to a variable
+
+    - Save the requested sub-page in a variable
+        - Check if the requested sub-page is part of the allowed sub-pages array
+        - Using the PHP function "in_array()"
+
+    - If the requested sub-page exists
+        - Pass the sub-page filename as argument to the PHP function "file_get_contents()"
+        - Then pass the returned string to the keyword "echo"
+            - This rendered the sub-page on the browser
+
+    - If the requested sub-page does NOT exist
+        - Do nothing or render a response message
+
+    - NOTE: It is IMPORTANT to confirm user generated input
+        - To confirm that an operation or a sub-page is specifically allowed
+        - Particularly when working with the host's filesystem
+    
+
+- Exercise
+    - Refactor the indexed array containing the allowed sub-pages
+        - Into an Associative array
+
+    - Use the created Associative array
+        - To render the HTML element <option>
+        - Use the loop "foreach()"
+
+    - Refactor the logic that 
+        - Checks if the requested sub-page exists in the Associative array of allowed sub-pages
