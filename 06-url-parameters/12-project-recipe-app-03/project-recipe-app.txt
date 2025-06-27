@@ -1,0 +1,4 @@
+Project: Secure Recipe App (Sample Solution)
+--------------------------------------------
+- The author's implementation for the previous lesson's exercise
+
