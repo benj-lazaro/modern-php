@@ -1,3 +1,4 @@
+<!-- My Exercise Solution    -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,16 +24,6 @@
         'tropical_tacos' => 'Tropical Tango Tacos',
     ];
 
-    if (!empty($_GET['page'])) {
-        $requestedPage = $_GET['page'];
-
-        // Load allowed sub-page(s) ONLY
-        if (in_array($requestedPage, $allowedPages)):
-            echo file_get_contents("pages/{$_GET['page']}.html");
-        else:
-            echo "<h1>Requested recipe NOT available</h1>";
-        endif;
-    }
     ?>
 
     <form action="exercise.php" method="GET">
@@ -40,13 +31,27 @@
             <option value="">Please select a recipe</option>
             <?php
             foreach ($allowedPages as $page => $label): ?>
-                <option value="<?php echo e($page); ?>"><?php echo e($label); ?></option>
+                <option value="<?php echo e($page); ?>" <?php if ($_GET['page']  == $page) echo "selected" ?>><?php echo e($label); ?></option>
             <?php
             endforeach;
             ?>
         </select>
         <input type="submit" value="Submit!">
     </form>
+
+    <?php
+    if (!empty($_GET['page'])):
+        $requestedPage = $_GET['page'];
+
+        // Load allowed sub-page(s) ONLY
+        if (array_key_exists($requestedPage, $allowedPages)):
+            echo file_get_contents("pages/{$_GET['page']}.html");
+        else:
+            echo "<h1>Requested recipe NOT available</h1>";
+        endif;
+    endif;
+
+    ?>
 
 </body>
 
