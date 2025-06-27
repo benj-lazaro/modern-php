@@ -1,0 +1,53 @@
+Overview And Code Walkthrough   
+-----------------------------
+- This section focuses on:
+    - A project exercise to create an interactive image gallery            
+    
+    - It's body consists of a 3 columned image thumbnail
+        - With a title for each image 
+            
+    - Clickable image thumbnail & title when clicked
+        - Displays the full image with the title on top
+        - A brief description of the image below it
+        - A link "Back to gallery" to return to the main page
+
+    - It heavily utilizes two (2) pre-defined Associative arrays that
+        - Allows the web app to be flexible as possible
+        - Allowing further images to be added at a later time
+
+
+- On the project's starter files
+    - The "gallery.php" file
+        - Houses the gallery itself (the main page)
+
+        - Implement the code in-between the two (2) "include" statements
+            - That calls the "header.php" and "footer.php" files
+
+    - The "header.php" and "footer.php" files
+        - Holds the pre-built header and footer section of the gallery
+        - Included from the "gallery.php" file
+
+    - The "image.php" file
+        - Accepts a $_GET parameter named "image"
+        - Then shows the actual image
+
+    - The "functions.inc.php" file
+        - Contains the user-defined function "e"
+            - That sanitizes user-generated input & output
+
+    - The "images.inc.php" file
+        - Contains the Associative arrays
+            - Holds the filename and corresponding image title
+            - Holds the filename and corresponding image description content
+
+        - Associative arrays serves as a data source
+            - For the images displayed in the "gallery.php" file
+            - For each image & description in the "image.php" file
+
+        - NOTE: The description contains may an embedded "\n" that
+            - Requires being converted to "<br />"
+                - Using the PHP function "str_replace()"
+                - Reference (https://www.php.net/manual/en/function.str-replace.php)
+
+    - The "./images/" directory
+        - Holds the images of the project
