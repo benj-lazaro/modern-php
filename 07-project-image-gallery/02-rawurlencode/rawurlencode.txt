@@ -1,0 +1,32 @@
+The rawurlencode Function: Ensure Safe Data Transmission
+--------------------------------------------------------
+- The PHP function "rawurlencode()"
+    - Encodes a given string (i.e. URL) according to the RFC 3986
+        - RFC 3986 Uniform Resource Identifier (URI) Generic Syntax
+        - Reference (https://datatracker.ietf.org/doc/html/rfc3986)
+
+    - Returns a string which
+        - All non-alphanumeric characters
+            - Except for "-", "_", "." and "~"
+            - Have been replaced with a "%" followed by two (2) hexadecimal digits
+            - e.g. whitespace = %20, ? = %3F
+
+        - Protects literal characters 
+            - From being interpreter as special delimiters 
+        
+        - Protects URLs from being mangled by 
+            - Transmission media with character conversions (e.g. email systems)
+
+    - Use case
+        - Working with filenames (path NOT included) that
+            - Maybe embedded with characters which can lead to misintepretation
+                - Resulting to unable to be read / loaded by the browser
+
+            - Replaced with URL safe characters
+
+    - Reference (https://www.php.net/manual/en/function.rawurlencode.php)
+
+
+Syntax:
+
+rawurlencode(<url_string>);
