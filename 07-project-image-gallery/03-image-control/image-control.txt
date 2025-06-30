@@ -1,0 +1,51 @@
+CSS Attributes For Image Control: "object-fit" & "aspect-ratio"
+--------------------------------------------------------------
+- The CSS property "object-fit"
+    - Sets how a content of a replaced element (e.g. <img> or <video>) 
+        - Should be resized to fit its container
+
+    - Property values
+        - contain
+            - Fits within the element's content box 
+                - While maintaining its aspect ratio
+
+        - cover
+            - Zoom-in, crops (the image) and fills the element's entire content box
+                - While maintaining its aspect ratio
+
+        - fill
+            - Fills the element's content box
+                - While maintaining its aspect ratio
+
+        - none
+            - It is NOT resized
+
+        - scale-down
+            - Sized as if "none" or "contain" is specified
+            - Whichever would result in a smaller concerete object size
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
+
+
+- The CSS property "aspect-ratio"
+    - Allows to define the desired 'width-to-height' ratio of an element's box
+
+    - When the parent container or viewport size changes
+        - The browser adjusts an element's dimensions
+        - To maintain the specified 'width-to-height' ratio
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
+
+
+Syntax:
+
+object-fit: contain;
+object-fit: cover;
+object-fit: fill;
+object-fit: none;
+object-fit: scale-down;
+
+
+aspect-ratio auto;
+aspect-ratio: <width> / <height>;
+aspect-ratio: <width & height>;
