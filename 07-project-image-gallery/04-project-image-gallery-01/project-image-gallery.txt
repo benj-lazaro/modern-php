@@ -1,0 +1,10 @@
+Project Image Gallery: Display The Images In A Gallery View
+-----------------------------------------------------------
+- First project implementation is to display
+    - The images and their respective image title
+    
+    - Each image & description clickable
+        - When clicked, redirects to "image.php"
+        - With the parameter 'image' assigned with each image's filename
+
+
