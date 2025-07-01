@@ -1,0 +1,3 @@
+Project Image Gallery: Design The Gallery Layout
+------------------------------------------------
+- Implement the image gallery layout
