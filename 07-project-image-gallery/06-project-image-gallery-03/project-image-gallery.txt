@@ -1,0 +1,3 @@
+Project Image Gallery: Implement The Image Page Contents
+--------------------------------------------------------
+- Implement the individual image Page
