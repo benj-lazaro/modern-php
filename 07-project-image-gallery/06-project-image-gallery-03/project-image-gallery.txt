@@ -1,3 +1,7 @@
 Project Image Gallery: Implement The Image Page Contents
 --------------------------------------------------------
 - Implement the individual image Page
+
+- NOTE: Replace the content's "\n" with an HTML element "<br />"
+    - Using the PHP function str_replace()
+

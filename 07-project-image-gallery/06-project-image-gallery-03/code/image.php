@@ -6,30 +6,24 @@ include './inc/images.inc.php';
 <?php include './views/header.php'; ?>
 
 <?php
-if (!empty($_GET['image'])):
-    $requestedImage = $_GET['image'];
-
-    if (!empty($imageDescriptions[$requestedImage])):
-        $imageFile = $_GET['image'];
-        $imageAlt = $imageTitles[$requestedImage];
-        $imageContent = $imageDescriptions[$requestedImage];
+if (!empty($_GET['image']) && !empty($imageTitles[$_GET['image']])):
+    $imageFile = $_GET['image'];
+    $imageTitle = $imageTitles[$imageFile];
+    $imageContent = $imageDescriptions[$imageFile];
 ?>
-        <div>
-            <img src="./images/<?php echo rawurldecode($imageFile); ?>" alt="<?php echo e($imageAlt); ?>">
-        </div>
+    <h2><?php echo e($imageTitle) ?></h2>
 
-        <div>
-            <?php echo e($imageContent); ?>
-        </div>
+    <img src="./images/<?php echo rawurldecode($imageFile); ?>" alt="<?php echo e($imageTitle); ?>">
 
-
+    <p><?php echo str_replace("\n", "<br />", e($imageContent)); ?></p>
 <?php
-    endif;
-endif;
-?>
 
-<div>
-    <a href="./gallery.php">Back to Gallery</a>
-</div>
+else: ?>
+    <div class="notice">
+        The requested image could not be found.
+    </div>
+<?php endif; ?>
+
+<a href="./gallery.php">Back to gallery</a>
 
 <?php include './views/footer.php'; ?>
