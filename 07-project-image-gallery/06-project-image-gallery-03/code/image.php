@@ -22,12 +22,14 @@ if (!empty($_GET['image'])):
             <?php echo e($imageContent); ?>
         </div>
 
-        <div>
-            <a href="./gallery.php">Back to Gallery</a>
-        </div>
+
 <?php
     endif;
 endif;
 ?>
+
+<div>
+    <a href="./gallery.php">Back to Gallery</a>
+</div>
 
 <?php include './views/footer.php'; ?>
