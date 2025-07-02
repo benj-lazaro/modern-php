@@ -1,0 +1,23 @@
+Overview 
+--------
+- This section focuses on:
+    - How to check types of variables
+    
+    - How to perform type casting in PHP
+        - Change the data type of a variable
+
+    - How to supress warning message(s)
+
+    - How "include" & file paths works
+        - Few important nuances that needs to be aware of
+
+    - Explore additional ways to include files
+        - "include_once"
+        - "require"
+        - "require_once"
+
+    - Explore additional string functions
+
+    - Why create a special file named "index.php"
+        - What does it do?
+
