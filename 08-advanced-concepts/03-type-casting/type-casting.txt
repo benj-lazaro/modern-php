@@ -1,0 +1,14 @@
+Type Casting: Solve Type Mismatches & Debug Code Errors Efficiently
+-------------------------------------------------------------------
+- Type casting forces the data type of a value 
+    - By enclosing the preferred data type within a pair of ( )
+        - Then prefixing it on a variable or a URL parameter in code
+
+    - If type casting is NOT possible (e.g. string to int)
+        - PHP assigns the corresponding value depending on the data type a value is to be type casted into
+        
+        - For value type cast of 'int' or 'float'
+            - Assigns the value of 0 or 0.0, respectively if NOT possible to convert from string
+
+    - Working with values of different data type
+        - Triggers a "Fatal error: Uncaught TypeError: Unsupported operand types: ..."
