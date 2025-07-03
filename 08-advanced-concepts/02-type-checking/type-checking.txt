@@ -1,0 +1,33 @@
+Type Checking: Identify Types With "_is" Functions & Manage Mixed-Types Arrays
+------------------------------------------------------------------------------
+- PHP has several functions that performs type checking
+    - The PHP function "is_array()"
+        - Returns "true" if a variable is assigned with an array as value
+        - Reference (https://www.php.net/manual/en/function.is-array.php)
+
+    - The PHP function "is_bool()"
+        - Returns "true" if a variable is assigned with a boolean value
+        - Reference (https://www.php.net/manual/en/function.is-bool.php)
+
+    - The PHP function "is_float()"
+        - Returns "true" if a variable is assigned with a float value
+        - Reference (https://www.php.net/manual/en/function.is-float.php)
+
+    - The PHP function "is_int()"
+        - Returns "true" if a variable is assigned with an integer value
+        - Reference (https://www.php.net/manual/en/function.is-int.php)
+
+    - The PHP function "is_numeric()"
+        - Returns "true" if a variable is assigned with a is a number or a numeric string
+        - Reference (https://www.php.net/manual/en/function.is-numeric.php)
+
+    - The PHP function "is_string()"
+        - Returns "true" if a variable is assigned with a string value
+        - Reference (https://www.php.net/manual/en/function.is-string.php)
+
+
+- Common use case of these functions
+    - Identify the data type of an array's element(s)
+        - Then perform the corresponding operation(s) based on its type
+    
+    - Identify the data type of a 3rd party array's element(s)
