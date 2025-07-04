@@ -1,0 +1,11 @@
+The @ Symbol: Silence PHP Warnings
+----------------------------------
+- The @ symbol is referred as an "error control" operator
+    - That is prepended to an expression in PHP
+    
+    - Any diagnostic error (i.e. warning) that might be generated will be supressed
+    
+    - NOTE: Fatal error(s) will NOT be supressed
+
+    - Reference (https://www.php.net/manual/en/language.operators.errorcontrol.php)
+
