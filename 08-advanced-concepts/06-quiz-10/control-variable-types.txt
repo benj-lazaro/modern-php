@@ -1,0 +1,69 @@
+Quiz 10: Test Your Knowledge Of Controlling Variable Types
+----------------------------------------------------------
+- You are working on a PHP script that needs to validate different types of user inputs
+    - Assume
+
+        $userInput = '123.0';.
+
+    - Which of the following functions will return "true" for the variable $userInput?
+
+    - Answer: is_numeric($userInput)
+
+
+- You are working on a PHP script for an online store
+    - The script needs to calculate a discount based on the type of user input
+        - If the input is an integer, it represents a fixed discount amount in dollars
+        - If it's a float, it represents a percentage discount
+
+    - The original price of a product is $100.
+
+        if (is_integer($discount)) {
+            $finalPrice = 100 - $discount;
+        } else if (is_float($discount)) {
+            $finalPrice = 100 - (100 * $discount);
+        }
+
+    - Which of the following statements about the final price of the product is FALSE?
+
+    - Answer: If discount is 0.3, the final price is $130
+        - NOTE: It should be $70
+
+
+- You are working on a PHP script that processes user inputs.
+
+    $suffix = '_file';
+     
+    if (is_string($input)) {
+        $result = $input . $suffix;
+    } else if (is_array($input)) {
+        foreach ($input as $key => $value) {
+            $input[$key] = $value . $suffix;
+        }
+        $result = $input;
+    }
+
+    - Which of the following statements about the $result variable after executing the code is TRUE?
+
+    - Answer: If $input is an empty string, $result will be "_file"
+
+
+- You are developing a PHP script that 
+    - Checks if a user qualifies for a membership upgrade based on the number of points they have
+    
+    - The number of points is provided via a GET request:
+
+        $userPoints = $_GET['points']; // User input as a string
+        
+        if ($userPoints >= 1000) {
+            echo 'You qualify for an upgrade!';
+        } else {
+            echo 'Keep earning points to qualify.';
+        }
+
+    - In its current state, this code may not work as expected
+
+    - Which of the following lines of code, when added before the if statement, correctly resolves the issue?
+
+    - Answer: $userPoints = (int) $userPoints;
+
+
