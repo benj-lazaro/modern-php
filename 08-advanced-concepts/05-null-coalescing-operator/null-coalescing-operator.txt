@@ -1,0 +1,31 @@
+Null Coalescing Operator: Simplify Default Value Assignments
+------------------------------------------------------------
+- PHP 7.0 added support for the Null Coalescing operator (??)
+    - It is simply a syntatic sugar of a ternary operator & the PHP function "isset()"
+
+    - The ?? operator evaluates the expression it is in
+        - Returns the 1st operand
+            - If the expression returns a value that is NOT a "null"
+
+        - Otherwise, returns the 2nd operand (i.e. default value)
+
+    - Reference 
+        - Official documentation (https://www.php.net/manual/en/migration70.new-features.php)
+        - PHP tutorial (https://www.phptutorial.net/php-tutorial/php-null-coalescing-operator/)
+
+
+- NOTE: Type casting takes precedence over the Null Coalescing operator
+    - Important when type casting the 1st operand
+
+        <data_type_cast> <1st_operand> ?? <2nd_operand>;
+    
+    - To address this concern
+        - Enclose the expression of the Null Coalescing operator w/in a pair of ( )
+        - Then type cast the returned value according to the preferred data type
+
+        (<data_type_cast>) (<1st_operand> ?? <2nd_operand>);
+
+
+Syntax:
+
+$<variable_name> = <first_operand> ?? <second_operand>;
