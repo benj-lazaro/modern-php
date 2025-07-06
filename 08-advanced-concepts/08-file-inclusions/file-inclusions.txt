@@ -1,0 +1,60 @@
+File Inclusions: include, require And Their *_once Variants 
+-----------------------------------------------------------
+- The PHP expression "include"
+    - Includes and evaluates the specified File
+
+    - If the specified file is NOT found
+        - PHP emits a warning
+
+    - Reference (https://www.php.net/manual/en/function.include.php)
+
+
+- The PHP expression "include_once"
+    - This expression has similar behavior to the "include"
+    
+    - The diffeence is that if the code from the file has been included
+        - It will NOT be included again
+        - And returns a boolean value of "true"
+
+    - Reference (https://www.php.net/manual/en/function.include-once.php)
+
+
+- The PHP expression "require"
+    - It is identical to the "include" expression
+
+    - The difference being that if the specified file is NOT found
+        - PHP emits an error instead of a warning
+
+    - Reference (https://www.php.net/manual/en/function.require.php)
+
+
+- The PHP expression "require_once"
+    - This expression is identifical to "require"
+
+    - The difference is that if the specified file has already been required
+        - It will NOT require it again
+
+        - Prevents from triggering a fatal error due to
+            - Re-declaring a previously declared function
+            - Re-initializing a variable all over again
+
+    - Reference (https://www.php.net/manual/en/function.require-once.php)
+
+
+- The PHP function "dirname()"
+    - Returns a parent directory's path as a string data type
+
+    - Reference (https://www.php.net/manual/en/function.dirname.php)
+
+
+Syntax:
+
+include "<file_path/file>";
+
+include_once "<file_path/file>";
+
+require "<file_path/file>";
+
+require_once "<file_path/file>";
+
+dirname();
