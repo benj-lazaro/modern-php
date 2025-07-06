@@ -1,0 +1,40 @@
+Optimizing include: Use __DIR__ For Reliable File Path Resolution 
+-----------------------------------------------------------------
+- The __DIR__ is a Magic Constant that
+    - Returns the current directory of a file
+
+    - When used with the "include" expression
+        - It returns the current directory name of the included file
+        
+        - This is equivalent to "dirname(__FILE__)"
+            - Best practice to use __DIR__ instead
+
+    - Reference (https://www.php.net/manual/en/language.constants.magic.php#constant.dir)
+
+
+- The __FILE__ is a Magic Constant that
+    - Returns the full path & filename of a file with symlinks resolved
+
+    - When used with the "include" expression
+        - It returns the name of the included file
+
+    - Reference (https://www.php.net/manual/en/language.constants.magic.php#constant.file)
+
+
+- The PHP function dirname()
+    - Returns a parent's directory path
+
+    - NOTE: It operates naively on input string
+        - It is NOT AWARE of the actual filesystem or path components (e.g. . or ..)
+
+    - NOTE: On Windows OS, both / and \ are used as directory separator character
+
+    - Reference (https://www.php.net/manual/en/function.dirname.php)
+
+
+Syntax:
+
+include __DIR__ . "<target_file>";
+
+include dirname(__FILE__);
+
