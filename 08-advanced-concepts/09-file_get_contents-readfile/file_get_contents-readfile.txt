@@ -1,0 +1,53 @@
+The Functions file_get_contents And readfile
+--------------------------------------------
+- The PHP function "file_get_contents()"
+    - Reads an entire file
+        - Returns the content as string 
+
+    - Starting at a specified offset (default 0)
+        - Up to the specified length (in bytes, default to read until end of file)
+
+    - It is the preferred way to read the contents of a file into a string
+        - Uses the host OS' memory mapping techniques
+        - IF SUPPORTED in order to enhance performance
+
+    - Returns 
+        - Boolean "false" on failure
+        - Read data on success
+
+    - Generates a warning if
+        - Specified file is NOT found
+        - Specified length is less than zero (0)
+        - Specified offset in the stream fails
+
+    - Reference (https://www.php.net/manual/en/function.file-get-contents.php)
+
+
+- The PHP function "readfile()"
+    - Reads the contents of a file and immediately writes to the output buffer
+
+    - Unlike "file_get_contents()"
+        - It does NOT load the content into memory
+
+    - Returns
+        - Boolean "false" on failure
+        - Number of bytes read on success
+
+    - Generates a warning if specified file is NOT found
+
+    - It is preferred for reading the content of large files
+
+    - Reference (https://www.php.net/manual/en/function.readfile.php)
+
+
+Syntax:
+
+file_get_contents(
+    string $filename,
+    bool $use_include_path = false,
+    ?resource $context = null,
+    int $offset = 0,
+    ?int $length = null
+): string|false
+
+readfile(string $filename, bool $use_include_path = false, ?resource $context = null): int|false
