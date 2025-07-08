@@ -1,0 +1,37 @@
+Coding Exercise 14: Personalized Email Newsletter 01
+----------------------------------------------------
+- Dive into the world of digital marketing 
+    - As a specialist tasked with crafting personalized email campaigns
+    
+    - Your objective is to refine email templates
+        - Ensuring they resonate personally with each segment of the audience
+        - Through creative manipulation of content
+    
+    - Your mission is to enhance engagement, personalize communication, and strengthen 
+        - The connection between brand and customer
+
+    - The "$emailContent"
+        - Contains the email content provide as a single string
+
+
+- Tasks
+    - Extract the "Quote of the Month" and its author
+        - From the variable "$emailContent"
+        - Save them into "$quote" and "$author", respectively
+
+        - The "Quote of the Month" section is consistently labeled with
+            - "Quote of the Month" PRECEEDED and FOLLOWED with "\n \n"
+
+
+    - Reformat the Quote Display
+        - Reverse the order in which the author and quote are displayed
+            - From:
+                [author]: [quote]
+
+            - To:
+                [quote] - [author]
+
+    - Update & Reassemble the Email content
+        - Integrate the reformatted quote back into "$emailContent"
+        - Store the updated content in "$modifiedEmailContent"
+
