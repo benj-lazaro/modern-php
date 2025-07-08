@@ -1,0 +1,29 @@
+The implode And explode Functions: Split Strings And Merge Arrays
+-----------------------------------------------------------------
+- The PHP function "implode()"
+    - Accepts an array
+        - Returns a string
+        - Containing the representation of element in the same order
+        - Separated by a string separator (formerly referred as 'glue') between each element
+
+    - Reference (https://www.php.net/manual/en/function.implode.php)
+
+
+- The PHP function "explode()"
+    - Accepts a string value
+        - Returns an array of strings
+
+    - Created by splitting the string value
+        - On boundaries formed by the defined string separator
+        
+    - NOTE: If the string separator is an empty string ""
+        - PHP throws a valueError
+
+    - Reference (https://www.php.net/manual/en/function.explode.php)
+
+
+Syntax:
+
+implode([<string_separator>], <array_name>);
+
+explode([<string_separator>], <input_string>);
