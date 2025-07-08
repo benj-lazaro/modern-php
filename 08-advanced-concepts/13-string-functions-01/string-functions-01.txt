@@ -1,0 +1,113 @@
+String Functions Part 01 
+------------------------
+- The PHP function "strlen()"
+    - Returns the length of an input string
+    
+    - NOTE: Counts the number of bytes (instead of actual characters)
+        - Be aware that certain emoji characters are counted as more than one (1) character
+
+    - Reference (https://www.php.net/manual/en/function.strlen.php)
+
+
+- The PHP function "strtolower()"
+    - Returns the input string whose characters converted to lowercase
+    - Reference (https://www.php.net/manual/en/function.strtolower.php)
+
+
+- The PHP function "strtoupper()"
+    - Returns the input string whose characters converted to uppercase
+    - Reference (https://www.php.net/manual/en/function.strtoupper.php)
+
+
+- The PHP function "substr()"
+    - Returns a part of the input string
+
+    - If offset is
+        - Non-negative  = returned string starts at the specified offset starting at position 0
+        - Negative      = returned string starts at the specified offset from the end of the string
+
+    - Reference (https://www.php.net/manual/en/function.substr.php)
+
+- The PHP function "trim()"
+    - Strips whitespace (or other characters) from
+        - The beginning and end of an input string
+        - Returns a trimmed string value
+
+    - Reference (https://www.php.net/manual/en/function.trim.php)
+
+
+- The PHP function "rtrim()"
+    - Strips whitespace (or other characters) from the end of a string
+        - Returns a trimmed string value
+
+    - Reference (https://www.php.net/manual/en/function.rtrim.php)
+
+
+- The PHP function "ltrim()"
+    - Strips whitespace (or other characters) from the beginning of a string
+        - Returns a trimmed string value
+
+    - Reference (https://www.php.net/manual/en/function.ltrim.php)
+
+
+- The PHP funtion "strpos()"
+    - Returns the numeric position of the 1st occurrence 
+        - Of the target string (i.e. needle) in the given string input (i.e. haystack)
+    
+    - NOTE: 'needle' is case-sensitive
+
+    - Returns a boolean value of "false" if NOT found
+
+    - Reference (https://www.php.net/manual/en/function.strpos.php)
+
+
+- The PHP function "str_starts_with()"
+    - Performs a case-sensitive check if a string input (i.e. haystack) 
+        - Begins with target string (i.e. needle)
+
+    - Returns a boolean value of "true" if found
+        - Otherwise returns a "false"
+
+    - Reference (https://www.php.net/manual/en/function.str-starts-with.php)
+
+
+- The PHP function "str_ends_with()"
+    - Performs a case-sensitive check if a string input (i.e. haystack) 
+        - Ends with target string (i.e. needle)
+
+    - Returns a boolean value of "true" if found
+        - Otherwise returns a "false"
+
+    - Reference (https://www.php.net/manual/en/function.str-ends-with.php)
+
+
+- The PHP function "ucfirst()"
+    - Makes the input string's first character uppercase
+
+    - Returns the updated string input
+
+    - Reference (https://www.php.net/manual/en/function.ucfirst.php)
+
+
+
+Syntax:
+
+strlen(<input_string>);
+
+strtolower(<input_string>);
+
+strtoupper(<input_string>);
+
+substr(<input_string>, <offset>);
+
+trim(<input_string>);
+
+rtrim(<input_string>);
+
+ltrim(<input_string>);
+
+strpos(<haystack>, <needle>);
+
+str_starts_with(<haystack>, <needle>);
+
+ucfirst(<string_input>);
