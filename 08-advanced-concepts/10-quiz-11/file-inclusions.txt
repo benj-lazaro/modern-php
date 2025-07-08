@@ -1,0 +1,37 @@
+Quiz 11: Test Your Knowledge About File Inclusions
+--------------------------------------------------
+- What is the difference between the require and include commands in PHP?
+    - Answer: 
+        - require will stop execution with a fatal error if the file cannot be included
+        - While include will emit a warning but continue execution
+
+
+- Given the PHP code require './includes/header.php';  
+    - That uses a relative path to include a file
+    - How would you modify it to use an absolute path for increased reliability?  
+
+    - Answer: require __DIR__ . '/includes/header.php';
+
+
+- Consider the following PHP code snippet
+
+    require __DIR__ . '/config/settings.php';
+    require_once __DIR__ . '/config/settings.php';
+
+    - Assuming config/settings.php exists and contains valid PHP code
+        - What would be the outcome of executing this code?
+
+    - Answer: The code executes successfully, including the file exactly once
+
+
+- You have a file named message.txt, that contains the following text:
+
+    echo file_get_contents(__DIR__ . '/message.txt');
+
+    - From a PHP script start.php located in the same directory, you execute the following line:
+
+    echo file_get_contents(__DIR__ . '/message.txt');
+
+    - What will be the outcome of this operation?
+
+    - Answer: echo file_get_contents(__DIR__ . '/message.txt');
