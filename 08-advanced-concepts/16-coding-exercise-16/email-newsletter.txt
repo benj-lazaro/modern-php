@@ -1,0 +1,35 @@
+Coding Exercise 15: Personalized Email Newsletter 03
+----------------------------------------------------
+- Your objective is to refine email templates
+    - Ensuring each resonate personally with each segment of the audience
+    
+    - The variable 
+        - "$emailTemplate" contains a string value
+        
+        - "$recipient" is an associative array
+            - Contains name, interest segment & email address
+
+        - "$segmentContent" is an associative array
+            - Maps audience to relevant articles
+
+        - "$events" is an array
+            - List of upcoming events or webinars
+
+
+- Tasks
+    - Personalized email templates
+        - Replace the [name] placeholder with the recipient's name
+            - Store results to "$personalizedEmail"
+
+    - Adjust content for audience segments
+        - Customize "$personalizedEmail" by replacing the [article] placeholder
+            - With content tailored to the recipient's interest segment
+        
+        - Use the "$segmentContent" array
+            - To find the relevant article for each recipient's segment
+            - Update "$personalizedEmail"
+
+    - Include information on upcoming events
+        - Update "$personalizedEmail" by replacing the [events] placeholder
+            - With a formatted list of upcoming events
+            - Utilize "$events" to create this list
