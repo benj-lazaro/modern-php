@@ -1,0 +1,12 @@
+The index.php File: Directory Index & File Recognition On Webservers
+--------------------------------------------------------------------
+- The web server immediately loads the file "index.php"
+    - If present on the directory being accessed
+        - Optionally omit the file "index.php" from the URL
+        - e.g. https://localhost/
+
+    - $_GET parameters can be used
+        - Optionally omit the file "index.php" from the URL
+        - e.g. https://localhost/?<paramter>=<value>
+
+    
