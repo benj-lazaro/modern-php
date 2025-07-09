@@ -4,32 +4,26 @@
 $emailContent = "Dear alex  ,\n\nWe hope this message finds you well.\n\nThis month, we are focusing on personal growth and innovation. Don't miss out on our exclusive insights!\n\nBest wishes,\nYour Discovery Network Team\nP.S. Check out our latest blog post!";
 
 // Write your code here
-
 if (!empty($emailContent)):
-    $splitContent = explode("\n\n", $emailContent);
-    $salutation = $splitContent[0];
-    $greetings = $splitContent[1];
-    $mainBody = trim($splitContent[1] . $splitContent[2]);
-    $signature = $splitContent[3];
-
     // Generate email preview
-    $emailPreview = substr($greetings, 0, 30) . '...';
-    echo $emailPreview . "<br />";
+    $afterSalutation = strpos($emailContent, ',') + 3;
+    $beforeSignature = strpos($emailContent, '!') + 3;
+    $emailPreview = substr($emailContent, $afterSalutation, 30) . '...';
 
-    // Main body count
-    $charCount = strlen($mainBody);
-    echo $charCount . "<br />";
+    // Count characters in the main body
+    $bodyStart = strpos($emailContent, ',') + 4;
+    $bodyEnd = strpos($emailContent, "Best wishes") + 1;
+    $charCount = strlen(substr($emailContent, $bodyStart, $bodyEnd - $bodyStart));
 
     // Standardize salutation
-    $splitSalutation = explode(" ", $salutation);
-    $splitSalutation[1] = ucfirst($splitSalutation[1]);
-    $salutation = implode(" ", $splitSalutation);
+    $beforeName = strpos($emailContent, "Dear ") + 5;
+    $afterName = strpos($emailContent, ",");
+    $sizeName = $afterName - $beforeName;
 
-    echo $salutation . "<br />";
+    $updateName = trim(substr($emailContent, $beforeName, $sizeName));
+    $updateName = strtoupper(substr($updateName, 0, 1)) . strtolower(substr($updateName, 1));
 
-    $splitContent[0] = $salutation;
-    $updateEmailContent = implode(" ", $splitContent);
-
-    echo $updateEmailContent . "<br />";
-
+    $beforeUpdateName = substr($emailContent, 0, $beforeName);
+    $afterUpdateName = substr($emailContent, $afterName);
+    $updatedEmailContent = $beforeUpdateName . $updateName . $afterUpdateName;
 endif;
