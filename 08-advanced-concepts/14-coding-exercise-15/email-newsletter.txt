@@ -1,0 +1,37 @@
+Coding Exercise 15: Personalized Email Newsletter 02
+----------------------------------------------------
+- Continuation of the previous coding exercise
+
+
+- Tasks
+    - Generate email preview
+        - The preview should include the first 30 characters
+            - Following the 'Dear [name], \n\n'
+            - Appeneded with '...'
+        
+        - NOTE: A single '\n' is counted as a single character
+
+        - Save the preview text into '$emailPreview'
+
+    - Count characters in the main body
+        - Isolate the main body of the email
+            - Exclude the salutation & signature
+
+        - Calculate & save the number of characters
+            - Into '$charCount'
+
+    - Standardize salutation
+        - Locate & extract the name used in salutation
+        
+        - NOTE: Pay attention to potential whitespace
+            - Around the name and remove it
+
+        - Reformat the name
+            - First letter is uppercased
+            - Remaining letters in lowercase
+
+        - Update the email content
+            - With the standardize name format
+            - Ensure the original message's integrity intact
+            - Save into '$updatedEmailContent'
+
