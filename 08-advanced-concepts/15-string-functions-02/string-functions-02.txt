@@ -1,0 +1,29 @@
+String Functions Part 02 
+------------------------
+- The PHP function "nl2br()"
+    - Converts newline character (i.e. \r\n, \n\r, \n and \r)
+        - Into a HTML element <br />
+
+    - Returns the converted string
+
+    - NOTE: Clean the string input using the function "htmlspecialchars()"
+        - BEFORE calling the function "nl2br()"
+
+    - Reference (https://www.php.net/manual/en/function.nl2br.php)
+
+
+- The PHP function "str_replace()"
+    - Replace ALL occurrences of the search string with the replacement string
+        - From a string value or array (i.e. haystack)
+
+    - Returns a string or an array with the replaced value
+
+    - Reference (https://www.php.net/manual/en/function.str-replace.php)
+
+
+Syntax:
+
+nl2br(<string_input>);
+
+str_replace(<search_string>, <replacement_string>, <haystack>);
+
