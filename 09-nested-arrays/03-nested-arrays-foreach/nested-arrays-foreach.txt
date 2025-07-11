@@ -1,0 +1,5 @@
+Extract Data From Nested Arrays by foreach Loops
+------------------------------------------------
+- IMPORTANT: Be mindful when using foreach loop
+    - Be aware which array (i.e. outer or inner) the forach loop is currently accessing
+
