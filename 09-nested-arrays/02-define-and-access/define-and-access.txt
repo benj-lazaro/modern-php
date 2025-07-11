@@ -1,0 +1,10 @@
+Define A Nested Array And Access Multi-Level Data
+-------------------------------------------------
+- A nested array is an array that
+    - Contains another array as its element(s)
+    - Basically an array of arrays
+
+
+- To access data inside a nested array
+    - Reference the index of the array element
+    - Then reference the specific key of an associated array (if it is)
