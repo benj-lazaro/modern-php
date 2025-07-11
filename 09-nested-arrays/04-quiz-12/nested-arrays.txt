@@ -1,0 +1,77 @@
+Quiz 12: Test Your Knoweldge Of Nested Arrays
+---------------------------------------------
+- You're developing a system to manage a small cinema's schedule. 
+    - The cinema has different halls, each showing a movie several times a day
+
+    - Your task is to create an array of arrays in PHP
+        - Where each sub-array represents a hall, a movie, and the number of showtimes for that movie
+    
+    - Which of the following options does NOT correctly create an array of arrays as specified?
+
+    - Answer:
+
+        $cinema = array(
+            "hall" => array("C", "D"),
+            "movie" => array("The Last Dreamwalker", "Invisible Boundaries"),
+            "n_showtimes" => array(2, 3)
+        );
+
+
+- Given Array:
+
+    $cinema = [
+      ["hall" => "B", "n_showtimes" => 3, "tickets_sold" => 120],
+      ["hall" => "D", "n_showtimes" => 4, "tickets_sold" => 150],
+      ["hall" => "F", "n_showtimes" => 2, "tickets_sold" => 80],
+      ["hall" => "I", "n_showtimes" => 5, "tickets_sold" => 150],
+      ["hall" => "J", "n_showtimes" => 3, "tickets_sold" => 90],
+    ];
+
+    - Given the $cinema array above
+        - Which of the following options correctly shows 
+        - How to access a specific property in one of the sub-arrays?
+
+    - Answer: $cinema[1]["tickets_sold"];   // access: 150
+
+
+- Given Code:
+
+    $cinema = [
+      ["hall" => "B", "movie" => "Echoes of Tomorrow", "tickets_sold" => 120],
+      ["hall" => "D", "movie" => "Moon Ride", "tickets_sold" => 150],
+      ["hall" => "F", "movie" => "The Infinite Dive", "tickets_sold" => 80]
+    ];
+     
+    $htmlOutput = "";
+
+    foreach ($cinema as $screening) {
+      $htmlOutput = $htmlOutput . "<div>Hall: " . $screening["hall"] . ", Movie: " . $screening["movie"] . " (" . $screening["tickets_sold"] . ") </div>";
+    }
+
+    - What will be the final value of the variable $htmlOutput 
+        - After the execution of the provided PHP loop code?
+
+    - Answer: <div>Hall: B, Movie: Echoes of Tomorrow (120)</div><div>Hall: D, Movie: Moon Ride (150)</div>
+              <div>Hall: F, Movie: The Infinite Dive (80)</div>
+
+
+- Given Array:
+
+    $cinema = [
+      ["hall" => "G", "movie" => "Journey Through Time", "n_showtimes" => 4, "tickets_sold" => 100],
+      ["hall" => "H", "movie" => "Mystery of the Cosmic Tide", "n_showtimes" => 5, "tickets_sold" => 180],
+      ["hall" => "K", "movie" => "Legends of the Ancient Path", "n_showtimes" => 3, "tickets_sold" => 90]
+    ];
+
+    - Identify the foreach loop that 
+        - Generates a list of movie titles and the number of tickets sold for each movie in the format:
+
+            Journey Through Time - 100 tickets sold
+            Mystery of the Cosmic Tide - 180 tickets sold
+            Legends of the Ancient Path - 90 tickets sold
+
+    - Answer:
+
+        foreach ($cinema as $screening) {
+            echo $screening["movie"]. " - " . $screening["tickets_sold"] . " tickets sold<br";
+        }
