@@ -1,0 +1,6 @@
+Navigate Multi-Level Data With Nested foreach Loops
+---------------------------------------------------
+- Using a nested "foreach" loop to access the corresponding value of an associated key
+    - That happens to be a normal array
+    - Representing a multi-level data
+
