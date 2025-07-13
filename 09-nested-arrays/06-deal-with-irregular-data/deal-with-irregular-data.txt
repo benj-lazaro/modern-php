@@ -1,0 +1,22 @@
+Deal With Irregular Data In Nested Arrays
+-----------------------------------------
+- Irregular data is a common problem when working with nested arrays
+
+
+- To address this concern
+    - If there is a means to access the said nested array
+        - Set the targeted "key" with an empty array
+
+    - Alternatively, use an "if" statement in conjunction with the function "empty()"
+        - Check if the target "key" containing the nested array is NOT empty
+        
+        - If it is NOT empty
+            - Using a nested "foreach" loop to access the nested data
+
+        - If it is empty
+            - PHP ignores and skips the nested array that does NOT exists
+
+    - This prevents PHP from triggering a warning when accessing a non-existent "key"
+        - Which by itself a common irregular data scenario
+
+    
