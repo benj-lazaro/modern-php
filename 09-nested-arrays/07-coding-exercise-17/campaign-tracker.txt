@@ -1,0 +1,24 @@
+Coding Exercise 17: Marketing Campaign Tracker 01
+-------------------------------------------------
+- Analyze the effectiveness of digital advertising campaigns for an online retailer
+    - Each campaign consists of
+        - Multiple ad sets aimed at different customer segments
+        - Offering insights into customer engagement 
+        - Marketing strategy success
+
+
+- Your analysis will focus on a simplified dataset structured as a PHP associative array
+    - Detailing each campaign's name and its ad sets, each with a unique name
+
+
+- Tasks:
+    - Compile a list of all ad set names within their campaigns
+        - Navigate through the dataset to list all ad set names
+            - Organized by their campaigns
+        
+        - The output should clearly associate each ad set with its campaign
+            - Using the following format
+
+                [Campaign Name]: "[Name of AdSet1]", "[Name of AdSet2]"
+                [Campaign Name]: "[Name of AdSet1]", "[Name of AdSet2]"
+                
