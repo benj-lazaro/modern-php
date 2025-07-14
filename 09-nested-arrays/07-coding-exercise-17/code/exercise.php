@@ -51,7 +51,7 @@ if (!empty($campaigns)):
 
         $formattedAdSetNames = implode(", ", $adSetNames);
 
-        $outputString = "- $campaignName: $formattedAdSetNames \n";
+        $outputString = "- $campaignName: $formattedAdSetNames\n";
         echo $outputString;
 
         $adSetNames = [];
