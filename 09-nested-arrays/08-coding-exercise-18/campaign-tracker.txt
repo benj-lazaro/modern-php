@@ -1,0 +1,29 @@
+Coding Exercise 17: Marketing Campaign Tracker 02
+-------------------------------------------------
+- A continuation of the previous coding Exercise
+
+
+- Tasks
+    - Calculate total clisk and impressions for each campaigns
+        - Iterate through each campaign & its ad sets
+            - Summing clicks & impressions for ALL ad sets within each campaign
+
+        - Store these totals in two (2) Associative arrays
+            - Namely "$totalCampaignClicks" and "$totalCampaignImpressions", respectively
+            - Use campaign names as keys
+
+    - Generate a report on average clicks and impressions per ad set accross all campaigns
+        - Calculate the total number of clicks & impressions across ALL ad sets in ALL campaigns
+
+        - Divide these totals by the number of ad sets
+            - To find the average clicks and impressions per ad set
+                - Round the average to zero decimal places
+
+            - NOTE: To prevent division by zero
+                - Where a "$campaigns" MIGHT be empty or ill-defined
+                - Use a default value of 0 in such cases
+
+        - Output the result in a formatted string
+            - Stating the average clicks and impressions per ad set 
+
+            "Average clicks per ad set: [average clicks], Average impressions per ad set: [average impressions]."
