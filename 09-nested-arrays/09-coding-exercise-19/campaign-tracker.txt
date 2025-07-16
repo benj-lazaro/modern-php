@@ -1,0 +1,40 @@
+Coding Exercise 17: Marketing Campaign Tracker 03
+-------------------------------------------------
+- The final part of this coding exercise
+    - The "$campaign" array has a new property "targetAudience"
+        - Contains an array of audience segments targeted by each ad set
+
+    - A new string variable "$specifiedAudience"
+        - Contains the name of a specific target audience
+        - It is used to identify the highest performing ad set 
+            - For a particular audience segment
+
+
+- Tasks
+    - Find the highest campaign with the highest click-through rate (CTR)
+        - Using the following formula
+
+            CTR = (Total Clicks / Total Impressions) * 100
+
+        - Calculate the CTR for each campaign
+            - identify the campaign with the highest CTR
+            - Assign the campaign name & CTR value to the array "$highestCTR"
+
+            $highestCTR = [ 'Campaign Name' => CTR ]
+
+        - NOTE: When dealing with potentially missing data (e.g. clicks or impressions)
+            - Use the value of 0 as a default for clicks
+            - Use the value of 1 as a default for impressions
+
+    - Compile a unique list of target audiences
+        - Traverse each ad set to accumulate a unique list of target audience
+            - Across ALL campaigns
+
+        - Save this information in an array with unique items named "$uniqueTargetAudience"
+
+    - Identify the highest-performing ad for a specific target audience
+        - With a given target audience in "$specifiedAudience"
+            - Sift through the ad sets to find those targeting this audience
+
+        - Compare their CTR values to unearth the ad set with a high CTR
+            - Store its name in the Associative array "$adWithHighestCTRForAudience"
