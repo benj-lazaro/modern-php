@@ -1,0 +1,17 @@
+Overview
+--------
+- Build an Air Quality data browser named AQI Explorer
+    - Preloaded with sample data
+        - List of preloaded cities with corresponding flag of country of origin
+        - Sample data taken from OpenAQ (https://openaq.org/)
+    
+    - Clicking a  city
+        - Loads a new page
+            - Displays the name of the city
+            - Displays the corresponding interactive graph 
+            - Displays the corresponding tabular data
+
+    - Generate corresponding JavaScript code through PHP
+        - For the interactive graph
+
+    
