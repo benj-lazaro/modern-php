@@ -33,4 +33,12 @@ Processing The Air Quality Data: Decode JSON & Handle .bzip Compression
         - Search for "bz2"
             - Check if "BZip2 Support" is enabled
 
-    - Use a file wrapper
+
+- To access the content of a .bz2 file
+    - Pass the paramters to the function "file_get_contents()"
+        - "compress.bzip2://"  (i.e. a stream wrapper)
+        - __DIR__
+        - "<path_of_bz2file>"
+        - true
+
+    - Then pass the returned value to the function "json_decode()"

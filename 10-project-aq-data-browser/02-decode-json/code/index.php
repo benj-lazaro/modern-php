@@ -16,4 +16,8 @@ echo "<br /> <br />";
 echo "singapore.json.bz2 filesize: " . filesize(__DIR__ . "/../../data/singapore.json.bz2") . " bytes";
 
 // To check for .bz2 support
-phpinfo();
+// phpinfo();
+
+// To open .bz2 file
+$data = json_decode(file_get_contents("compress.bzip2://" . __DIR__ . "/../../data/singapore.json.bz2"), true);
+var_dump($data);
