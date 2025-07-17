@@ -1,0 +1,36 @@
+Processing The Air Quality Data: Decode JSON & Handle .bzip Compression
+-----------------------------------------------------------------------
+- The file "index.json" located within the folder "data"
+    - Serves as an index for selected countries and their corresponding ".bz2" file
+
+
+- To load / read the file "index.json" directly from the local filesystem
+    - Use the PHP function "file_get_contents()" in conjunction with the magic constant "__DIR__"
+        - Reads the entire file into a string
+        - Reference (https://www.php.net/manual/en/function.file-get-contents.php)
+
+
+- To convert the content of the JSON file into an array(ish)
+    - Use the PHP function "json_decode()" to decode the JSON into a string
+        - Pass a parameter "true" to convert the decoded string into an Associative array
+
+    - Reference (https://www.php.net/manual/en/function.json-decode.php)
+
+
+- To determine the size of a file
+    - Use the PHP function "filesize()"
+    - Reference (https://www.php.net/manual/en/function.filesize.php)
+
+
+- To handle a file with .bz2 extension in PHP
+    - First check if the PHP interpreter is configured to handle it
+        - Use the PHP function "phpinfo()" to render the 
+            - Current configuration of the PHP interpreter on the browser
+
+        - Search for "Registered PHP Streams"
+            - Check if "compress.bzip2" is included
+
+        - Search for "bz2"
+            - Check if "BZip2 Support" is enabled
+
+    - Use a file wrapper
