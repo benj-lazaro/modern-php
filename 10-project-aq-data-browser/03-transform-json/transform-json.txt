@@ -1,0 +1,11 @@
+Transforming JSON Data Into Web Content: Create Dynamic City Links
+------------------------------------------------------------------
+- Open the "index.json" file
+    - Convert the content into a list rendered in a HTML document
+
+    - Make each "city" into a clickable element
+        - When clicked use the value of a "city" as a GET parameter
+
+        - NOTE: Use the function "http_build_query()"
+            - Prevents passed values with extra characters (e.g. whitespace, etc.)
+            - From being exploited or misinterpreted
