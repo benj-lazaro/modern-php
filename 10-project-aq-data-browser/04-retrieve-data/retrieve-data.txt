@@ -1,0 +1,10 @@
+Crafting City Statistics Pages: Retrieve Data & Handle Errors
+-------------------------------------------------------------
+- Build the view component for the individual city graphs
+
+
+- Load the corresponding data from the passed value in the $_GET parameter
+    - Open the file "index.json"
+
+    - Open the corresponding bz2 file of the selected city
+        - Specifically load the data from the property "results"
