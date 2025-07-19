@@ -1,0 +1,5 @@
+Analyzing PM2.5 Data: Calculate Air Quality Index
+-------------------------------------------------
+- Skip everything whose property "parameter" is NOT "pm25"
+    - Group the data based on the property "local"
+    - Retrieve the value of the property "value"
