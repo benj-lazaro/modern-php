@@ -1,0 +1,19 @@
+Manage Data Integrity & Integrate Additional Measurement Parameters (PM10)
+--------------------------------------------------------------------------
+- Implement data integrity checks
+    - Noted negative "pm25" values from the property "value"
+        - This indicates a potential measurement error (i.e. faulty data)
+
+    - Implement code that skips over these negative values
+        - Prior to saving individual entries into the array "$stats"
+
+
+- Next is to calculate for additional parameters
+    - Tracking data for "pm10" values
+        - Referring to litte larger fine dusts
+        - As opposed to "pm25" finer dusts
+
+    - Refactor the "$stats" array
+        - To include data of "pm10" values
+
+        - Create sub-levels for "pm25" and "pm10" values
