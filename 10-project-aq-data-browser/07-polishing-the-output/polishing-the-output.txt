@@ -1,0 +1,9 @@
+Polishing The Output: Add Numeric Formatting And Measurement Units
+------------------------------------------------------------------
+- Improving the "view" page of the selected city
+    - Formatting (truncate) the "PM 2.5" and "PM 10" values
+    
+    - Add measurement units
+        - Extract from the property "unit"
+        - Instead of hard coding the unit of measurement in HTML
+        - Due to weather stations changing the unit of measurement for "PM 2.5" & "PM10" values
