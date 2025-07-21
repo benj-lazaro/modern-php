@@ -1,0 +1,25 @@
+Integrating Chart.js With PHP 01: Build Interactive Visual Charts
+-----------------------------------------------------------------
+- To add an interactive chart to the web application
+    - Requires using the Chart.js
+        - An open-source JavaScript charting library
+        - To be run on the client-side (browser)
+        - Website (https://www.chartjs.org/)
+
+    - Instead of installing the library via npm
+        - Download the Chart.js as a standalone (local) library via CDNJS
+            - CDNJS (https://cdnjs.com/libraries/Chart.js)
+        
+        - Click the link for the latest version of "chart.umd.js"
+            - Paste the link on a new browser tab
+                - The browser loads the content
+                
+            - Save the content locally (CTRL + S)
+                - To the web app's "scripts" folder
+
+        - Integrate the library via HTML element <script>
+            - Reference (https://www.chartjs.org/docs/latest/getting-started/integration.html)
+
+    - To setup a line chart
+        - Reference (https://www.chartjs.org/docs/latest/getting-started/integration.html#helper-functions)
+        
