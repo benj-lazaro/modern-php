@@ -22,22 +22,22 @@ endif;
 
 // Load & iterate through the city's corresponding bz2 file
 if (!empty($filename)):
-    // Specifically retrieve data coming from the property 'results'
+    // Specifically retrieve data from the property 'results'
     $results = json_decode(file_get_contents("compress.bzip2://" . __DIR__ . "/../../data/" . $filename), true)['results'];
 
-    // Aggregate data (i.e. raw stats) from property "parameter" with the value "pm25"
+    // Aggregate data (i.e. raw stats) from the property "parameter" with the value "pm25" & "pm10"
     $stats = [];
     foreach ($results as $result):
-        // Skips data whose property "parameter" is not "pm25" & "pm10"
+        // Skips data whose property "parameter" does not have "pm25" & "pm10" as value
         if ($result['parameter'] !== "pm25" && $result['parameter'] !== "pm10") continue;
 
-        // Skip data whose property "value" have negative values (i.e. faulty/invalid data)
+        // Skip data whose property "value" contain a negative value (i.e. faulty/invalid data)
         if ($result['value'] < 0) continue;
 
         // Retrieve corresponding year-month from child property "local" of the parent property "date"
         $month = substr($result['date']['local'], 0, 7);
 
-        // Check if an "pm25" element has NOT yet set for said year-month, initialize it
+        // If an "pm25" and "pm10" entry have NOT yet been set for said year-month, initialize it
         if (!isset($stats[$month])):
             $stats[$month] = [
                 "pm25" => [],
