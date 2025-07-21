@@ -1,0 +1,15 @@
+Integrate Chart.js With PHP 02: Implement Robust Data Transfer
+-----------------------------------------------------------
+- Implement the actual data into the interactive chart
+    - Providing the correct value to the properties
+    
+    - The property "labels" data will be taken from the "$stats" array
+        - Use the PHP function "array_key()"
+            - To retrieve the keys of the "$stats" array
+            - Then use as labels for the diagram
+        
+        - Pass the returned value to the PHP function json_encode()
+            - To convert the PHP array into a JSON compatible format
+        
+        
+   
