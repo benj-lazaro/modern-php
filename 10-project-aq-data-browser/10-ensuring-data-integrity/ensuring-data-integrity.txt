@@ -1,0 +1,5 @@
+Ensuring Data Integrity: Missing Data
+-------------------------------------
+- Refactor code to make to more robust
+    - To seemlessly work with missing data
+    - And refrain from triggering a "Fatal Error"
