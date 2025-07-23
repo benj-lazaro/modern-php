@@ -1,0 +1,38 @@
+The "for" Loop: Repeat Actions And Manage Iterations
+----------------------------------------------------
+- The "for" loop
+    - Consists of three (3) expressions
+        - 1st = initialization; it is evaluated once unconditionally
+        - 2nd = condition; evaluates if the loop will continue or terminate
+        - 3rd = incremental / decremental expression
+        
+        - Each expression is optional
+            - Separated from each other using a ";"
+    
+        - NOTE: Be mindful of the how the 2nd expression is being evaluated
+            - Ensure that it will NOT result into an infinite loop
+
+        - NOTE: Leaving the 2nd expression (i.e. condition) empty
+            - Will implicitly result to an infinite loop
+            - Unless there is a line of code within that brakes the loop
+
+    - Is the perfect loop construct
+        - When the number of iterations is known AHEAD of time
+
+    - Reference (https://www.php.net/manual/en/control-structures.for.php)
+
+
+Syntax:
+
+for (<expr1>; <expr2>; <expr3>){
+    <statement>
+    ...
+}
+
+for (<expr1>; <expr2>; <expr3>):
+    <statement>
+    ...
+endfor;
+
+// Acceptable but NOT a best practice for single line statement within the loop
+for (<expr1>; <expr2>; <expr3>) <single_line_statement>;
