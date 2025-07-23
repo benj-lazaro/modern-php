@@ -1,0 +1,16 @@
+Overview
+--------
+- This section focuses on other PHP looping constructs
+    - for
+    - while
+
+    - These constructs allowsto execute code multiple times
+        - Without requiring an array (e.g. "foreach" loop)
+        - Able to read data from a database or a filesystem and NOT from an array
+
+    - Offers additional flexibility
+        - Able to count (iterate) from 1 to 100
+        
+        - Executes a block of code
+            - Until a condition evaluates to a "false"
+    
