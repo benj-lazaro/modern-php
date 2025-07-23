@@ -1,0 +1,50 @@
+Coding Exercise 20: Energy Consumption Forecast
+-----------------------------------------------
+- A leading industrial company is focusing on sustainable growth 
+    - By monitoring and optimizing its energy consumption amidst rapid expansion
+
+    - Your task is to create a forecast model that 
+        - Predicts energy consumption over the next years
+
+        - Considering both the expected increase from operational scaling 
+            - And the targeted decrease from implementing energy-efficiency initiatives
+
+    - For your model
+        - "$totalEnergyConsumption" (number)
+            - Starting energy consumption in kWh
+            - Reflecting the initial industrial scale
+
+        - "$monthlyIncrease" (number)
+            - Expected monthly increase in kWh due to expansion and new machinery
+
+        - "$efficiencyImprovement" (float)
+            - Enhanced efficiency measures aiming for a higher reduction in energy growth rate
+
+        - "$years" (number)
+            - Forecast period
+
+- Tasks
+    - Calculate the forecast total energy consumption over the specified period
+        - Taking into account both 
+            - Increase from new developments
+            - Decrecrease from efficiency improvements
+
+    - Monthly increase
+        - For each month, begin by adding the specified monthly increase in energy
+
+            $newEnergyConsumption = $totalEnergyConsumption + $monthlyIncrease;
+
+    - Efficiency improvements
+        - After accounting for the increase
+            - Apply the efficiency improvement factor to
+            - Slightly reduce the total energy consumption
+            
+            $newEnergyConsumption *= (1 - $efficiencyImprovement);
+
+    - Repeat for every month of the given years
+        - Perform these calculations sequentially for each month
+            - Accross the entire forecast period
+
+    - Save the forecast
+        - Store the final forecasted energy consumption in "$forecastedEnergyConsumption"
+        - Round the value to two (2) decimal places
