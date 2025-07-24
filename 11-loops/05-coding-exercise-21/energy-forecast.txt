@@ -1,0 +1,36 @@
+Coding Exercise 21: Energy Consumption Forecast 02
+--------------------------------------------------
+- Your model will utilize the following parameters from part 01
+    - "$totalEnergyConsumption" (number)
+        - Current energy consumption in kWh
+
+    - "$monthlyIncrease" (number)
+        - Expected monthly increase due to expansion
+
+    - "$efficiencyImprovement" (float)
+        - Efficiency improvement factor per month
+
+    - "$energyCapacityThreshold" (number)
+        - Energy consumption threshold that must NOT be exceeded
+
+
+- Tasks
+    - Calculate time to threshold
+        - Determine how many months it will take for "$totalEnergyConsumption"
+            - To reach or exceed the "$energyCapacityThreshold"
+
+        - For each iteration (month), apply the
+            - "$monthlyIncrease" & "efficiencyImprovement" to the "$totalEnergyConsumption"
+
+        - Should the number of months required to reach the threshold 
+            - Extend beyond 50 years (600 months), halt the forecast process
+            - Formula: <number_of_years> * 12 <months> = <number_of_months_for_n_years>
+
+    - Display the results
+        - If the forecase will be met within 50 years, output the message:
+
+            "It will take [number of months] months to reach or exceed the threshold of [energy capacity threshold] kWh."
+
+        - Otherwise, output the message:
+
+            "The energy consumption threshold of [energy capacity threshold] kWh will not be met within 50 years."
