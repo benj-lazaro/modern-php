@@ -1,0 +1,46 @@
+Utilize "opendir", "readdir" & "closedir" For Directory Management
+------------------------------------------------------------------
+- The PHP function "opendir()"
+    - Opens up a directory handle (i.e. directory)
+        - To be used with in subsequent PHP functions "readdir()", "closedir()"
+
+    - Returns a directory handle resource on success
+        - Otherwise, returns a "false" on failure
+        
+        - Triggers a run-time warning error that is caused by
+            - A non-existent directory
+            - A directory can NOT be opened due to permission restrictions
+            - A filesystem error
+
+    - NOTE: A resource of type "stream" is a special data type that
+        - Represents an opened directory
+
+    - Reference (https://www.php.net/manual/en/function.opendir.php)
+
+
+- The PHP function "readdir()"
+    - Read entry from a directory handle
+        - Returned by the PHP function "opendir()"
+
+    - Returns the name of the next entry (i.e. file) in the directory
+        - Entries are returned in the order
+            - Which they are stored in the filesystem
+
+    - Reference (https://www.php.net/manual/en/function.readdir.php)
+
+
+- The PHP function "closedir()"
+    - Closes the directory handle
+        - Opened by the PHP function "opendir()"
+        - NO value is returned
+
+    - Reference (https://www.php.net/manual/en/function.closedir.php)
+
+
+Syntax:
+
+opendir(<directory_path>);
+
+readdir(<directory_handle>);
+
+closedir(<directory_handle>);
