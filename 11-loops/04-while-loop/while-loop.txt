@@ -1,0 +1,36 @@
+The "while" Loop: Execute Code With Conditional Repeats And Avoid Infinite Loops
+--------------------------------------------------------------------------------
+- The "while" loop
+    - Is a loop construct that allows to execute a block of Code
+        - As long as the conditional expression is fulfilled
+
+    - Is the loop construct
+        - When the number of iterations are NOT known ahead of time
+    
+    - Common use case
+        - Retrieving (unknown number of) records from a database
+
+    - NOTE: Be mindful of the how the conditional expression is evaluated
+        - Ensure that it will NOT execute an infinite loop
+
+    - Reference (https://www.php.net/manual/en/control-structures.while.php)
+
+
+- When to use "for", "foreach" or "while" loop 
+    - Implement a loop construct, using a "foreach" loop first
+    - If it is NOT possible, use a "for" loop
+    - Otherwise, use a "while" loop
+
+
+Syntax:
+
+while (<conditional_expression>) {
+    <statement>;
+    ...
+}
+
+while (<conditional_expression>) :
+    <statement>;
+    ...
+endwhile;
+
