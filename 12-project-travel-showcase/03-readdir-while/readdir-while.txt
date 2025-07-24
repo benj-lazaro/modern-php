@@ -1,0 +1,9 @@
+Using "readdir" In A While Loop: Read File Directories Efficiently
+------------------------------------------------------------------
+- Using the PHP function "readdir()" in a "while" loop
+    - To efficiently read file(s) inside a directory
+
+    - Use the PHP function rawurlencode()
+        - For individual files read from the handler, passed as an argument value
+        - Reduces chance of exploitation
+        - Reference (https://www.php.net/manual/en/function.rawurlencode.php)
