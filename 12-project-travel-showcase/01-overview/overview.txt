@@ -1,0 +1,19 @@
+Overview
+--------
+- This section focuses on
+    - How to read folders (directories) 
+    
+    - How to read files
+        - Check if such file exists
+        - Check it's file extension
+
+    - Develop a project
+        - An automated image gallery script
+
+        - Details of the content including images
+            - Are NOT hardcoded
+            - Instead are read directly from the local filesystem
+
+            - Each image has a corresponding text file
+                - Containing the description of the image's content
+        
