@@ -1,0 +1,61 @@
+File Functions: "file_exists", "is_file", "is_dir", "filemtime", "filesize"
+---------------------------------------------------------------------------
+- The PHP function "file_exists()"
+    - Checks whether a file or directory exists
+
+    - Returns a boolean value "true" if it exists
+        - Otherwise a "false"
+
+    - NOTE: This function treats a folder as a file
+
+    - Reference (https://www.php.net/manual/en/function.file-exists.php)
+
+
+
+- The PHP function "is_dir()"
+    - Determines whether the given filename is a directory
+
+    - Returns a boolean value "true" if it is a directory
+        - Otherwise a "false"
+
+    - Reference (https://www.php.net/manual/en/function.is-dir.php)
+
+
+- The PHP function "is_file()"
+    - Determines whether the given filename is a regular file
+
+    - Returns a boolean value "true" if it is a directory
+        - Otherwise a "false" and flags a warning error
+
+    - Reference (https://www.php.net/manual/en/function.is-file.php)
+
+
+- The PHP function "filemtime()"
+    - Returns the file's modification time
+        - Time when the content of the file was changed
+
+    - Returns the time (Unix timestamp) when the file was last modified
+        - Otherwise flags a warning error
+
+    - Reference (https://www.php.net/manual/en/function.filemtime.php)
+
+
+- The PHP function "filesize()"
+    - Returns the size of a given file
+
+    - Returns a boolean "false" and a warning error when it fails
+
+    - Reference (https://www.php.net/manual/en/function.filesize.php)
+
+
+Syntax:
+
+file_exists(<directory_or_filename>);
+
+is_dir(<directory_or_filename>);
+
+is_file(<directory_or_filename>);
+
+filemtime(<filename>);
+
+filesize(<filename>);
