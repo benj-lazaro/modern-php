@@ -1,0 +1,33 @@
+The "pathinfo" Function: Extract File Path Components For Filtering File Types
+------------------------------------------------------------------------------
+- The PHP function "pathinfo()"
+    - Returns information about a file path in the form of
+        - An Associative array or string depending on the flags passed
+
+        - Valid flags are as follows:
+            - PATHINFO_DIRNAME
+            - PATHINFO_BASENAME
+            - PATHINFO_EXTENSION
+            - PATHINFO_FILENAME
+
+    - If a flag is NOT set
+        - It returns an Associative array
+        - Containing the following elements
+            - dirname
+            - basename
+            - extension (if any)
+            - filename
+
+    - If a flag is set
+        - It returns a string 
+        - Containing the requested specific element
+
+    - NOTE: The function "pathinfo()" does NOT check
+        - If the file / path actually exists (or NOT) in the filesystem
+
+    - Reference (https://www.php.net/manual/en/function.pathinfo.php)
+
+
+Syntax:
+
+pathinfo("<path>", [<flags>]);
