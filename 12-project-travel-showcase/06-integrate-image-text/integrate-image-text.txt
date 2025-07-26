@@ -1,0 +1,5 @@
+Integrate Images With Descriptive Text
+--------------------------------------
+- As an exercise, implement your own code where
+    - The corresponding text file of each image
+    - Will be read and rendered on the web page
