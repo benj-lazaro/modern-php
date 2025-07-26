@@ -14,7 +14,7 @@
     </header>
     <main>
         <pre><?php
-                // Open the sub-directory "images"
+                // Open directory handle for "images"
                 $handle = opendir(__DIR__ . '/images');
 
                 // Array to store image filename(s)
@@ -38,11 +38,11 @@
                     if (!in_array($extension, $allowedExtensions)) continue;
 
                     // Get content from corresponding text file of the same filename
-                    $textFile = str_replace(".jpg", ".txt", $currentFile);
-                    $sourceText = file_get_contents(__DIR__ . "/images/" . $textFile);
+                    $imageText = str_replace(".jpg", ".txt", $currentFile);
+                    $content = file_get_contents(__DIR__ . "/images/" . $imageText);
 
                     // Assign content to its corresponding image (key)
-                    $images[$currentFile] = $sourceText;
+                    $images[$currentFile] = $content;
 
                 endwhile;
 
