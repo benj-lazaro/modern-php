@@ -1,0 +1,3 @@
+Render Text Data On The Website: Sample Solution 03
+---------------------------------------------------
+- Third part of the author's implementation for the exercise
