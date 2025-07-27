@@ -1,0 +1,4 @@
+Read Text Data For Image Descriptions: Sample Solution 01
+---------------------------------------------------------
+- Author's first part of the author's implementation for the exercise
+
