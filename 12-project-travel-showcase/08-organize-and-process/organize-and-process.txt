@@ -1,0 +1,3 @@
+Organize And Process Text Data Effectively: Sample Solution 02
+--------------------------------------------------------------
+- Second part of the author's implementation for the exercise
