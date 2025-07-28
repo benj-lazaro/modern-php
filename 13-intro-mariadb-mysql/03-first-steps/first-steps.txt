@@ -1,0 +1,99 @@
+First Steps With phpMyAdmin: Create New Databases And Store Data
+----------------------------------------------------------------
+- Before creating a new database
+    - First launch the phpMyAdmin application
+        - This is written in PHP & bundled together with XAMPP
+        - It allows to manage databases easily
+
+    - To launch the phpMyAdmin
+        - Ensure that XAMPP's "MySQL" service is running
+
+        - Open a new browser tab
+            - Enter the following URL and then press "ENTER"
+            - URL (http://localhost/phpmyadmin)
+
+        - The phpMyAdmin application is loaded
+            - At center-top of the page
+                - Displays "Service: localhost"
+
+            - On the "Database Service" window tab
+                - The "Server type" field has the value of "MariaDB"
+
+
+- To create a new database            
+    - Click on the tab "Databases
+        - Click on the button "Create database"
+    
+    - On the text field with the placeholder text "Database name"
+        - Type the name of the new database
+        
+        - NOTE: Best practice to use "_" for separating
+            - Multiple words used in the name
+            - e.g. "language_school"
+
+    - Click the button "Create
+        - Creates the database
+
+        - At the phpMyAdmin's top-center bar is updated with
+            - "Database: <name_of_the_created_database>"
+
+        - At the phpMyAdmin's left side panel
+            - The name of the created database is added
+            - NOTE: Clicking the name automatically loads the database
+
+
+- To create a new database table
+    - On the field "Table name"
+        - Provide the name of the table
+    
+    - On the filed "Number of columns"
+        - Provide the number of columns that the table will use
+
+    - Click the button "Create"
+
+    - Database table is created
+        - With the specified number of unnamed columns
+
+    - On the field "Name"
+        - Type the name of the column
+
+        - NOTE: Best practice to
+            - Use lowercase 
+            - Use "_" for separating multiple words used
+                - e.g. "language_school"
+
+    - On the field "Type"
+        - Select the data type representing the data for that column
+        - e.g. "VARCHAR" stores text with specified length
+
+    - On the field "Length/Values"
+        - Provide the length or initial value of the expected data
+        - NOTE: This is dependent on the data type chosen
+
+    - Scroll down to the bottom of the page
+        - Click the button "Save"
+
+    - At the phpMyAdmin's left side panel
+        - The name of the database table is added
+
+    - At the phpMyAdmin's tab window "Structure"
+        - The fields of the created table are displayed
+
+
+- To insert data into the database table
+    - Click the tab "Insert"
+
+    - Manually enter the data into the "Value" field
+        - Of the individual columns / fields
+
+    - To save the data
+        - Scroll down to the bottom of the page
+        - Click the button "Go"
+    
+    - Page refreshes
+        - Notifies that "1 row inserted"
+
+
+- To view the inserted data in the database table
+    - Click the button "Browse"
+
