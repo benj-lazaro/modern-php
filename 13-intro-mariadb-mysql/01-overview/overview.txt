@@ -1,0 +1,28 @@
+Overview
+--------
+- This section focuses on
+    - Exploring databases
+
+    - Why it is needed
+        - CRUD (Create, Read, Update & Delete data)
+        - Filter, group & sort the data
+
+    - How to 
+        - Keep a database consistent
+        - Prevent simultaneous writes
+        - Avoid simultaneous updates
+
+    - MySQL / MariaDB realtional database
+        - MySQL was bought by Oracle
+        
+        - Open source developers forked MySQL into MariaDB
+            - Have since been independently developed from MySQL
+
+        - Difference between the two 
+            - Are based on their advanced features
+            - Features that are generally irrelevant for application development
+            - Other than that, these two are completely interchangeable
+    
+    - Thinking of a database as an Microsoft Excel spreadsheet document
+        - Accessing data using specific commands
+    
