@@ -1,0 +1,14 @@
+Foundations: From Excel Spreadsheet To Database Tables
+------------------------------------------------------
+- An Excel spreadsheet is basically equivalent
+    - To a MySQL / MariaDB database table
+
+
+- The named column header of a sheet is equivalent
+    - To a MySQL / MariaDB database field
+
+
+- The act of defining or naming a column is equivalent
+    - To defining the schema of the data to be stored
+        - That will be stored on said column(s)
+
