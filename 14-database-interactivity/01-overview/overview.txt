@@ -1,0 +1,12 @@
+Overview
+--------
+- This section focuses on
+    - How to connect a database from PHP
+
+    - Writing database queries using SQL
+
+    - Work on a project
+        - Create a table named "notes" using phpMyAdmin
+        - Insert data into the table
+        - Use PHP to connect to the database
+        - Read the records into PHP from the database table
