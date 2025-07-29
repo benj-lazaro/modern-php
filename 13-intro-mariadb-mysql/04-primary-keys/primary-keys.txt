@@ -1,0 +1,129 @@
+Primary Keys: Ensure Data Integrity With Unique ID Columns 
+----------------------------------------------------------
+- The creation of two (2) entries (records) in the table "users" have prompted the notification
+
+    "Current selection does not contain a unique column"
+
+
+- A "unique column" refers to a column that does NOT have duplicate entries
+    - Without it, both MySQL / MariaDB and phpMyAdmin are unable
+        - To determine which record is selected by the user
+        - To perform a database-related opertion (i.e. copy, edit or delete)
+
+    - The data stored on this column is referred as a "Primary Key"
+
+
+- To create a "unique column"
+    - Click the tab "Structure"
+
+    - At the bottom of the section "Table Structure"
+        - On the field "Add"
+            - Leave the default value of 1
+
+        - On the field "column(s)"
+            - Select the item "at beginning of table"
+
+        - Click the button "Go"
+
+
+    - Loads the page of the tab "Insert"
+        - On the field "Name"
+            - Type "id" (for this example)
+
+        - On the field "Type"
+            - Leave the default value of "INT"
+
+        - On the field "Length/Values"
+            - Type the value of 11
+
+        - Click the button "Save"
+
+
+    - Loads the page of the tab "Structure"
+        - Displays the notification
+
+            "Table <name> has been altered successfully"
+
+        - Click the button "Browse"
+    
+    
+    - Loads the page of the tab "Browse"
+        - The added column has been inserted
+
+        - The column "id" of ALL records are assigned with
+            - The default value of 0
+            
+        - NOTE: This makes the column "id" NOT a "unique column"
+    
+
+    - To remove the assigned default value of 0 from ALL records of the column "id"
+        - Click the tab "Operations"
+
+        - Scroll down to the section "Delete data or table"
+            - Click the link "Empty the table (TRUNCATE)"
+            - NOTE: This deletes ALL records whike keeping the structure intact
+
+        - Loads the window "Confirm"
+            - Click the button "OK"
+
+        - Loads the page of the tab "Operations"
+            - Displays the notification
+
+                "MySQL returned an empty set"
+
+        - Click the tab "Browse"
+            - Note that ALL entries of the table have been deleted
+
+
+    - Click the tab "Structure"
+        - Scroll down to the section "Indexes"
+
+        - On the field "Create an index on"
+            - Leave the default value of 1
+
+        - Click the button "Go"
+            - Loads the "Add index" window
+
+        - On the drop-down menu "Index choice"
+            - Select item "PRIMARY"
+
+            - Verify that the column "id" has been selected
+                - This column will serve as the Primary Index (or Primaty Key)
+                - That will contain a unique value (i.e. "unique column")
+
+            - Click the button "Go"
+
+        - Loads the page of the tab "Structure"
+            - The column "id" has now a yellow key icon besides it
+                - Indicating that this column will hold the Primary key for each record
+
+
+- To insert new set of data to the table
+    - Click the tab "Insert"
+
+    - On the column "id"
+        - Provide the value of 1 as value for the Primary Key
+
+    - On the column "firstname"
+        - Provide a first name
+
+    - On the column "lastname"
+        - Provide a last name
+
+    - On the column "email"
+        - Provide an email address
+
+    - On the column "phone"
+        - Provide a phone number
+
+    - Click the button "Go"
+
+    - Create another entry (record)
+        - NOTE: The increment the value by 1 
+            - For the Primary Key of the next entry (record)
+
+
+- With the presence of a Primary Key (or "unique column")
+    - It provides phpMyAdmin and MySQL / MariaDB the ability to
+        - Copy, edit or delete individual entries (or records)
+        - Without resorting to deleting (truncating) a table's entire content
