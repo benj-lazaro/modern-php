@@ -1,0 +1,40 @@
+Auto Increment: Generate Unique IDs With Ease
+---------------------------------------------
+- When adding a new record to the database table
+    - Requires manually assigning a unique value (i.e. Primary Key)
+        - To the "unique column" of a table
+
+    - Failing to do so will trigger an "Incorrect integer value" error
+        - Due to NOT assigning a unique integer value (i.e. Primary Key)
+            - To the designated "unique column"
+
+    - Assigning a duplicate "Primary Key" value 
+        - Triggers a "Duplicate entry" error
+        - Indicating that said "Primary Key" already assigned to a pre-existing record
+
+
+- To address the need of manually assigning a "Primary Key"
+    - When adding a new record to the database table
+
+    - Click the tab "Structure"
+    
+    - On the designated "unique column"
+        - Click the link "Change"
+
+    - Loads the page containing the properties of the "unique column"
+        - Click the checkbox "AUTO_INCREMENT"
+        - Click the button "Save"
+
+    - Loads the page of the tab "Structure"
+        - The "unique column" has an "AUTO_INCREMENT" value
+            - Assigned on its "Extra" column
+
+        - This meant that the "Primary Key" will be automatically generated
+            - Incrementing the previous value of the "Primary Key" value by 1
+
+
+- Inserting a new record into the database table
+    - Ignoring to manually provide a "Primary Key"
+        - Will NOT result to an error
+        - Instead MySQL / MariaDB will automatically generated & assign one
+
