@@ -1,0 +1,41 @@
+Export & Import Files In phpMyAdmin 
+-----------------------------------
+- To export a database table from the MySQL database using phpMyAdmin
+    - Select the target database table
+
+    - Click the tab "Export"
+        - Loads the corresponding page
+
+    - On the section "Format"
+        - Choose the file type
+            - By default, the item "SQL" is selected
+
+    - Click the button "Export"
+        - The database table is exported into the local filesystem
+
+        - If the default format has been selected
+            - The exported file has the file extension ".sql"
+
+
+- To import an (exportd) database table file into a MySQL database
+    - Select the target database
+
+    - Click the tab "Import"
+        - Loads the corresponding page
+
+    - On the section "File to import"
+        - Click on the button "Browse"
+
+        - Select the exported file (.sql)
+
+    - Scroll down to the bottom of the page
+        - Click on the button "Import"
+
+        - Displays a notification
+
+            "Import has been successfully finished, ... queries executed."
+
+    - Click the tab "Structure"
+        - The imported table has been added into the database
+
+    
