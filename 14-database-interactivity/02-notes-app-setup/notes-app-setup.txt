@@ -1,0 +1,30 @@
+Setting Up The Database And Table For The Notes App
+---------------------------------------------------
+- Setup the database for the notes app project using the phpMyAdmin
+    - Create a new database named "note_app"
+
+    - NOTE: Make sure that the encoding is set to "utf8mb4_general_ci" (default value)
+        - Ensures that data like emojis will work seemlessly
+
+
+- Create a new database table named "notes"
+    - Name the 1st column "id"
+        - Type of "INT"
+        - Length of 11
+        - Index type of "PRIMARY"
+        - Enable auto-increment
+
+    - Name the 2nd column "title"
+        - Type of "VARCHAR"
+        - Length of 100
+
+    - Name the 3rd column "content"
+        - Type of "VARCHAR"
+        - Length of 1000
+
+    - Save the changes
+
+
+- Insert data into the database table "notes"
+    - NOTE: See attached file for the content
+
