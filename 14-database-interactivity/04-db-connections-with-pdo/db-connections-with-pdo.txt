@@ -1,0 +1,63 @@
+Database Connections With PDO: Initialization & Best Practices
+--------------------------------------------------------------
+- To connect a MySQL / MariaDB database from PHP
+    - Requires using the PDO (PHP Data Objects) class
+    
+    - Offers a flexible and modern-way of accessing a SQL database
+
+    - The instantiated object represents the database connection    
+
+    - Reference (https://www.php.net/manual/en/class.pdo.php)
+
+
+- To establish a connection to a MySQL / MariaDB database
+    - Instantiate the class PDO() to a variable "$pdo"
+        - NOTE: It is considered best practice to use the variable name "$pdo"
+
+    - Pass the following arguments to the class PDO()
+
+    - The argument "mysql:host="
+        - Identifies as a MySQL / MariaDB database connection
+
+        - The ":host" part identifies as either a local or remote database
+            - For local database, assign the value "localhost"
+
+        - End with the ";" character as a separator
+
+    - The arugment "dbname="
+        - Identifies the name of the MySQL / MariaDB database to access
+        - Followed by the ending " character
+        - And then a "," 
+
+        $foo = new PDO("mysql:host=<localhost_or_remote>; dbname=<db_name>", );
+
+    - Next pass the username authorized to access the MySQL / MariaDB database
+        - Enclosed in ""
+        - Followed by a ","
+
+    - Then the password of the said username
+        - Also enclosed in ""
+        - Followed by a ","
+
+        $foo = new PDO("mysql:host=<localhost_or_remote>; dbname=<db_name>", "<username>", "<password>", );
+
+    - Lastly, pass additional attributes that defines
+        - How PHP should behave in the event that the connection failed
+        
+        - Attributes are enclosed within a pair of "[ ]"
+
+            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+
+        - Informs PHP to flag a fatal error when the database connection fails
+
+        $foo = new PDO("mysql:host=<localhost_or_remote>; dbname=<db_name>", '<user_name>', '<user_password>', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+
+Syntax:
+
+$foo = new PDO("mysql:host=<localhost_or_remote>; dbname=<db_name>", '<user_name>', '<user_password>', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+
+Example:
+
+$pdo = new PDO("mysql:host=localhost; dbname=note_app", 'root', '', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
