@@ -1,0 +1,52 @@
+Object Orientation In PHP: Manage Zip Files With Methods
+--------------------------------------------------------
+- Before learning how to connect PHP to a MySQL / MariaDB database
+    - Important to learn how object oriented syntax works in PHP
+
+        <object_name>-><method_name>();
+
+
+- The ZipArchive() is a PHP built-in class that
+    - Archives a file (or folder)
+    - Compresses using Zip
+    - Instantiated object represents a Zip archive file
+    - Reference (https://www.php.net/manual/en/class.ziparchive.php)
+
+
+- The ZipArchive method "open()"
+    - Opens an existing Zip archive for reading, writing or modifying
+    - Reference (https://www.php.net/manual/en/ziparchive.open.php)
+
+
+- The ZipArchive method "count()"
+    - Counts the number of files in the Zip archive
+    - Reference (https://www.php.net/manual/en/ziparchive.count.php)
+
+
+- The ZipArchive method "getNameIndex()"
+    - Returns the name of an entry (file) using its index
+    - Reference (https://www.php.net/manual/en/ziparchive.getnameindex.php)
+
+
+- The ZipArchive method "getFromName()"
+    - Returns the entry's (file) content using its name as argument value
+    - Reference (https://www.php.net/manual/en/ziparchive.getfromname.php)
+
+- The ZipArchive method "close()"
+    - Closes the active Zip archive (opened or newly created)
+    - Reference (https://www.php.net/manual/en/ziparchive.close.php)
+
+
+Syntax:
+
+$foo = new ZipArchive();
+
+$foo->open(<filename.zip>, [<flags>]);
+
+$foo->count();
+
+$foo->getNameIndex(<index_value>);
+
+$foo->getFromName(<filename>);
+
+$foo-close();
