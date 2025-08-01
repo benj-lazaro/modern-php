@@ -1,0 +1,19 @@
+Data Retrieval With PDO: Fetch Data From A Database
+---------------------------------------------------
+- To send the first query to the database server
+    - Use the PDO method "prepare()"
+        - Prepares a statement (or query string) for execution
+        - If successful, returns a PDOStatement object
+        - Reference (https://www.php.net/manual/en/pdo.prepare.php)
+
+    - Use the PDO method "execute()"
+        - To execute the prepared statement
+        - Returns "true" if successful, otherwise "false"
+        - Reference (https://www.php.net/manual/en/pdostatement.execute.php)
+
+
+    - Use the PDF method "fetchAll()"
+        - To fetched the remaining rows from a result statement
+        - Returns an array
+        - Reference (https://www.php.net/manual/en/pdostatement.fetchall.php)
+
