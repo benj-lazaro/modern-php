@@ -1,0 +1,30 @@
+Test Your Knowledge Of Database Connectivity With PDO
+----------------------------------------------------- 
+- What is a method in the context of objects in PHP in the most general sense?
+    - Answer: A function that can access or change the internal state of an objects
+
+
+- What does the PHP code initialize?
+
+    $pdo = new PDO('mysql:host=localhost;dbname=db', 'root', '');
+
+    - Answer: A connection to a database
+
+
+- What does the symbol -> represent in the 
+    - PHP code $pdo->prepare('SELECT * FROM `data`');
+    - Where $pdo contains a PDO object initialized as
+
+    $pdo = new PDO('mysql:host=localhost;dbname=db', 'root', ''); ?  
+
+    - Answer; The operator used to access the "prepare()" method of the $pdo object
+
+
+- Assuming you have successfully established a PDO connection
+    - Wow do you retrieve all data from the table users 
+    - And save it into a variable $data?
+
+    - Answer:
+        $stmt = $pdo->prepare("SELECT * FROM `users`");
+        $stmt.execute();
+        $data = $stmt->fetchAll();
