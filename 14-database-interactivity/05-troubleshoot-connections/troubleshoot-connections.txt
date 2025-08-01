@@ -1,0 +1,42 @@
+Troubleshooting Database Connections With PDO
+---------------------------------------------
+- On both Linux & MacOS
+    - PHP uses the following to connect to a database server
+        - Local     = using "localhost" or 127.0.0.1
+        - Remote    = using the database server's IPv4 address
+
+    - Difference between "localhost" and 127.0.0.1
+        - The former is a virtual file that
+            - Does NOT send network packets to the database server
+        
+        - While the  latter does send network packets 
+
+
+- On Windows OS
+    - PHP uses the same connection methods to a database server
+
+    - Except that the MySQL / MariaDB application 
+        - Does NOT support sockets
+        - It ALWAYS send network packets when accessing the database server
+
+
+- IMPORTANT: When accessing a locally hosted database server
+    - Use 127.0.0.1 for the "host" parameter instead of "localhost"
+        
+
+- The user account "root" may have been configured differently
+    - When accessing a locally hosted database server using "localhost" and 127.0.0.1
+
+    - In some cases, "root" may have access to one method but NOT BOTH
+        - XAMPP has been configured the user account "root" to work on BOTH
+
+    - NOTE: The first to check when accessing a locally hosted database server
+        - Particularly when the user account "root" is used
+
+    - NOTE: On other development platforms besides XAMPP
+        - The user account "root" may have been assigned with a password
+        
+        - This is evident when flagged with the following error
+
+            "Fatal error: Uncaught PDOException: ... access denied"
+    
