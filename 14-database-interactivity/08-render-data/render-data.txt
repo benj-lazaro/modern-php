@@ -1,0 +1,20 @@
+Rendering Fetched Data As HTML: Enhance Readability And Security
+----------------------------------------------------------------
+- By default, the PDO method "fetchAll()"
+    - Returns all of the data as an array
+    - However, the array contains duplicate elements
+        - An element accessible using a string key
+        - An element accessible using a numeric index
+
+    - NOTE: The returned array requires additional memory
+        - Best to inform PDO to return an Associative array
+            - Whose elements are accessible using a string key
+        
+        - This is done by passing the arguement value "PDO::FETCH_ASSOC" 
+            - To the PDO method "fetchAll()"
+            - Returns an array with elements accessible via string key
+
+
+- Use a "foreach()" loop to iterate through the fetched data
+    - Pick specific elements using the corresponding string key
+ 
