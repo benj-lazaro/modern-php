@@ -1,0 +1,28 @@
+SQL Query Basics: Utilize ORDER BY Clause & SELECT Specific Columns 
+-------------------------------------------------------------------
+- Fine tuning the SQL query statement
+    - By default, data are sorted by Primary Key
+    - Data can be sorted according to the column names of the table
+
+
+- The SQL keyword "SELECT *" with the clause "FROM <database_table>"
+    - Collect records from the specified database table
+        - The "*" refers to ALL records
+        - Mutiple specific column names can be selected; separated by a ,
+
+    - The clause "ORDER BY <column_name>"
+        - Sorts the records according to the selected column name
+
+    - The clause "ASC" and "DESC" sorts the records in ascending / descending order
+        - The "ASC"     = sort by ascending order
+        - The "DESC"    = sort by descending order
+
+    - NOTE: It is best practice to enclose the table & column names
+        - Within a pair of backticks ` `
+        - NOT a pair of single quotes ' '
+
+        - This helps the SQL identify a keyword / clause
+            - From an identical database / column name
+
+    - NOTE: It is best practice to write SQL keywords & clauses in uppercase
+        - For readability purposes
