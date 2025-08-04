@@ -1,0 +1,10 @@
+Filter Data With the WHERE Clause & Fetch Individual Entries With PDO
+---------------------------------------------------------------------
+- To filter and fetch an individual record using the WHERE clause
+    - Executes the SQL statement with PDO method "execute()"
+
+    - Fetch the 1st element from the returned array using the PDO method "fetch()"
+        - Passing the value "PDO::FETCH_ASSOC" as argument
+
+    - This offers an efficiency way to fetch specific records than
+        - Parsing through every record stored in a table of a database
