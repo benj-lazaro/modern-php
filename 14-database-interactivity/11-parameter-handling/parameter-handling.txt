@@ -1,0 +1,39 @@
+Secure Parameter Handling In PDO: Prevent SQL Injection With Bind Methods
+-------------------------------------------------------------------------
+- To prevent SQL injection when working with $_GET parameter
+    - It is NOT SAFE
+        - To directly pass the $_GET parameter value as part of the SQL statement
+            - That will be passed as argument value to the method "prepare()"
+
+        - To use a pair of " " in the SQL statement
+            - As it allows to use variable name substitution
+            - Use a pair of ' ' instead
+
+    - It is BEST
+        - To use a placeholder to represent the $_GET parameter value instead
+            - In said SQL statement 
+
+        - On the separate line
+            - Call the PDO method "bindValue()"
+
+            - Pass both the placeholder and the $_GET parameter names as argument values
+                - PDO binds the value of the $_GET parameter to the placeholder name
+
+            - Due to the nuance of the SQL
+                - It truncates any additional characters in the value of the $_GET parameter
+                - Leaving behind the first (and intended) value
+                - Effectively preventing an SQL injection
+
+                - Equivalent to executing the following SQL statement in the database server
+
+                    SELECT <record> FROM <table> WHERE <column_name> = '<value>';
+
+            - NOTE: Typecasting the $_GET parameter name (within bindValue())
+                - Offers an added layer of security
+                - ONLY IF the value is of data type 'int'
+
+        - On the separate line
+            - Call the PDO method "execute()"
+        
+            - PDO passes the SQL statement to the database server
+
