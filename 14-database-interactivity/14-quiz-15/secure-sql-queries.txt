@@ -1,0 +1,66 @@
+Quiz 15: Test Your Knowledge Of Secure SQL Queries In PDO 
+---------------------------------------------------------
+- Given the following simple database table named 'products', which contains information about ecommerce products:
+
+    | product_id | name           | category     | price | stock |
+    |------------|----------------|--------------|-------|-------|
+    | 1          | Coffee Mug     | Kitchen      | 15.99 | 34    |
+    | 2          | Travel Pillow  | Travel       | 29.99 | 15    |
+    | 3          | Wireless Mouse | Electronics  | 59.99 | 20    |
+
+    - Consider the SQL query:
+
+        SELECT name FROM `products` WHERE stock < 25 ORDER BY stock DESC;
+
+    - What data will this query retrieve from the products table?
+
+    - Answer: Wireless Mouse and Travel Pillow, in that ORDER
+
+
+- Given the PHP code snippet below, which retrieves data from a products table based on user input:
+
+    $category = $_GET['category'];
+
+    $query = "SELECT `price` FROM `products` WHERE `category` = $category";
+
+    - This code intends to select product prices based on a category 
+        - Provided by the user through a URL parameter 
+        - What major issue does this approach introduce?
+
+    - Answer: SQL injection, allowing attackers to manipulate the query to access / alter database information
+
+
+- Given the task to retrieve product prices from a products table 
+    - Based on a category provided by the user through a URL parameter
+    - Which of the following approaches correctly prevents SQL injection, where
+
+        $category = $_GET['category']; ?
+
+    - Answer: $stmt = pdo->prepare('SELECT `price` FROM `products` WHERE `category` = :category');
+
+
+- Given the original products table:
+
+    | product_id | name             | category    | price | stock |
+    |------------|------------------|-------------|-------|-------|
+    | 1          | Coffee Mug       | Kitchen     | 15.99 | 34    |
+    | 2          | Travel Pillow    | Travel      | 29.99 | 15    |
+    | 3          | Wireless Mouse   | Electronics | 59.99 | 20    |
+
+    - And performing the following SQL operations:
+
+        UPDATE `products` SET `price` = 18.99 WHERE `product_id` = 1;
+
+        DELETE FROM `products` WHERE product_id = 2;
+
+        INSERT INTO `products` (`product_id`, `name`, `category`, `price`, `stock`) VALUES (4, 'Bluetooth Speaker', 'Electronics', 45.99, 12);
+
+    - How does the products table look after these operations?
+
+    - Answer: 
+
+    | product_id | name             | category    | price | stock |
+    |------------|------------------|-------------|-------|-------|
+    | 1          | Coffee Mug       | Kitchen     | 15.99 | 34    |
+    | 3          | Wireless Mouse   | Electronics | 59.99 | 20    |
+    | 4          | Bluetooth Speaker| Electronics | 45.99 | 12    |
