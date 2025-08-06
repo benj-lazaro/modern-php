@@ -1,0 +1,6 @@
+Insert Data Securely With INSERT INTO, Placeholders & The bindValue() Method
+----------------------------------------------------------------------------
+- To insert data securely into the database
+    - Using the clause INSERT INTO, placeholders and the PDO method "bindValue()"
+
+
