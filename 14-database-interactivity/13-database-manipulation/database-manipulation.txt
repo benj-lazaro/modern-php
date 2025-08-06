@@ -1,0 +1,6 @@
+Database Manipulation: Using UPDATE & DELETE FROM Securely
+----------------------------------------------------------
+- Using the clauses UPDATE and DELETE FROM
+    - For updating and deleting data respectively from a database table
+
+
