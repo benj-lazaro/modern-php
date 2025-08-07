@@ -1,0 +1,57 @@
+Prevent Leakage Of Database Connection Information In Older (<= 8.1) PHP Versions
+---------------------------------------------------------------------------------
+- The following security concern is ONLY applicable for PHP versions 8.1 and below
+    - Use the function "phpinfo()" to verify the PHP version running on the server (local/remote)
+
+
+- The problem
+    - PHP complains when it encounters a problem when connecting to a database
+        - Flags a "Fatal Error: Uncaught PDOException"
+        - Partially shows the database server's IP address
+        - Shows the user account
+        - Does NOT show the user password i.e. "Object(SensitiveParameterValue)"
+
+    - On older PHP versions
+        - Flags a "Fatal Error: Uncaught PDOException"
+        - The actual user password is displayed (leaked)
+
+        - Likely to occur when a database connection has been distrupted due to
+            - Database update
+            - Network related incident
+            - Running complex queries that overloaded the database
+            - DDoS attack
+
+
+- To address this concern
+    - Solution #1 
+        - Update the installed PHP to version to 8.2
+
+    - Solution #2 
+        - Refactor the PHP code responsible for connecting to the database server
+            - Using a try..catch block
+
+        - Inside the "try" block
+            - Place the code for connecting to the database server 
+
+        - On the "catch" block
+            - Pass the targeted error message (i.e. PDOException) as argument value
+                - Along with the variable (e.g. $err) that will contain error message object
+
+        - Inside the "catch" block
+            - Terminate the execution of the PHP program using the function "die()"
+
+            - This prevents the error "Fatal Error: Uncaught PDOException"
+                - From being rendered on the HTML document
+                - That contains sensitive Information
+
+        - NOTE: On the development standpoint
+            - This is annoying as it strips any debugging information
+                - However, helpful for production deployment
+
+            - Potential workarounds
+                - Call the method "getMessage()" of the error message object
+                    - Pass it as an argument value to "var_dump()"
+                    - Returns from information without revealing the user password
+
+                - Simply insert an "echo()" statement
+                    - Providing some simple information about database connection problem
