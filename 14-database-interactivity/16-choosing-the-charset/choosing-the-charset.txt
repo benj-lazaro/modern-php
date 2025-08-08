@@ -1,0 +1,28 @@
+Choosing The Charset: Ensure The Compatibility With utf8mb4 Encoding
+--------------------------------------------------------------------
+- When connecting to a database, adding an additional parameter "charset"
+    - Assign the value "utf8mb4" (NOT the utf8)
+    
+    - Placed right after the parameter "dbname"
+        - Separated by a ;
+
+         $pdo = new PDO('mysql:host=<ip_address>; dbname=<db_name>; charset=utf8mb4', '<username>', '<password>', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+    - This allows for content like emojis or character from different langguages 
+        - To be saved as content to a record of the database
+
+    - NOTE: XAMPP has the charset set to "utf8mb4" by default
+        - Best practice to EXPLICITLY set the parameter "charset"
+        - The "charset" of a live production PHP server may be configured differently
+    
+    - To verify that if a database field supports the "utf8mb4" charset on phpMyAdmin
+        - Click the tab "Structure"
+        
+        - On the column "Collation"
+            - It should be assigned with the value of "utf8mb4_general_ci"
+
+        - If needed to modify the current value
+            - Click the button "Change"
+            - Select the corresponding value for the "Collation" field
+            - Click the button "Save
+
