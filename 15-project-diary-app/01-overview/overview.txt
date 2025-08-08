@@ -1,0 +1,12 @@
+Overview
+--------
+- This section focuses on
+    - Creating a PHP Diary app
+
+    - A diary that keeps track on one's PHP (development) journey
+        - Among other things
+
+    - This project is divided into two (2) parts
+        - This section focuses on the frontend (HTML & CSS)
+        - The succeeding section focuses on the backend (PHP)
+
