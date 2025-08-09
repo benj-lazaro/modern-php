@@ -1,0 +1,21 @@
+Design Files
+------------
+- Design files have been provided as part of the starter kit
+
+
+- The initial design was made using Adobe Illustrator
+    - Include designs for the main & form pages
+        - Saved with the file extension ".ai"
+        - Stored in the folder "illustrator" 
+    
+    - The Adobe Illustrator files have been 
+        - Exported as ".jpg" files
+        - Stored in the folder "jpg/"
+    
+    - Elements from the design files (e.g. background, buttons)
+        - Have been exported as ".svg" files
+        - Stored in the folder "export/svg/"
+
+    - Images from the design files
+        - Have been exported as ".jpg" files
+        - Stored in the folder "images/"
