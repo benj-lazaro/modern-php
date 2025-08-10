@@ -1,0 +1,16 @@
+Starting With The Design
+------------------------
+- Starter files includes 
+    - A "normalize.css" file
+        - A modern, HTML5-ready alternative to CSS resets
+        - Renders ALL elements to be MORE consistent on ALL modern browsers
+        - Targets ONLY the styles that NEED normalizing
+        - Website (https://necolas.github.io/normalize.css/)
+
+    - A custom "styles.css" file
+        - Initial CSS selectors for the project
+
+
+- Implement the initial design for the navigation bar
+    - Configure the Class & Element Selectors in CSS (styles.css)
+
