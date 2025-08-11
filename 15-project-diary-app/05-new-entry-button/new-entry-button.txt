@@ -1,0 +1,3 @@
+Create The "New Entry" Button
+-----------------------------
+- Creating the "New Entry" button on the navigation bar
