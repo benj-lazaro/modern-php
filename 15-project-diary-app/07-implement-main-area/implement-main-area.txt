@@ -1,0 +1,12 @@
+Implement The Main Area
+-----------------------
+- Implement the main area of the web application
+    - Based on the given design specifications
+
+    - NOTE: The "rem" is depedent on the root element's font size
+        - 1 rem = 16 pixels
+        
+        - Increasing the "rem" values automatically increseas
+            - The proportions of child elements accordingly
+
+        - The "em" is dependent on the current font size
