@@ -1,0 +1,5 @@
+Position The Button
+-------------------
+- Implementing Flexbox to reposition both
+    - The app logo and the "New Entry" button on the same navigation bar
+
