@@ -1,0 +1,33 @@
+Create A Container
+------------------
+- Implement a container for the web application's main area
+    - It will contain all of the cards to be implemented later
+        - Limits the width of its child element(s)
+
+    - NOTE: CSS property "box-sizing" with value of "border-box"
+        - Automatically resizes child / targeted element's width
+            - In relation to the element's border
+
+        - If the child element's "width" is set to 100%
+            - The child element content will be resized
+            - To fit within its borders
+            - Instead of expanding outwards (i.e. "box-sizing: content-box")
+
+
+- Implement the same container on the contents of the nav bar
+    - NOTE: NOT the nav bar rather its children instead
+
+    - This breaks the placement orientation of the child elements
+        - Due to the HTML element <nav> being configured as a flexbox container
+
+    - Move the flexbox configuration from the CSS Element selector "nav"
+        - Transfer into a new CSS Class selector named "nav__layout"
+
+    - Declare a new child HTML element <div> inside the <div> with the class of "container"
+        - Declare the HTML attribute "class"
+        - Assign the value "nav__layout"
+
+    - Move the child element of the HTML element <div> with the class "container"
+        - Into the child HTML <div> with the class "nav__layout"
+
+    - Save the changes
