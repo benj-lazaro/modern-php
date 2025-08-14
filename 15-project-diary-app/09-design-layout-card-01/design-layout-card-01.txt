@@ -1,0 +1,6 @@
+Design The Layout Of The Card Part 01
+-------------------------------------
+- Start implementing the intended design layout for the web application's cards
+    - HTML element <div> with the attribute "class" of "card"
+    - Adding an image and descriptive content within each card
+    
