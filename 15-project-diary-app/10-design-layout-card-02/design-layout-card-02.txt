@@ -1,0 +1,4 @@
+Design The Layout Of The Card Part 02
+-------------------------------------
+- Continuation of implementing the design layout of the cards
+    - Focused on styling the card's time description, heading & paragraph
