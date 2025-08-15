@@ -1,0 +1,8 @@
+Responsive Design
+-----------------
+- Implement the smartphone version of the web app
+    - Test resolution: 375 x 812 (iPhone 11 Pro)
+
+    - NOTE: Modern-day web design is mobile first
+        - Prior to the desktop based design layout
+        - NOT an absolute MUST but preferred
