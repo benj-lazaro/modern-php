@@ -1,0 +1,3 @@
+Design The Layout Of The Card Part 03
+-------------------------------------
+- Final implementation of the cards' design Layout
