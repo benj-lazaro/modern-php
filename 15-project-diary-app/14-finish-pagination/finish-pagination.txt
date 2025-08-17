@@ -1,0 +1,6 @@
+Finish Pagination
+-----------------
+- Complete the pagination bar of the web application
+    - Implement the hover effect
+    - Implement the "active page" pagination button color theme
+    
