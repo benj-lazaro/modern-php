@@ -1,0 +1,7 @@
+Add The Background Part 02
+--------------------------
+- Implement the final implementation for the background image
+    - Change the opacity level
+    - Move it behind the HTML element <main>
+    - Mirror the background image on the left to the right side
+
