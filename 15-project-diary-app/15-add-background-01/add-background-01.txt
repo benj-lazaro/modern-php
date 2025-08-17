@@ -1,0 +1,23 @@
+Add The Background Part 01
+--------------------------
+- Implementing the background image presented on the web application
+    - As presented in the initial design concept
+
+    - The background image is available as ".svg" file format
+        - Located at starter folder "export/svg"
+        - Filename "bg-lines.svg"
+
+    - Open the file with a text editor
+        - Change the value of property "opacity"
+        - From 0.1 to 1
+    
+    - Implement the background in the HTML element <main>
+        - Assign a HTML attribute "class"
+            - With the value of "main"
+
+        - Then assign a pseudo element "::before"
+            - To load the background image
+            - Prior to rendering the rest of the elements
+
+    - Implement CSS styling
+        - To implment the positioning of the background image
