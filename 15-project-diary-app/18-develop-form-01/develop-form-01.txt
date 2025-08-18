@@ -1,0 +1,5 @@
+Develop The Form Part 01
+------------------------
+- Initial implementation of the form design in the web application
+    - Create the corresponding "form.html" for the "New entry" button
+
