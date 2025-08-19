@@ -1,0 +1,3 @@
+Finishing Touches
+-----------------
+- Implement final polishing on the web application's front-end
