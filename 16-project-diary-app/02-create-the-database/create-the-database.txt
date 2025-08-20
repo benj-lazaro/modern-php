@@ -1,0 +1,27 @@
+Create The Database
+-------------------
+- Using phpMyAdmin to create a database
+    - Named as "diary"
+
+
+- Create a table named "entries" with the following fields
+    - A field named "id" 
+        - It is a data type of "int" 
+        - It has a length of 11 characters
+        - It is designated as a Primary Index (Key)
+        - It "auto-increments"
+
+    - A field named "title"
+        - It is a data type of "varchar"
+        - It has a length of 1023 characters
+
+    - A field named "message"
+        - It is a data type of "text"
+
+    - A field named "date"
+        - It is a data type of "date"
+
+
+- Insert an initial entry to the database
+    - Using the 1st entry rendered on the website
+
