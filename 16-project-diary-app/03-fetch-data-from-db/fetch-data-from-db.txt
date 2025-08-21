@@ -1,0 +1,21 @@
+Fetch Data From The Database
+----------------------------
+- Implement PHP code to fetch data from the MySQL database
+    - Rename the HTML documents' file extensions into ".php"
+    - Rename all link references to the previous HTML documents into PHP files
+
+
+- Create a new folder "inc"
+    - Contains PHP files that handles database connection & helper functions
+    - PHP file "db-connect.inc.php" handles database connection
+    - PHP file "functions.inc.php" is a collection of helper functions
+
+
+- Clean all the "cards" from "index.php"
+    - EXCEPT for the first card
+
+
+- Implement the "logic" in "index.php"
+    - Require the PHP files from the "inc/" folder
+    - Test database connectivity
+    
