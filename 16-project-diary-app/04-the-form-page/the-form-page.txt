@@ -1,0 +1,18 @@
+The Form Page
+-------------
+- Refactor the codebase to reduce redundant HTML markup for easy maintenance
+    - Seperate HTML markup from the header section up to a portion of the main container
+        - Then the footer section HTML markup
+    
+    - Each pasted into their respective individual files (.php)
+        - Stored into the directory named "views"
+
+    - Then require the sections back into the "index.php" and "form.php" files
+
+
+- Implement the initial data entry logic for the "form.php"
+    - Refactor the attribute "action" of the HTML element <form>
+        - From "index.html" to "index.php"
+    
+    - By doing so the submitted data will be processed
+        - By the logic that will be implemented
