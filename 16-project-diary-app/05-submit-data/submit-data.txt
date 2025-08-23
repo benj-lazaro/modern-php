@@ -1,0 +1,13 @@
+Submit Data Into The Database
+-----------------------------
+- Implement the logic to submit user data into the MySQL database
+
+
+- Implement error handling when working with an empty user entry
+    - Add the attribute "required" on the HTML element <input> of the "form.php"
+    - Serves as a data validation mechanism on the client-side
+    - Prevents users from submitting an empty entry
+
+
+- Manually redirect users (for now) back to "index.php"
+    - After submitting an entry to the MySQL database
