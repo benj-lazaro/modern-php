@@ -1,0 +1,29 @@
+Add Pagination
+--------------
+- To implement pagination in the web application
+    - First, define the entrie' sort order
+        - By default, MySQL database records are sorted based on their Primary ID
+    
+    - For the application's requirements
+        - Sort entries by date in descending order
+        - Then by their Primary ID, in the event of an entry with an identical date
+
+        SELECT * FROM `entries` ORDER BY `date` DESC, `id` DESC;
+
+    - Refactor the SQL statement in the "index.php"
+        - Implement the updated SQL statement
+
+
+- To limit the records fetched from the MySQL database
+    - Use the clause "LIMIT" followed by an integer that
+        - Represents the number of records to be fetched
+    
+        SELECT * FROM `entries` ORDER BY `date` DESC, `id` DESC LIMIT <num_of_records>;
+
+
+- To fetch suceeding records
+    - Use the clause "OFFSET" followed by an integer that
+        - Skips the specified number of records to be skipped
+
+        SELECT * FROM `entries` ORDER BY `date` DESC, `id` DESC LIMIT <num_of_records> OFFSET <records_to_skip>;
+
