@@ -1,0 +1,11 @@
+Generate Links
+--------------
+- Implement the logic (links) for the pagination buttons
+    - Need to find out how many records are currently stored in the database table
+        - Use the function COUNT()
+        - Pass the argument value "*" (i.e. all records in the database table)
+        - Returns an interger value that specifies the current number of records
+
+        SELECT COUNT(*) AS `count` FROM `entries`
+
+
