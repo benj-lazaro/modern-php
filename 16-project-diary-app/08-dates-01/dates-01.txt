@@ -1,0 +1,70 @@
+Dates Part 01
+-------------
+- Working with dates in PHP
+    - PHP provides a function named "time()"
+    - Alternatively, PHP offers another function named "microtime(true)"
+
+
+- PHP function "time()"
+    - Returns a integer (int) value that 
+        - Represents the current UNIX timestamp
+    
+    - It is measured in the number of seconds
+        - Since the Unix Epoch (01/01/1970 00:00:00 GMT)
+
+    - It consumes 32-bits or 4 bytes of storage
+        - To store a date
+
+    - Reference (https://www.php.net/manual/en/function.time.php)
+
+
+- PHP function "microtime()"
+    - Returns a string that 
+        - Represents the current UNIX timestamp with microseconds included
+        - Accurate to the nearest microsecond
+
+    - NOTE: Available ONLY on operating systems that 
+        - Supports the "gettimeofday()" system call (i.e. Linux & Mac OS machines)       
+        - On Windows OS machine, the clock may NOT be accurate
+
+    - Often used for performance measurement
+        - PHP Manual recommends using "hrtime()" instead
+
+    - Passing an argument value of "true"
+        - Returns a float instead of a string
+
+    - Reference (https://www.php.net/manual/en/function.microtime.php)
+
+
+- To convert the UNIX timestamp into a human-readable date
+    - First, PHP needs to inform which timezone it should operate in
+        - Using the function "date_default_timezone_set()"
+
+        - It accepts a string argument value representing the timezone ID
+            - Supported timezone IDs (https://www.php.net/manual/en/timezones.php)
+        
+        - It returns a boolean value
+            - A value of "false" meant that the given timezone is NOT VALID
+
+        - Reference (https://www.php.net/manual/en/function.date-default-timezone-set.php)
+
+    
+    - Next, ask PHP for the current date (and time)
+        - Using the function "date()"
+        
+        - Pass a format string as argument value; separated by a "-"
+            - Y = year
+            - m = month
+            - d = day
+            - H = 24-hour format 
+            - i = minutes
+            - s = seconds
+
+            - Date Time Interface format (https://www.php.net/manual/en/datetime.format.php)
+
+        - Returns the current date
+            - Based on the given format string
+
+        - Reference (https://www.php.net/manual/en/function.date.php)
+
+            
