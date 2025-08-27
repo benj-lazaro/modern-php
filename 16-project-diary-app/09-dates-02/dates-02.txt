@@ -1,0 +1,44 @@
+Dates Part 02
+-------------
+- To convert a human-readable date into a UNIX timestamp
+    - Use the function "mktime()"
+        - Pass the required argument values (human-readable date)
+        - Returns an integer value representing the UNIX timestamp
+    
+    - Reference (https://www.php.net/manual/en/function.mktime.php)
+
+
+- To determine the elapsed time between
+    - A previous (fixed) UNIX timestamp and a current timestamp
+
+    - Use the function "mktime()" to convert the fixed date-time
+        - Into a UNIX timestamp then store it in a variable
+
+    - Subtract the returned UNIX timestamp from the function "time()"
+        - With the variable storing the fixed UNIX timestamp
+
+
+- To format a UNIX timestamp into a preferred format
+    - Use the function "date()"
+        - Pass the preferred format as the 1st argument
+        - Pass the UNIX timestamp as the 2nd argument
+
+    - NOTE: Do set the preferred timezone first
+        - Using the function "date_default_timezone_set()"
+        - Pass the supported timezone as argument
+
+
+- To convert a string date into a UNIX timestamp
+    - Use the function "strtotime()"
+        - Pass the string date as argument
+        - Returns a UNIX timestamp
+    
+    - Reference (https://www.php.net/manual/en/function.strtotime.php)
+
+    - NOTE: It offers less control compared to the function "mktime()"
+        - A workaround is to explode the string using the function "explode()"
+            - Returns an array
+            - Store elements of the array into individual variables
+
+        - Pass the variables as arguments to the function "mktime()"
+            - Returns a UNIX timestamp
