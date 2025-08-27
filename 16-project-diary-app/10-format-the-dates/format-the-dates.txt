@@ -1,0 +1,16 @@
+Format The Dates
+----------------
+- Refactor the "index.php"
+    - Format the date timestamp of each entry fetched from the MySQL database
+
+
+- Use the function "explode()"
+    - To explode the string date fetched from the MySQL database
+        - Save each piece into their respective variables
+
+    - Pass the variables as arguments to the function "mktime()"
+        - Returns a UNIX timestamp
+
+    - Use the function "date()"
+        - To select the preferred date format as the 1st argument
+        - Pass the UNIX timestamp as the 2nd argument
