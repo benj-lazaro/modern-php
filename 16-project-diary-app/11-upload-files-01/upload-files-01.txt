@@ -1,0 +1,33 @@
+Upload Files Part 01
+--------------------
+- To upload a file to a server using the method "POST"
+    - ONLY uploads the filename but NOT the actual file
+    - Demonstrated by accessing the Associative array "$_POST"
+
+
+- Add the attribute "enctype" in the HTML element <form>
+    - Assign the value "multipart/form-data"
+    
+    - This informs the server how to submit the file to a server
+
+
+- To access details of the file after submission
+    - Access the Associative array "$_FILES", NOT "$_POST"
+
+    - Returns important details that can be used to perform post-submission checks
+        - Includes filename, path, file type, temporary name & file size
+    
+    - Reference (https://www.php.net/manual/en/reserved.variables.files.php)
+
+
+- Moving the submitted file from its temporary location to a new (secure) one
+    - Use the PHP function "move_uploaded_file()"
+
+    - Reference (https://www.php.net/manual/en/function.move-uploaded-file.php)
+
+    - NOTE: Check the new location's "read & write" permissions for "others"
+        - In order to successfully transfer the submitted file
+    
+    - IMPORTANT: To prevent from a harmful file from being executed remotely
+        - Implement file type checks
+        - Prevent unrecognized type from being moved 
