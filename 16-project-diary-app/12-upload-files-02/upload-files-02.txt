@@ -1,0 +1,42 @@
+Upload Files Part 02
+--------------------
+- Addressing the security problem on the previous section's implementation
+    - With the function "move_upload_files()" for uploading an image Files
+        - Previous implementation supports EVERY file type
+
+
+- To address this concern
+    - The easiest way is to simply rename the submitted file's filename & extension
+        - Using the function "time()"
+        
+        - Pass it as argument to the function "move_upload_files()"
+            - Force a new filename extension of ".jpg"
+
+    - Alternatively, retrieve the submitted file's filename without its extension
+        - Using the function "pathinfo()"
+            - Pass the file's filename as 1st argument
+            - Pass the flag 'PATHINFO_FILENAME" as 2nd argument
+            - Reference (https://www.php.net/manual/en/function.pathinfo.php)
+        
+        - Then perform a regular expression search & replace on the filename
+            - Using the function "preg_replace()"
+            - Reference (https://www.php.net/manual/en/function.preg-replace.php)
+        
+        - Search characters that is NOT
+            - A lowercase or uppercase 'a' to 'z'
+            - Number from 0 to 9
+        
+        - Replace the character with a '' if found
+            - Save the updated changes to a variable
+
+        - Then pass the variable as an argument to the function "move_upload_files()"
+            - Force a new filename extension of ".jpg"
+
+
+- Another issue of the previous implementation
+    - Uploading the same file twice, simply overwrites the old file
+
+
+- To address this concern
+    - Add a UNIX timestamp to every file that is being uploaded to the server
+    
