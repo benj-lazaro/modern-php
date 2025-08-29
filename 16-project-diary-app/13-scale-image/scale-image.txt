@@ -1,0 +1,122 @@
+How To Scale An Image
+---------------------
+- Implement code that scales an image down during an upload procedure
+    - This section focuses on opening an image
+    - Turning the image into a thumbnail
+
+
+- PHP offers "Imagick" class for manipulating image files
+    - Provides an OOP way of handling images
+        - Uses the "->" operator when accessing methods
+        - Similar to that of the "PDO" class when working on databases
+
+    - However, it is part of the PECL (PHP Excension Community Library)
+        - Meaning it is NOT available in the default (local) PHP installation
+            - Unlike the "PDO" class
+        
+        - Requires to manually install it
+        
+    - NOTE: To check, run the function "phpinfo()"
+        - Search of the word "Imagick"
+            - If installed "Imagick" details will be displayed
+        
+        - However, on most web hosting services that offers PHP support
+            - The class "Imagick" has reported to be installed
+
+    - Reference (https://www.php.net/manual/en/class.imagick.php)
+
+
+- PHP offers built-in functions for manipulating images
+    - That natively comes with the default PHP installation
+        - Does NOT require an additional installations
+
+    - The PHP function "getimagesize()"
+        - Determines the image size of any supported image file
+    
+        - Returns any array that contains information on
+            - width (int & string)
+            - height (int & string)
+            - number of channels (int)
+            - file type expressed in corresponding HTTP content type (mime) e.g. "image/jpeg"
+
+        - Reference (https://www.php.net/manual/en/function.getimagesize.php)
+
+    - Use the special syntax in PHP that
+        - Allows to unpack elements of an array into individual variables
+
+        [$<variable_1>, $<variable_2>] = getimagesize(<target_file>);
+
+
+- To calculate the scaled-down dimensions of an image file
+    - Declare the maximum (width) dimension
+
+    - Calculate the scale factor
+        - Use the function "max()"
+        - Pass the image file's width & height as argument values
+        - Returns the highest value between the two
+    
+    - Calculate the new dimensions
+        - Individually multiple the image file's current width & height with the scale factor
+    
+
+- To scale down an image file
+    - Create a new image representing an existing (source) image file
+        - Using the function "imagecreatefromjpeg()"
+        
+        - NOTE: Source image is expected as a ".jpg" or ".jpeg" file type
+
+        - Pass the source file as an argument value
+            - If successful, returns na image identifier (i.e. GdImage)
+                - Representing the image obtained from the given source file
+
+            - Otherwise, a boolean 'false"
+
+        - Reference (https://www.php.net/manual/en/function.imagecreatefromjpeg.php)
+
+
+    - Create a new true color image (i.e. destination image)
+        - Using the function "imagecreatetruecolor()"
+            - Pass the new (scaled-down) width & height as argument values
+
+        - NOTE: Strips off pontentially malicious content injected in the source image
+            - And sensitive metadata such as camera device & geolocation
+            
+        - Reference (https://www.php.net/manual/en/function.imagecreatetruecolor.php)
+
+
+    - Copy and resize part of an image with resampling
+        - Using the function "imagecopyresampled()"
+            - Pass the destination image as the 1st argument
+            - Pass the source image identifier (i.e. GdImage) as the 2nd argument
+            - Pass the x & y values where rendering starts on the destination image as the 3rd & 4th arguments
+            - Pass the x & y values where copying starts from the source image as the 5th & 6th arguments
+            - Pass the destination image's width as the 7th argument
+            - Pass the destination image's height as the 8th argument
+            - Pass the source image's width as the 9th argument
+            - Pass the source image's height as the 10th argument
+
+        - Reference (https://www.php.net/manual/en/function.imagecopyresampled.php)
+
+
+    - Output the resized image to the browser
+        - Set the "header()"
+            - Pass the value "Content-Type: image/jpeg" as argument
+
+        - Use the PHP function "imagejpeg()"
+            - Pass the new image as argument 
+            - Renders the resized image on the browser
+
+        - Reference (https://www.php.net/manual/en/function.imagejpeg.php)
+
+        - NOTE: Make sure that there are NO "var_dump()" called anywhere in the code
+
+
+    - To save the resized image on the local filesystem
+        - Omit calling the "header()"
+
+        - Use the PHP function "imagejpeg()"
+            - Pass the new resized image as the 1st argument
+            - Pass the filename of the image as the 2nd argument
+
+        - NOTE: Make sure that group account 'others" have 'read & write' permissions enabled
+
