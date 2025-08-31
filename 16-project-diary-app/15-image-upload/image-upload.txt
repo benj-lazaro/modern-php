@@ -1,0 +1,27 @@
+Implement Image Upload
+----------------------
+- Implement the image upload functionality in the web application
+    - Add a new local folder "uploads"
+        - Intended to store the uploaded & scaled-down image files
+
+    - Add an additional column in the database's structure that
+        - Stores the filename of the uploaded image file
+        
+        - Named "image"
+            - Type of "VARCHAR"
+            - Length of 1023
+            - Default value of "NULL"
+            - Checkbox "NULL" enabled
+        
+        - Save the changes
+
+    - Refactor the "index.php" file
+        - To output the associated image file to a diary entry
+            - If an image file is supplied
+            - Otherwise, no image is displayed
+
+    - Refactor the "form.php" file
+        - To implement the image file scale down & upload functionality
+
+    
+    
