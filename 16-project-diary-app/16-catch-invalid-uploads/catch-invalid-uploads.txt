@@ -1,0 +1,22 @@
+Catch Invalid Uploads
+---------------------
+- Refactor "form.php" to implement a way to catch an invalid file upload
+    - Despite being able to change the filename & extension of a submitted file
+    
+    - A non-image file can cause the web application a Fatal Error
+        - Caused by an Uncaught DivisionByZeroError
+        
+        - The PHP function "getimagesize()" returns a boolean "false"
+            - Assigning the values for the width & height with "null"
+
+        - Calculating the scale factor for the submitted image file
+            - Results to a division by zero 
+    
+    - Implement a check for the submitted image file's width & height
+        - In the absence of these values
+        - The submitted file will simply be ignored
+
+
+- Implement check if the submitted image file is of "jpeg" format
+    - The PHP function "imagecreatefromjpeg()" returns
+        - Either a GdImage (representation of the image file) or a boolean "false"
