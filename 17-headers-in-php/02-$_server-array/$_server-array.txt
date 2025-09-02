@@ -1,0 +1,70 @@
+The $_Server Array: Gain Insights About The Server Running Your PHP Script
+--------------------------------------------------------------------------
+- The $_SERVER Associative array provides
+    - Server and execution environment information
+
+    - Contains information such as headers, paths & script locations
+        - Entries provided by the web server
+
+        - However, there is NO guarantee that every web server will provide any of these
+            - Some servers may omit and provide additional information NOT listed
+            - Dependent on how the web server (i.e. Apache HTTPd) is configured
+        
+        - MOST of these information are accounted in the RFC 3875 (Common Gateway Interface)
+            - Reference (https://datatracker.ietf.org/doc/html/rfc3875)
+
+    - Reference (https://www.php.net/manual/en/reserved.variables.server.php)
+
+
+- The property "REMOTE_ADDR"
+    - Returns the IP address of the site visitor's machine
+    
+    - NOTE: In a few countries (e.g. EU) the client's IP address 
+        - Is considered sensitive private information
+        - Requires to have substantial reason to log the whole IP address
+
+
+- The property "PHP_SELF"
+    - Returns a string that contains 
+        - The relative path and filename of the currently executing PHP script
+    
+    - NOTE: Dangerous if misused
+        - Treat the it as a user-generated content
+        - Sanitize the output using the PHP function "htmlspecialchars()"
+
+
+- The property "REQUEST_URI"
+    - Returns a string that contains identical value as "PHP_SELF"
+
+    - Difference
+        - It is requested by the visitor's browser
+        - Additional URL parameters will become part of the returned value
+
+    - NOTE: NOT commonly used
+        - On niche use cases that test the values of additional URL parameters
+
+
+- The property "SCRIPT_NAME"
+    - Returns a string that contains identical value as "PHP_SELF"
+
+    - Difference
+        - Accessing the PHP file as a directory or folder
+            - With another file succeeding it 
+            - (e.g. http://localhost/modern-php/17-headers-in-php/02-$_server-array/code/server.php/test)
+
+        - PHP will NOT consider the PHP file as a URL parameter
+            - Returns the relative path up to the currently executing script
+            - Omits the succeeding file from the path
+        
+        - Returns the succeeding file as a value of the property "PATH_INFO"
+
+    - NOTE: Applicable on use cases
+        - That uses the executing PHP script as a directory or folder
+        - Otherwise, use the property "PHP_SELF" instead
+
+
+- The property "REQUEST_METHOD"
+    - Returns a string that identifies the request method
+        - Used to access the page (e.g. 'GET', 'POST')
+
+    
