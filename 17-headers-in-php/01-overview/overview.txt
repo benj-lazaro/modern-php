@@ -1,0 +1,21 @@
+Overview
+--------
+- This section focuses on
+    - The $_Server array
+        - Provides access to server related information
+
+    - Headers
+        - How headers are used in PHP
+        - Browser -> Server
+        - Server -> Browser
+
+    - Allows to develop new user cases
+        - Identify a site visitor's browser (i.e. Firefox, etc.)
+
+        - Automatically redirect site visitor's to a different URL
+            - Userful with form submissions
+
+        - Develop a custom error page
+
+        - Trigger a file download from PHP
+       
