@@ -1,0 +1,74 @@
+HTTP Headers: Examine Server To Browser Communication
+-----------------------------------------------------
+- When a client's browser sends a request to a server
+    - Server replies back with a response
+
+    - Both the browser and the server send headers (to each other)
+        - Each (header) contains their corresponding message
+
+    - The headers describes
+        - The request from the browser to the server
+        - The response of the server to the browser's request
+    
+    - This section focuses on
+        - The browser's request to the server
+
+
+- To inspect the browser's request method
+    - Launch "Chrome Dev Tools"
+
+    - Click the tab "Network"
+
+    - Click the checkbox "Disable cache"
+
+    - Click the tab "All"
+
+    - Add the column "Method"
+        - If NOT yet added
+
+    - Refresh / Reload the web page
+
+    - Click the loaded script
+        - Click the tab "Headers"
+
+    - Expand the tab "Request Headers"
+
+
+- Properties of the "Request Headers"
+    - Accept
+        - Contains the MIME type of the document that the browser is requesting to the server
+            - e.g. "text/html", "application/xhtml+xml", "application/xml"
+        
+    - Accept-Encoding
+        - Allows the server to respond in a compressed format
+            - Lists accepted compression algorithms
+            - e.g. "gzip, deflate, br, zstd"
+
+    - Accept-Language
+        - Informs the server on the preferred language for the requested document or file
+
+    - Connection
+        - The value "keep-alive" informs the server to keep the current connection alive
+            - Build the connection once
+            - Reuse it for the succeeding requests
+        
+        - Refrains from closing the connection immediately
+            - After the server sends back the response
+            - Improving the performance
+
+    - Referer
+        - Contains the URL where the browser previously came from
+
+    - User-Agent
+        - Contains the browser information
+
+        - NOTE: Chrome, Edge, Opera & Safari browsers share the same rendering engine
+            - Returns similar "User-Agent" information
+            - With the Edge browser returns an additional value of "Edg"
+
+
+- The HTTP headers are made available to PHP via "$_SERVER" Associative array
+    - These properties starts with "HTTP_"
+
+
+    
