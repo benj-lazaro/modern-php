@@ -1,0 +1,71 @@
+HTTP Headers: Examine Server To Browser Communication
+-----------------------------------------------------
+- Focused on headers sent back by the server to the site vistor's browser
+
+
+- When reloading a blank web page on a browser
+    - The server receives a HTTP Requet Method "GET"
+
+    - The server replies with Response Headers that contain the properties
+        - "Connection"
+            - Type of connection 
+            - e.g. "Keep-Alive"
+
+        - "Content-Length"
+            - Length of the content
+            - e.g. 0
+
+        - "Content-Type"
+            - Type of content
+            - e.g. "text/html;charset=UTF-8", "image/jpeg"
+
+        - "Date"
+            - Day, date , time and timezone of the Response
+            - e.g. "Thu, 04 Sep 2025 08:04:08 GMT"
+
+        - "Keep-Alive"
+            - Value on how long to keep the connection alive
+            - e.g. "timeout=5, max=100"
+
+        - "Server"
+            - Information about the running web server
+            - e.g. "Apache/2.4.58 (Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1"
+
+        - "X-Powered-By"
+            - Information about the running PHP version
+            - e.g. "PHP/8.2.12"
+
+    - NOTE: ALL of the presented properties are DEPENDENT on
+        - How the web server is CONFIGURED
+        - The type of content requested by the browser
+
+
+
+- To send a customized Response Headers for a normal web page
+    - Use the function "headers()"
+    
+    - Pass the Response Headers property "Content-Type" with the value of  "text/plain"
+        - e.g. "Content-Type: text/plain"
+
+    - The browser receives the Response Headers from the server 
+        - Reads the "Content-Type" or MIME Type
+        - Renders the web page as a text file
+
+
+- The PHP function "readfile()"
+    - Reads a file from the local filesystems and outputs a file
+
+    - Reference (https://www.php.net/manual/en/function.readfile.php)
+    
+    - It can be used to open an image file from a ".php" file
+        - Immediately send the content back to the browser for rendering
+
+        - Similar to the PHP function "file_get_contents()"
+            - Except this requires saving the content to a variable first
+            - Then calls the function "echo()" to render the content of the variable
+            - It offers an added overhead
+
+        - NOTE: All the browser CARES about is the Response Headers' "Content-Type" value
+            - NOT necessarily the filename extension
+
+    
