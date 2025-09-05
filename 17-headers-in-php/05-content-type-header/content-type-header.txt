@@ -1,0 +1,9 @@
+Content-Type Header Example: Dynamically Serve CSS With PHP
+-----------------------------------------------------------
+- Dynamically generate CSS code with PHP
+    - To demonstrate how important "Content-Type" header is 
+    
+    - Emphasizing that for browsers the file extension does NOT matter
+        - BUT the MIME type is c/o "Content-Type" is
+
+    
