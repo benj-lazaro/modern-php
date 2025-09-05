@@ -1,0 +1,64 @@
+Output Buffering: Avoid Header Issues & Ensure Seamless File Transmissions
+--------------------------------------------------------------------------
+- Address issues when the PHP function "header()" fails to work
+    - Inclusion of a whitespace prior to the "<?php" tag
+        - On an included PHP File
+
+    - Generation of 5000 whitespaces in a loop
+        - Prior to rendering content to the browser
+
+        - When PHP starts outputting whitespaces
+            - Make the headers using its default headers (i.e. "Content-Type: text/html")
+
+        - When it reaches a PHP function "header()" call to output a new "Content-Type"
+            - It is unable to implement any changes anymore
+            
+            - PHP instead triggers a warning
+
+                "Warning: Cannot modify header information - headers already sent"
+    
+        - NOTE: These are dependent on how the server is configured
+            - Passing 50 whitespace character does NOT trigger a warning
+
+        - Why is this happening?
+            - The answer behind this is the PHP concept known as "Output Buffering"
+
+
+- What is Output Buffering
+    - When generating an output, instead of sending it directly to the browser
+
+    - PHP will first collect a little bit of output (i.e. buffering)
+        - The size of the buffer can be changed in the PHP configuration
+        
+        - NOTE: In XAMPP, has the default size of 4096 bytes
+            - To display the configured limit
+                - Pass the string 'output_buffering' as argument to the function "ini_get()"
+                - Reference (https://www.php.net/manual/en/function.ini-get.php)
+
+            - Pass the returned value as argument to heP function "var_dump()"
+                - Returns a numeric string value
+
+    - Before sending the output to the browser
+
+    - NOTE: If PHP's Output Buffering is NOT full
+        - The "Content-Type" header can be changed without triggering a warning
+
+
+- To address this concern
+    - An application with multiple files included
+        - Avoid generating output from any of these (included) files
+            - Unless it is intended to generate HTML mark-up
+
+        - Best practice to NEVER close the PHP tag
+            - If the goal of the included file is to implement logic
+            
+            - Closing the tag may unintentionally introduce an additional
+                - Whitespace character
+                - Line break character
+
+            - These additional characters will then be sent to the browser
+                - Overwhelm the PHP Output Buffering thershold in the process
+                - Triggers a warning that is EXTREMELY difficult to debug
+
+            - Without the closing tag
+                - PHP will simply IGNORE trailing whitespace characters
