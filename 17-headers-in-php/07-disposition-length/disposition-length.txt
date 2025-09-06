@@ -1,0 +1,29 @@
+Content-Disposition And Content-Length Header: Implement File Downloads
+-----------------------------------------------------------------------
+- The Header "Content-Disposition" indicates whether content is
+    - Displayed inline in the browser as a web page
+    - Download as an attachment locally
+
+
+- To download the content instead of rendering on the browser
+    - Assign the value "attachment" to "Content-Disposition"
+
+    - Assign the filename with extension of the content to the parameter "filename"
+
+    - Use a ";" to separate "Content-Disposition" from the "filename"
+
+        header("Content-Disposition: attachment; filename=<filename.ext>");
+
+    - NOTE: If the content happens to be a large file
+        - The browser will NOT show a progress bar as it downloads the content
+
+
+- To address this concern
+    - Use the Header "Content-Length"
+
+    - Pass the file size of the content as value
+        - Use the returned value of the PHP function "filesize()"
+
+        header("Content-Length:" . filesize(<filename.ext>));
+
+    - Displays a progress bar as it downloads the content
