@@ -1,0 +1,30 @@
+Location Header: Redirect Users To Files
+----------------------------------------
+- The header "Location" is a Response Header that either
+    - Returns the specified file to the browser to be rendered
+    - Redirects the browser to the specified URL
+
+
+- There is a limit on redirecting
+    - The browser is capable of detecting an endless redirect
+        - Flags an error message
+
+    - The browser terminates the redirect BUT
+        - The PHP script remains running in the background
+        
+        - Succeding content after the redirect is NOT rendered
+
+        - To properly terminate the PHP script
+            - Use the PHP function "die()"
+
+    - NOTE: Best practice to combine the function "die()"
+        - When working with header "Location"
+        - 
+
+
+Syntax:
+
+header("Location: <URL_desination>");
+
+header("Location: <local_file>");
+
