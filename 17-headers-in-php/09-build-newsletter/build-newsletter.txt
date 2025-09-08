@@ -1,0 +1,4 @@
+Example: Build A Newsletter Sign-Up Page Using Location Headers
+---------------------------------------------------------------
+- An example project to demonstrate the use of the header "Location"
+
