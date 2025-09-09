@@ -1,0 +1,34 @@
+Quiz 16: Test Your Knowledge Of Headers In PHP
+----------------------------------------------
+- Consider the $_SERVER array in PHP, which provides a wealth of information 
+    - About the server environment, script execution, and request details
+    - Which of the following is NOT a valid key in the $_SERVER array
+
+    - Answer: SERVER_FILENAME
+
+
+- When is it best practice to omit the closing PHP tag (?>) in a PHP file
+    - Answer: To prevent accidental inclusion of whitespace or new line characters at the end of the file
+
+
+- How can you redirect users to the login page (login.php)
+    - If they are not authenticated in the current PHP script
+
+    - Answer: 
+
+        header("Location: login.php");
+        die();
+
+
+- Consider the following PHP code snippet
+
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: attachment; filename="User_Guide.pdf"');
+    readfile(__DIR__ . '/User_Guide.pdf');
+
+    - What does this code accomplish
+
+    - Answer: 
+        - It configures the HTTP headers to prompt the browser to download the file
+        - Then sends the file's content using "readfile()"
+
