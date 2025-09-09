@@ -1,0 +1,62 @@
+Decipher HTTP Status Codes: Success & Errors
+--------------------------------------------
+- These codes indicate the (request) status of a web page
+    - Extremely important for search engines
+
+
+- Status Code: 200 (OK)
+    - Informs the browser that the request is OK
+    - Browser renders the content of the requested web page
+
+
+- Status Code: 301 (Moved Permanently)
+    - The URL of the requested resource has permanently changed
+        
+    - The browser is expected to be redirected to the new URL
+         - Using the header "Location"
+
+    - Important to a search engine
+        - The permanent URL is remembered
+
+
+- Status Code: 302 (Found)
+    - The URL of the requested resource has changed temporarily
+
+    - The browser is expected to be redirected to the tentative URL
+        - Using the header "Location"
+
+    - Working with PHP's header "Location"
+        - The browser is instructed to request for the redirected file (or resource)
+        - Logged with as Status Code 302 (by default)
+
+    - Important to a search engine
+        - The tentative URL is NOT remembered
+    
+
+- Status Code: 400 (Bad Request)
+    - The request is malformed or invalid
+
+    - The browser requesting for a file that
+        - Contains invalid characters (e.g. fi%le.html) that the server could NOT understand
+
+
+- Status Code: 403 (Forbidden)
+    - The server understands the request BUT refuses to authorize it
+
+
+- Status Code: 404 (Not Found)
+    - The requested resource could NOT be Found
+
+    - The browser requested a non-existent file (or resource)
+
+
+- Status Code: 500 (Internal Server Error)
+    - It is a generic error occurred on the server
+
+
+- The Status Codes are grouped into categories
+    - 200s   = Everthing is okay
+    - 300s   = Redirected to somewhere else
+    - 400s   = Client (or browser request) related errors
+    - 500s   = Server side problems
+
