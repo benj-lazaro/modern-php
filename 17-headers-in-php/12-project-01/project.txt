@@ -1,0 +1,16 @@
+Project: Craft A Custom 404 Error Page Part 01
+----------------------------------------------
+- A simple project that crafts HTTP Status Codes
+    - For this project, craft a custom page for the Status Code 404
+
+
+- To craft a HTTP Status Code 404
+    - Use the PHP function "http_response_code()"
+        - Pass the integer value "404" as argument
+
+    - NOTE: Must be declared BEFORE 
+        - Sending any headers or contet to the server
+
+    - In a real-world scenario
+        - The error page will NOT be indexed by a search engine
+
