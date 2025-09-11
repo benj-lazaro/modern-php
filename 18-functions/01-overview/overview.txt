@@ -1,0 +1,6 @@
+Overview
+--------
+- This section focuses on
+    - Concept of functions in PHP
+    - Writing modular code
+    
