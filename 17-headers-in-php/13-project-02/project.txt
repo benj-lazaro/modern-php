@@ -1,0 +1,65 @@
+Project: Create A Custom Error Document Part 02
+-----------------------------------------------
+- Create a custom error web page that
+    - Overrides the browser default error page
+
+    - Previously crafted an error page by embedding the logic that
+        - Crafts the custom HTTP Status Code inside another PHP file
+        
+    - For this lecture 
+        - Crafting a custom error page as a stand-alone
+    
+    - Common use case is accessing a file that does NOT exists
+        - Wherein the browser renders its own default (generic) error page
+        - After it receives a HTTP Status Code 404
+
+
+- To craft a custom error page for the Apache web server
+    - Create a configuration file ".htaccess"
+        - Save it inside the project folder
+        - NOTE: ONLY applies to the project folder's file & sub-folders
+
+    - Inside the file
+        - Write the following configuration on a single line
+
+            ErrorDocument 404 <url_custom_error_page.php>
+
+        - The URL starts RIGHT AFTER the web server's hostname
+            - (e.g. /modern-php/17-headers-in-php/13-project-02/code/notfound.php)
+
+        - NOTE: Replace whitespace character in the URL with "%20"
+            - To prevent an invalid syntax when the URL is decoded
+            - Triggering a HTTP Status Code 500 (Internal Server Error)
+
+    - NOTE: The Apache web server MIGHT be configured that
+        - Prevents the ".htaccess" from working
+        
+        - Some web hosting services that implements this practice
+            - Or require a complicated setup in order for the ".htaccess" to work
+
+        - Web servers besides Apache may require a different setup
+            - Best to check its corresponding documentation
+
+    - Moving the project folder requires editing the path of
+        - The custom error page (.php) & its corresponding stylesheet file (.css)
+
+    - IMPORTANT: This process is ONLY intended for 
+        - Replacing the default (generic) error page rendered by the browser
+        - Provide a custom error page and nothing more
+
+    - To redirect stuff in PHP besides a custom error page
+        - PHP uses "mod_rewrite" module
+
+
+- To ensure the consistency of the custom error page's stylesheet
+    - When accessing non-existent nested sub-folders
+
+    - When assigning the CSS stylesheet in the custom error page
+        - Use the PHP function "pathinfo()"
+
+        - Pass the "$_SERVER['PHP_SELF']" & "PATHINFO_DIRNAME"
+            - As argument values
+
+        - Followed by the CSS stylesheet
+
+        <link rel="stylesheet" href="<?php echo pathinfo($_SERVER['PHP_SELF'], PATHINFO_DIRNAME); ?>/simple.css">
