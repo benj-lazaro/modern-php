@@ -1,0 +1,21 @@
+Declare And Invocate Custom Functions
+-------------------------------------
+- A (user-defined) function is defined by
+    - Using the PHP keyword "function"
+    
+    - Then a name (string)
+    
+    - Followed by a list of parameters (w/c maybe empty)
+        - Enclosed within a pair of parenthesis ( )
+        - Separated by commas
+
+    - Enclose the body of the function w/in a pair of { }
+
+    - Reference (https://www.php.net/manual/en/functions.user-defined.php)
+
+
+Syntax:
+
+function <name>(<parameter_1>, ..., <parameter_n>) {
+    ...
+}
