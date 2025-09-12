@@ -1,0 +1,9 @@
+Multiple 'return' Statements: Control Function Output
+-----------------------------------------------------
+- Implementing multiple 'return' statements that
+    - Controls the returned output from a function
+
+
+- NOTE: The function "die()" terminates the entire PHP script
+    - Even when invoked inside of a function
+
