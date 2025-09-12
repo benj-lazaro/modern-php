@@ -1,0 +1,94 @@
+Quiz 17: Test Your Knowledge About Functions
+--------------------------------------------
+- For a financial app focusing on travelers
+    - You are tasked with creating a function convertUsdToEur that 
+        - Converts currency from US Dollars (USD) to Euros (EUR).
+
+    - The function should take two parameters:
+        - $usdAmount: the amount in USD to be converted
+        - $exchangeRate: the current USD to EUR exchange rate.
+
+    - It should then calculate the converted amount and 
+        - Output a message with the amount in EUR
+        
+    - Which of the following implementations does accomplish this task?
+
+    - Answer:
+
+        function convertUsdToEur($usdAmount, $exchangeRate) {
+            $eurAmount = $amount * $exchangeRate;
+            echo $eurAmount . ' EUR';
+        }
+
+
+- Given the PHP code below, what will be the output when it is executed?
+
+    $hour = 18;
+     
+    function greetTimeOfDay($hour) {
+        if ($hour < 12) {
+            echo "Good morning!";
+        } else if ($hour < 18) {
+            echo "Good afternoon!";
+        } else {
+            echo "Good evening!";
+        }
+    }
+     
+    greetTimeOfDay();
+
+    - Answer: A Fatal error resulting from an Uncaught ArgumentCountError
+
+
+- Given the PHP code below, what will be the output when it is executed?
+
+    $hour = 18;
+     
+    function greetTimeOfDay($hour=12) {
+        if ($hour < 12) {
+            echo "Good morning!";
+        } else if ($hour < 18) {
+            echo "Good afternoon!";
+        } else {
+            echo "Good evening!";
+        }
+    }
+     
+    greetTimeOfDay(8);
+
+    - Answer: Good morning!
+
+
+- In a health and nutrition application, you have an array of meals as follows:
+
+    $meals = [
+        ['name' => 'Chicken Salad', 'calories' => 350],
+        ['name' => 'Grilled Salmon', 'calories' => 480],
+        ['name' => 'Vegetable Stir Fry', 'calories' => 300]
+    ]; 
+
+    - And the following function calculateMealCalories defined 
+        - To calculate and display the total calories of the array of meals.
+
+    function calculateMealCalories($meals, $detailed = true) {
+        $totalCalories = 0;
+        foreach ($meals as $meal) {
+            $totalCalories += $meal['calories'];
+            if ($detailed) {
+                echo "{$meal['name']}: {$meal['calories']} calories.<br>";
+            }
+        }
+        echo "Total calories: " . $totalCalories . ".<br>";
+    }
+
+    - Given the output below:
+
+        Chicken Salad: 350 calories.
+        Grilled Salmon: 480 calories.
+        Vegetable Stir Fry: 300 calories.
+        Total calories: 1130.
+
+    - Which of the following code snippets 
+        - Correctly utilizes the calculateMealCalories function to produce the given output?
+
+    - Answer: calculateMealCalories($meals)
