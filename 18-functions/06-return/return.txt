@@ -1,0 +1,15 @@
+The "return" Statement: Extract Function Output
+-----------------------------------------------
+- PHP's 'return' statement
+    - Returns program control to the calling module
+
+    - When called within a function
+        - IMMEDIATELY terminates the function
+        - Return its argument as the value of the function call
+
+    - Reference (https://www.php.net/manual/en/function.return.php)
+
+
+Syntax:
+
+return <expression | function | variable>;
