@@ -1,0 +1,24 @@
+Function Contexts & Parameter Passing: Transfer Data Into Functions
+-------------------------------------------------------------------
+- When a function is called / invoked
+    - It creates its own context
+    
+    - Declared variables within the function are
+        - Completely SEPARATE from the outside 'world'
+            - Even if a variable has an identical name outside the function
+
+        - Values assigned to these variables
+            - ONLY EXISTS within the function
+        
+    - Once the function completes its execution
+        - The variables within the function are immediately discarded
+
+
+- In order to pass values into a function requires
+    - Declaring a parameter variable or list of parameter variables
+        - Enclosed w/in the ( ) right after the function name
+        - If multiple parameter variables, each is separated by a ','
+
+    - Parameter variables are immediately discarded after
+        - The function completes its execution
+   
