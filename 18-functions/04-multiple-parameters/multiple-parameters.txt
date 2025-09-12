@@ -1,0 +1,21 @@
+Multiple Parameters & Default Values: Configure Functions
+---------------------------------------------------------
+- This section focuses on
+    - Declaring multiple parameter variables
+
+    - Declaring a default value to a parameter variable
+        - Using the "=" operator
+        - Also referred as a "Default Parameter"
+
+
+- It is best practice to first declare
+    - Parameter variables that are essential
+        - Where it would NOT be assigned with a default value
+
+    - Followed by parameter variables that are OPTIONAL
+        - Assigned with a default value
+
+
+Syntax:
+
+function <name>(<param_variable>, <param_variable>=<default_value>);
