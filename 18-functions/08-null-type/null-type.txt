@@ -1,0 +1,27 @@
+The 'null' Type: Represent Missing Values
+-----------------------------------------
+- The 'null' (or 'NULL') is a special type or value in PHP that
+    - Represents something that does NOT exist or could NOT find (i.e. missing)
+
+    - It can be assigned to a variable
+        - As an initial value
+        - Result of an operation (i.e. search)
+
+    - A functions with NO return value
+        - IMPLICITLY returns a 'null'
+
+    - To EXPLICITLY return a 'null' value from a function
+
+        return null;
+
+        return;
+
+
+- Common use case of the 'null' value
+    - Retrieving a database record with a specified ID
+        - When unable to find the requested record
+        - Returns a 'null' instead of a 'false'
+            
+    - Intentional assigned 'null' value to a key 
+        - In an Associative array
+
