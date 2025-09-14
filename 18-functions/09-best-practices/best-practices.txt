@@ -1,0 +1,53 @@
+Function Redefinition: Best Practices
+-------------------------------------
+- PHP does NOT allow redeclaring named function more than once
+    - Within the same .php file
+        - VS Code (with PHP Intelephense extension) IMMEDIATELY catches the issue
+
+        - Visually highlights the problem
+            - Prevents the file from being executed
+        
+        - Forcing the file to be executed
+            - PHP immediately triggers a Fatal error
+            - Terminates the execution of the file
+            - Informs the browser to render a Fatal error message
+
+    - On separate .php files
+        - VS Code is UNABLE to DETECT this issue
+                    
+        - During execution of the .php files
+            - PHP processes the first .php (main) file
+                - Sends back processed content back to the browser
+
+            - PHP proceeds with processing the required file(s)
+            
+            - When PHP discovers a redeclared named function
+                - Immediately triggers a Fatal error
+                - Terminates the execution of the file
+                - Informs the browser to render a Fatal error message
+
+
+- To proactively prevent redeclared functions from occurring
+    - Use the PHP function "function_exists()"
+
+    - Requires passing the name of a function as a string argument value
+        - Returns a boolean "true" if a named function has been declared (i.e. exists)
+        - Otherwise "false"
+
+    - Reference (https://www.php.net/manual/en/function.function-exists.php)
+
+    - Common use case:
+        - 3rd party libraries, helper functions or utilities
+
+        - Multiple separate project files
+            - Files that may contain several named function declarations
+            - NOTE: This is NOT considered as best practice
+
+
+- Best practice to use descriptive function names that
+    - Clearly describes what the function does
+
+    - Refrain from using single letter or non-descriptive names for functions
+        - e.g. f()
+
+    
