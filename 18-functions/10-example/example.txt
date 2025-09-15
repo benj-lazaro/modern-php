@@ -1,0 +1,5 @@
+Example: Handling File Sizes With A Divide & Conquer Strategy
+-------------------------------------------------------------
+- Demonstrates how a function implements the 'divide & conquer' strategy
+    - Dividing code into smaller blocks
+    - Able to manage the code as the complexity of the application grows
