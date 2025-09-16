@@ -1,0 +1,59 @@
+Coding Exerise 22: Event Scheduler For Online Conferences Part 01
+--------------------------------------------------------------
+- You are part of a team organizing an international online conference
+    - To ensure the event runs smoothly, it's crucial to schedule sessions 
+        - At times that work across multiple time zones
+        
+    - Your task is to help create a scheduling tool that 
+        - Calculates the best meeting times
+        - Considering the diverse locations of all participants
+
+    
+- Tasks
+    - Write two (2) specific functions
+        - calculateTimeOverlap()
+            - Accepts UTC time zone offets of two participants
+            - Calculates the overlap in their preferred meeting time window
+            - Suggest an optimal meeting time based on this data
+
+        - suggestOptimalMeetingTime()
+            - Utilizes the overlap calculated by calling the function calculateTimeOverlap()
+            - To suggest a meeting time
+
+    - Create a function named calculateTimeOverlap()
+        - Accepts two (2) parameters namely "$offset1" and "$offset2"
+            - These represents the timezone offsets from UTC for each participant
+
+        - Calculates the intersection of working hours 
+            - Between two (2) time zones based on their UTC offsets
+                - Use 12:00 UTC as the baseline start time
+                - Use 18:00 UTC as the baseline end time
+            
+            - Returns an array with
+                - Start and end times of the overlap in UTC
+                - Otherwise, returns an empty array
+
+        - When calculating time overlaps
+            - Assume ALL overlaps occur within the same day
+
+    - Create a function named suggestOptimalMeetingTime()
+        - Accepts two (2) parameters namely "$offset1" and "$offset2"
+            - These represents the timezone offsets from UTC for each participant
+
+        - Using the array returned by the function calculateTimeOverlap()
+            - Suggest an optimal meeting time
+
+            - If there is an overlap, output the message via "echo"
+
+                "Suggested meeting time: [start] to [end] UTC"
+
+
+            - If there is NO overlap, output the message via "echo"
+
+                "No available meeting time for these time zones."
+
+
+    - You write additional helper functions if this helps
+
+    - NOTE: You are only required to write the function definitions
+        - The invocation of these functions will be handled within the test
