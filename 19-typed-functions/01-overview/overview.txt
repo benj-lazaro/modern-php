@@ -1,0 +1,20 @@
+Overview
+--------
+- This section focuses on
+    - Typed function
+        - Allows to write reliable code
+        - By enforcinf types on function's parameters
+    
+    - PHP 7.0 introduced support for
+        - Type declarations on functions
+        - Although still considered experimental
+
+    - PHP 7.4 (and subsequently 8.0 & later versions)
+        - Type declarations are ready to be used
+
+    - Old code without type declarations are
+        - STILL supported by modern-day PHP
+    
+    - HOWEVER, type declarations are ESSENTIAL 
+        - It helps write modern and reliable PHP code
+   
