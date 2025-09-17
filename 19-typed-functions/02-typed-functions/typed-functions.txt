@@ -1,0 +1,35 @@
+Typed Functions: Secure & Document Your Code
+--------------------------------------------
+- To declare a type on the function's parameter variable(s)
+
+    function <name>(<type> <paremeter_name>) {
+        ...
+    }
+
+    - Reference (https://www.php.net/manual/en/language.types.declarations.php)
+
+
+- Whenever a "Fatal error: Uncaught TypeError" is triggered
+    - When passing an argument value to a function
+
+    - PHP identifies which argument value triggered the error
+        - What data type the parameter expects to receives
+        - Identifies the data type that was passed
+
+
+- Offers additional safeguards
+    - PHP explicitly checks the data type of a function
+    
+    - During coding, the "PHP Intelephense"
+        - Immediately flags an error
+        - Before the PHP script is executed
+
+
+- Type declaration also helps documenting the code
+    - Helpful as a project's codebase grows in size over time
+    - Helpful for other developers who might work on the code at a later time
+
+
+- NOTE: When working with an argument value of data type "array"
+    - Currently, PHP does NOT have the ability to declare the type of each element
+
