@@ -1,0 +1,31 @@
+Coding Exercise 23: Event Scheduler For Online Conferences Part 02
+------------------------------------------------------------------
+- Feel free to build on any code from the previous challenge
+
+
+- Task:
+    - Improve the scheduling tool to support multiple participants
+
+    - Write two (2) functions as in the previous challenge
+        - calculateTimeOverlap()
+            - Now accepts an array of participants
+            - Including their UTC time zone
+            - Calculates the overlap in their preferred session time window
+
+        - suggestOptimalMeetingTime()
+            - Uses the overlap calculated by calculateTimeOverlap()
+            - For all participants to suggest a meeting time
+
+    - Partipants will now be represented in the following structure
+
+        $participants = [
+            ["Name" => "Max", "Timezone" => "UTC-3"],
+            ["Name" => "Charlie", "Timezone" => "UTC+1"],
+            ["Name" => "Alex", "Timezone" => "UTC+2"],
+            ["Name" => "Nina", "Timezone" => "UTC"]
+            ];
+
+    - NOTE: The preferred window time remains
+        - From 12:00 to 18:00 UTC
+
+        
