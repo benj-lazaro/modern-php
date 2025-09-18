@@ -1,0 +1,28 @@
+Strict Types: Enforce Accurate Type Handling
+--------------------------------------------
+- PHP the the ability to IMPLICITLY converts
+    - A string argument value to an integer
+    - When the function's parameter list requires an integer
+    - IMPLICIT conversions can be EXTREMELY DIFFICULT to debug
+
+
+- To enforce strict typing within a .php file
+    - On the first line RIGHT AFTER <?php
+
+    - Type the line
+
+        declare(strict_types=1);
+
+    
+    - Doing so diables PHP's ability to perform
+        - IMPLICIT (data) type conversions
+
+    - During execution, a "Fatal error: Uncaught TypeError" is triggered
+        - Whenever an IMPLICIT type conversions occurs
+
+    - NOTE: This is similar to JavaScript's "Strict Mode"
+
+    - HIGHLY RECOMMENDED enabling "strict_types" as it
+        - Make debugging code easier
+        - Make the code significantly more reliable
+        
