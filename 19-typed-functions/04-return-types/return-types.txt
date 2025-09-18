@@ -1,0 +1,25 @@
+Return Types: Enforce Reliable Function Outputs
+-----------------------------------------------
+- To explicitly enforce a type on the return value of a function
+    - Use ":" symbol at the end of the the function's parameter list
+        - Followed by the (data) type that the return value should have
+
+    - Helps document a function's return value type
+
+    - NOTE: A Union type can be implemented on
+        - BOTH the parameter list and return value
+
+    - VS Code with "PHP Intellephense" extension installed
+        - Immediately catches when a return value
+        - Does NOT meet the explicitly (data) type declaration
+
+        
+Syntax:
+
+function <name> (<parameter_list>): <type> {
+    ...
+}
+
+function <name> (<type_1> | <type_n> <parameter_list>): <type_1> | <type_n> {
+    ...
+}
