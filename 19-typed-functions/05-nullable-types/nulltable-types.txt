@@ -1,0 +1,35 @@
+Nulltable Types: Allow Missing Values As Parameters
+---------------------------------------------------
+- Addresses the issue when calling a function 
+    - With a declared type parameter list
+        - Then passing an argument value of "null" 
+
+    - Declaring a Union type on the function's parameter list
+        - Adding "null" as part of the Union type
+
+    - Alternatively, place a "?" symbol on front of the
+        - Declared (data) type of the function's parameter list
+        - This signifies that a "null" value are allowed
+        
+        - NOTE: Applicable ONLY when expecting two (data) types
+            - Where the other one is a "null"
+
+     - NOTE: When using "null" as part of a Union type
+        - Do NOT use "?" to represent a "null" type value
+        - Use the word "null" instead
+
+    - This can also be applied with the return (data) type
+        - NOTE: When returning a "null" value
+        - PHP requires to EXPLICITLY write "null" on the "return" statement
+        - e.g. return null
+
+
+Syntax:
+
+function <name> (<type_n> | null <parameter_list>): <type_n> | null {
+    ...
+}
+
+function <name> (?<type_n> <parameter_list>): ?<type_n> {
+    ...
+}
