@@ -1,0 +1,21 @@
+Overview
+--------
+- Build a project called a Baby Name Explorer
+    - Lists the most common names (top 10)
+
+    - Click the names from the list or
+        - Individually select from an alphabetically arranged menu
+        - Click a specific alphabet (e.g. 'A', 'B', etc.)
+        - Click a specific name from the list
+
+    - Opens a new page that displays
+        - Statistics of the number of babies born that
+            - Were given that name
+
+        - Including on which year
+
+    - Explore concepts throughout the project
+        - Output buffering
+        - How to optimize things with the database
+
+    
