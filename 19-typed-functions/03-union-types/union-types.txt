@@ -1,0 +1,17 @@
+Union Types: Multiple Parameter Types
+-------------------------------------
+- A Union type accepts values of multiple different (data) types
+    - Individual (data) types w/c form a Union type are
+        - Joined by the "|" symbol
+
+    - Enables a function to have variable parameters capable of
+        - Accepting different (data) types of argument values
+
+    - Reference (https://www.php.net/manual/en/language.types.type-system.php)
+
+
+Syntax:
+
+function <name> (<type_1> | <type_n> <parameter_variable) {
+    ...
+}
