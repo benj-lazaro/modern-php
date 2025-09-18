@@ -1,0 +1,84 @@
+Quiz 18: Test Your Knowledge About Typed Functions
+--------------------------------------------------
+- Consider the following PHP function:
+
+    function calculateDiscount($price, $discountRate, $isMember) {
+        if ($isMember) {
+            return $price * (1 - $discountRate);
+        }
+        return $price;
+    }
+
+    - This function calculates the price after 
+        - A discount if the user is a member
+        
+    - To make this function more robust 
+        - By adding types to the parameters and return type
+            - Which of the following function signatures would be most reasonable
+
+    - Answer: 
+
+    function calculateDiscount(float $price, float $discountRate, bool $isMember): float {
+        ...
+    }
+
+
+- Consider the following PHP function:
+
+    function mergeOrSum($input1, $input2) {
+        if (is_array($input1) && is_array($input2)) {
+            return array_merge($input1, $input2);
+        } else if (is_numeric($input1) && is_numeric($input2)) {
+            return $input1 + $input2;
+        }
+        return null;
+    }
+
+    - This function either merges two arrays or sums two numeric values 
+        - Based on the types of its inputs
+        
+    - To refine this function with types for the parameters and the return type
+        - Which of the following function signatures would be most reasonable?
+
+    - Answer: 
+
+    function mergeOrSum(array|int|float $input1, array|int|float$input2): array|int|float|null {
+        ...
+    }
+
+
+- Given the PHP code
+
+    <?php
+    function processDetails(int $id, string $name, array $attributes): string {
+        return "ID: {$id}, Name: {$name}, Attributes: " . implode(", ", $attributes);
+    }
+     
+    echo processDetails("101", 7331, []);
+    ?>
+
+    - This function constructs and returns a string that 
+        - Describes a set of details provided to it
+        - What will happen when this code is executed
+
+    - Answer: "ID: 101, Name: 7331, Attributes: "
+
+
+- Given the PHP code:
+
+    <?php
+    declare(strict_types=1);
+     
+    function processDetails(int $id, string $name, array $attributes): string {
+        return "ID: {$id}, Name: {$name}, Attributes: " . implode(", ", $attributes);
+    }
+
+    - Consider the function call results below
+    
+    - Which statement INCORRECTLY describes the output or behavior of the function call
+
+    - Answer:  
+
+        echo processDetails(101, "Tool", ["color" => "blue", "size" => "M"]); will
+        result in a TypeError, leading a Fatal error
+
