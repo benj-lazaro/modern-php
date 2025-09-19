@@ -1,0 +1,41 @@
+Import The Data
+---------------
+- Create a new user account in phpMyAdmin
+    - Click the tab "User accounts"
+
+    - Click the link "Add user account"
+
+    - On the section "Login Information"
+        - User name: "names"
+        - Host name: Local (localhost)
+        
+    - Click the Generate password button "Generate"
+        - Copy the generated password to a file
+
+    - On the section "Database for user account"
+        - Click the checkbox "Create database with the same name and grant all privileges"
+        
+        - NOTE: The created user account will be the ONLY ONE
+            - Who has access for the database that will be created
+    
+    - Scroll down to the bottom of the page
+        - Click the button "Go"
+            - Creates both user account & database table of the same name
+            - Returns the notification message
+
+            "You have added a new user"
+
+
+- Import the provided SQL dump (i.e. names.sql) into the MySQL database
+    - Click the tab "Import"
+
+    - On the section "File to import"
+        - Click "Choose File"
+        - Choose the SQL dump file "names.sql"
+
+    - Scroll down
+        - Click the button "Import"
+
+    - On the database "names"
+        - A new table named "names" is created
+        
