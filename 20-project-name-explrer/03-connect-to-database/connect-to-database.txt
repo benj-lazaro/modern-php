@@ -1,0 +1,90 @@
+Connect To Database
+-------------------
+- Connect the provided starter application to the database
+    - The database connectivity "db-connect.inc.php" is
+        - Called from the required file "all.inc.php"
+
+
+- Refactor the content of "db-connect.inc.php"
+    - Change the username 'root' to 'names'
+
+    - Change the password '' to the generated password
+        - During the creation of the username 'names'
+
+    - Save the changes
+
+
+- Test database connectivity
+    - Prepare a SQL query in the file "db-connect.inc.php"
+        - Query all records from the database
+        - Fetch the 1st record to be rendered on the web page
+
+    - Reload "index.php" in the browser
+        - The 1st record is rendered on the web page
+
+
+- Exploring user accounts related to database connectivity issues
+    - On phpMyAdmin's "User accounts"
+        - Displays a table of username, hostname, password & privilges that
+            - Details access to the hosted databases
+
+    - Accounts with identical usernames but different hostnames
+        - Are considered different users
+
+    - The hostname refers to where user are connectin from
+        - Hostname of "%" refers to a connection from all IP addresses (i.e. anywhere)
+
+
+- To "change" the privilges of an existing username
+    - Click the tab "User accounts"
+
+    - Click the checkbox of the targeted username
+
+    - Click the link "Edit privilges"
+        - Option to change "Login information"
+        
+        - Option to change privilges
+
+        - Apply changes
+
+    - NOTE: Privileges of the user does NOT get updated
+        - Instead, it offers options to
+            - Keep the old one
+            - Delete the old one from the user tables
+            - Revoke all active privielges from the old one & delete it afterwards
+            - Delete the old one from the users tables & reload privielges afterwards
+
+    - NOTE: Doing so, the application may lose
+        - The ability to connect to its database
+
+
+- A different way to connect to the MySQL database for Linux & MacOS
+    - Is using a virtual file called "sockets"
+        - NOTE: This is ideal for deployment, NOT during development
+            - Due to an issues with XAMPP involving the hostname "%" 
+            - NOT during development due to issues with XAMPP
+
+    - PHP can use sockets to the MySQL database
+        - This connectivity is highly efficient    
+        
+        - Allows PHP & MySQL to communicate without involing the network stack
+        
+        - NOTE: On Windows OS, the network stack likely involved
+        
+        - A socket is NOT an overhead since it is 
+            - A "virtual file" that does NOT exists on the filesystem
+            - Writing data into it, ends up saved in the MySQL database
+    
+        - The hostname "localhost" is a socket
+        
+        - NOTE: hostname "127.0.0.1" ALWAYS resolve to "localhost"
+            - BUT it involves the network stack
+
+        - The hostname "%" meant to involve the network stack
+            - As it allows connectivity to the database from anywhere
+
+            - NOTE: On the file "db-connect.inc.php"
+                - Change the value of "host" from "localhost" to "127.0.0.1"
+                - When the associated username account uses "%" as hostname
+                - If it fails, change to the current PC's IP addresses
+        
