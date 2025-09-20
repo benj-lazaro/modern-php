@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=names;charset=utf8mb4', 'names', 'V5YWrb8*))pzOHF)', [
+    $pdo = new PDO('mysql:host=localhost;dbname=names;charset=utf8mb4', 'names', '@qF]UQGnK1qGVmc(', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
 } catch (PDOException $e) {
