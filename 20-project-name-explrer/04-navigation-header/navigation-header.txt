@@ -1,0 +1,24 @@
+Navigation In The Header
+------------------------
+- First to implement is a list of alphabet letters
+    - At the navigation bar of the application
+
+    - Allows users to select-click a letter that
+        - Renders a page of names starting with the selected letter
+
+
+- The logic will be implement as a function named "gen_alphabet()"
+    - Generates an array of uppercased letters of the alphabet
+    - Returns an array
+    - It will be part of "functions.inc.php"
+    
+
+- The function will be called within "header.php"
+    - Located as the 1st line of code
+    - NOTE: Ensure that there are NO extra whitespaces after the line
+
+    - Stores the returned array into a variable named "$alphabet"
+
+    - Iterates through each letter and rendered as an individual link
+        - Stored within a HTML element <nav>
+        - A child of the HTML element <header>
