@@ -1,0 +1,22 @@
+List The Names
+--------------
+- Work on rendering the list of names
+    - Based on the clicked letter in the navigation bar
+
+
+- To query for database records that 
+    - Begins with the selected letter
+    
+    - On the SQL statement
+        - Select "distinct" records from the "name" column
+        - Where it looks "like" the selected letter
+        - Followed by a "%" wildcard suffix
+        - Sorted in ascending order
+
+        - NOTE: This remove duplicates from the
+            - Returned records requested from the database
+
+        SELECT DISTINCT `name` FROM `names` WHERE `name` LIKE '<letter>%' ORDER BY `name` ASC;
+
+    - Implement the logic within "index.php"
+        - In-between the "require" statement of "header.php" and "footer.php"
