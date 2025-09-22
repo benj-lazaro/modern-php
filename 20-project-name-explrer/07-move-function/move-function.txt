@@ -1,0 +1,27 @@
+Move Function To A Separate File
+--------------------------------
+- Moving the function "fetch_names_by_initial()"
+    - From "index.php" to its own separate file named "names.inc.php"
+
+    - The file "names.inc.php" is intended to contain
+        - Functions that works with the database "names"
+
+    - Then require the file "names.inc.php" in "functions.inc.php"
+
+
+- Enable strict typing on "names.inc.php"
+    - To be implemented to ALL declared functions within this file
+
+
+- Implement Type Annotations on the function "fetch_names_by_initial()"
+    - Parameter list
+    - Return value
+
+
+- Alternatively, the logic in "index.php" that 
+    - Checks the length of the URL parameter 'char'
+        - Ensures that the 1st character is retrieve
+        - Discards excess characters if any
+        - Then uppercase the value
+
+    - May be relocated as part of the function "fetch_names_by_initial()"
