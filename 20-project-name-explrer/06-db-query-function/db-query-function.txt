@@ -1,0 +1,23 @@
+DB Query In Function
+--------------------
+- Move the database query logic of "index.php"
+    - Into its own separate function
+        - Named as "fetch_names_by_initial()"
+        - Requires a parameter that accepts an initial as input
+
+    - Making the function callable
+        - To different parts of the application's code
+
+
+- When using the keyword "global"
+    - Best AVOID using it within a function
+    
+    - EXCEPT for connecting to a database
+        - Setting the PDO variable "$pdo" as "global"
+        - It allows database connection into a function easily
+
+    - NOTE: Alternatively making the PDO variable "$pdo"
+        - As part of the function's parameter list
+        
+        - The developer may FORGET to include the variable "$pdo" 
+            - As an argument value when calling the Function
