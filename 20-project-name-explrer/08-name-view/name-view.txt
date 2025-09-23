@@ -3,11 +3,10 @@ Solution: Develop The Name View
 - As an exercise, create the file "name.php" that
     - Retrieves the corresponding data of the clicked name
 
-    - Create functions in "names.inc.php"
-        - To fetch a databased record for a specific name
-        - To render the fetched name in a table
+    - Create a function in "names.inc.php" that
+        - Fetches the databased record for a specific name
 
-    - To fetch a name from the database, use the SQL statement
+    - Use the SQL statement
 
         SELECT * FROM `names` where `name` = <clicked_name> ORDER BY `year` ASC
 
