@@ -1,0 +1,18 @@
+DB Query For Overview
+---------------------
+- Work to be implemented on the new "index.php"
+    - Will serve as an overview page that
+        - Displays the popular names from the database
+
+
+    - To determine the popular names
+        - Group the records by the column 'name'
+        - Sum each record's column 'count' value
+
+    - The SQL statement that will generate the data set
+
+        SELECT `name`, SUM(`count`) AS `sum` FROM `names` GROUP BY `name` ORDER BY `sum` DESC
+
+    - Implement this SQL query into a function
+        - To be implemented on the next lecture
+    
