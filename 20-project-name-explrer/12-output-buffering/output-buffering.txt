@@ -1,0 +1,31 @@
+Output Buffering
+----------------
+- Output buffering allows to capture the output of a PHP script
+    - And then be able to work with it
+    - Before it is sent to the browser or shell
+
+    - While active NO output is sent from the PHP script
+        - Instead is tentatively stored in an internal buffer
+    
+    - Once the PHP script completes
+        - The output is sent to the browser or shell
+        - Content in the output buffer is implictly flushed
+
+    - Reference (https://www.php.net/manual/en/outcontrol.output-buffering.php)
+
+
+- Without it, the output is sent to the browser or shell
+    - In pieces as PHP processes through the script
+
+
+- PHP provides a fully buffered user-level output
+    - With functions to start, manipulate & stop
+        - Reference (https://www.php.net/manual/en/ref.outcontrol.php)
+
+    - As well as two (2) functions to flush system buffers
+        - Function "flush()"
+            - Reference (https://www.php.net/manual/en/function.flush.php)
+
+        - Function "ob_implicit_flush()"
+            - Reference (https://www.php.net/manual/en/function.ob-implicit-flush.php)
+    
