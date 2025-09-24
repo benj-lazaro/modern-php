@@ -1,0 +1,15 @@
+Generate An Overview Page
+-------------------------
+- Create a new "index.php"
+    - Implement the application's boilerplate code
+
+    - Implement previous lecture's SQL statement into a function
+        - Named "gen_names_overview()"
+        - To be part of the "names.inc.php"
+    
+
+- Refactor "header.php"
+    - Create a link on the HTML element <h1>
+        - With the content "Name explorer"
+
+    - Link it to the file "index.php"
