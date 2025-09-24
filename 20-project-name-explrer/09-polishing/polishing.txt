@@ -1,0 +1,26 @@
+Polishing
+---------
+- Polishing the "index.php" UI
+    - Initially renders ALL of the names in the main page
+
+
+- To address this concern
+    - Implement an "if" statement that checks
+        - The length of the value from the URL parameter "char"
+        
+        - If the length is 0
+            - Redirect it to a page that does NOT render a list of names
+        
+        - Then terminate the PHP script
+
+    - Rename the current "index.php" to "char.php"
+        - The page that renders a list of names when a letter is clicked
+
+    - Update initial references to "index.php" into "char.php"
+        - In the "header.php"
+
+    - Create a new "index.php"
+        - The page that does NOT render a list of names
+        
+        - NOTE: To be implemented in the next lecture
+        
