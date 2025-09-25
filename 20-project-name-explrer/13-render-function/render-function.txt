@@ -1,0 +1,19 @@
+Create A render() Function
+--------------------------
+- Create a function that handles the rendering of an output
+    - It accepts a file path to a file as argument
+        - File being responsible to generate an output
+ 
+    - Enables output buffering
+
+    - Requires a separate file responsible for
+        - Generating an output
+
+    - Save the captured output to a variable
+        - Then clean the output buffer
+        - Implicitly stops output buffering
+
+    - Requires a separate file responsible for
+        - The layout of a web page
+        - Renders the captured output stored in a variable
+
