@@ -1,0 +1,66 @@
+Use The render() Function
+-------------------------
+- Implement the recently created function "render()"
+    - Into the web application
+
+
+- Create a new folder "layouts"
+    - Inside the folder "views"
+
+    - Create a new file "main.view.php"
+        - Contains the content of both "header.php" & "footer.php"
+
+    - Delete the files "header.php" & "footer.php"
+
+
+- On the "index.php"
+    - Select the output code
+        - Comprised of the HTML elements <h1>, <ol> & <li>
+
+    - Create a new folder "pages"
+        - Inside the folder "views"
+
+    - Create a new file "index.view.php"
+        - Paste the output code on this file
+
+    - Delete the "require()" statements from "index.php"
+        - Respectively requiring "header.php" & "footer.php"
+    
+
+- On the previous chapter's "index.php"
+    - Copy the function "render()" code base
+
+    - Open the file "inc/functions.inc.php"
+        - Paste the code of the function "render()" 
+
+
+- On the file "main.view.php"
+    - Move the logic that calls the function "gen_alphabet()"
+        - To the function "render()"
+
+    - Remove the lines that requires the files "header.php" & "footer.php"
+
+    - Call the function "render()", passing the arguments
+        - 1st argument = "main.view" 
+        - 2nd argument = ['name' => $name, 'entries' => $entries]
+        
+
+- On the file "name.php"
+    - Cut the HTML element <h1> and the "if statement" block
+
+    - Create a new file "name.view.php"
+        - Inside the folder "pages"
+        - Paste the code taken from "name.php"
+
+    - Call the function "render()", passing the arguments
+        - 1st argument = "char.view" 
+        - 2nd argument = ['names' => $names, 'char' => $char]
+
+
+- On the file "char.php"
+    - Cut the HTML elements
+
+    - Create a new file "char.view.php"
+        - Inside the folder "pages"
+        - Paste the code taken from "char.php"
+
