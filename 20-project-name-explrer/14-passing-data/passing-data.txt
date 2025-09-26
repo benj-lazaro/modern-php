@@ -1,0 +1,32 @@
+Passing Data Into the render() Function
+---------------------------------------
+- One way of passing data into the function "render()"
+    - Then having the data render on the corresponding file
+        - The file that is responsible for generating an output
+
+    - Add an Associative array on the parameter list of "render()"
+        - Conventionally named "$params"
+    
+    - Iterate through the elements using a "foreach()" loop
+        - Dynamically creating variables based on the 'key'
+        - Assigning each with the corresponding 'value'
+
+    - NOTE: A better approach is to use the PHP function "extract()"
+        - Instead of using a "foreach()" loop
+
+
+- The PHP function "extract()"
+    - Acceps an argument value in the form an Associative array
+
+    - It extract elemnts into individual variable(s) (w/ corresponding values)
+        - Into PHP's symbol table in memory
+
+    - The variable(s) is called directly inside
+        - The file(s) responsible for generating output
+
+    - Reference (https://www.php.net/manual/en/function.extract.php)
+
+
+- When calling the function "render()" 
+    - 1st parameter = File being responsible on generating an output
+    - 2nd parameter = Associative array whose value(s) to be passed to the file (1st param)
