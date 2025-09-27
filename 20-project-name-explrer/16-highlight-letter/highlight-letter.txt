@@ -1,0 +1,34 @@
+Highlight The Letter
+--------------------
+- Implement the logic that
+    - Highlights the selected letter in the "main.view.php"
+
+
+- Create a CSS stylesheet named "custom.css"
+    - Saved in the folder "styles"
+
+    - Declare a Class Selector named "active" for 
+        - The HTML Element <a>
+
+        a.active, 
+        a.active:visted 
+        
+    - Declare the property "border-color"
+        - Assign the value "var(--accent)"
+
+    - Declare the property "color"
+        - Assign the value "var(--accent)"
+
+    
+- Refactor the file "main.view.php"
+    - On the "foreach()" loop responsible for generating the list of letters
+        - Append the HTML Attribute class "active"
+            - Of the HTML Element <a>
+
+        - When the variable "$char" is NOT empty
+
+
+- Refactor the file "name.php"
+    - Place the "'char' => $name[0]" as 2nd argument value
+        - When calling the function "render()"
+
