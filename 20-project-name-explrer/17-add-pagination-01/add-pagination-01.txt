@@ -1,0 +1,80 @@
+Add Pagination Part 01
+----------------------
+- Implement pagination feature
+
+
+- Refactor the function "fetch_names_by_initial()"
+    - To return a certain number of entries (i.e. names)
+        - Located within the file "names.incn.php"
+
+    - Add the following new parameters to the function
+        - "$page"
+            - Type "int" with a default value of 1
+            - Representing a page of names
+
+        - "$perPage"
+            - Type "int" with a default value of 15
+            - Represents number of names in a page
+
+    - Refactor the SQL query statement
+        - Add the keyword "LIMIT"
+            - Assign the value of "$perPage"
+            - Pair it with the placeholder ":limit"
+
+        - Add the keyword "OFFSET"
+            - Assign the value of "$page"
+            - Pair it with the placeholder ":offset"
+
+    - Bind the placeholders with their corresponding variables
+        - Placeholder ":limit" with "$perPage"
+            - With an additional parameter "PDO::PARAM_INT"
+            - Informs PHP to expect a return value of int type
+
+        - Placeholder ":offset" with "$perPage * ($page - 1)"
+            - With an additional parameter "PDO::PARAM_INT"
+            - Informs PHP to expect a return value of int type
+
+    - Add input validation
+        - To prevent a string value in "$page"
+            - Force type casted into a int (i.e. 0)
+            - Produce a negative int value
+            - Triggers an "Uncaught PDOException: SQLSTATE[42000]"
+    
+        - Use the PHP function "max()"
+            - Pass the value of 1 and current value of "$page" as argument values
+            - Ensures that it will NEVER has a value of 0 or a negative int
+            
+    
+- Refactor the file "char.php"
+    - Add new argument "$page" to a call on the function "fetch_names_by_initial()"
+    
+    - Capture the value of the URL parameter 'page'
+        - If empty, assign a default value of 1
+        - Type cast value as int
+        - Save into the variable "$page"
+
+    - Declare a new variable "$perPage"
+        - Assign the number of names to be rendered on a page
+        - Initially assigned with the value of 15
+
+    - On the call to the function "fetch_names_by_initial()"
+        - Add the variable "$perPage" as an argument value
+
+
+- In the file "names.inc.php"
+    - Create a new function "count_names_by_initial()" that
+        - Identifies the number of entries of a selected letter or initial
+
+    - Accepts a string parameter named "$char"
+
+    - Returns an int value of the column 'count'
+    
+
+- Back on the file "char.php"
+    - Store the returned value by the function "count_names_by_initial()"
+        - To the variable "$count"
+
+    - On the call to the function "render()"
+        - Add the following argument value 
+        
+        'pagination' => ['page' => $page, 'count' => $count, 'perPage' => $perPage]
