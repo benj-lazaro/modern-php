@@ -1,0 +1,4 @@
+Add Pagination Part 02
+----------------------
+- Implement pagination on the file "char.view.php"
+
