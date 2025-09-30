@@ -1,0 +1,72 @@
+Improve DB Performance With Indexes
+-----------------------------------
+- This lecture focuses on the value of indexes 
+
+
+- When playing with the database table 'names' locally
+    - Using phpMyAdmin
+    
+    - The following SQL statement
+
+        SELECT * FROM `names` WHERE `name` = 'JAN' ORDER BY `year` ASC
+
+        - It took the following elapsed time
+            - Author's machine = 0.0250 seconds
+            - Local machine = 0.0008 seconds
+
+    - With the SQL statement
+
+        SELECT `name`, SUM(`count`) AS `sum` 
+            FROM `names` GROUP BY `name` ORDER BY `sum` DESC LIMIT 10
+
+        - It took the following elapsed time
+            - Author's machine = 0.1446 seconds
+            - Local machine = 0.5698 seconds
+    
+        - Compared to earlier SQL query, this is considered slow
+            - Due to the complexity of the SQL query statement
+
+    - Clicking the link "Explain SQL"
+        - Identifies the "select" statement
+            - If it is a "SIMPLE" one or something else
+
+        - Under the column "possible_keys"
+            - Identifies which column in a database table that 
+                - Can be used an index key
+
+        - Under the column "key"
+            - Identifies if a column has already been select as an index key
+
+
+- To select a table column to be an indexed
+    - Click the tab "Structure"
+
+    - Scroll down until "Create an index on 1 columns" 
+        - Click the button "Go"
+
+    - When the window "Add Index" opens
+        - On the drop-down menu "Index choice"
+            - Select "INDEX"
+
+        - Below identify which table column to apply the index
+            - e.g. 'name'
+
+        - Click the button "Go"
+
+    - Back on the tab "Structure"
+        - The selected column has now a silver key icon
+
+    - Under the section "Indexes"
+        - The selected column name is now included
+            - e.g. 'name'
+
+        - It now have the "Type" of BTREE
+            - A hierarchical data structure
+            - Wherein records are arranged like a sorted book
+
+        - This allows to sort records under the indexed column faster
+            - Prior to indexing, records are loaded in memory
+            - Then sorts it
+
+    - NOTE: The key takeaway is that indexes 
+        - Help improve performance of SQL queries
