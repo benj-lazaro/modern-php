@@ -1,0 +1,88 @@
+Improve groupby Performance
+---------------------------
+- Improve the performance of the complex SQL statement
+    - Used by the function "gen_names_overview()"
+    
+
+- Despite refactoring the structure of the table "names"
+    - Setting the column "name" as indexed
+
+    - It has NOT improved the performance of the 
+        - Complex SQL statement used by the function "gen_names_overview()"
+
+    - The index "name" ONLY alphabetically sorts
+        - The records of the column "name"
+
+    - However, the complex SQL query asks for
+        - Distinct records grouped by the column "name"
+
+        - Calculate the sum of each record's column "count" value
+        
+        - The index "name" offers NO value
+            - It alphabetically sorts records by the column "name" ONLY
+            
+        - The "count" column is ONLY available aa a normal column
+            - It is NOT optimized 
+            - SQL is unable to utilized the optimized index structure
+    
+
+- To address this concern is to create a new index key
+    - First, change the length of the table column "name"
+        - To reduce it from 1023 down to 500
+
+    - Click the tab "Structure"
+
+    - On the table column "name"
+        - Click the link "Change"
+
+    - On the field "Length/Values"
+        - Change the current value 1023 to 500
+        - Click the button "Save"
+        - Returns the "Structure" window with the changes implemented
+
+
+    - Next, create a new index key involving two table columns
+        - Namely the columns "name" and "count"
+    
+    - Scroll down to "Create an index on __ " columns
+        - Type 2
+        - Click the button "Go"
+
+    - Launches the "Add index" window
+        - On the drop-down menu "Index choice"
+            - Select "INDEX"
+
+        - On the section "Column"
+            - First select the column "name"
+            - Then select the column "count"
+            
+        - NOTE: The order of the columsn is IMPORTANT
+            - Sorts the records by column "name" first
+            - Then by column "count"
+
+    - Click the button "Go"
+
+    - On the section "Indexes"
+        - A new index key with the Keyname "name_2" is created
+        - It involves two table columns namely "name" & "count"
+    
+
+- Test the function "gen_names_overview()" complex SQL query statement
+    - Paste it on phpMyAdmin's inline SQL browser
+        - Located within the tab "Browse"
+
+    - Click the button "Go"
+
+
+- As a guideline for implementing index key(s)
+    - For everything that is filtered in a SQL query
+        - You MIGHT consider using an index key
+        - In order to optimize the query
+    
+    - A SQL query that utilizes a "LIKE" expression
+        - e.g. names that begins w/ a specific character 
+        - Followed by any character i.e. "{$char}%"
+
+    - A SQL query that utilizes the "GROUP BY" clause
+
+    - NOTE: NOT all queries can be optimized
