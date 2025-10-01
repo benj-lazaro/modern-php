@@ -1,0 +1,21 @@
+Overview
+--------
+- This section focuses on
+    - Regular expression also referred as regex (in short)
+
+    - How regex helps 
+        - Evaluate the contents of a string
+        - Find sub-string(s) within a string
+
+    - PHP offers several function that work with regex
+        - preg_match()
+            - Checks if a string matches a regular expression
+            - e.g. checking for an email address or phone number pattern
+
+        - preg_replace()
+            - It is like the function "str_replace()"
+                - Replaces a sub-string with another
+                - BUT uses a regular expression
+
+    - NOTE: This is NOT mandatory
+        - PHP code can be written without the need to know regex
