@@ -1,0 +1,43 @@
+Fix A Bug
+---------
+- A bug in the function "fetch_names_by_initial()"
+    - Specifically on the SQL statement's "LIKE" expression
+        - Wherein it binds with "{$char}%"
+
+    - The "%" character has a special meaning in SQL
+        - It stands for ANY (allowed) character
+    
+    - Passing the "%" as value to the URL parameter "char"
+        - It retrieves ALL of the names from the database
+            - Renders them using the "char.view.php"
+
+        - This is due to SQL intprets the query as "%%" meaning
+            - It looks for names that starts with ANY character
+            - Succeeding by ANY characters
+            - Resulting to ALL records retrieved from the database
+
+    
+- NOTE: This is NOT a major security issue (i.e. SQL injection)
+    - Nonetheless, the script had done something that is NOT intended
+        
+    - This incident highlights
+        - The need to test the application
+            - Have someone review the code
+
+        - The value of placing (multiple) layered safeguards on the code
+            - Implementing validation checks
+                - When it fails, redirects user to the corresponding page
+                - Then terminate the PHP script
+
+            - Prevents a missed bug in becoming a major security issue
+
+        - The value of using PDO's "prepare" statements
+
+
+- To address this concern
+    - Refactor "char.php"
+
+    - Implement an additional input validation check
+        - If the value of "$char" is NOT an alphabet character
+        - Redirect user back to "index.php"
+        - Then terminate the PHP script
