@@ -1,0 +1,42 @@
+Intro To Regex: Search Patterns In Strings
+------------------------------------------
+- Using Regex to check if a target string pattern exists w/in a string
+    - The PHP function "preg_match()"
+        - 1st parameter = regex expression enclosed w/in /<regex>/ 
+        - 2nd parameter = input string
+        - 3rd parameter = an array with results of search
+
+        - It returns
+            - An int value of 1 = match found
+            - An int value of 0 = NO match found
+            - A boolean "false" = search failed
+
+        - NOTE: It ONLY finds the 1st matching instance
+            - To search for all matching instances
+            - Use the PHP function "preg_match_all()"
+            - Reference (https://www.php.net/manual/en/function.preg-match-all.php)
+
+        - Reference (https://www.php.net/manual/en/function.preg-match.php)
+
+
+- Regular expression uses Character classes
+    - A character class matches a single charcter in the input string
+
+    - However, character types (see below) are commonly used with Regex
+        - Each type has a specific meaning
+
+        \d     any decimal digit from 0 to 9
+        \D     any character that is not a decimal digit (includes whitespace)
+        \h     any horizontal white space character
+        \H     any character that is not a horizontal white space character
+        \s     any white space character
+        \S     any character that is not a white space character
+        \v     any vertical white space character
+        \V     any character that is not a vertical white space character
+        \w     any "word" character (ignores whitespace charcter)
+        \W     any "non-word" character
+
+        - Reference (https://www.pcre.org/pcre.txt)
+
+    - Reference (https://www.php.net/manual/en/regexp.reference.character-classes.php)
+
