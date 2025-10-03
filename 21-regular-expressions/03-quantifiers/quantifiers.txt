@@ -1,0 +1,13 @@
+Quantifiers: Control Repetitions For Powerful Pattern Matching
+--------------------------------------------------------------
+- Allows to specify how often a character or character class 
+    - In front of the it should be repeated
+
+
+- Quantifiers that can be used
+    - *     = repeated 0 to any number of times
+    - +     = repeated 1 to any number of times
+    - ?     = repeated character (or character class) 0 or 1 time (optional)
+    - {n}   = repeated exactly at <n> times
+    - {n,}  = repeated at least <n> times
+    - {n,m} = repeated from <n> tp <m> times
