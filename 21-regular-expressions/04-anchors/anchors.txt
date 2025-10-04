@@ -1,0 +1,20 @@
+The '^' And '$' Anchors: Define String Boundaries
+-------------------------------------------------
+- These are two important symbols in regular expression 
+    - The '^' refers to the start position of the string
+    - The '$' refers to the end position of the string
+
+
+Example:
+
+/^H/    = matches all "H" characters that are at the beginning of a string
+
+
+- The character '.' in a regular expression
+    - It refers to ANY character
+
+
+- NOTE: Regular expression can only perform 90-95% validation
+    - NEVER completely make SURE that EVERYTHING MATCHES
+
+    
