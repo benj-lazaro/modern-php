@@ -1,0 +1,45 @@
+Quiz 19: Test Your Knowledge Of Regular Expressions
+---------------------------------------------------
+- Consider the string: 
+
+    "The quick brown fox jumps over the lazy dog. The quick white dog plays in the yard."
+
+    - Given the PHP function call
+
+        preg_match('/quick \w* \w*/', $string, $matches),
+
+    - what will $matches contain after execution?
+
+    - Answer: "quick brown fox"
+
+
+- Consider the two different strings: 
+
+    "Order #1234: Total 150.75 USD" and "Confirmation: Your order number is #567, ready for pickup."
+
+    - You want to write a PHP code snippet that uses regular expressions 
+        - To extract the order numbers ("#1234", "#567") from these strings
+        
+    - Which of the following commands would correctly achieve this?
+
+    - Answer: preg_match('/#\d+/', $string, $matches);
+
+
+- Consider the PHP function call 
+    preg_match('/^\d{3}-\d{2}-\d{4}$/', $string, $matches)
+
+    - Which of the following strings would produce a match with this pattern?
+
+    - Answer: "123-45-6789"
+
+
+- Consider the strings: 
+    "Locations: (45.123, -70.987), (48.654, -72.987)" 
+    and "Coordinates reported at (42.987, -68.654) and (41.123, -67.321)."
+
+    - To extract all the coordinates from these strings 
+        - Using the preg_match_all function in PHP
+    
+    - which of the following patterns should you use?
+
+    - Answer: /\(\d+\.\d+, \-\d+\.\d+\)/
