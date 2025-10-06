@@ -1,0 +1,12 @@
+Bracket Expressions In Practice
+-------------------------------
+- Bracket expressions in practice 
+
+
+- A capture group is a quantifier that is represented
+    - Using with a pair of { }
+
+    - Then placing an integer value inside that
+        - States the number of times a pattern is to be repeated
+
+    
