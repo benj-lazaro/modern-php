@@ -1,0 +1,38 @@
+Bracket Expressions (Theory): Craft Custom Character Sets & Ranges
+------------------------------------------------------------------
+- Alternative to using pre-made expressions (e.g. /d, /d+, /w)
+    - Bracket expressions allows to create your own character class
+
+
+- Using a pair of [ ]
+    - Inserting the regular expression in-between
+        - e.g. [abc] = a character that is either an "a", "b" or "c"
+        - e.g. [ABC] = a character that is either an "A", "B" or "C"
+
+        - NOTE: A bracket expression refers to a SINGLE CHARACTER ONLY
+            - And each character is CASE-SENSITIVE
+
+    - Using a "-" provides character range
+        - e.g. [a-c] = a character that is between lowercase "a" to "c" (in Unicode)
+        - Similar to the expression [abc] but written differently
+
+    - Multiple ranges also can be used
+        - e.g. [A-Za-z0-9] = a character that is between "A" and "Z", 
+            - Between "a" and "z" or a digit between 0 and 9
+
+    - Symbols can also be used
+        - e.g. [!?_] = a character that is either a "!", "?" or "_"
+        
+        - e.g. [A-Za-z0-9!] = a character that is between "A" & "Z", "a" & "z",
+            - A digit between 0 & 9 or an "!"
+
+    - Can be combined with a pre-made character classes
+        - e.g. [A-Za-z0-9/d] = a character that is between "A" & "Z", "a" & "z" or
+            - A digit between 0 & 9
+
+        - NOTE: Rarely used since [ ] expressions is intended for
+            - Explicitly specifying the ranges involved
+
+    - Placing a "^" at the start of the [ ] expression's content
+        - NEGATES the entire expression
+        - e.g. [^A-Z] = a character that is NOT between "A" and "Z"
