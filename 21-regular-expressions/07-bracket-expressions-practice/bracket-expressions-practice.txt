@@ -3,10 +3,6 @@ Bracket Expressions In Practice
 - Bracket expressions in practice 
 
 
-- A capture group is a quantifier that is represented
-    - Using with a pair of { }
+- A pair of { } functions as a quantifier that is represents
+    - The number of times a pattern is repeated
 
-    - Then placing an integer value inside that
-        - States the number of times a pattern is to be repeated
-
-    
