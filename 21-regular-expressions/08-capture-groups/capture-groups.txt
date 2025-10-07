@@ -1,0 +1,19 @@
+Capture Groups: Extract Structure Data Elements
+-----------------------------------------------
+- A capture group is created
+    - Using a pair of ( )
+
+    - Inside contains a combination of 
+        - Bracket expressions, character & word classes, etc.
+        - e.g. ([a-z]*)
+
+    - Returns matches results
+        - Access the result of each capture group separately
+
+    - When working with a character that 
+        - Consume multiple bytes to be represented in memory
+            - e.g. €
+
+        - Pass the Unicode flag "u" at the end of the regex pattern
+            - When working with the PHP function "preg_match()"
+            - e.g. preg_match('/<regex>/u', <input_string>, <match_array>) 
