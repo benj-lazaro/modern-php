@@ -1,0 +1,31 @@
+Overview
+--------
+- This section focuses on
+    - The general approach of object-oriented programming in PHP
+
+    - Object oriented programming allows to write modular code that
+        - Help keep track of even larger projects
+        - Maintain control over it
+
+    - It offers a divide & conquer approach
+        - Bundling functions (i.e. methods) into classes
+        - Addressing earlier concern on 'colliding' function names
+
+    - It offers a new approach to structuring code that
+        - Allows to develop more complex applications in PHP
+
+
+- Why object orienttation is needed?
+    - A function rarely stands for itself
+        - Usually works or exits with data
+        - Data is closely correlated to a function
+
+    - Offers a way to bundle properties & methods in code
+
+
+- In this section will first build
+    - A simple bank account program without using OOP
+        - To demonstrate how 'messy' code & difficult to maintain it
+    
+    - After that explore the concept object orientation
+        - Then develop the same program using OOP
