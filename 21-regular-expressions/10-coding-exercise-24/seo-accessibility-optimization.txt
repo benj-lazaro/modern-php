@@ -1,0 +1,35 @@
+Coding Exercise 24: SEO & Accessibility Optimization
+----------------------------------------------------
+- Dive into the task of revamping a classic website
+    - This involves auditing and refining the site's HTML content 
+    - To align with contemporary web standards and accessibility principle
+
+    - The string in the variable "$htmlContent" which
+        - Contains a portion of an HTML document
+
+        - It has various HTML element including 
+            - Links (<a> tags)
+            - Images potentially missing alt attributes
+            - Outdated <i> tags
+
+        - NOTE: Do NOT assume the presence of line breaks 
+            - Between HTML elements in the variable "$htmlContent"
+            - They are included in the example for readability purposes only
+
+    
+- Tasks
+    - Extract hyperlinks
+        - Isolate ALL hyperlink ("href" attribute) from <a> tags
+        - Store matching values in an array named "$links"
+
+    - Replace deprecated tags
+        - Transform ALL <i> to <em>
+        - Save modified HTML content in the variable "$emphasizedHtmlContent"
+
+    - Enchance image accessibility
+        - For any <img> that lacks an "alt" attribute
+        - Append a generic "alt" with the value "placeholder image"
+
+        - Save updated HTML content in the variable "$accessibleHtmlContent"
+
+    
