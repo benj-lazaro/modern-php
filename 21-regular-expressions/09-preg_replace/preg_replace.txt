@@ -1,0 +1,18 @@
+Text Transformations: Pattern-Based Edits With preg_replace
+-----------------------------------------------------------
+- The PHP function "preg_replace()"
+    - Perform regular expression (text) search and replace
+
+    - Reference (https://www.php.net/manual/en/function.preg-replace.php)
+
+
+Syntax:
+
+preg_replace(
+    string|array $pattern,
+    string|array $replacement,
+    string|array $subject,
+    int $limit = -1,
+    int &$count = null
+): string|array|null
+
