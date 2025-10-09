@@ -3,7 +3,7 @@ Limitations Of Procedural Approaches: Setting The Stage For OOP
 - Modelling a bank account program without using OOP
 
 
-- Limitations of working with procedural programming approach
+- Limitations of the procedural programming approach
     - A function does NOT have the means to verify 
         - If a valid argument value comes with the required properties
         - That the a function is meant to work on
