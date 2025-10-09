@@ -1,0 +1,31 @@
+Limitations Of Procedural Approaches: Setting The Stage For OOP
+---------------------------------------------------------------
+- Modelling a bank account program without using OOP
+
+
+- Limitations of working with procedural programming approach
+    - A function does NOT have the means to verify 
+        - If a valid argument value comes with the required properties
+        - That the a function is meant to work on
+
+    - Functions working with an array argument value
+        - Require placing a "&" on the parameter variable
+
+        - To directly update the value(s) of the origina array
+            - NOT the implicit copy that is normal passed as argument value
+
+        - Makes the change(s) permanent after leaving the function
+            - NOTE: This is NOT normally done with an array
+
+    - Also on functions working with arrays
+        - The structure of the array argument value is assumed beforehand
+
+        - To prevent from triggering a warning
+            - When accessing non-existent array 'keys'
+    
+    - Chance of colliding function names are high
+        - Identical function names intended for different set of data
+            - Triggering a "Fatal Error: Cannot redeclare <function_name>
+
+        - As prevention 
+            - Requires tedius long function names
