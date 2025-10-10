@@ -1,0 +1,42 @@
+Classes In OOP: Create Custom Objects
+-------------------------------------
+- A class allows to "bundle" properties together
+    - Think of a class as a baking reciple
+
+    - Wherein both properties and methods are defined
+        - Property = attributes of a baked product
+        - Method   = local function that process a property
+
+    - After that, creates a new instance of a class
+        - Using a single recipe (i.e. class) to create 1 or more cakes (i.e. objects)
+
+        - A single class can instantiate as many object as needed
+
+
+- The naming convention of a class name suggests that
+    - The first letter of EVERY word is written in uppercase
+
+    - Reference (https://www.php.net/manual/en/language.oop5.basic.php)
+
+
+- When defining a property of a class
+    - Best practice to specify the data type
+        - Despite being optional
+        - Clearly specifies type of value it will store
+
+
+Syntax:
+
+// Define a class
+class <class_name>
+{
+    // property declaration
+    public [<data_type>] $<property_name> [= <assigned_value>];
+
+}
+
+// Instiate a new object from a class
+$<object_name> = new <class_name>();
+
+// Access and assign values to an object's properties
+$<object_name>-><property_name> = <value>;
