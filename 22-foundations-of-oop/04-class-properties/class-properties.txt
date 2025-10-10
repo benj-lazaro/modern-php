@@ -1,0 +1,38 @@
+Properties In A Class: Typing, Initialization & Management
+----------------------------------------------------------
+- Declaring a class property's data type is optional
+    - Considered best practice to declare the data type of each property
+    - This helps PHP's type system to ENFORCE it
+
+
+- A Class with uninitialized properties
+    - When instantiated into an object
+    - Object's properties will be assigned the value of "uninitialized"
+
+
+- Accessing an Object's property with the value of "uninitialized"
+    - Trggers a fatal error
+    - A property MUST be initialized with value before accessing it
+
+
+- When assigning a value of a different data type into an Object's property
+    - If "strict_types" mode is NOT declared or ENABLED
+        - PHP performs an implicit typecast on the assigned value
+
+    - If "strict_types" mode is ENABLED
+        - PHP triggers a fatal error
+        - Workaround is to explicitly typecast the assigned value
+
+
+- To override an asisgned value of an OBject's property
+    - Simply assign a new value using the "=" operator
+
+
+- To specify a defalut value on a Class' property
+    - Place the "=" right after the property name
+    - Followed by the default value to be assigned
+
+    - NOTE: Works for simple Class properties
+        - Those that stores a int or string
+
+        - For complex Class property, require the use of a Constructor
