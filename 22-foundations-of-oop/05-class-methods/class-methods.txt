@@ -1,0 +1,12 @@
+Class Methods: Define Behavior With Objects
+-------------------------------------------
+- A function defined within a Class is referred to as a "Method"
+    - Naming convention
+        - Best practice NOT to use a "_" character
+        - Capitalize the 1st letter of the succeeding words
+
+    - When a Method access a Property within its own Class
+        - Prefix the Property with "$this->"
+
+        - The "$this->" represents the current instance of the Class
+
