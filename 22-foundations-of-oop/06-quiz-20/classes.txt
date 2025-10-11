@@ -1,0 +1,79 @@
+Quiz 20: Test Your Knowledge About Classes
+------------------------------------------
+- In the context of Object-Oriented Programming (OOP) in PHP, which of the following statements is incorrect?
+    - Answer: Methods are predefined functions w/in a class that and cannot access or modify the object's properties
+
+
+- You want to define a class UserProfile with a single property username. 
+    - Then you want to create an instance of UserProfile and save it to the variable $user
+    - Which of the following code snippets correctly accomplishes the task?
+
+    - Answer:
+
+        class UserProfile
+        {
+            public string $username;
+        }
+
+        $user = new UserProfile();
+
+
+- In the continued development of our UserProfile class
+    - You decide to add a method that enables the retrieval of the user's username.
+
+    - Below is the class with a crucial line missing in the method. 
+        - Your task is to identify the missing line, ensuring the method works as intended.
+
+
+            class UserProfile {
+                public string $username;
+            
+                function getUsername() {
+                    // missing line
+                }
+            }
+            
+            $user = new UserProfile();
+            $user->username = 'PHPMaster';
+
+    - Answer: return this->username
+
+
+- The UserProfile class has been expanded 
+    - To include not just a username but also an visits property to track user engagement through a counter.
+
+    - The class provides methods to increment the counter, reset it, and read it.
+
+        class UserProfile {
+            public int $visits = 0;
+        
+        
+            function incrementVisits() {
+                $this->visits++;
+            }
+        
+            function resetVisits() {
+                $this->visits = 0;
+            }
+        
+            function getVisits() {
+                return $this->visits;
+            }
+        }
+     
+     
+        $user = new UserProfile();
+        
+        $user->incrementVisits(); 
+        $user->incrementVisits(); 
+        $user->resetVisits();     
+        $user->incrementVisits(); 
+        $user->incrementVisits(); 
+        $user->incrementVisits();
+        $user->incrementVisits();
+        $user->incrementVisits();
+
+    - After these operations, what is the output of calling $user->getVisits()?
+
+    - Answer: 5
+    
