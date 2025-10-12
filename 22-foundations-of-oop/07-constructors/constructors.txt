@@ -1,0 +1,38 @@
+Constructors: Ensure Proper Initialization Of Object Properties
+---------------------------------------------------------------
+- A Constructor is a special class function (i.e. Method)
+    - It is ALWAYS named as "__construct()"
+
+    - It is AUTOMATICALLY EXECUTED when
+        - An Object is instantiated from a Class
+    
+    - It can be used to initialize Object Properties with initial values
+        - Prvents Fatal errors
+        - Triggered by a Method accessing uninitialized typed Properties
+
+    - A list of parameter variables can be set within the ( )
+        - Each parameter variable corresponds to an Object's Property
+        - Passed argument values then initializes the corresponding Property
+           
+    - NOTE: It helps enable the "strict_types" 
+        - Ensures data type checks are enforced duing development
+
+            declare(strict_types=1);
+
+
+Syntax:
+
+class <class_name>
+{
+    // Class Typed Property
+
+    // Constructor
+    function __construct(<data_type> $<parameter_variable>, ...)
+    {
+        $this-><property> = $<parameter_variable>;
+        ...
+    }
+
+    // Class Method
+}
+
