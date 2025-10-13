@@ -1,0 +1,10 @@
+Simplifying Constructors: Efficient Initialization & Business Logic Integration
+-------------------------------------------------------------------------------
+- To simplify a Constructor declaration in a Class
+    - Move the declaration of Properties into the Constructor's parameter list
+    - Remove the declaration of Properties
+
+    - It is considered legal to combine the simplified Constructor with
+        - Separate declaration of Property
+        - Initialize said Property within a Constructor
+        - (Optionally) integrate business logic to said Property w/in a Constructor
