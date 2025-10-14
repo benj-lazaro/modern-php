@@ -1,0 +1,12 @@
+Secure Class Properties: From Public To Private Access
+------------------------------------------------------
+- To secure Properties of a Class
+    - Changing from "public" to "private"
+
+    - Prevents a Class Property in a Class that is NOT by design
+        - To be directly accessed and updated (i.e. set)
+
+    - In doing so, a Property will now be ONLY ACCESSIBLE w/in a Class
+
+    - Attempt to access a Private Property of a Class
+        - Triggers a "Fatal error: Uncaught Error: Cannot access private property"
