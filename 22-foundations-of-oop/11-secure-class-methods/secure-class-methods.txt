@@ -1,0 +1,18 @@
+Securing Class Methods: From Public To Private Access
+-----------------------------------------------------
+- The keywords "public" and "private" are applicable to Class Methods
+    - And NOT exclusively to Class Properties
+
+    - By default, Methods in a Class are implicitly "public"
+        - NOTE: The same with a Class Constructor
+
+    - A private Class Method
+        - Meant that it can NOT be accessed outside of a Class
+        - It can ONLY be accessed with other Methods within a Class
+
+    - An attempt to use a private Class Method
+        - Triggers a "Fatal error: Uncaught Error: Call to private method"
+
+    - This is applicable to helper Methods of a Class
+        - e.g. fetch data from the database for certain use cases
+        
