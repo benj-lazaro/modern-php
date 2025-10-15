@@ -1,0 +1,41 @@
+Coding Exercise 25: Hotel Room Digitization Part 01
+---------------------------------------------------
+- Your task is to reconstruct a hotel digitally
+    - Starting with its fundamental block: the rooms
+    
+    - Each room is distinguished by a unique number
+        - Offer a variety of facilities (e.g. king-size bed, WiFi access, scenic view)
+        - Comes with a daily rate
+
+    - Class requirement
+        - A PHP Class named Room
+
+        - It has the following Properties
+            - roomNumber (int)  = identifies each room uniquely
+            - rate (float)      = daily cost of the room in dollars
+
+        - It has the following public Methods
+            - getRoomNumber     = retrieves the room number
+            - calculateCost     = calculates & returns the total cost of the stay, given a specified number of days
+
+        - The Method getRoomNumber()
+            - Returns the (int) value of the Property roomNumber
+
+        - The Method calculateCost()
+            - It accepts a parameter variable "$numberOfDays"
+            
+            - If "$numberOfDays" is NOT GREATER THAN 0
+                - Returns a "null"
+                
+                - Otherwise returns the product of "$numberOfDays" * $rate
+                    - Rounded to two (2) decimal places
+                
+            - NOTE: Assume that "$numberOfDays" will ALWAYS be provided as an int
+                - Test for a value greater than 0, less than 0 and 0
+
+
+    - NOTE: Udemy's backend is currently running PHP 7
+        - It does NOT support EXPLICIT type declarations for Class Properties
+            - e.g. AVOID "public int $data", INSTEAD write as "public $data"
+
+        
