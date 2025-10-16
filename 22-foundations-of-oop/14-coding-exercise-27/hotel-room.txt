@@ -1,0 +1,26 @@
+Coding Exercise 27: Hotel Room Digitization Part 03
+---------------------------------------------------
+- Focuses on the manipulation of the "Room" Class' Property "amenities"
+
+
+- Create a new private Method named "addAmenity()"
+    - Adds a new "amenity" object to the Property "amenities"
+
+
+- Create a new private Method named "removeAmenity()"
+    - It accepts a string argument
+    
+    - Then searches for the string w/in the Property "amenities"
+        - If found, removes it from the array
+
+
+- Create a new Method named "transferAmenity()"
+    - It accepts two arguement values 
+        - A Room object under the parameter variable "$to"
+        - A string for the amenity name to be transfered
+
+    - It first verifies the movability of the specified amenity in the current room
+        - When verified to be movable
+        - The amenity is removed from the current room
+        - Then  added to the Room object specified in "$to"
+
