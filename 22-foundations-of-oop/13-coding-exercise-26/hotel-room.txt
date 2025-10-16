@@ -1,0 +1,28 @@
+Coding Exercise 26: Hotel Room Digitization Part 02
+---------------------------------------------------
+- Continue evolving the "Room" Class 
+    - By introducing a dynamic array of Amenity objects
+
+    - Adding a new Property named "amenities"
+        - It holds a collection of "Amenity" objects
+
+
+- Define a new Class "Amenity"
+    - With the following Properties:
+        - name (string)         = name of the amenity
+        - movable (bool)        = if amenity is movable or NOT
+        - description (string)  = brief description of amenity
+
+    - Ensure each Property is appropriately encapsulated
+        - With a Contructor Method for initialization
+
+
+- Define a new Method "createDescription"
+    - A Method for the "Room" Class
+    
+    - It concatenates all amenity descriptions 
+        - Into a single descriptive string
+        - Save concated string into a variable named "$description"
+        - Return the string
+
+
