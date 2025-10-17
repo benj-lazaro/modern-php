@@ -1,0 +1,120 @@
+Overview
+--------
+- This section focuses on
+    - Creating a web app named "Cities Explorer"
+
+    - It allows to paginates through a list of cities
+
+    - The list of cities came from Simplemaps
+        - Website (https://simplemaps.com/data/world-cities)
+        - Data exported as a .csv file
+        - Included with the starter file as "worldcities.csv"
+        - Author included an exported SQL file "worldcities.sql"
+
+    - Use the attach PHP script "import.php"
+        - To import contents of the .csv file into the MySQL database   
+        - NOTE: Create the database table first
+
+    - Alternatively, import the "worldcities.sql" using phpMyAdmin
+        - NOTE: Also requires creating the database table first
+
+
+- Create a new user account using phpMyAdmin
+    - Click tab "User accounts"
+        
+    - Click link "Add user account"
+        
+    - Assign the user name "cities" on the field "User name"
+        
+    - Select "Local" on the field "Host name"
+        
+    - Click the button "Generate" to generate a password
+        - Copy the generated password
+
+    - Click the checkbox "Create database with the same name..."
+
+    - Click the button "Go"
+
+
+- Open the starter file "inc/db-connect.inc.php"
+    - Replace the user account "root" to "cities"
+
+    - Replace the previous assigned password 
+        - Paste the recently generated one 
+
+    - Save the changes
+
+
+- To import the file "worldcities.sql" into the database
+    - Click the database "cities"
+
+    - Click the tab "Import"
+
+    - Click the button "Choose File"
+        - Select "worldcities.sql"
+
+    - Click the button "Import"
+        - Returns "Import has been successfully finished..."
+
+    - The database "cities" has now
+        - A table named "worldcities"
+
+    
+- On the database "worldcities"
+    - Attempt to order the data by the column "population"
+        - It does NOT work
+
+    - To address this concern
+        - Click the button "SQL"
+            - Use the SQL statement 
+
+                UPDATE `worldcities` SET `population` = '0' WHERE `population` = ''
+
+        - Click the button "Go"
+
+        - Next click the tab "SQL"
+
+        - On the column "population"
+            - Click the link "Change"
+
+        - Change the
+            - "Type" from "VARCHAR" into "DECIMAL"
+            - "Length" from 200 to 12,2
+
+        - Click the button "Save"
+
+        - Then change the
+            - "Type" from "VARCHAR" into "INT"
+            - "Length" from 200 to 11
+
+        - Click the button "Save"
+
+
+- Add an index key for the column "population"
+    - Click the tab "Structure"
+
+    - Click the link "More"
+    
+    - Click the link "Index"
+
+    - A Confirm window appears
+        - Click the button "OK"
+
+    - On the section "Indexes"
+        - A new index key created with the name "population"
+
+
+- Add an another index key for the column "city"
+    - Click the link "More"
+    
+    - Click the link "Index"
+
+    - A Confirm window appears
+        - Click the button "OK"
+
+    - On the section "Indexes"
+        - A new index key created with the name "city"
+
+    
+- NOTE: The starter file "worldcities-final.sql"
+    - Contains optimized structure w/ the additional index keys included
