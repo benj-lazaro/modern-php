@@ -1,0 +1,33 @@
+Create Model Class
+------------------
+- Create a new folder "src"
+    - This will ONLY contain files that contain Classes
+        
+
+
+- Inside the folder "src"
+    - Create a Class file named "WorldCityModel.php"
+        - NOTE: A Model represents a single entry (i.e. record) in the database
+
+    - Inside the file "WorldCityModel.php"
+        - Declare a Class name "WorldCityModel"
+        - NOTE: It is best practice to name the filename that MATCHES the Class name
+        
+    - Create Properties based on the database column names
+        - NOTE: EXCLUDE column names that has an "_" character
+
+    
+- Open the file "/inc/all.inc.php"
+    - Require the file "WorldCityModel.php"
+
+
+- Open the file "index.php"
+    - Create mocked up models
+
+    - Save each model into an array named "$entries"
+
+    - Pass the "$entries" as an argument value to the function "render()"
+
+
+- Open the file "/views/pages/index.view.php"
+    - Render the content of the passed values from the variable "$entries"
