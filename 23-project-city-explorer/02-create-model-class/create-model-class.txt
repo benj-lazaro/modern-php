@@ -31,3 +31,11 @@ Create Model Class
 
 - Open the file "/views/pages/index.view.php"
     - Render the content of the passed values from the variable "$entries"
+
+
+- The reason why a Constructor function was not declared / used
+    - The entries of the app will be fetched directly from the database
+    
+    - On the next lecture
+        - There will be NO need to create objects from the Class manually
+        
