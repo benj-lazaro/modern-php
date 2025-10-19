@@ -1,0 +1,74 @@
+Add A Repository
+----------------
+- Create a new Class named "WorldCityRepository" in the sub-folder "src"
+    - The filename uses the same name as the Class
+
+    - This Class will be responsible for
+        - Fetching & updating data from & to the database, respectively
+
+    - Open the file "all.inc.php"
+        - Add a new "require" statement for the Class "WorldCityRepository"
+
+
+- Create a mock Method named "fetch()"
+    - Responsible for fetching data from the database
+        - Returns an array
+
+    - Copy the mock model objects from the file "index.php"
+        - Including the array "$entries"
+        - Paste it within the Method
+
+
+- Back in the file "index.php"
+    - Create a new object from the Class "WorldCityRepository"
+    
+    - NOTE: Use the convention of naming the object (i.e. variable)
+        - With the same name as the Class it was instantiated from
+        
+    - Call the method "fetch()"
+        - Save the returned value (i.e. array) into the variable "$entries"
+
+
+- Once the test is successful
+    - Refactor the Method "fetch()" to connect & access the database 'cities'
+    - NOTE: Using the keyword "global" w/in a OO program is a complete ANTI-PATTERN
+
+
+- In the Class "WorldCityRepository"
+    - Create a constructor
+    
+    - Accepts a private object PDO as argument value
+        - Basically accepting a database connection as an argument value
+
+
+- Update the statement in the file "index.php" that 
+    - Instantiates an object from the Class "WorldCityRepository"
+    
+    - Pass the variable "$pdo" as argument value
+        - This object contains the database connection using PDO
+        - NOTE: Check the file "/inc/db-connect.inc.php"
+
+
+- Back in the file "WorldCityRepository.php"
+    - Refactor the Method "fetch()"
+
+    - Prepare an SQL statement 
+
+        'SELECT `id`, `city`, `lat`, `lng`, `country`, `iso2`, `iso3`, `capital`, `population` 
+            FROM `worldcities` ORDER BY `population` DESC LIMIT 10'
+        
+    - Use the PDO Method "fetchAll()", pass two arguments
+        - 1st = "PDO::FETCH_CLASS"
+            - Treat each database entries / records as Properties of a Class
+
+        - 2nd = "WorldCityRepository"
+            - The Class that PHP will match the corresponding columns of each database entry
+
+    - Save the returned array into the variable "$entries"
+
+    - Return the variable "$entries" to the calling line of code
+
+
+- Back in the file "index.php"
+    - Reloadng the browser
+        - Renders the 1st 10 cities fetched from the database
