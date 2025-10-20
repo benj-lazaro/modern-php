@@ -1,0 +1,64 @@
+Fetch Additional Columns 
+------------------------
+- Focuses on fetching the remaining columns from the database that was previously excluded
+    - city_ascii
+    - admin_name
+
+
+- To fetch these columns without triggering a 'deprecation' notices from PHP
+    - Open XAMPP's "php.ini" file
+        - Located at "/opt/lampp/etc/php.ini"
+
+    - Search for "error_reporting"
+        - The current value "E_ALL & ~E_DEPRECATED & ~E_STRICT" is ideal for production deployment
+
+        - Change the value to "E_ALL"
+            - Ideal for development
+            - Renders deprecation notices
+
+        - Save changes
+            - Restart XAMPP's "Apache Web Server" service
+
+        - To verify
+            - Launch or relaunch PHP's info (phpinfo.php)
+            - Search for "error_reporting"
+            - The assigned value should change from "22527" to "32767"
+
+
+    - Refactor the file "/src/WorldCityModel.php"
+        - Declare a Constructor function
+
+        - Migrate the Class Properties as parameter variables of the Constructor function
+
+        - Include the additional columns
+            - Use the proper naming convention for PHP 8
+                - i.e. no "_" between words
+
+        - Save changes
+
+
+
+    - Refactor the file "/src/WorldCityRepostiry.php"
+       - Declare and enable "Strict Typing"
+
+            declare(strict_types=1);
+
+
+        - Refactor the argument value for the PDO function "fetchAll()"
+            - Change from "PDO::FETCH_CLASS, 'WorldCityModel'" to "PDO::FETCH_ASSOC"
+
+        - Declare an empty array named "$models"
+            - This will store each database entry as an instantiated "WorldCityModel" object
+
+        - Declare a "foreach" loop
+            - Iterate through the fetched database entries
+            
+            - Instantiate a new "WorldCityModel" object
+                - Pass the column value of each database entry as argument values
+
+            - Save each instantiated object into the array "$models"
+
+            - NOTE: The value of each database entry's columns are IMPLICITLY coverted into a string
+                - For non-string columns, EXPLICITLY type cast it to their corresponding data type 
+
+        - Return the array "$models"       
