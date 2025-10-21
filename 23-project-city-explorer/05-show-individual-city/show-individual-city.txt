@@ -1,0 +1,61 @@
+Show An Individual City
+-----------------------
+- Implement page that renders an individual city 
+    - At the root folder of the project
+        - Create a new PHP file named "city.php"
+
+
+- Open the file "city.php"
+    - Copy and paste the codebase of "index.php"
+
+    - Declare a new variable named "$id"
+        - Stores the value of $_GET URL parameter "id"
+            - Otherwise, use the value of 0
+
+    - Change the method "fetch()" to "fetchById()"
+        - This is a Method of the Class "WorldCityRepository" that it to be written
+
+        - Pass the parameter variable "$id"
+        
+    - Change the variable "$entries" to "$city"
+        - Stores the fetched city object 
+
+    - Change the argument value of the function "render()"
+        - From "index.view" to "city.view"
+
+    - Chant the 2nd argument value
+        - From "'entries' => $entries" to "'city' => $city"
+
+
+- Create a new PHP file "/views/pages/city.view.php"
+    - Declare a HTML element <h1>
+        - Echo the value of "$city->city"
+
+        - Followed by an echo the value of "$city->country"
+
+
+- Open the file "/src/WorldCityRepository"
+    - Implement a new Method named "fetchById()"
+        - With a parameter variable "$id"
+    
+    - It could either return a "WorldCity" object or a null
+        - NOTE: Declare "?WorldCity" as the expected return data type
+
+
+- Switch back to "city.php"
+    - If the value of "$city" is empty
+        - Redirect the user back to the "index.php"
+
+
+- Swith back to "/views/pages/city.view.php"
+    - Create a HTML table 
+        - To render display additional city information
+
+
+- Switch to "/views/pages/index.view.php"
+    - Make each listed country clickable
+
+    - Use the function "http_build_query()"
+        - Pass the argument value "['id' => $city->id]"
+        - To generate the corresponding URL $_GET parameter "id"
+
