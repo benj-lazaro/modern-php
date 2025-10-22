@@ -1,0 +1,46 @@
+Optimize The Code
+-----------------
+- Optimize the previous section's codebase structure
+
+
+- In the file "/src/WorldCityRepository.php"
+    - Presence of code repetition on the Methods "fetchById()" & "fetch()"
+        - Fetched data from the database
+        - Implement data into a new instantiated object of the Class "WorldCityModel"
+
+    - NOTE: Repeating several lines of code multiple times is a sign to
+        - Consolidate these lines of code into a single private Class Method 
+
+    - Create a private Class Method named "arrayToModel()"
+        - Accepts a parameter variable named "$entry" of data type array
+        - Returns a "WorldCityModel" object
+
+    - This Method serves as a helper function that
+        - Implements fetched database record data
+        - Into an instantiated object of the Class "WorldCityModel"
+
+    - Replace the repeating lines of code
+        - With a call to the private Class Method "arrayToModel()"
+
+
+- In the file "/src/WorldCityModel.php"
+    - Create a public Class Method named "getCityWithCountry()"
+        - Accepts NO argument value
+        - Returns a string
+
+    - This Method serves as a helper function that 
+        - Access the database record's 'city' and 'country' columns
+        - Returns embedded data in a string
+
+    - Update the corresponding view pages
+        - "/views/pages/index.view.php"
+        - "/views/pages/city.view.php"
+
+    - Replace the line of code
+
+        echo e($city->city); ?> (<?php echo e($city->country);
+
+    - With a call to the method "getCityWithCountry()"
+
+        echo e($city->getCityWithCountry());
+        
