@@ -1,0 +1,25 @@
+Country To Flag Symbol
+----------------------
+- Adding a flag symbol on each city in the rendered list using Unicode
+    - A character can be rendered on the browsing using its numeric value
+        - To determine a character's numeric value
+            - Use the function "ord()"
+            - Pass the character as an argument value
+
+        - To convert a numeric value into its corresponding character
+            - Use the function "chr()"
+            - Pass the numeric value as argument
+
+    - To render a character using its Unicode value
+        - Prefix the number with a "&#"
+        - Suffix the number with a ";"
+        - e.g. "&$65;"   = A
+
+
+- For advanced chracters whose numeric value is greater than 128
+    - Using the function "chr()" in onder to 
+        - Convert into the corresponding character does NOT work anymore
+        - e.g. chr(127462)  = returns a "?" symbol
+
+    - PHP requires using a Multibyte Extension "mb_chr()"
+        - Needed to render flags on the browser
