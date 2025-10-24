@@ -1,0 +1,36 @@
+Add Flag To The Project
+-----------------------
+- Takes the value from the column 'iso2' of each database record
+    - Convert them into their corresponding flag using
+    - PHP functions "mb_chr()" and "ord()"
+
+
+- Move the created function "get_flag_for_country()"
+    - From "index.php" into "/inc/functions.inc.php"
+
+
+- In the file "/src/WorldCityModel.php"
+    - Create a new Method named "getFlag()"
+        - Expected to return a string
+
+    - Simply calls the function "get_flag_for_country()"
+        - Accepts the Property "$iso2" as argument value
+
+    - Returns the returned of the function "get_flag_for_country()"
+        - Which is a data type string
+
+
+- Refactor the Method "getCityWithCountry()"
+    - Embed the call to the Method "getFlag()" in the return statment
+
+        return "{$this->city} ({$this->getFlag()} {$this->country})";
+    
+
+- In the file "/views/pages/city.view.php"
+    - Add a new table row that renders the flag of the selected country
+
+        <tr>
+            <th>Flag of the country:</th>
+            <td><?php echo e($city->getFlag()); ?></td>
+        </tr>
+
