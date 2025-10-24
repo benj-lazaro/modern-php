@@ -1,0 +1,18 @@
+Implement Pagination
+--------------------
+- Implement pagination on the web application as an exercise
+
+
+- Create new Methods in the file "/src/WorldCityRepository.php"
+    - A Method that accesses the database table `worldcities` and
+        - Returns the number of entries in the database
+    
+    - A Method that based on the previous Method
+        - Dictates the number of entries per page (i.e. pagination)
+
+
+- On the file "index.php"
+    - It accepts the page to load based on the given URL parameter
+
+    - Render a simple pagination menu
+        - At the bottom on the web application
