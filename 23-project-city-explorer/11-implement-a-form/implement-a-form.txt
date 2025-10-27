@@ -1,0 +1,24 @@
+Implement A Form
+----------------
+- Implement a separate edit page named "edit.php"
+    - It fetches data of the corresponding city from the database
+    
+    - Places the fetched data into a form that
+        - Could be edited or updated
+        - Later (next section) to be submitted back into the database
+
+
+- Copy the codebase of "city.php"
+    - Change the view file that will be rendered
+        - From "city.view" to "edit.view"
+
+
+- Create a mew view file "/views/pages/edit.view.php"
+    - Implement an HTML form
+    
+    - Use the method "POST"
+        - Assign the value "edit.php" for the HTML attrbitute "value"
+        
+    - Add the URL parameter 'id' to the HTML attrbitute "value"
+        - Using the PHP function "http_build_query()"
+        - Pass the URL paramter 'id' as argument value
