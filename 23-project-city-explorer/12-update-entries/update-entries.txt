@@ -1,0 +1,6 @@
+Update Entries
+--------------
+- Implement logic that submit & store the update city data in the database
+    - Refactor the code of "edit.php"
+    - Create a new Class Method "update()" in the file "WorldRepository.php"
+    
