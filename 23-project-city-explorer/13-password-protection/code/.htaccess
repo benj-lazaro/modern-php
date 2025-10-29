@@ -1,0 +1,6 @@
+<FilesMatch "^(edit.php|other-file.php)$">
+    AuthName "Editing a city"
+    AuthType Basic
+    AuthUserFile /opt/lampp/htdocs/modern-php/23-project-city-explorer/13-password-protection/code/.htpasswd
+    Require valid-user
+</FilesMatch>
