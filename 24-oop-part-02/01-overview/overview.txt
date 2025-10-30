@@ -1,0 +1,12 @@
+Overview
+--------
+- This section focuses on
+    - Namespaces
+    - Autoloading
+    - Interfaces
+
+
+- These topics will allow
+    - To grow the codebase of a project
+    - To write more complex applications
+    
