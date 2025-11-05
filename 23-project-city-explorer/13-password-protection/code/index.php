@@ -1,26 +1,35 @@
 <?php
 
+// Require all essentials defined in the file
 require __DIR__ . '/inc/all.inc.php';
 
-$worldCityRepository = new WorldCityRepository($pdo);
+// Instantiate an object, pass a database connection (c/o db-connect.inc.php) as an argument value
+$worldCityRepository = new WorldClassRepository($pdo);
 
-// Get 'page' number in URL
+// Fetch the URL Parameter 'page'; otherwise default value to (int) 1
 $page = (int) ($_GET['page'] ?? 1);
 
-// Prevents a maliciously entered negative 'page' number
+// Prevents a negative 'page' number manually entered in the URL
 $page = max(1, $page);
 
-$entriesPerPage = 15;
+// Number of records per page
+$perPage = 15;
 
+// Fetch the total number of records in the database
 $count = $worldCityRepository->count();
-$entries = $worldCityRepository->paginate($page, $entriesPerPage);
 
-// Sends corresponding variables to the corresponding view 'index.view.php'
+// Calls the Method that fetches records from the database
+// $entries = $worldCityRepository->fetch();
+
+// Fetch the records based on the number of records rendered per page
+$entries = $worldCityRepository->paginate($page, $perPage);
+
+// Render the corresponding view page along with its content in $entries
 render('index.view', [
     'entries' => $entries,
     'pagination' => [
         'count' => $count,
-        'perPage' => $entriesPerPage,
+        'perPage' => $perPage,
         'page' => $page
     ]
 ]);

@@ -1,35 +1,40 @@
 <?php
 
+// Require all essentials defined in the file
 require __DIR__ . '/inc/all.inc.php';
 
-// Fetch the value of the URL parameter 'id' 
+// Get the value of URL parameter 'id' submitted from "edit.view.php"
 $id = (int) ($_GET['id'] ?? 0);
 
-// Access the database & fetch the corresponding record by its 'id' 
-$worldCityRepository = new WorldCityRepository($pdo);
+// Instantiate an object, pass a database connection (c/o db-connect.inc.php) as an argument value
+$worldCityRepository = new WorldClassRepository($pdo);
+
+// Fetches a record from the database by its id
 $model = $worldCityRepository->fetchById($id);
 
-// If the $_GET URL parameter is empty, redirect user back to the landing page
+// If NO record fetched, redirect back to "index.php"
 if (empty($model)):
     header("Location: index.php");
     die();
 endif;
 
-// Extract elements of $_POST Associative array into their corresponding variables
+// Process POST data submitted from "edit.view.php"
 if (!empty($_POST)):
+    // Extract individual fields from the $_POST array, placed into local variables
     $city = (string) ($_POST['city'] ?? '');
     $cityAscii = (string) ($_POST['cityAscii'] ?? '');
     $country = (string) ($_POST['country'] ?? '');
     $iso2 = (string) ($_POST['iso2'] ?? '');
     $population = (int) ($_POST['population'] ?? 0);
 
-    // If any of the variable is empty, ridirect back to the main page (index.php)
+    // Check if any of the variables is empty
     if (empty($city) || empty($cityAscii) || empty($country) || empty($iso2) || empty($population)):
-        header("location: index.php");
+        // Perform NO record update & redirect back to "index.php"
+        header("Location: index.php");
         die();
     endif;
 
-    // Update record in the database & store the updated content in a variable for rendering
+    // Update the record in the database & save updated content in $model
     $model = $worldCityRepository->update($id, [
         'city' => $city,
         'cityAscii' => $cityAscii,
@@ -38,14 +43,9 @@ if (!empty($_POST)):
         'population' => $population
     ]);
 
-    // Redirect back tp the main (index.php) after update
-    header("location: index.php");
+    header("Location: index.php");
     die();
-
 endif;
 
-// View the submitted updated columns of the corresponding record
-// var_dump($_POST);
-
-// Render the updated record content in the view page '/views/pages/edit.view.php'
+// Render the corresponding view page along with its updated content
 render('edit.view', ['city' => $model]);

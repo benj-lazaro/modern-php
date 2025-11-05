@@ -1,11 +1,14 @@
 <?php
 
+// Establish a database connection; save connection in the variable $pdo
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=cities;charset=utf8mb4', 'cities', '[axwAEsmj@iWSX!e', [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ]);
+    $pdo = new PDO(
+        'mysql:host=localhost;dbname=cities;charset=utf8mb4',
+        'cities',
+        'zwkv-HA*L4TaHqI[',
+        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+    );
 } catch (PDOException $e) {
-    // var_dump($e->getMessage());
-    echo 'A problem occured with the database connection...';
+    echo 'ERROR: A problem occured with the database connection...';
     die();
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./styles/simple.css" />
     <link rel="stylesheet" type="text/css" href="./styles/custom.css" />
-    <title>Cities explorer</title>
+    <title>Cities Explorer Deux</title>
 </head>
 
 <body>
@@ -17,6 +17,7 @@
         <p>Explore and find cities</p>
     </header>
     <main>
+        <!-- From layout page 'main.view.php'; echoes the value of $contents from 'index.php' c/o render() -->
         <?php echo $contents; ?>
     </main>
     <footer>
