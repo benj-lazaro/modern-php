@@ -18,5 +18,5 @@ if (empty($city)):
     die();
 endif;
 
-// Render the corresponding view page along with its content in $entries
+// Render the corresponding view page along with its content in $city
 render('city.view', ['city' => $city]);
