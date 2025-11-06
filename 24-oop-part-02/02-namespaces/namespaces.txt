@@ -1,0 +1,33 @@
+Namespaces In PHP: Organize Code And Avoid Naming Collisions
+------------------------------------------------------------
+- Each Class name may ONLY EXIST ONCE
+    - NO two identical Class name can co-exist in a PHP application
+    
+    - To address this concern is to use "Namespaces"
+        - Prevents identically named Classes from colliding
+        - Reference (https://www.php.net/manual/en/language.namespaces.php)
+
+
+- Best practice
+    - If a Class file is in a Namespace
+        - That Namespace gets turned into a folder structure
+        - With the name of the folder is named after the Namespace
+
+            - /src/Admin/User.php    = "Admin" is the Namespace of the Class file "User.php"
+            - /src/Client/User.php   = "Client" is the Namespace of the Class file "User.php"
+        
+    - On each invidual Class file
+        - Declare the Namespace at the first line of code (right after <?php)
+
+            namespace <name>;
+            
+    - On the calling PHP program
+        - Use "require" to include the Class files with identical names
+
+
+- When instantiating an Object from a Class that is in a Namespace
+    - Include the Namespace with the Class name; separated by a "\"
+    - e.g. $admin = new Admin\User();
+           $client = new Client\User();
+
+    
