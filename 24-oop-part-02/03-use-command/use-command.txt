@@ -1,0 +1,86 @@
+The "use" Command: Simplify PHP Code With namespace 
+---------------------------------------------------
+- The "use" operator creates an alias for a Namespace
+    - Eliminates repeated declaration of a fully qualified Namespace w/in the code base
+
+    - Declared right after a Namespace declaration (if there is one)
+        - Located at the beginning of a PHP file
+
+    - Also allows the creation of an alias for a Class outside of a Namespace
+        - e.g. Class PDO used for conencting PHP & a database server
+
+
+Syntax:
+
+// Creates a Namespace alias
+use <Namespace\Class> as <namespace_alias>;
+...
+$<object_name> = new <namespace_alias>();
+
+
+// Creates an alias for a Class outside of a Namespace
+use <external_class_name>;
+...
+Class <class_within_a_namespace> {
+    $<object_name> = new <external_class_name>;
+}
+
+
+- Classes located within the same Namespace
+    - Can access each other without the declaration of a fully qualified Namespace
+    - Referring to each other using their respective Namespace alias
+    - However, these Classes NEED to be declared via "require" in the "index.php"
+
+        namespace Admin;
+        
+        Class Role {
+            ...
+        }
+
+        ----
+
+        namespace Admin;
+
+        Class User {
+            public Role $role;
+        }
+
+
+    - Alternatively, using a fully qualified Namespace
+        - Requires prefixing the the Class with a "\<Namespace\"
+
+        namespace Admin;
+        
+        Class Role {
+            ...
+        }
+
+        ----
+
+        namespace Admin;
+
+        Class User {
+            public \Admin\Role $role;
+        }
+
+
+- Accessing a Class located outside of a Namespace 
+    - Requires prefixing the Class with a "\"
+    - Informs PHP that the Class is located outside of a Namespace
+
+        namespace Admin;
+
+        Class User {
+            $pdo = new \PDO();
+        }
+
+    - Alternatively, the "use" operator to create an alias
+
+        namespace Admin;
+        use PDO;
+
+        Class User {
+            $pdo = new PDO();
+        }
+
+    - The latter is the preferred convention
