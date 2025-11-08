@@ -1,0 +1,34 @@
+Class Names And Namespaces: Access, Resolution & Instance Verification
+----------------------------------------------------------------------
+- The operator "::class"
+    - PHP resolves the fully qualified name of a Class (or a Namespace alias)
+        - Includes its corresponding Namespace 
+        - Returns a string value
+    
+    - Better alternative to
+        - Using the fully qualified name of a Class
+        - Using the "\\" to separate Namespace & Class name
+        - e.g. Admin\\User
+
+    - Use case:
+        - Certain PHP functions require a fully qualified name of a Class name (including Namespace)
+
+
+Syntax:
+
+<class_name>::class;
+
+<namespace_alias>::class;
+
+
+- The keyword "instanceof"
+    - Checks whether an Object belongs to a specific Class
+
+    - Returns a boolean value "true" if the object is an instance of the specified Class
+        - Otherwise, returns a "false"
+
+
+Syntax:
+
+<object_name> instanceof <class_name>;
+
