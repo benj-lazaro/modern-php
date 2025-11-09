@@ -1,0 +1,87 @@
+Autoloading: Load Classes And Manage Namespaces Efficiently
+-----------------------------------------------------------
+- The PHP function "spl_autoload_register()"
+    - Registers a given function (as argument value) as "__autoload()" implementation
+        - Returns a boolean "true" on success or "false" on failure
+
+    - Reference (https://www.php.net/manual/en/function.spl-autoload-register.php)
+
+    - Pass the function (to-be-created) "autoload" as argument value
+        - Calls the function automatically everytime the PHP script is run
+
+
+- Create a function named "autoload()"
+    - It accepts the name of a Class as argument
+
+    - Checks if it an existing fully qualified name of a Class with Namespace
+        - e.g. <namespace>//<class_name>
+
+    - If it evaluates to "true"
+        - Loads the Class using the "require" statement 
+        - e.g. require __DIR__ . "/src/<namespace>/<class_name>.php";
+
+    - This ONLY loads Classes that are required by the current codebase
+        - Eliminates the need to load ALL Classes from their respective Namespaces
+
+    - However, this approach requires
+        - Lisitng ALL anticipated Classes & their respective Namespaces
+        - That might be required by the current codebase
+
+
+- An alternative approach (i.e. better)
+    - Instead of a chained "if" statement
+
+    - Reconstruct the filepath of the Class & its corresponding Namespace
+        - Save it on a variable
+
+    - Check if the Class file exists
+        - Loads the Class file using the "require" statement
+
+    - This approach offers clean & short code
+
+    - However, be mindful if the host OS is case-sensitive on filenames
+        - Case-sensitivity may cause a Class file NOT to be loaded
+
+        - NOTE: This is an OS-specific issue
+            - On Mac OS, it is NOT case-sensitive
+            - On Linux, it is case-sensitive
+
+
+- An Anonymous function is an unnamed function
+    - Uses the PHP keyword "function"
+    - No name is declare & immediately followed by a pair of ( )
+    - Returned value from the function is saved in a variable
+    - The variable is called like a named function (e.g. $<variable>();)
+
+    - NOTE: Anonymous function declaration ends with a ;
+
+Syntax:
+
+// Anonymous function declaration
+$<variable_name> = function() {
+    ...
+};
+
+// Calls the Anonymous function
+$<variable_name>();
+
+
+- Another alternative approach (i.e. much better)
+    - Instead of a named function registered with an __autoload() implementation
+    
+    - An Anonymous function is passed as argument
+        - To the PHP function "spl_autoload_register()"
+
+    - Body of the Anonymous function is written as an inline argument value
+
+    - Offers a shorter codebase
+        - It registers the Anonymous function as autoloading
+        
+        - Executes the Anonymous function
+            - Check if the Class file exists
+            - Loads the Class file using the "require" statement
+
+
+- NOTE: This "autoloading" implementation is good for small applications
+    - Developing bigger and complex applications
+    - The PSR-4 autoloading standard is required
