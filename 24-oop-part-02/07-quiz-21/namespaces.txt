@@ -1,0 +1,63 @@
+Quiz 21: Test Your Knowledge On Namespaces
+------------------------------------------
+- Why are namespaces used in PHP?
+    - Answer: To enable the same Class name to be used in different parts of a program
+        - Or in different program without causing a name collision, by isolating them
+
+
+- You aim to establish email notification functionality, comprising:
+
+    /EmailService/NotificationSender.php - Intended to contain the NotificationSender class for sending email notifications
+
+    - You're tasked with correctly defining the namespace for the NotificationSender class 
+        - To ensure it is properly organized within the EmailService namespace
+
+    - How should you begin the NotificationSender.php file to establish its namespace?
+
+    - Answer: 
+
+        namespace Emailservice;
+
+        class NotificationSender {
+            // Class implementation
+        }
+
+
+- Your PHP project has the following structure, designed to manage event registrations:
+
+    src/
+        EventManager.php
+        /EmailService
+            NotificationSender.php
+        /LogService
+            NotificationSender.php
+
+    - /EmailService/NotificationSender.php defines 
+        - A class named NotificationSender within the EmailService namespace 
+        - For sending out email notifications.
+
+    - Which of the following snippets in EventManager.php 
+        - Will incorrectly attempt to instantiate the NotificationSender class 
+        - From the EmailService namespace in your EventManager.php file?
+
+    - Answer:
+
+        require "EmailService/NotificationSender.php";
+        use LogService\NotificationSender as EmailNotifier;
+        $notifier = new EmailNotifier();
+
+
+- What is the primary function of this code?
+
+    function myAutoloader($className) {
+        $path = "src/" . str_replace("\\", "/", $className) . ".php";
+        if (file_exists($path)) {
+            require $path;
+        }
+    }
+    
+    spl_autoload_register("myAutoloader");
+
+    - Answer: Automatically includes Class files when a Class is used
+        - Based on the class name & its namespace, mapping them to a path in the "src/" directory
+
