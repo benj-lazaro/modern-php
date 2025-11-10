@@ -1,0 +1,39 @@
+Advanced Namespacing: Adopt PSR-4 Autoloading
+---------------------------------------------
+- When integrating 3rd-party code into one's project
+    - It is best practice to implment a naming convention
+    - Helps seperate own's code from that of a 3rd-party
+
+
+- Best practice
+    - Prefix declared Namespaces in the "index.php" with "App\"
+        - Alternatively, can use company or project name
+        - e.g. App\<namespace>\<class_name>
+        - e.g. <company_name>\<namespace>\<class_name>
+
+    - Refactor declared Namespaces w/in their respective Classes
+        - Implement the prefix "App\"
+
+    - PHP-FIG offers a specification for autoloading Classes from file paths
+        - This specification is referred as "PSR-4 Autoloader"
+        - Reference (https://www.php-fig.org/psr/psr-4/)
+        
+    - To implement the "PSR-4 Autoloader"
+        - Create a file "autoload.php" on the project's root folder
+
+        - Copy example code from PHP-FIG's Github repository
+        - (https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md)
+
+        - Paste the example code into "autoload.php"
+
+        - Change the value of "$prefix" to "App\"
+            - Informs PHP to autoload Classes w/in declared Namespaces with the prefix "App\"
+            - Namespaces without the prefix are ignored
+
+        - Save changes
+
+    - Open "index.php"
+        - Use the "require" statement on the file "autoload.php"
+
+        - Autoloads the Classes w/in declared Namespaces with the prefix "App\"
+            - Everytime the application starts (or reloaded)
