@@ -1,0 +1,49 @@
+Interfaces: Define And Implement For Enhanced Type Safety And Reusability
+-------------------------------------------------------------------------
+- An Interface is similar to that of a Class EXCEPT
+    - It does NOT contain the implementations of a Class
+
+    - It contains declaration of public Method(s) ONLY
+        - Does NOT have its own implementation
+        - e.g. public function <method_name>(); 
+
+    - The actual implementation of the declared Method w/in an Interface
+        - It is done w/in the Class that "implements" the declared Interface 
+        - Thus, making its own Class Method implementation
+
+        - e.g. class <class_name> implements <interface_name> {
+                    .. 
+                    public function <method_name>() {
+                        ...
+                    }
+                }
+
+    - NOTE: The argument(s) & return type of a Method w/in a Class that "implements" the Interface
+        - MUST MATCH the argument(s) & return type of the Method declared in the Interface
+
+    - It serves as a declaration that certain method(s) w/in a Class are expected to exists
+        - Helps create reusable code
+
+        
+Syntax:
+
+interface <interface_name> {
+    public function <method_name>();
+}
+
+class <class_name> implements <interface_name> {
+    public function <method_name> {
+        ...
+    }
+}
+
+
+- Use case:
+    - A user-defined function that accepts an object as argument value
+        - ONLY if the object is instantiated from a Class that "implements" an Interface 
+
+        - Uses the Interface name as data type
+            - For the variable that stores the passed object as argument value
+
+        - Good alternative to the manual declaration of acceptable Class names
+            - Using the "|" operator on the user-defined function's parameter list
