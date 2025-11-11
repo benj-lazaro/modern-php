@@ -1,0 +1,31 @@
+Code Exercise 28: Social Media Publishing
+-----------------------------------------
+- You are to define a PHP interface that 
+    - Standardizes the method for publishing content across various social media platforms
+
+    - Following the interface definition
+        - You will ensure that two provided classes, FacebookPublisher and LinkedInPublisher
+            - Implement this interface accurately
+        
+        - Additionally, you will develop a function named publishPost 
+            - To utilize this setup for content publishing attempts
+
+
+- Tasks:
+    - Define and implement the interface "SocialMediaPublisher"
+        - Create an interface suitable for the "publish
+
+    - Develope the function "publish()"
+        - It accepts three parameters 
+            - "$publisher"  = instance of the "SocialMediaPublisher" interface
+            - "$content"    = content intended for publication (string)
+            - "$token"      = authentication token (string)
+
+        - It makes a single attempt to publish content
+            - Using the provided publisher interface
+            
+            - If successful, the function echoes the message & returns true
+                "Post published successfully.\n"
+
+            - Otherwise, the funtion echoes the message & returns false
+                "Failed to publish post.\n"
