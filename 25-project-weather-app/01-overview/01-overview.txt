@@ -1,0 +1,21 @@
+Overview
+--------
+- This section focuses on developing a Weather app
+  - Displays current temperature & weather style (icon)
+    - Able to switch between Celsuis and Farenheit
+
+  - Connects to a 3rd party API
+    - To fetch the current weather data
+
+  - This (section of the) project will focus on the design
+    - Starter files includes Adobe Illustrator (.ai) files
+    - The .ai files have been exported into .jpg and .svg format
+
+    - NOTE: In the real-world scenario
+      - Best to request the UI designer to 
+        - Export the Adobe Illustrator files into .svg format
+        
+
+  - The backend (PHP) implementation of the project
+    - Will be tackled on the suceeding section
+ 
