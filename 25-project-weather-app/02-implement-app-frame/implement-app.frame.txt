@@ -1,0 +1,25 @@
+Implement The App Frame
+-----------------------
+- The bundled stylesheet "normalize.css" in the starter files
+    - Ensures initial style defaults remains consistent on ALL browsers
+
+
+- Create a new stylesheet "custom.css"
+    - Contains ALL custom CSS styles
+    - Link the stylesheet to the "index.html" document
+
+
+- Implement the initial styling for the HTML document
+    - Set "background-color" to "rgb(75, 75, 75)"
+    
+
+- Implement the HTML elements that
+    - Serves as the structure for the web app
+
+
+- Add an HTML element <div>
+    - HTML attribute "class" with the value of "app-container"
+    - Serves as the "frame" body of the web app
+
+
+- Implement styling for the CSS class "app-container"
