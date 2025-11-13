@@ -1,0 +1,63 @@
+Show The Background
+-------------------
+- Implement background images of the web app
+    - Create a new folder named "images"
+        - Within the root folder of the project
+
+    - From the starter files
+        - Take all of the sub-folders containing .svg files from the folder "00 - Design/SVGs/"
+
+        - Copy them over to the folder "images"
+
+    
+- In the "index.php"
+    - Assign a background image on the HTML element <div> with 
+        - The HTML attribute "class" of "app-container"
+
+    - Using the HTML attribute "style"
+        - Assign the value "background-image: url('images/<image_folder>/<image_file>.svg')"
+
+    - The property "background-image" can easily be changed / updated by PHP
+
+    - Save the changes
+        - Background image is 'zoomed in'
+
+
+- Scale down the background image
+    - By default, a .svg file has a viewport settings
+        - It has a width & height that CSS respects
+
+    - To address this concern
+        - Open "styles.css"
+
+        - On the class selector ".app-container"
+
+        - Add a new property "background-size"
+            - Assign the value "cover"
+        
+        - Add a new property "background-position"
+            - Assign the value "bottom center"
+
+        - Add a new property "background-color"
+            - Assign the value "rgb(71, 174, 234)"
+            - NOTE: serves as a contigency when a background image fails to load
+
+
+- The top margin of the HTML element <div>
+    - Has the tendency to have a computed negative value 
+        - Resulting to an overflow at the element's top margin
+
+    - To address this concern
+        - On the class selector ".app-container"
+
+        - Change the assigned value to the property "margin-top"
+            - Cut the earlier "calc(...)" expression
+
+        - Replace it with a "max()"
+            - 1st argument value is "0px"
+            - 2nd argument value, paste the "calc(...)" expression
+
+        - Forces the "margin-top" with the value of "0px"
+            - In the event that the "calc()" expression return a negative value
+            - Preventing an overflow
+
