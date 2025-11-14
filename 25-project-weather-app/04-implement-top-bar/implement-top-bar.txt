@@ -1,0 +1,16 @@
+Implement The Top Bar
+---------------------
+- The Top Bar is where the following information is displayed
+    - Location
+    - Current date (day of the week & date)
+
+
+- Implement corresponding HTML element <div>
+    - Each has its own HTML attribute "class" assigned with the respective values
+        - "top-bar__location"
+        - "top-bar__date"
+
+    - Provide the corresponding dummy date
+
+
+- Implement CSS styling on corresponding Class selectors
