@@ -1,0 +1,54 @@
+html {
+    font-family: system-ui, -apple-system, 
+        "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", 
+        "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", 
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+  background-color: rgb(75, 75, 75);
+}
+
+.app-container {
+  background-color: white;
+  height: 40rem;
+  width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: max(0px, calc((100vh - 40rem) / 2));
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: bottom center;
+  background-color: rgb(71, 174, 234);
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.top-bar__location, .top-bar__date {
+  color: white;
+  padding: 1.5rem 2rem;
+}
+
+.top-bar__date {
+  font-weight: bold;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  top: 0.4rem;
+  margin-right: 0.4rem;
+}
+
+.weather-info__image {
+  display: block;
+  max-width: 12.5rem;
+  margin: 2rem auto 0rem auto;
+  filter: drop-shadow(0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5));
+}

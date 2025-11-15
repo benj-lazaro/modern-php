@@ -1,0 +1,5 @@
+Visualize The Weather
+---------------------
+- Implement the weather icon on the web app
+    - The weather icon (i.e. large.svg) is included in the starter files
+
