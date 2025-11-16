@@ -1,0 +1,3 @@
+Final Polishing
+---------------
+- Implement 'polishing' changes on the app's CSS styling
