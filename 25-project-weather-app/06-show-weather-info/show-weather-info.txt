@@ -1,0 +1,8 @@
+Show The Weather Info
+---------------------
+- Implement the HTML mark-up and CSS styling that displays
+    - Mocked up temperature (NOT specific if it is Celsius or Farenheit)
+    - Mocked up brief weather description accompanied by an icon
+    
+    
+
