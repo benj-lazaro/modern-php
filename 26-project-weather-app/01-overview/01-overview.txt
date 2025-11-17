@@ -1,0 +1,15 @@
+Overview
+--------
+- This section focuses on
+    - Implementation of the backend side (in PHP)
+
+    - Fetching the weather data from a 3rd-party (fake) weather API
+        - URL (https://downloads.codingcoursestv.eu/056%20-%20php/weather/weather.php?city+Los%20Angeles)  
+    
+    - Structure the backend code that 
+        - Is NOT entirely dependent on the said API
+        - It can easily adopt to other weather API service
+
+    - Create own mock-up weather data first
+        - Latter sections will access the 3rd-party (fake) weather API
+
