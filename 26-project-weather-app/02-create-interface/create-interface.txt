@@ -1,0 +1,14 @@
+Creating An Interface, First Steps
+----------------------------------
+- Implement the backend PHP code on the Weather app
+
+
+- Rename "index.html" into "index.view.php"
+    - Create a new folder named "views"
+    - Move the file "index.view.php" into that folder
+
+
+- Create a blank "index.php" on the project's root folder
+
+
+- Create a model based on the 3rd party weather API
