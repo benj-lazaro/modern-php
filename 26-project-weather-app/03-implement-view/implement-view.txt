@@ -1,0 +1,15 @@
+Implementing The View Code
+--------------------------
+- Implement the backend code that renders the fetched data namely
+    - City
+    - Temperature
+    - Weather type
+
+
+- The data is saved on the variable "$info"
+    - Render the fetched data into the view file "index.view.php"
+
+
+- NOTE: Current project intentionally did NOT use a "render()" function
+    - To keep the implmentation simple
+    - As it only renders the data on a single page
