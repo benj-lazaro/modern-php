@@ -1,0 +1,17 @@
+Testing The Design With Random Data
+-----------------------------------
+- Implement a new Class that generates a random weather data
+    - Named "RandomWeatherFetches"
+        - Implements the Interface "WatherFetchesInterface"
+    
+    - Implements its own Method "fetch()"
+        - Returns a "WeatherInfo" object
+        - Containing random data instead of a static one (like in "FakeWeatherFetcher.php")
+
+    - The purpose of this implementation is to
+        - Further test the initial design of the app
+
+    - NOTE: Enable "strict_types" to ensure consistency
+        - With the data types of the object's "WeatherInfo" properties
+        - Generates a Fatal error due to "Uncaught TypeError"
+        - Reduces the chance of unforeseen or "difficult to debug" bugs
