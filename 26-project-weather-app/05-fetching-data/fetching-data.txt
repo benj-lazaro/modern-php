@@ -1,0 +1,20 @@
+Fetching Data With fsockopen
+----------------------------
+- Implement code that fetches data from a "fake" weather API
+    - URL (https://downloads.codingcoursestv.eu/056%20-%20php/weather/weather.php)
+
+
+- First, learn how to use PHP function "fsockopen()"
+    - Allows to manually connect to a remote server & transfer data
+    
+    - It initiates a socket connection (i.e. virtual file)
+        - To write data to the server
+        - To read data from the server
+
+    - Reference (https://www.php.net/manual/en/function.fsockopen.php)
+
+    - Unlike curl which is 80% support by local PHP installations
+        - The function "fsockopen()" is ALWAYS available
+
+    - Does NOT care whethere the protocol used is HTTP, HTTPS or SSL
+        - It is a general way of establishing a connection
