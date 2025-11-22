@@ -1,0 +1,6 @@
+Accessing A Remote Weather API
+------------------------------
+- Implement code that access the "fake" weather API
+    - Create a new Class named "RemoteWeatherFetcher.php"
+    - Use a differement implementation of the Method "fetch()"
+    
