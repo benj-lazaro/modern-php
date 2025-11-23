@@ -1,0 +1,29 @@
+Adding Error Handling
+---------------------
+- Implement error handling on "RemoteWeatherFetcher.php" in the event of
+    - Server connection failure
+    - Server fails to provide a content
+
+
+- To address this concerns
+    - Prefix PHP function "fsockopen()" with "@" to supress warnings
+
+    - In the event that "$fp" returns a falsy value
+        - Return a null
+
+    - Refactor the return value of method "fetch()" to include a null value
+        - Prefixing the method's return value "WeatherInfo" with a "?"
+
+    - Refactor the method "fetch()" of the Interface "WeatherFetcherInterface"
+        - Prefixing the method's return value "WeatherInfo" with a "?"
+
+    - Refactor "index.php"
+        - In the event that the variable "$info" is empty
+        - Return an "echo()" statement
+        - Then terminate the script with the function "die()"
+
+    - In the event that the server returned NO weather data
+        - Return a null
+    
+    - In the event that the server returned an incomplete weather data
+        - Return a null
