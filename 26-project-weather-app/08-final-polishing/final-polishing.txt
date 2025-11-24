@@ -1,0 +1,20 @@
+Final Polishing
+---------------
+- Implementing the final polish on the web app
+    - Changing the default temperature (Kelvin) to Celsius or Farenheit
+
+    - Declaring a new Methods within the Class "WeatherInfo" respectfully
+        - Named "getFarenheight()" and "getCelsius()"
+
+    - Refactor "index.view.php"
+        - Call the corresponding Class Methods
+
+    - Transforming the static date into a dynamic one
+        - Using the PHP function "date()"
+
+    - Set the default timezone in "index.php"
+        - Using the PHP function "date_default_timezone_set()"
+
+        - NOTE: This implementation require additional work to address
+            - The "th", "nd" and "st" suffix of the date_default_timezone_set
+    
