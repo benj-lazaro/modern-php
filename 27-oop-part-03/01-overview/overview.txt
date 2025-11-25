@@ -1,0 +1,13 @@
+Overview
+--------
+- This section focuses on
+    - Inheritance of objects
+
+
+- Inheritance
+    - Allows to derive a new Class from an existing Class
+
+    - A Child Class inheriting Properties and Methods from a Parent Class
+        - Add new Properties and Methods
+        - Override inherited Method(s)
+
