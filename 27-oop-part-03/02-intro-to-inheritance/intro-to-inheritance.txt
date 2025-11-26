@@ -1,0 +1,47 @@
+Intro To Inheritance: Extend Functionality From Parent Class
+------------------------------------------------------------
+- For a Child Class to inherit methods & properties of a Parent Class 
+    - Use the keywrod "extends" 
+    - Followed by the name of the Parent Class
+    
+Syntax:
+
+class <child_class_name> extends <parent_class_name> {
+    // Properties
+    ...
+
+    // Methods
+    ...
+}
+
+
+- To override an inherited Method from a Parent Class
+    - On PHP version 8.3 (and higher)
+        - Use the annotation "#[\Override]"
+        - Placed on TOP of the inherited Method  within the Child Class
+        - Otherwise, triggers a Fatal error
+
+    - On PHP version 8.2 (and lower)
+        - The annotation "#[\Override]" has NO effect
+            - PHP treats it as a comment
+        
+        - To override, simply declare a Method using 
+            - The same delared Method name in the Parent Class
+        
+Syntax:
+
+class <child_class_name> extends <parent_class_name> {
+    // Properties
+    ...
+
+    // Override inherited Method in PHP 8.3
+    #[\Override]
+    public function <inherited_method_name>() {
+        ...
+    }
+
+    // Override inherited Method in PHP 8.2
+    public function <inherited_method_name>() {
+        ...
+    }
+}
