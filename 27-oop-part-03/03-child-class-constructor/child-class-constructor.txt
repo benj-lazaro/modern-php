@@ -1,0 +1,26 @@
+Set Up The Child Class Constructor For Effective Object Initilization
+---------------------------------------------------------------------
+- A Child Class' constructor overrides 
+    - The inherited constructor from its Parent Class
+
+    - Accessing an inherited property from its Parent Class
+        - May trigger a Fatal error
+        - Due to the inherited property NOT initialized
+        - Caused by the Child Class' constructor overriding the Parent Class' constructor
+
+    - To access a Parent Class' constructor in order to initialize an inherited property
+        - Use the following syntax
+
+            parent::__construct(<argument_value>);
+
+    - Alternative Child Class overriding inherited Parent Class' constructor
+
+        class <child_class_name> extends <parent_class_name> {
+            // Overrides inherited constructor
+            public function __construct(<same_parameter_variables>, <new_parameter_variables>, ...) {
+
+                // Calls Parent Class' constructor; to initialize inherited property 
+                parent::__construct(<argument_value>);
+
+            }
+        }
