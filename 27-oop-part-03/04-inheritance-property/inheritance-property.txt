@@ -1,0 +1,14 @@
+Inheritance & Property Accessibility: Navigate Properties Across Classes
+------------------------------------------------------------------------
+- Exploring how in general Class Properties work
+
+
+- Best practice
+    - On a Parent Class
+        - Access ONLY Methods & Properties that exists w/in itself
+        - Can NOT access Methods & Properties of its Child Class
+
+    - On a Child Class
+        - Access Methods & Properties that exists w/in itself
+        - Access Methods & Properties inherited from its Parent Classes
+    
