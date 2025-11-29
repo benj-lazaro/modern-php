@@ -1,0 +1,13 @@
+Property Visibility: Private And Protected Properties For Secure Data Handling
+------------------------------------------------------------------------------
+- The visibility keyword "private" prevents a Class Property
+    - To be accessed by its instantiated object
+    - To be shared with (or inherited by) its Child Class
+
+
+- The visibility keyword "protected" prevents a Class Property
+    - To be accessed by its instantiated object
+    - HOWEVER, it can be shared (or inherited by) its Child Class
+
+
+- NOTE: These visibility keywords are also applicable to Class Methods
