@@ -1,0 +1,29 @@
+The "parent" & "self" Keywords: Precisely Reference Class Methods
+-----------------------------------------------------------------
+- Use the keyword "parent"
+    - To specifically refer to a Method declared w/in a Parent Class
+    
+    - Use the syntax:
+
+        parent::<parent_class_method>();
+
+
+- Use the keyword "this"
+    - To refer to a Method based on the resolution 
+        - Where the object that called the Method instantiated from (e.g. Parent / Child Class)
+    
+    - Use the syntax:
+
+        this-><class_method>();
+
+
+- Use the keyword "self"
+    - To refer to a Method declared w/in the Class that an Object is instantiated from
+
+    - Skips the resolution
+        - Immediately executes the declared Method w/in the Class that an Object came from
+        - Despite the possibility of the same Method being overriden in another Child Class
+
+    - Use the syntax:
+
+        self::<class_method>();
