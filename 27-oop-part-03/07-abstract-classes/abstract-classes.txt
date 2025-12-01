@@ -1,0 +1,39 @@
+Abstract Classes: Enforce Method Implementation For Reliable Code
+-----------------------------------------------------------------
+- The keyword "abstract" on a Class
+    - Prevents the Class to be directly instantiated into an Object
+
+    - Requires the Class to be extended into a Child Class
+        - Then the Child Class will be instantiated into an Object
+
+
+- An Abstract Method
+    - MUST be implemented w/in a Child Class
+        - NOTE: NO implementation of the Abstract Method w/in an Abstract Class 
+    
+    - Implementation of the Abstract Method w/in a Child Class
+        - MUST match the parameter(s) & return data type declared w/in the Abstract Class
+        - NOTE: Better to be MORE SPECIFIC than the Abstract Parent Class
+
+
+Syntax:
+
+// Abstract Parent Class
+abstract class <class_name> {
+    ...
+
+    // Abstract Method
+    abstract protected function <method_name>(<parameter(s)>): <return_data_type> {
+        ...
+    }
+}
+
+// Child Class
+class <class_name> extends <abstract_parent_class_name> {
+
+    // Abstract method implementation
+    protected function <abstract_method_name>(<parameter(s)>): <return_data_type> {
+        // Implement method code here
+        ...
+    }
+}
