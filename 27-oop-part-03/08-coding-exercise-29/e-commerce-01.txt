@@ -1,0 +1,27 @@
+Code Exercise 29: E-Commerce Products Modeling 01
+-------------------------------------------------
+- You're tasked with enhancing an online store's system
+    - Focusing on categorizing products like electronics and clothing 
+    - With specific attributes and functionality
+
+    - Your objective is to implement features that 
+        - Accurately reflect each item's details, apply discounts, and update prices
+
+    - You are given the base Class "Product" 
+        - As the starting point for this exercise
+
+
+- Tasks:
+    - Define & implement the Class "Electronics"
+
+    - Define & implement the Class "Clothing"
+
+    - Enhance the Class "Product" with new Methods
+        - getPrice()        = returns the current price of a product
+        - updatePrice()     = accepts new price (float) & updates the Property "price"
+        - applyDiscount()   = accepts a discount percentage (float), calculates & updates the Property "price"
+
+    - NOTE: Due to Udemy's PHP 7.4
+        - Avoid type declaration for Class Properties
+        - However, enforcing types w/in Constructors & Methods is OK
+        
