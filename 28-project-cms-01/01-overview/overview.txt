@@ -1,0 +1,10 @@
+Overview
+--------
+- This section focuses on
+    - The foundation of developing a Content Management System (CMS)
+
+    - This will be the project until the course's conclusion
+
+    - Project starter files included
+
+
