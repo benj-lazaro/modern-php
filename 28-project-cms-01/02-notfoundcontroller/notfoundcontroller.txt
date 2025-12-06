@@ -2,7 +2,7 @@ Develop The NotFoundController
 ------------------------------
 - Implement a "Controller pattern"
     - Manages requests made by a user
-    - Handles pages (or request files) that does NOT exists
+    - Handles the error triggered by a page (or requested file) that does NOT exists
 
 
 - In the project
@@ -28,6 +28,12 @@ Develop The NotFoundController
 
         - Create an instance of the Controller "NotFoundController"
             - Save the object into the variable "$notFoundController"
-            - NOTE: Use the full namespace path of the Controller
+            
+        - NOTE: Use the full namespace path of the Controller
+            - Instead of using a "use" statement at the beginning of "index.php"
+            - As the file "index.php" is NOT w/in (or outside of) a Namespace
 
         - Call the object's method "error404()"
+
+    - The logic behind serving of an error page is handled by the Controller
+        - Instead of implementing w/in the file "index.php"
