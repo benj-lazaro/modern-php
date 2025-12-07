@@ -1,0 +1,41 @@
+Implement The Error Page
+------------------------
+- After the Controller "NotFoundController" was created
+    - Next is to implement nice looking error page
+
+
+- In the project
+    - Access the file "inc/functions.inc.php"
+        - Copy the function "render()"
+
+        - Best implemented w/in a Controller
+            - Instead of a stand-alone function
+            - It is called (needed) ONLY w/in a Controller
+
+    - Paste the code w/in "NotFoundController.php"
+        - Turn the function into a Protected Method
+        
+        - Refactor the correspodning path filenames of the "require" statements
+
+        - Refactor the "NotFoundController" Method "error404()"
+            - Calling the Method "render()"
+
+            - Passing the arguments
+                - 1st = "notFound/error404"
+                - 2nd = []
+
+    - Create the correspodning View page named "error404.view.php"
+        - Located w/in "views/frontend/notFound"
+
+    - Create a new Controller named "AbstractController"
+        - Serves as an Abstract Class
+            - Located w/in the same Namespace as the "NotFoundController"
+        
+        - Move the Method "render()" from the Controller "NotFoundController"
+            - Into the Controller "AbstractController"
+
+        - Making the Method "Render()" available to ALL Controllers that 
+            - Extends the "AbstractController"
+
+    - Refactor the Controller "NotFoundController"
+        - To extend from the created "AbstractController"
