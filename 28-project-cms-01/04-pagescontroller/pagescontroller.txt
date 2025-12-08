@@ -1,0 +1,40 @@
+Outlook: PagesController
+------------------------
+- An overview of additional Classes that 
+    - Will be created as the lectures progress forward
+
+
+- Class PagesController
+    - Located at "App\Frontend\Controller\"
+
+    - Responsible for
+        - Processing the request
+        - Taking the data
+        - Rendering the corresponding View page
+
+    - Contains a Method named "showPage(string $pageKey)"
+        - Accepts a page to be rendered in the browser
+        - e.g. "index" = start page, "contact" = contact page
+
+    - Controller "PagesController" extends the "AbstractController"
+        - Allows reuse of the Method "render()"
+
+
+- Class PageModel
+    - Located at "App\Model\"
+
+    - Represents a single entry in the database
+        - Reason behind why it is NOT located within "App\Frontend"
+        - It will be accessed by both Admin & the rest of the "Frontend" Controllers
+
+
+- Class PagesRepository
+    - Located at "App\Respository\"
+
+    - Represents the repository for
+        - What needed to do with the database
+        - e.g. fetch entries, fetch single entry, etc.
+
+
+
+    
