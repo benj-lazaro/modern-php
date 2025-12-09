@@ -1,0 +1,4 @@
+Initiate The PagesController
+----------------------------
+- Implement the Controller "PagesController()"
+
