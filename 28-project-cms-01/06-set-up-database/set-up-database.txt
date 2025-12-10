@@ -1,0 +1,104 @@
+Set Up The Database
+-------------------
+- Set up the database table of the CMS
+    - Launch phpMyAdmin
+
+
+- Create a new user & database
+    - Click the tab "User accounts"
+
+    - Click the link "Add user account"
+        - User name         = "cms"
+        - Host name (local) = "localhost"
+        - Password          = generate a strong password
+
+    - Click checkbox "Create database with same name & grant all privileges"
+
+    - Click the button "Go"
+
+
+- Open the file "inc/db-connect.inc.php"
+    - Uncomment code
+
+    - Paste the generated password
+        - On the 3rd parameter of the Class "PDO"
+
+    - Save the changes
+
+    - Open the CMS app on the browser
+        - It should NOT report any database-related errors or warnings 
+
+
+- Create a database table
+    - Click the tab "Structure"
+        - Table name        = "pages"
+        - Number of columns = 4
+
+    - Click the button "Create"
+
+
+- Define the columns of the database table "pages"
+    - 1st column
+        - Name              = "id"
+        - Type              = int
+        - Length            = 11
+        - Index             = Primary
+        - Auto-increment    = yes
+    
+    - 2nd column
+        - Name              = "title"
+        - Type              = varchar
+        - Length            = 100
+        
+    - 3rd column
+        - Name              = "slug"
+        - Type              = varchar
+        - Length            = 100
+
+        - NOTE: A slug is a piece of unique data that is converted
+            - Into something that the app's URL can understand
+
+    - 4th column
+        - Name              = "content"
+        - Type              = mediumtext (max length: 16MB)
+
+    - Click the button "Save"
+
+
+- Add a new entry in the table
+    - Click button "Insert"
+
+    - Column "title"
+        - Assign the value "Welcome"
+
+    - Column "slug"
+        - Assign the value "index"
+
+    - Column "content"
+        - Assign the value "Welcome to our new website!"
+
+    - Click the button "Go"
+
+
+- Create an index
+    - Click the tab "Structure"
+
+    - In the field "Create an index on" 
+        - Located w/in the section "Indexes"
+
+        - Click the button "Go"
+
+    - On pop-up window "Add index"
+        - On the "Column" drop-down menu
+            - Select the column "slug"
+
+        - On the field " Index choice"
+            - The entry "UNIQUE" should be automatically selected
+
+        - Click the button "Go"
+
+    - On the section "Indexes"
+        - An entry with the keyname "slug" should be added
+
+    - This ensures that the values assigned to the column "slug"
+        - Remains to be unique
