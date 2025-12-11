@@ -1,0 +1,12 @@
+Create The PageModel and PagesRepository
+----------------------------------------
+- Implement the Model "PageModel" and Repository "PagesRepository" 
+    - On their respective namespaces
+        - App\Model
+        - App\Repository
+
+    
+- Update the Controller "PagesController"
+
+
+- Update the View "showPage.view.php"
