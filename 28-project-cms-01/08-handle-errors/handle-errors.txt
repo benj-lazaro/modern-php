@@ -1,0 +1,18 @@
+Add The "About Us" Page & Handle Errors
+---------------------------------------
+- Add an additional page "About Us" that
+    - Can be routed & rendered
+    
+    - Insert a new record in the database "cms"
+        - In the table "pages"
+            - title = "About us"
+            - slug  = "about-us"
+            - content = "This is the page "About us".
+
+
+- Implement error handling for non-existent slugs
+    - Refactor the Repository "PageRepository.php"
+
+    - Refactor the Controllers "AbstractController.php", "NotFoundController.php" and "PagesController.php"
+        - In order to handle error caused by View pages that does NOT exists
+    
