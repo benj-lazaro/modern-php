@@ -1,0 +1,72 @@
+Render The Navigation Bar
+-------------------------
+- Implement a small navigation bar that
+    - Allows to switch from one page to another
+        - Implement the navigation bar on the View page "views/layouts/main.view.php"
+        - Navigation bar items should fetched from the database
+    
+    - Refactor the Method "render()" of the Controller "src/Frontend/Controller/AbstractController.php"
+        - Responsible for rendering
+            - Individual View pages (views/frontend) 
+            - Main layout "views/layouts/main.view.php"
+
+        - Prior to rendering the main layout
+            - The function needs to access the database via Repository "PageRepository.php"
+            - To fetch records order ordered by their "id"
+            - Save to a variable
+            - Variable's value will be rendered as navigation items in the main layout
+
+    - Create a Constructor on the Controller "AbstractController"
+        - Accepts a "protected" argument value of type "PageRepository"
+            - Parameter variable named "$pageRepository"
+
+        - NOTE: Add a "use" statement for the "App\Repository\PageRepository"
+            
+
+    - Refactor the Controller "src/Frontend/Controller/PagesController.php"
+        - To address conflict with "AbstractController"
+
+        - Refactor the Constructor
+            - Remove the visibility "private" from parameter
+        
+        - Calls the Constructor of the "src/Frontend/Controller/AbstractController.php"
+            - Pass the value stored in "$pageRepository" as an argument value
+    
+
+    - Refactor the Repository "src/Frontend/Repository/PagesRepository.php"
+        - Implement a Method named "fetchForNavigation()" that 
+            - Fetches records from the database
+            - Returned as an array of PageModel objects
+            - Will be used as items for the navigation bar of the main layout "views/layouts/main.view.php"
+
+    
+    - On the Controller "src/Frontend/Controller/AbstractController.php"
+        - Stores the returned array from the PageRepository into the variable "$navigation"
+        - This variable will be available to the main layout "views/layouts/main.view.php"
+
+    
+    - On the main layout "views/layouts/main.view.php"
+        - Use a "foreach()" loop to iterate through the array stored in "$navigation"
+            - Each record is stored in the variable "$navPage"
+
+        - Add the attribute "class" with the value of "active"
+            - If the value of the "$navPage->id" is strictly identical 
+                - To the property "id" of the PageModel object
+            
+            - Check if the variable "$page" passed from the Controller "PagesController" is NOT empty
+            - Check if the property "id" is NOT empty
+            - Check if the object stored in "$page" is an instance of "App/Model/PageModel.php"
+
+
+    - Refactor "index.php"
+        - On the line prior to calling the Controller "src/Frontend/NotFoundController.php"
+
+        - Create a new instance of the Repository "PageRepository"
+            - Stored the object into the variable "$pagesRepository"
+
+        - Pass the variable as an argument value when calling the Controller "NotFoundController"
+
+        - This is to handle non-existent values for the URL parameter "route"
+            - None of the navigation items are highlighted
+            - Properly renders an error (404) page
+
