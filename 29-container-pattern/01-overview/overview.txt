@@ -1,0 +1,9 @@
+Overview
+--------
+- This section focuses on
+    - Container pattern
+        - How it creates & manages instances of Classes
+        - How it allows to scale an application
+
+    - A Container is basically a Class
+        - By convention, also named "Container" in the PHP context
