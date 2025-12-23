@@ -2,25 +2,26 @@
 
 require __DIR__ . '/inc/all.inc.php';
 
-// Declare an additional URL parameter; if none found, default value to "pages"
+// Fetch the value of URL parameter "route"; if none, assign the value of "pages"
 $route = @(string) ($_GET['route'] ?? 'pages');
 
-// Route "pages"
+// Check which Controller to render
 if ($route === "pages"):
-    // Fetch the URL parameter 'page', if none found, default to "index" (i.e. index.php)
+    // Fetch the value of URL parameter "page"
     $page = @(string) ($_GET['page'] ?? 'index');
 
-    // Fetch a database record by its "slug" value
+    // Fetch the corresponding record from the database
     $pagesRepository = new App\Repository\PagesRepository($pdo);
+    $pagesRepository->fetchBySlug("index");
 
-    // Render the corresponding View page
-    $pagesController = new \App\Frontend\Controller\PagesController($pagesRepository);
-    $pagesController->showpage($page);
+    // Render the record on the corresponding View Page
+    $pagesController = new App\Frontend\Controller\PagesController($pagesRepository);
+    $pagesController->showPage($page);
 
 else:
     $pagesRepository = new App\Repository\PagesRepository($pdo);
-    
-    // Render a custom error 404 page
-    $notFoundController = new \App\Frontend\Controller\NotFoundController($pagesRepository);
-    $notFoundController->error404();
+
+    // Render the error page for non-existent record 
+    $notFoundController = new App\Frontend\Controller\NotFoundController($pagesRepository);
+    $notFoundController->error404();    
 endif;

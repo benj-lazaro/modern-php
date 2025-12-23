@@ -2,11 +2,13 @@
 
 namespace App\Frontend\Controller;
 
-class NotFoundController extends AbstractController
-{
-    // Opens the inherited Method for public use
+// Child Controller that handles non-existent pages
+class NotFoundController extends AbstractController {
+
+    // Overrides the inherited protected Method
+    // Makes it publicly available only for instances of this Child Controller
     public function error404()
     {
-        return parent::error404();
+        parent::error404();
     }
 }
