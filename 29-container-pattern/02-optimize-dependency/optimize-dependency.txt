@@ -1,0 +1,24 @@
+Optimize Dependency Injection With Container Strategies
+-------------------------------------------------------
+- Further improve the previous Container
+    - Addressing the issue demonstrated in the previous code example
+
+    - Calling the Container's respective "get" Methods
+        - Creates a new instance of the associated Class (i.e. Controller or Repository)
+        - Instead of reusing the Class' current (active) instance
+
+    - NOTE: Use "var_dump()" to view the instance number besides the name of the object
+
+
+- To address this concern
+    - Within the Container
+        - Declare a private Property 
+            - Whose name & type is based on the corresponding Class (i.e. Controller or Repository)
+
+    - Within the respective "get" Methods
+        - Check if the instance of said Class is non-existent
+            - If true, create & return a new instance of the Class
+            - If false, return the current (active) instance instead
+
+    - This prevents the creation of a new instance of the associated Class
+
