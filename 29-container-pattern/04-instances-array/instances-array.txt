@@ -1,0 +1,31 @@
+Refactor The Container With An Instances Array
+----------------------------------------------
+- Refactor the Methods of the Container
+    - Remove repetitive declarations of the variables "$postsController" & "$postsRepository"
+        - Within their respective Methods
+
+    - Create a new Private Property named "$instances"
+        - Data type of "array"
+        - Initialized with an empty array
+
+        - NOTE: NOT initializing with an empty array
+            - Requires creating a Constructor to initialize the Property
+            
+    - On their respective Methods
+        - Check array if it contains an element that is an instance of "PostsController" or "PostsRepository"
+        
+        - If there are NO instances within the array
+            - Create an instance of the corresponding Class
+            - Store the instantiated object as an element of the array "$instances"
+
+        - Otherwise
+            - Return the active object 
+
+    - The advantage of this approach
+        - Allows the code base to be refactored further
+
+    - The disadvantage of this approach
+        - Does NOT offer Type Safety
+            - The array "$instances" is NOT typed
+
+        - NOTE: This approach produces the same output as the previous implementation
