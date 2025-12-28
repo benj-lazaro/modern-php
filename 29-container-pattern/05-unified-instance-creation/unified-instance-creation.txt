@@ -1,0 +1,9 @@
+Refactor The Container With Unified Instance Creation
+-----------------------------------------------------
+- Instead of calling individual public Methods of the Class "Container"
+    - They are replaced with a unified instance creation
+
+    - This requires the creation of a single instance of the Class "Container"
+        - Calling previous individual public Methods using a single Method named "get()"
+        - Passing an argument value based on the names of previous Methods (e.g. postsRepository, postsController)
+
