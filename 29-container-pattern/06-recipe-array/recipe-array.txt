@@ -1,0 +1,27 @@
+Implement A Recipe Array For Dynamic Instance Creation
+------------------------------------------------------
+- Declare a new Property of Private array named "recipes" on the Class "Container"
+
+
+- Declare a Constructor
+    - Initialze the property "recipes"
+    
+    - Assign the corresponding Anonymous Function that instantiates an object from their corresponding Class
+        - As elements of the array
+
+
+- Refactor the Method "get()"
+    - Replace the "if..else if" statement with a single "if" statement
+
+    - Check if the arrays "instances" and "recipes" are empty
+        - If true echo a custom error message
+        - Then terminate program execution with "die()"
+
+    - Otherwise
+        - Execute the corresponding Anonymous Function in the array "recipes"
+            - Save the returned object into the array "instances"
+
+        - Store the object returned by the array "recipes" into the array "instances"
+
+        - Return the array "instances"
+    
