@@ -1,0 +1,97 @@
+Quiz 22: Test Your Knowledge Of The Container Pattern
+-----------------------------------------------------
+- In PHP development, understanding design patterns is crucial for writing efficient and maintainable code
+    - The Container Pattern is one such design pattern
+    - Which of the following best describes the Container Pattern
+    
+    - Answer: It acts as a central location for managing and creating class instances
+
+
+- In a PHP application, you're tasked with creating an anonymous function that 
+    - Calculates the total price including tax for a product
+    - The tax rate is defined outside the function
+
+    - However, you encounter an issue where 
+        - The anonymous function doesn't recognize the external tax rate variable
+    
+    - Here's the initial code:
+
+        $taxRate = 0.05; // 5% tax rate
+
+        $calculateTotal = function ($price) {
+            return $price + ($price * $taxRate);
+        };
+ 
+        echo $calculateTotal(100); // Intended to output: 105
+
+    - How should the anonymous function be rewritten to correctly use the external "$taxRate" variable
+
+    - Answer: 
+
+        $calculateTotal = function ($price) use ($taxRate) {
+            return $price + ($price * $taxRate);
+        };
+    
+
+- Imagine a simplified version of a Container class designed according to the Container Pattern principles
+    - This class allows for the flexible registration and retrieval of components
+        - But is slightly different from the examples discussed in the lectures
+
+        class Container {
+            private $bindings = [];
+        
+            public function bind($key, $value) {
+                $this->bindings[$key] = $value;
+            }
+        
+            public function get($key) {
+                if (isset($this->bindings[$key])) {
+                    return $this->bindings[$key]();
+                }
+        
+                return null;
+            }
+        }
+        
+        $container = new Container();
+
+    - In this context, what is the purpose of the $container->bind call?
+
+        $container->bind('paymentGateway', function() {
+            return new PaymentGatewayService('API_KEY_HERE', 'API_SECRET');
+        });
+
+    - Answer: To associate the "paymentGateway" key with a function that
+        - Creates a new PaymentGatewayService
+        - Enabling easy access & configuration management
+
+    
+- Continuing with our exploration of the Container class designed under the Container Pattern principles
+    - Consider how you would resolve an instance of PaymentGatewayService 
+    - After it has been registered with the container
+    - Given the initial setup:
+
+        class Container {
+            private $bindings = [];
+        
+            public function bind($key, $value) {
+                $this->bindings[$key] = $value;
+            }
+        
+            public function get($key) {
+                if (isset($this->bindings[$key])) {
+                    return $this->bindings[$key]();
+                }
+        
+                return null;
+            }
+        }
+        
+        $container = new Container();
+        $container->bind('paymentGateway', function() {
+            return new PaymentGatewayService('API_KEY_HERE', 'API_SECRET');
+        });
+
+    - Which of the following code snippets correctly retrieves an instance of PaymentGatewayService from the "$container"?
+
+    - Answer: $paymentGateway = $container->get("paymentGateway");
