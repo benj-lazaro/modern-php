@@ -1,0 +1,33 @@
+Secure Instance Creation With Private "bind()" Functions
+--------------------------------------------------------
+- Previously declared a Public Property "recipes" in the Class "Container"
+    - An array that functions as a mechanism that registers a 'recipe' for instantiating a particular Class
+        - Returns the corresponding object
+
+    - However, this is a Public Property
+        - Directly accessible to any part of the code base
+        - Allows any part of the code base to add or remove a 'recipe' 
+
+
+- To address this concern
+    - Switch the visibility of the Property "recipes" as Private
+
+    - Create a Public Method named "bind()"
+        - Accepts two (2) parameters
+            - A string data type "$what"
+            - A closure data type (expressed as "\Closure") "$recipe"
+
+        - Adds an element into the Private array "recipes"
+            - Whose element's key is based on the value of "$what"
+            - Assigns the anonymous function stored in "$recipe"
+
+    - Instead of directly accessing the Property "recipes" from the main code base
+        - Calls the Method "bind()", passes two (2) argument values
+            - 1st   = Name of the Class whose object will be instantiated from
+            - 2nd   = Corresponding closure (anonymous function) that instantiates & returns the corresponding object
+
+        - Effectively listing objects that can be built
+            - Binding the recipes (closures) to the corresponding Class names
+            - Resolving dependencies
+
+    - Keeps the Class "Container" clean & simple as possible
