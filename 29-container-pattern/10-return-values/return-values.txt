@@ -1,0 +1,18 @@
+Enhanced Code Modularity: Utilize Return Values In File Inclusion
+-----------------------------------------------------------------
+- A little trick to use for a database connection
+    - From a function declared w/in an separate file
+        - Easier to read 20 or 30 lines of database connection related code
+    
+    - Use a "require" statement to include
+        - The separate file containing the aforementioned function
+
+    - On the separate PHP file
+        - Declares the function responsible to establishing a database connection
+        - Returns a PDO object via "return" statement
+
+    - On the main PHP file
+        - At the same line as the "require" statement
+            - Save the returned PDO object into a variable
+
+        - Reference the variable whenver a database connection is needed
