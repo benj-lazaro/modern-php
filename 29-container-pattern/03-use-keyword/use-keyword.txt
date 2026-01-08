@@ -14,6 +14,6 @@ $<variable_name> = function() use($<external_variable>) {
     ...
 };
 
-// Execute Function by calling the varaible name with ( )
+// Execute Function by calling the variable name with ( )
 $<variable_name>();
 
