@@ -1,24 +1,37 @@
 Optimize Dependency Injection With Container Strategies
 -------------------------------------------------------
-- Further improve the previous Container
-    - Addressing the issue demonstrated in the previous code example
+- The implementation of the previous Container presents an issue
+    - Every call to the Container's public Methods
+        - Results to the creation of a new & separate instance (Object)
+        - Instead of reusing the current (active) one
 
-    - Calling the Container's respective "get" Methods
-        - Creates a new instance of the associated Class (i.e. Controller or Repository)
-        - Instead of reusing the Class' current (active) instance
+    - Evident using the function "var_dump()"
+        - For each Method call 
+            - The instance number increases (e.g. object(PostsRepository)#2, object(PostsRepository)#3)
+            - Instead of consistently using the same instance number
 
-    - NOTE: Use "var_dump()" to view the instance number besides the name of the object
+    - This strategy prevents
+        - The creation of multiple individual (active) instances of its corresponding Class
+
+        - Reuses the current (active) instance
+            - (e.g. consistent object(PostsRepository)#2 &object(PostsController)#3)
 
 
-- To address this concern
-    - Within the Container
-        - Declare a private Property 
-            - Whose name & type is based on the corresponding Class (i.e. Controller or Repository)
+- On the example code
+    - In the Container
+        - Declare Private Properties whose type is named after the corresponding Class
+            - e.g. private PostsRepository $postsRepository
+                   private PostsController $postsController
+        
+        - On the respective public Methods
+            - Implement a check if the Private Property
+                - Assigned with an instance of its corresponding Class
 
-    - Within the respective "get" Methods
-        - Check if the instance of said Class is non-existent
-            - If true, create & return a new instance of the Class
-            - If false, return the current (active) instance instead
+            - If the Property is NOT assigned with an instance
+                - Crew a new instance of its Class
+                - Assign the instance to the Private Property
+                - Return the Private Property
 
-    - This prevents the creation of a new instance of the associated Class
-
+            - Otherwise, return the current Private Property
+                - Containing the current (active) instance of its corresponding Class
+    
