@@ -1,19 +1,23 @@
 The "use" Keyword: Weave External Data Into Closures
 ----------------------------------------------------
-- The keyword "use"
-    - Allows to import & use external data w/in an Anonymous Function's closure 
+- A declared variable outside of a function
+    - Is INACCESSIBLE w/in the function's closure
+
+    - To access the external variable
+        - Use the keyword "use()"
+            - Pass the external variable as an argument value
+            - Place it before the opening curly brace of the function
+
+        - It IMPORTS the external variable w/in the closure
 
 
 Syntax:
 
-// External data
 $<external_variable> = <data>;
 
-// Anonymous Function stored in a variable
 $<variable_name> = function() use($<external_variable>) {
     ...
 };
 
-// Execute Function by calling the variable name with ( )
 $<variable_name>();
 

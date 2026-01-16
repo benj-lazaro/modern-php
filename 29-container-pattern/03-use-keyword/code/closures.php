@@ -2,10 +2,9 @@
 
 header("Content-Type: text/plain");
 
-// External data
 $what = "Mars!";
 
-// Anonymous Function
+// Imports the variable w/in the anonymous function's closure
 $print_5x = function() use($what) {
     var_dump("Hello " . $what);
     var_dump("Hello " . $what);
@@ -14,5 +13,5 @@ $print_5x = function() use($what) {
     var_dump("Hello " . $what);
 };
 
-// Execute Function
+// Execute anonymous function
 $print_5x();
