@@ -1,31 +1,30 @@
 Refactor The Container With An Instances Array
 ----------------------------------------------
-- Refactor the Methods of the Container
-    - Remove repetitive declarations of the variables "$postsController" & "$postsRepository"
-        - Within their respective Methods
+- Refactor the current Container to implement an array as a Private Property
+    - Stores instances of their corresponding Classes
 
-    - Create a new Private Property named "$instances"
-        - Data type of "array"
-        - Initialized with an empty array
-
-        - NOTE: NOT initializing with an empty array
-            - Requires creating a Constructor to initialize the Property
-            
-    - On their respective Methods
-        - Check array if it contains an element that is an instance of "PostsController" or "PostsRepository"
+    - This approach produces the same objects as the preivous code example
+        - It allows the code base to be refactored further
         
-        - If there are NO instances within the array
-            - Create an instance of the corresponding Class
-            - Store the instantiated object as an element of the array "$instances"
+        - It does NOT offer type safety
+            - The array itself is NOT typed (as either PostsRepository or PostsController)
+            - It stores Objects of BOTH Classes as elements
+        
 
-        - Otherwise
-            - Return the active object 
+- In the Class "Container"
+    - Declare a new Private Property named "$instances"
+        - Data type "array"
+        - Then initialize the Property w/ an empty array
 
-    - The advantage of this approach
-        - Allows the code base to be refactored further
+        - NOTE: Initializing w/ an empty array 
+            - Removes the need of a Constructor
+            - In order to initialize the Private Property "$instances"
 
-    - The disadvantage of this approach
-        - Does NOT offer Type Safety
-            - The array "$instances" is NOT typed
+    - On the respective Public Methods "getPostsRepository()" & "getPostsController()"
+        - Refactor the line that instances a new Object from their corresponding Classes
 
-        - NOTE: This approach produces the same output as the previous implementation
+        - Instead of storing the object into their respective Private Properties
+            - Store the created instance as an element of the array "$instances"
+            - Use the respective Property name as key (i.e. postsRepository, postsController)
+
+    - Remove the previous declared Private Properties (i.e. $postsRespository, $postsController)
