@@ -1,9 +1,36 @@
 Refactor The Container With Unified Instance Creation
 -----------------------------------------------------
-- Instead of calling individual public Methods of the Class "Container"
-    - They are replaced with a unified instance creation
+- Refactor the current Container
+    - Consolidate individual Public Methods "getPostsRepository()" & "getPostsController()"
+        - Into a single Public Method named "get()"
 
-    - This requires the creation of a single instance of the Class "Container"
-        - Calling previous individual public Methods using a single Method named "get()"
-        - Passing an argument value based on the names of previous Methods (e.g. postsRepository, postsController)
+        - Requires a parameter variable named "$what"
+            - Identifies which Class that will be instantiated
+            - Then saved as an element in the array "$instances"
+            - Using the (former Private) Property name as key (i.e. postsRepository, postsController)
 
+    - This Method is referred as a "Unified Instance Creation"
+
+
+- In the Class "Container"
+    - Delete the Public Methods "getPostsRepository()" & "getPostsController()"
+
+    - Create a new Public Method named "get()"
+        - Define the parameter variable "$what"
+
+    - Use an "if" statement to 
+        - Identify which Class will be instantiated
+
+    - Use a nested "if" statement to
+        - Check if an instance of the Class already exists as an element of the array "$instances"
+        
+        - If NO element exists in the array
+            - instantiate a new Object from the corresponding Class
+            - Save it as an element of the array "$instances"
+
+        - Otherwise, return the current instance instead
+
+
+- Refactor how the Public Method "get()" is called 
+    - From both w/in the Method "get()" and the main program
+    - Passing "postsRepository" or "postsController" as argument values

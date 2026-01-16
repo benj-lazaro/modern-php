@@ -2,52 +2,58 @@
 
 header("Content-Type: text/plain");
 
-// Class(es) with dependencies
 class PostsRepository {
-    // Constructor
     public function __construct(private string $a, private string $b) {
-        var_dump("PostsRepository has been constructed...");
+        var_dump("PostsRespository instantiated...");
     }
 }
 
 class PostsController {
-    // Constructor
-    public function __construct(private PostsRepository $postsRepository) {}
+    public function __construct(private PostsRepository $postsRepository) {
+        var_dump("PostsController instantiated...");
+    }
 }
 
 // Container pattern
 class Container {
-    // Properties
     private array $instances = [];
-  
-    // Methods
+
+    // Unified instance creation
     public function get($what) {
-        if ($what === "postsRepository"):
+        if ($what === 'postsRepository'):
+
+            // Save new instance as element of the array
             if (empty($this->instances['postsRepository'])):
                 $this->instances['postsRepository'] = new PostsRepository("A", "B");
             endif;
-            
+            // Otherwise, return the current (active) instance instead
             return $this->instances['postsRepository'];
-        elseif ($what === "postsController"):
+
+        elseif($what === 'postsController'):
+
+            // Save new instance as element of the array
             if (empty($this->instances['postsController'])):
-                $postsRepository = $this->get("postsRepository");
+                $postsRepository = $this->get('postsRepository');
                 $this->instances['postsController'] = new PostsController($postsRepository);
             endif;
-
+            // Otherwise, return the current (active) instance instead
             return $this->instances['postsController'];
+
         endif;
     }
 }
 
-// Create an instance of a Container; this is done ONLY ONCE
+// Container pattern instantiated ONLY ONCE
 $container = new Container();
 
-$postsRepository = $container->get("postsRepository");
+// Create an instance of PostsRepository
+$postsRepository = $container->get('postsRepository');
 var_dump($postsRepository);
 
 // Create an instance of PostController
-$postsController = $container->get("postsController");
+$postsController = $container->get('postsController');
 var_dump($postsController);
 
-$postsController2 = $container->get("postsController");
+// Create another instance of PostController; uses the same current (active) instance
+$postsController2 = $container->get('postsController');
 var_dump($postsController2);
