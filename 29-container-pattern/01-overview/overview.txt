@@ -1,9 +1,26 @@
 Overview
 --------
 - This section focuses on
-    - Container pattern
-        - How it creates & manages instances of Classes
-        - How it allows to scale an application
+    - Container pattern that allows
+        - To scale an application
+        - To create & manage instances of a Class
 
     - A Container is basically a Class
-        - By convention, also named "Container" in the PHP context
+        - NOTE: By convention, it is also named "Container"
+
+
+- Container pattern
+    - Address the following concerns
+        - Repetitive (manual) setup of instantiating a Class
+            - Particularly a Class w/ required dependencies (e.g. another Class instance)
+        
+        - In the event of a changes in a Class' structure (i.e. dependencies or properties)
+            - Requires refactoring lines of related code
+
+    - It contains public Methods that handles
+        - The instantiation of a Class including those w/ dependencies
+
+    - A Container is ONLY instantiated ONCE
+        - Then calls its public Methods to instantiate an Object from its corresponding Class
+
+
