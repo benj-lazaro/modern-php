@@ -1,27 +1,59 @@
-Implement A Recipe Array For Dynamic Instance Creation
+Implement A Recipe Array For Dynamic Instance Creation 
 ------------------------------------------------------
-- Declare a new Property of Private array named "recipes" on the Class "Container"
+- Refactor the Method "get()" of the current Container
+    - Address the potential growth of "if" & "else if" statements
+        - In order to accomodate future Classes when the app scales up
 
+    - Implement an array of recipes named "$recipes"
+        - Each element (i.e. recipe) is an Anonymous Function
+            - That instantiates a corresponding Class
+            - Uses the (former Private) Property name as key (i.e. postsRepository, postsController)
 
-- Declare a Constructor
-    - Initialze the property "recipes"
-    
-    - Assign the corresponding Anonymous Function that instantiates an object from their corresponding Class
-        - As elements of the array
+    - Declare a Constructor
+        - Assign the corresponding Anonymous Function to the array "$recipes"
+        
+    - Refactor the Method "get()"
+        - To store the instantiated Object returned by an element of "$recipes" into "$instances"
 
+        - NOTE: To execute the recipe (i.e. Anonymous Function) w/in "$recipes"
+            - Place a "()" suffix when referencing it (e.g. $this->recipes['postsRepository']() )
+        
+        - To address code duplication
 
-- Refactor the Method "get()"
-    - Replace the "if..else if" statement with a single "if" statement
+        - To implement error handling for non-existent Class(es)
+        
 
-    - Check if the arrays "instances" and "recipes" are empty
-        - If true echo a custom error message
-        - Then terminate program execution with "die()"
+- In the Class "Container"
+    - Create a Private array named "$recipes"
+        - Assign it w/ an empty array
 
-    - Otherwise
-        - Execute the corresponding Anonymous Function in the array "recipes"
-            - Save the returned object into the array "instances"
+    - Create a Constructor
+        - Assign an Anonymous Function as an element of the array "$recipes"
+            - Creates & returns the instantiated Object of the corresponding Class
+                - Uses the (former Private) Property name as key (i.e. postsRepository, postsController)
 
-        - Store the object returned by the array "recipes" into the array "instances"
+            - NOTE: The "$this->" is accessible w/in the closure of an Anonymous Function
+                - This is relevant for a Class w/ dependencies from other Classes (e.g. postsController)
 
-        - Return the array "instances"
-    
+            - NOTE: The closure increments the instance counter
+
+    - In the public Method "get()"
+        - Replace the line of code that instantiates a Class
+            - With a call to the corresponding element of the array "$recipes"
+        
+        - To execute the corresponding Anonymous Function in "$recipes"
+            - Add a pair of "()"
+            - e.g. $this->recipes['postsRepository']()
+
+        - Address the repetitive references to
+            - Both "postsRepository" & "postsController" w/in the body of "if" statements
+
+            - Reduce to a single "if" statement
+                - Replace reference to either "postsRepository" & "postsController" w/ the variable "$what"
+                - NOTE: The variable "$what" identifies the Class that is being requested
+
+        - Implement error correction
+            - Check if the recipe for the requested Class exists w/in the array "$recipes"
+
+            - If none, prompt an error message
+                - Call the function "die()" to terminate the program
