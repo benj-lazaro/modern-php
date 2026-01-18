@@ -1,19 +1,49 @@
 Register The Recipes For Instance Creation Outside The Container
 ----------------------------------------------------------------
-- From a code perspective
-    - The "$recipes" has NOTHING to do with the Class "Container"
-    
-    - The Container is pretty much a container that
-        - Build instances of Classes (e.g. PostsRepository, PostsController)
-        - Should be kept as clean & simple as possible
-        - Should work standalone & use universally
+- The Private array "$recipes" w/in the Constuctor of the Class "Container"
+    - As the application scales up
+        - New recipes will be included into the Container
+        - Requiring the Constructor to be refactored repeatedly
 
-    - To address this concern
-        - Declare the Property "recipes" as Public
-            - Move it from the Constructor to outside of the Class "Container"
-            - Remove the remnant Constructor
-            
-            - NOTE: Doing so will make the said Property accessible to everyone
+    - From a code perspective
+        - The Private array "$recipes has NOTHING to do with the Class "Container"
 
-        - Refactor the "$recipes" codebase
-            - Treat them as accessing the Public Property "recipes"
+    - The Class "Container" is intended simply as a container that
+        - Helps build an instance of a Class
+
+        - It should
+            - NOT contain the recipes w/in its Constructor
+            - Be kept clean & simple
+            - Work standalone & use universally
+
+    - The logic that handles the recipes
+        - Should be moved from the Constructor
+            - Eventually deleting the Constructor
+
+        - Change the Private Property "$recipes"
+            - From Private to Public
+
+        - Access the Public Property "$recipes" outside of the Class "Container"
+            - To assign the recipe for its corrresponding Class
+
+
+- In the Class "Container"
+    - Change the Property "$recipes"
+        - From Private to Public
+
+    - Delete the Constructor
+
+
+- Outside the Class "Container"
+    - After creating its own instance 
+        - Stored into the variable "$container"
+
+    - Access the Public Property "$recipes" then
+        - Register (assign) the recipe (i.e. Anonymous Function) of the corrresponding Class
+        
+        - NOTE: Use the function "use()" in order to
+            - Import the instance of the container w/in an Anonymous Function
+            - Required for a Class that has a dependency 
+
+    - Use the Method "get()"
+        - To create an instance of the requested Class
