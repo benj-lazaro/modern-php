@@ -2,68 +2,74 @@
 
 header("Content-Type: text/plain");
 
-// Class(es) with dependencies
 class PostsRepository {
-    // Constructor
     public function __construct(private string $a, private string $b) {
-        var_dump("PostsRepository has been constructed...");
+        var_dump("PostsRespository instantiated...");
     }
 }
 
 class PostsController {
-    // Constructor
-    public function __construct(private PostsRepository $postsRepository) {}
+    public function __construct(private PostsRepository $postsRepository) {
+        var_dump("PostsController instantiated...");
+    }
 }
 
 // Container pattern
 class Container {
-    // Properties
     private array $instances = [];
     private array $recipes = [];
-  
-    // Methods
+
+    // Binds (registers) a recipe Class to its corresponding Class
     public function bind(string $what, \Closure $recipe) {
-        // Assings (binds) the closure (anonymous function)
         $this->recipes[$what] = $recipe;
     }
 
+    // Unified instance creation
     public function get($what) {
+        // If there is NO active instance of requested Class
         if (empty($this->instances[$what])):
 
+            // Check for the existence of the requested Class' recipe
             if (empty($this->recipes[$what])):
-                echo "Could not build: {$what}";
+                echo "Could NOT build: {$what}.\n";
                 die();
             endif;
-            
-            // Instantiates an object & then save it as an element of the array "$instances"
+
+            // Access recipe & save the new instance of the requested Class
             $this->instances[$what] = $this->recipes[$what]();
         endif;
 
+        // Returns either the new or current (active) instance
         return $this->instances[$what];
     }
 }
 
-// Create an instance of a Container; this is done ONLY ONCE
+// Container pattern instantiated ONLY ONCE
 $container = new Container();
 
-// Binds the recipes that be instantiated from the "Container"
-$container->bind("postsRepository", function() { 
-    return new PostsRepository("A", "B"); 
+// Binds (registers) recipe of the Class PostsRepository
+$container->bind('postsRepository', function () {
+    return new PostsRepository("A", "B");
 });
 
-$container->bind("postsController", function() use($container) {
-    $postsRepository = $container->get("postsRepository");
-    return new PostsController($postsRepository);
+// Binds (registers) recipe of the Class PostsController
+$container->bind('postsController', function () use($container) {
+    // Resolve dependency on PostsRepository
+    $postRepository = $container->get('postsRepository');
+    return new PostsController($postRepository);
 });
 
 // Create an instance of PostsRepository
-// $postsRepository = $container->get("postsRepository");
-// var_dump($postsRepository);
+$postsRepository = $container->get('postsRepository');
+var_dump($postsRepository);
 
 // Create an instance of PostController
-$postsController = $container->get("postsController");
+$postsController = $container->get('postsController');
 var_dump($postsController);
 
-// Attemmpt to create an instance of a non-existent Class
-$postsController2 = $container->get("abc");
+// Create another instance of PostController; uses the same current (active) instance
+$postsController2 = $container->get('postsController');
 var_dump($postsController2);
+
+// Deliberate non-existent Class
+$postsController3 = $container->get('postsController123');
