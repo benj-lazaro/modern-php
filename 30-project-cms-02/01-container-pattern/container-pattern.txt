@@ -1,0 +1,95 @@
+Utilize Container Pattern In The CMS
+------------------------------------
+- Implement the Container pattern on the CMS project
+
+
+- On the CMS project
+    - Copy the file "better-container.php" from the previous chapter
+        - Create a new folder named "src/Support"
+        - Paste the file into the folder
+        - Rename it to "Container.php"
+
+    - Refactor the file "src/Support/Container.php"
+        - Add the namespace "App\Support"
+
+    - Open the file "index.php"
+        - Create a new instance of the Container pattern named "Container"
+            - Save the instance into the variable named "$container"
+
+    - Switch to the file "inc/db-connect.inc.php"
+        - At the end of the codebase, add a "return" statement
+        - To return the database connection stored in the variable "$pdo"
+        
+    - Switch to the file "inc/all.inc.php"
+        - Copy the "require" statement for the file "inc/db-connect.inc.php"
+            - Then comment the line of code
+
+        - Intended to load this file manually, ONLY when needed
+
+    - Switch back to the file "index.php"
+        - Within the anonymous function for the "pdo"
+            - Declare a "return" statement
+            - Paste the "require" statement copied from the file "inc/all.inc.php"
+            - NOTE: This serves as the recipe for a database connection
+
+        - Register the recipe for the Class "PagesRepository"
+            - Use the method ".bind()" of the Class "Container"
+                - Pass the argument values 
+                    - 1st argument = "pagesRepository"
+                    - 2nd argument = anonymous function
+                        - NOTE: Use the keyword "use" & pass "$container" as an argument value
+
+                - Inside the anonymous function
+                    - Use the method ".get()" of the Container
+                    - Pass the argument value "pdo"
+                    - Save the database connection object in the variable "$pdo"
+
+                - Declare a "return" statement
+                    - Copy the line of code that instantiates the Class "PagesRepository"
+                    - Pass the variable "$pdo" as an argument values
+
+        - Register the recipe for the Class "PagesController"
+            - Use the method ".bind()" of the Class "Container"
+                - Pass the argument values 
+                    - 1st argument = "pagesController"
+                    - 2nd argument = anonymous function
+                        - NOTE: Use the keyword "use" & pass "$container" as an argument value
+
+                - Inside the anonymous function
+                    - Use the method ".get()" of the Container
+                    - Pass the argument value "pagesRepository"
+                    - Save the database connection object in the variable "$pagesRepository"
+
+                - Declare a "return" statement
+                    - Copy the line of code that instantiates the Class "PagesController"
+                    - Pass the variable "$pagesRepository" as an argument values
+
+        - Within the "if" statment that instantiates the Class "PagesController"
+            - Use the Method ".get()" of the Class "Container" stored in "$container"
+                - Pass the argument value "pagesController"
+                - Save the instantiated object in the variable "$pagesController"
+
+        - Register the recipe for the Class "NotFoundController"
+            - Use the method ".bind()" of the Class "Container"
+                - Pass the argument values 
+                    - 1st argument = "notFoundController"
+                    - 2nd argument = anonymous function
+                        - NOTE: Use the keyword "use" & pass "$container" as an argument value
+
+                - Inside the anonymous function
+                    - Use the method ".get()" of the Container
+                    - Pass the argument value "pagesRepository"
+                    - Save the database connection object in the variable "$pagesRepository"
+
+                - Declare a "return" statement
+                    - Copy the line of code that instantiates the Class "NotFoundController"
+                    - Pass the variable "$pagesRepository" as an argument values
+
+        - Within the "else" statement
+            - Remove the line of code that instantiates the Class "PagesRepository"
+
+            - Use the Method ".get()" of the Class "Container" stored in "$container"
+                - Pass the argument value "notFoundController"
+                - Save the instantiated object in the variable "$notFoundController"
+
+        - Save the changes
