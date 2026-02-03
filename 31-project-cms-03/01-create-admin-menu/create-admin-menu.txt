@@ -1,0 +1,116 @@
+Create The Admin Menu
+---------------------
+- Previously successfully implemented the Container pattern into the CMS application
+    - Next is to start implementing an Admin menu
+
+
+- On the CMS project
+    - Create a new namespace for the Admin menu
+        - On the folder "src"
+            - Create a new folder named "Admin"
+
+        - Inside the folder "src/Admin"
+            - Create a new sub-folder named "Controller"
+
+        - Inside the folder "src/Admin/Controller"
+            - Create a new file named "PagesAdminController.php"    
+            - NOTE: This serves as the pages controller for the Admin menu
+
+
+    - On the file "PagesAdminController.php"
+        - Declare the Namespace "App\Admin\Controller"
+
+        - Create a new Class named "PagesAdminController"
+
+        - Create a public Method named "index()"
+            - Calls the function "var_dump()"
+            - Pass the string argument value "PagesAdminController::index"
+
+            - NOTE: This intended to display Admin-related entries
+
+
+    - Switch to the file "index.php"
+        - Bind the reciple for instantiating the Class "PagesAdminController"
+            - For now, simply returns the instantiated object
+
+            - NOTE: Soon will require a dependency from "$container"
+
+        - On the "if" statement
+            - Add the new route "admin\pages" to the variable "$route"
+
+            - Instantiate the Class "PagesAdminController"
+                - Save the returned object into the variable "$pagesAdminController"
+
+            - Call the Method "index()"
+
+        - Save the changes
+            - Reload the browser
+            - On the URL, use "index.php?route=admin/pages"
+            - It should render the string value "PagesAdminController::index" on the browser
+
+
+    - Switch to the file "src/Frontend/Controller/AbstractController.php"
+        - Copy the Abstract Class "AbstractController"
+
+
+    - Create a new file "src/Admin/Controller/AbstractAdminController.php"
+        - Declare the Namespace "App\Admin\Controller"
+
+        - Paste the Abstract Class "AbstractController"
+            - Rename it to "AbstractAdminController"
+
+        - Refactor the Constructor
+            - Remove the parameter variable "$pagesRepository"
+
+        - Refactor the protected Method "render()"
+            - Remove the line of code that fetches the value for the variable "$navigation"
+
+            - Refactor the path of the "require" statements
+                - Replace "frontend" to "admin"
+
+    
+    - Switch to the file "src/Admin/Controller/PagesAdminController.php"
+        - On the Class "PagesAdminController"
+            - Extend the Class "AbstractAdminController"
+
+        - On the public Method "index()"
+            - Remove the call of "var_dump()"
+            - Render the "pages/index" w/ NO data passed into the page
+
+
+    - Create a new folder "views/admin"
+        - Create a sub-folder named "layouts"
+        
+        - Copy the file "views/frontend/layouts/main.view.php" into this folder
+
+        - On the file "views/admin/layouts/main.view.php"
+            - Refactor the content
+            - To reflect that it is the Admin page that is being accessed
+
+    
+    - Create a new folder "views/admin/pages"
+        - Create a new file "index.view.php"
+
+
+    - On the file "views/admin/pages/index.view.php"
+        - Declare a HTML element <h1>
+        - Content denoting that it is the "index.view.php" of the Admin page
+
+    
+    - Create a new folder "view/admin/abstract"
+        - Copy the file "views/frontend/abstract/error404.view.php" to this folder
+
+    
+    - Switch to the "PagesAdminController"
+        - Comment the call to the Method "index()"
+        
+        - Call the Method "error404()"
+            - To manually trigger it
+
+
+    - Save the changes
+        - Reload the browser
+        - On the URL, use "index.php?route=admin/pages"
+        - It should render the Error 404 page
+
+
