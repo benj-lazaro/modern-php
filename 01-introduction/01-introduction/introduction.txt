@@ -1,57 +1,59 @@
 Introduction
 ------------
 - PHP history
-    - Was launched in 1997
+    - Launched in 1997
     - Nowadays, powering 80% of all websites
     - Popular software (i.e. WordPress) is written in it
     - PHP is incredibly a powerful programming language
-    - Also, PHP hosting is incredibly cheap
-
-    - Moreover
-        - PHP has significantly evolved over the years
-
-        - Used to be a pure scripting language for simple scripts
-            - Likely cause its bad reputation
-
-        - It has become an advanced, object-oriented programming language
-            - That can be utilized for modern applications
+    - PHP hosting is incredibly cheap
 
 
-Course Structure (Roadmap)
---------------------------
-- Introduction
-    - Setting up your system
+- Moreover
+    - PHP has significantly evolved over the years
 
-- PHP for small projects
-    - Variables, conditionals, loops, arrays ...
+    - It used to be a pure scripting language for simple scripts
+        - Might have a bad reputation due to that
 
-- PHP for intermediate projects
-    - Working with a database, functions, type annotations, file uploads...
-
-- PHP for larger projects
-    - Object-oriented programming, namespace, autoloading, MVC pattern
+    - It has become an advanced, object-oriented programming language that
+        - Can be utlizied for modern applications
 
 
-Course Projects
----------------
-- Image browser (from local filesystem)
-    - Add a few files in a folder
-    - Turns into a nice website
-    - All local images will be displayed
+- Course strcture (roadmap)
+    - Introduction
+        - Setting up your system
 
-- Air Quality explorer
-    - Loads files
-    - Parse JSON data
-    - Work with arrays
+    - PHP for small projects
+        - Focuses on variables, conditionals, loops, arrays...
 
-- PHP diary
-    - Working with a database
+    - PHP for intermediate projects
+        - Workng w/ a database, functions, type annotations, file uploads...
 
-- Weather app
-    - Working with extrenal APIs, interfaces
-    - Explore object-oriented programming
+    - PHP for larger projects
+        - Object-oriented programming, namespace, autoloading, MVC pattern
 
-- Content Management System
-    - A fully fledged CMS application
-    - A complete MVC (Model View Controller) setup
-    - Prepare for real-world projects
+
+- What projects that will be developed
+    - Image browser (from the local filesystem)
+        - Add image files into a local folder
+        - PHP will turns the images into a nice website
+        - The images will be rendered on the browser
+
+    - Air quality explorer
+        - Loads files 
+        - Parse JSON data
+        - Work w/ arrays
+
+    - PHP diary
+        - Work w/ a database
+    
+    - Weather app
+        - Work w/ external APIs
+        - Explore object-oriented programming
+        - Use interfaces to easily switch the external API
+
+    - Content management system
+        - A fully fledged CMS applications
+        - Define pages that will be shown to site vistors
+        - This will be a completed MVC (Model View Controller) setup
+        - Explore advanced concepts of object-oriented programming
+        - Concepts that will prepare for real-world project & larger-scale applications
