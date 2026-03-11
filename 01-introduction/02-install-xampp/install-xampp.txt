@@ -1,93 +1,95 @@
-Install XAMPP
--------------
-- Windows
-    - Get the latest XAMPP installer
-        - Website (https://www.apachefriends.org/download.html)
+Install XAMPP (Windows & Linux)
+-------------------------------
+- Download the latest installer from the official website
+    - Website (https://www.apachefriends.org/download.html)
 
+
+- Installation (Windows)
     - Run the executable installer
-        - Use default settings
+        - Use the default settings
 
-    - Post installation
-        - Click the button "Start" on the following services
+    - Post-installation tasks
+        - Launch the XAMPP Control Panel
+        
+        - Click the "Start" button of the following services
             - Apache
-            - MySQL 
-
+            - MySQL
+        
         - On the "Apache" service
-            - Click the button "Admin"
+            - Click the "Admin" button
+            - Launches the system default browser
+            - Loads the XAMPP dashboard
 
-            - Launches the default browser
 
-            - Loads the XAMPP dashboard web application
-    
+- Installation (Linux)
+    - Launch terminal
+        - Navigate to the directory where the installer is downloaded
 
-- Linux
-    - Get the latest XAMPP installer
-        - Website (https://www.apachefriends.org/download.html)
-
-    - Open terminal
-        - Navigate to the folder where the installer is downloaded
-
-    - Make the file executable
+    - Make the installer executable
 
         sudo chmod +x xammp-linux-x64*
 
-    - Run the installer
+
+    - Execute the installer
 
         sudo ./xammp-linux-x64*
 
-    - Change the ownership of the folder "/opt/lampp/htdocs"
+    
+    - Change the ownership of the directory "/opt/lampp/htdocs"
 
         sudo chown -R <username>:<username> /opt/lampp/htdocs/
 
-    - Launch XAMPP dashboard
 
-        sudo /opt/lampp/manager-linux-x64.ru
+    - Launch the XAMPP Control Panel
+
+        sudo /opt/lampp/manager-linux-x64.run
 
 
+- Troubleshooting Tips
+    - Windows OS: XAMPP services failed to start (e.g. Apache, MySQL)
+        - The default ports may have been taken by another application or service
 
-Troubleshooting Tips
---------------------
-- Windows: Services (i.e. Apache, MySQL) failed to start
-    - Default ports may have been taken by another application or service
+        - On the XAMPP Control Panel
+            - Click the "Config" button
 
-    - Click button "Configure"
-        - Select "Apache (httpd.conf)"
+            - Select the item "Apache (httpd.conf)"
+                - Launches default text editor & loads the .conf file
 
-        - Scroll down until reaching the directive (for incoming requests)
+            - Scroll down until the reaching the directive
 
-            "Listen 80"
+                Listen 80
 
-        - Change the port number to something else (e.g. 8080 or 8090)
+            - Change the port number into something else (e.g. 8080 or 8090)
 
-            "Listen 8090"
+                Listen 8090
 
-        - Close the editor
-            - To automatically save the changes
+            - Close the default editor
+                - Automatically save the changes
+        
 
-    - Click button "Configure"
-        - Select "Apache (httpd-ssl.conf)"
+        - Back on the XAMPP Control Panel
+            - Click "Config" button again
+                - Select the item "Apache (httpd-ssl.conf)"
+                - Launches default text editor & loads the .conf file
 
-        - Scroll down until reaching the directive (for incoming requests)
+            - Scroll down until the reaching the directive
 
-            "Listen 443"
+                Listen 443
 
-        - Change the port number to something else (e.g. 1891 )
+            - Change the port number into something else (e.g. 1891)
 
-            "Listen 1891"
+                Listen 1891
 
-        - Close the editor
-            - To automatically save the changes
+            - Close the default editor
+                - Automatically save the changes
 
-    - Click the button "Start"
-        - Displays the updated port numbers
 
-    - Click the button "Admin"
-        - Launches the default browser
+        - Click the "Start" button of the Apache service
+            - The updated port numbers are listed under the "Port(s)" column
 
-        - Loads the XAMPP dashboard web application
 
-        - NOTE: If the dashboard fails to load
-            - Manually append the new port number on the URL
+        - Click the "Admin" button to launch the XAMPP dashboard on the browser
+            - If the XAMPP dashboard fails to load, manuall paste the following URL
+                - NOTE: Use the assigned ports number
 
-                https://localhost:<new_port_number>/dashboard
-       
+            - URL (https://localhost:<new_port_number>/dashboard)
