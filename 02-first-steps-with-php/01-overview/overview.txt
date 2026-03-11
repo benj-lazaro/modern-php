@@ -1,19 +1,20 @@
 Overview
 --------
 - This section focuses on:
-    - Basics of PHP development
+    - The basics of PHP development
         - Variables
         - Strings
         - How to include files
 
-    - Create a simple website for a restaurant
-        - It has three sections
-            - Section names
-                - Our mission
-                - Ingredients
-                - Menu
+    - Create a simple restaurant website that
+        - Comprises of three (3) sections
+            - Our mission
+            - Ingredients
+            - Menu
+        
+        - Each section has a distinct 
+            - Header background image
+            - Content
 
-            - Each has a distnct header background image & content
-
-        - It has a common HTML structure
+        - ALL sections has a common HTML structure
             - Instead of three (3) individual HTML pages
