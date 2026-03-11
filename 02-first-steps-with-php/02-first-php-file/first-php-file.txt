@@ -1,90 +1,90 @@
 A First PHP File & The "echo" Command: Display Text On A Website
 ----------------------------------------------------------------
-- Creating the first PHP file
-    - Launch XAMPP's "Apache Web Server" service
-
-    - Launch Chrome browser
-
-    - On the project's root folder
-        - Create a new file "index.php"
-
-    - Inside the "index.php" file
-        - Generate HTML boilerplate code 
-            - Using VS Code's "!" shortcut
-
-        - Add an HTML element <h1> with the content
-
-            "Hey, this is my first .php file"
-
-        - Save the changes
-
-        - Refresh the Chrome browser
-
-    - Behind the scenes
-        - Apache Web Server by virtue of file extension
-            - Detect the ".php" file extension
-            - Hands it over to the PHP interpreter (if installed one)
-
-        - PHP interpreter goes through the file's code
-            - Checks for PHP keywords, function, etc. 
-                - Generates the corresponding content
-
-            - Hands it back to the Apache Web Server
-
-        - Apache Web Server receives the content
-            - Serves the content to the Chrome browser
-
-        - Chrome browser receives the content
-            - Renders it on its (currently active) window
-
-    - To insert PHP code within a HTML document
-        - Use the following line
-
-            <?php <php_code_here> ?>
-
-        - The "<?php" infoms the Apache Web Server that
-            - This is the start of a PHP block of code
-
-        - The "?>" signifies the end of the PHP code block
-
-            - NOTE: This code block does NOT appear in the HTML document
-                - When viewed using Chrome browser's "View page source"
-                - It ONLY shows the generaed content from the PHP's code block
-
-        - NOTE: PHP code can be embedded as content within a HTML element (e.g. <h1>)
+- Launch the XAMPP Control Panel
+    - Start the "Apache Web Server" service
+    - Launch the Chrome browser
+    - Launch VS Code editor
 
 
-- The "echo" statement is a PHP language construct (NOT a function)
-    - It outputs one or more expression passed as a parameter value
-        - Enclosed within a pair of ' ' or " "
+- On the project folder
+    - Create a new file named "index.php"
+
+    - Generate a HTML boilerplate code
+        - Using VS Code shortcut "!"
+
+    - Create an HTML element <h1> w/ the string "Hey, this is my first .php file"
+    - Save the changes
+    - Reload the browser
+
+
+- What happens behind the scenes
+    - The Apache web server 
+        - Identifies the file as a PHP file by virtue of the file extension ".php"
+        - Hands over the file to the PHP interpreter
+
+    - The PHP interpreter
+        - Parses through the "index.php" file's code base
+            - Checks for PHP keywords, functions, etc.
+            - Renders the corresponding output
         
-    - It does NOT add newlines or space to the expression
+        - Hands it back to the Apache web server
+
+    - The Apache web server
+        - Receives the content from the PHP interpreter
+        - Servers it to the (client) Chrome browser
+
+    - The Chrome browser
+        - Renders the content on its (currently active) window
+
+
+- To insert PHP code w/in a HTML document
+    - Use the following syntax:
+
+        <?php <place_PHP_code_here> ?>
+
+    - The "<?php" informs the Apache web server that
+        - This is the start of a PHP code block
+
+    - The "?>" signifies the end of a PHP code block
+
+    - IMPORTANT: BOTH "<?php" & "?>" are NOT rendered in the HTML document
+        - When viewed using the Chrome browser's "View page source"
+
+        - The PHP code is embedded as content w/in a HTML document
+
     
-    - It does NOT have a return value (i.e. void)
+- The "echo" statement
+    - It is a PHP language construct that
+        - Outputs one (1) or more expression passed as an argument value
+        - It is NOT a function
+    
+    - It does NOT
+        - Add a newline or space to the expression
+        - Have a return value (i.e. void)
 
     - Reference (https://www.php.net/manual/en/function.echo.php)
 
-Syntax:
+    Syntax:
+    echo "<string_expression>";
+    echo '<string_expression>';
+    echo "$<variable_name>";
+    echo <expression>;
 
-echo '<string>';
-echo "<string>";
 
-echo '$<variable_name>';
-echo "$<variable_name>";
+- The function "rand()"
+    - Generates a random integer
 
-echo <expression>;
-echo <function>;
+    - Optionally accepts two (2) arguments
+        - 1st = minimum integer value to generate
+        - 2nd = maximum integer value to generate 
 
-- The function "rand()" generates a random integer
-    - It optionally accepts two paramters
-        - First paramter    = minimum number generated
-        - Second parameter  = maximum number generated (inclusive)
-
-    - If called without the optional parameters
-        - Returns an integer between 0 and the value returned by "getrandmax()"
-
+    - If called w/o an argument value
+        - Returns an integer between 0 & the number returned by the function "getrandmax()"
+    
     - Reference (https://www.php.net/manual/en/function.rand.php)
 
-Syntax:
+    Syntax:
+    rand();
+    rand([<min_integer_to_generate>, <max_integer_to_generate>]);
 
-rand([min, max]);
+

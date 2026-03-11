@@ -8,11 +8,12 @@
 </head>
 
 <body>
+    <!-- Echo a string value -->
     <h1><?php echo 'Hello from PHP!'; ?></h1>
 
     <h1>Hey, this is my first .php file</h1>
 
-    <!-- Generate a random number between integers 1 and 6 -->
+    <!-- Generates a random number between the integer value 1 & 6 -->
     <h1>Random number: <?php echo rand(1, 6); ?></h1>
 
 </body>
