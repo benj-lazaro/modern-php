@@ -1,8 +1,8 @@
 Install Visual Studio Code
 --------------------------
-- Download the latest installer of Visual Studio Code
+- Get the latest Visual Studio Code installer from the official website
     - Website (https://code.visualstudio.com/)
 
 
-- VS Code Extensions
-    - PHP Intelephense by Ben Mewburn
+- Recommended Visual Studio Code Extension(s)
+    - PHP Intelephense (Ben Mewburn)
