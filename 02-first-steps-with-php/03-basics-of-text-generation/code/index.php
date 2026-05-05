@@ -32,12 +32,10 @@
     </style>
 </head>
 
-<!-- Dynamically change the value of attribute "class" for each page refresh -->
-
+<!-- Dynamically updates the HTML attribute "class" when refreshed -->
 <body class="body-<?php echo rand(1, 6); ?>">
-    <!-- Generate text that contains a legit <h1> element markup -->
+    <!-- Generate content that contains a legitimate HTML element -->
     <?php echo '<h1>Hello from PHP!</h1>';   ?>
-
 </body>
 
 </html>

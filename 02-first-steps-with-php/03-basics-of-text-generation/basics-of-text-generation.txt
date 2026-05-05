@@ -1,16 +1,51 @@
 The Basics Of Text Generation With PHP: Create Dynamic Background Colors
 ------------------------------------------------------------------------
-- PHP generates HTML markup
-    - The browser renders the corresponding HTML markup
-
-
-- PHP can generate any arbitrary text that
-    - Can be rendered by the browser as HTML markup
+- PHP can generate any arbitrary text that is
+    - Rendered as HTML mark-up by the browser
 
     - Common use case:
-        - Dynamically change the assigned value of an element's "class" attribute
-            - Using a combination of "echo" and "rand()"
+        - Dynamically change an HTML element's attribute "class"
+            - Using an "echo" statement & the function "rand()"
 
-    - NOTE: The browser does NOT care where the generated HTML markup came from
-        - It just renders the HTML markup received from the (Apache) Web Server
+    - NOTE: The browser does NOT care where the HTML mark-up came from
+        - It just renders the HTML mark-up receives from a web server (e.g. Apache Web Server)
 
+
+- On the example code (index.php)
+    - Embed inline CSS code using the HTML element <style>
+        - Declare six (6) CSS Class Selector ".body-<number>"
+            - Whose value of <number> ranges from 1 to 6
+
+        - Each Class Selector ".body-<number>"
+            - Sets the property "background-color" to the following colors
+            - Colors "red", "green", "aqua", "yellow", "magenta" & "gray"
+
+
+    - On the HTML element <body>
+        - Embed an inline PHP code using
+            - An "echo" statement that call the function "rand()"
+            - Pass the following argument values
+                - 1st = 1    
+                - 2nd = 6
+
+        - Assign the inline PHP code as part of the assigned value to the
+            - HTML attribute "class"
+
+            <body class="body-<?php echo rand(1, 6); ?>
+
+    
+    - On the next line
+        - Embed another inline PHP code using an "echo" statement
+            - Pass an HTML element <h1> as content w/ the string value
+
+                "Hello from PHP!"
+
+
+    - Save the changes
+
+
+    - Load / reload the browser
+        - The HTML element <h1> w/ the content of "Hellow from PHP" is rendered
+
+        - The background color cycles through different colors
+            - Every time the HTML document is reloaded
