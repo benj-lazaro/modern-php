@@ -1,65 +1,53 @@
 A First PHP File & The "echo" Command: Display Text On A Website
 ----------------------------------------------------------------
-- Launch the XAMPP Control Panel
-    - Start the "Apache Web Server" service
+- Launch the "XAMPP Control Panel"
+    - Start the service "Apache Web Server"
     - Launch the Chrome browser
     - Launch VS Code editor
 
 
-- On the project folder
-    - Create a new file named "index.php"
+- What happens behind-the-scenes
+    - After a PHP file "index.php" is loaded on the browser
 
-    - Generate a HTML boilerplate code
-        - Using VS Code shortcut "!"
-
-    - Create an HTML element <h1> w/ the string "Hey, this is my first .php file"
-    - Save the changes
-    - Reload the browser
-
-
-- What happens behind the scenes
-    - The Apache web server 
-        - Identifies the file as a PHP file by virtue of the file extension ".php"
-        - Hands over the file to the PHP interpreter
+    - The XAMPP service "Apache Web Server"
+        - Identifies the file "index.php" as a PHP file by its filename extension
+        - Hands over the file to XAMPP's PHP interpreter
 
     - The PHP interpreter
-        - Parses through the "index.php" file's code base
-            - Checks for PHP keywords, functions, etc.
-            - Renders the corresponding output
-        
-        - Hands it back to the Apache web server
+        - Receives the file & parses through the code base
+        - Checks for PHP keywords, functions, etc.
+        - Renders the corresponding output
+        - Hands over the generated output back to the "Apache Web Server"
 
-    - The Apache web server
-        - Receives the content from the PHP interpreter
-        - Servers it to the (client) Chrome browser
+    - The XAMPP service "Apache Web Server"
+        - Receives the generated output from the PHP interpreter
+        - Serve the content to the client (Chrome browser)
 
-    - The Chrome browser
-        - Renders the content on its (currently active) window
+    - The Chrome browser (client)
+        - Renders the content on its currently active window
 
 
-- To insert PHP code w/in a HTML document
-    - Use the following syntax:
+- To insert (inline) PHP code w/in a HTML document
+    - Embed the PHP code between the pair of tags "<?php" & "?>"
+        - Tag "<?php"   = Start of a PHP code block
+        - Tag "?>"      = End of a PHP code block
 
-        <?php <place_PHP_code_here> ?>
+    - BOTH tags are NOT rendered on the HTML document 
+        - Rendered content by the PHP code becomes content of the HTML document
 
-    - The "<?php" informs the Apache web server that
-        - This is the start of a PHP code block
+        - Evident using Chrome browser's "View page source"
 
-    - The "?>" signifies the end of a PHP code block
+    Syntax:
+    <?php <PHP_code> ?>
 
-    - IMPORTANT: BOTH "<?php" & "?>" are NOT rendered in the HTML document
-        - When viewed using the Chrome browser's "View page source"
 
-        - The PHP code is embedded as content w/in a HTML document
+- The PHP "echo" statement
+    - It is a language construct that
+        - Outputs an expression passed as an argument  value
+        - NOTE: It is not a function
 
-    
-- The "echo" statement
-    - It is a PHP language construct that
-        - Outputs one (1) or more expression passed as an argument value
-        - It is NOT a function
-    
     - It does NOT
-        - Add a newline or space to the expression
+        - Add a "newline" or "space" character to the expression
         - Have a return value (i.e. void)
 
     - Reference (https://www.php.net/manual/en/function.echo.php)
@@ -71,15 +59,17 @@ A First PHP File & The "echo" Command: Display Text On A Website
     echo <expression>;
 
 
-- The function "rand()"
-    - Generates a random integer
+- The PHP function "rand()"
+    - It generates & returns a random number
 
-    - Optionally accepts two (2) arguments
-        - 1st = minimum integer value to generate
-        - 2nd = maximum integer value to generate 
+    - It can optionally accepts two (2) argument values
+        - 1st   = minmum (lowest) integer value
+        - 2nd   = maximum (highest) integer value
 
-    - If called w/o an argument value
-        - Returns an integer between 0 & the number returned by the function "getrandmax()"
+    - When called w/out passing an argument value
+        - Returns an integer value between
+            - Integer value of 0
+            - Integer returned by the function "getrandmax()"
     
     - Reference (https://www.php.net/manual/en/function.rand.php)
 
@@ -88,3 +78,37 @@ A First PHP File & The "echo" Command: Display Text On A Website
     rand([<min_integer_to_generate>, <max_integer_to_generate>]);
 
 
+- On the project folder
+    - Launch XAMPP
+        - Run the service "Web Apache Server"
+
+    - On VS Code
+        - Create a new file named "index.php"
+
+    - Inside the file "index.php"
+        - Generate a HTML boilerplate using the shortcut "!" + "tab"
+            
+        - Create an HTML element <h1>
+            - Embed PHP code as content using an "echo" statement
+                - To render the following string value
+
+                "Hello from PHP!"
+
+        - Create a 2nd HTML element <h1>
+            - Pass the following string value as content
+
+                "Hey, this is my first .php file"
+
+        - Create a 3rd HTML element <h1>
+            - Embed PHP as content using an "echo" statement
+                - To call the function "rand()"
+                
+                - Pass the following argument values
+                    - 1st = 1 (lowest generated number)
+                    - 2nd = 6 (highest generated number)
+
+    - Save the changes
+    
+    - Launch the browser
+        - Open the file "index.php"
+        - Renders the HTML elements <h1> & the corresponding content
